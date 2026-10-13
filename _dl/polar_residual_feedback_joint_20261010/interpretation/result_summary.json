@@ -1,0 +1,645 @@
+{
+  "protocol_id": "87b0691d59aa2ae342e321ff2ecc9534782585453ba16a659cbaeef52614aeeb",
+  "checkpoint_step": 12000,
+  "checkpoint_sha256": "ec7f0e6e79d0dcf21c536dc71958d44514bd7e78a8624bb936f16c02c37e81e8",
+  "gpu_used_for_this_analysis": false,
+  "archive_files_verified": 159,
+  "source_weights_match": true,
+  "frozen_code_match": true,
+  "frozen_runtime_sources_preserved": true,
+  "splits": {
+    "validation": {
+      "frames": 872,
+      "round1": {
+        "image_mean_psnr": 26.08008901248357,
+        "image_mean_ssim": 0.9053678083310434,
+        "scene_macro_psnr": 26.149799005277472,
+        "scene_macro_ssim": 0.9086580236864115
+      },
+      "round2": {
+        "image_mean_psnr": 26.095937680270303,
+        "image_mean_ssim": 0.9045132328884318,
+        "scene_macro_psnr": 26.154375573440298,
+        "scene_macro_ssim": 0.9079519162710772
+      },
+      "iteration_gain": {
+        "image_mean_psnr": 0.0158486677867417,
+        "image_mean_ssim": -0.0008545754426116243,
+        "scene_macro_psnr": 0.004576568162822776,
+        "scene_macro_ssim": -0.0007061074153343339
+      },
+      "psnr_improved": 533,
+      "psnr_worsened": 339,
+      "ssim_improved": 245,
+      "both_improved": 230,
+      "median_psnr_gain": 0.023044604110029177,
+      "max_psnr_gain": 0.26537353819716714,
+      "min_psnr_gain": -0.4135162099873071,
+      "scenes": 8,
+      "psnr_scenes_improved": 3,
+      "per_scene": [
+        {
+          "scene": "01",
+          "frames": 33,
+          "round1": {
+            "psnr": 28.42673123465133,
+            "ssim": 0.9505028706608396
+          },
+          "round2": {
+            "psnr": 28.386277234495854,
+            "ssim": 0.9500722632263646
+          },
+          "iteration_gain": {
+            "psnr": -0.04045400015547978,
+            "ssim": -0.00043060743447506064
+          }
+        },
+        {
+          "scene": "07",
+          "frames": 55,
+          "round1": {
+            "psnr": 21.398388353530404,
+            "ssim": 0.8945452635938471
+          },
+          "round2": {
+            "psnr": 21.38857830794012,
+            "ssim": 0.8949757771058516
+          },
+          "iteration_gain": {
+            "psnr": -0.009810045590284488,
+            "ssim": 0.0004305135120045055
+          }
+        },
+        {
+          "scene": "22",
+          "frames": 119,
+          "round1": {
+            "psnr": 29.91585599507374,
+            "ssim": 0.9622413400842362
+          },
+          "round2": {
+            "psnr": 30.011711498391616,
+            "ssim": 0.9624855558411414
+          },
+          "iteration_gain": {
+            "psnr": 0.0958555033178759,
+            "ssim": 0.00024421575690517904
+          }
+        },
+        {
+          "scene": "30",
+          "frames": 160,
+          "round1": {
+            "psnr": 25.99674420185881,
+            "ssim": 0.9213516902178526
+          },
+          "round2": {
+            "psnr": 25.96013804652256,
+            "ssim": 0.9196105595678091
+          },
+          "iteration_gain": {
+            "psnr": -0.03660615533625104,
+            "ssim": -0.0017411306500434876
+          }
+        },
+        {
+          "scene": "36",
+          "frames": 74,
+          "round1": {
+            "psnr": 31.734385102436693,
+            "ssim": 0.9390389645421827
+          },
+          "round2": {
+            "psnr": 31.65393025031123,
+            "ssim": 0.9381194622130007
+          },
+          "iteration_gain": {
+            "psnr": -0.08045485212546392,
+            "ssim": -0.0009195023291819805
+          }
+        },
+        {
+          "scene": "41",
+          "frames": 147,
+          "round1": {
+            "psnr": 26.53461700690116,
+            "ssim": 0.8333574144207702
+          },
+          "round2": {
+            "psnr": 26.524852702213735,
+            "ssim": 0.8317992488543192
+          },
+          "iteration_gain": {
+            "psnr": -0.009764304687428648,
+            "ssim": -0.0015581655664508845
+          }
+        },
+        {
+          "scene": "55",
+          "frames": 220,
+          "round1": {
+            "psnr": 24.14216734573656,
+            "ssim": 0.9091809364882383
+          },
+          "round2": {
+            "psnr": 24.206216031862517,
+            "ssim": 0.9085341572761536
+          },
+          "iteration_gain": {
+            "psnr": 0.06404868612595649,
+            "ssim": -0.0006467792120846835
+          }
+        },
+        {
+          "scene": "56",
+          "frames": 64,
+          "round1": {
+            "psnr": 21.04950280203107,
+            "ssim": 0.8590457094833255
+          },
+          "round2": {
+            "psnr": 21.10330051578473,
+            "ssim": 0.8580183060839772
+          },
+          "iteration_gain": {
+            "psnr": 0.05379771375365769,
+            "ssim": -0.001027403399348259
+          }
+        }
+      ],
+      "confidence": {
+        "semantics": "T1 local quality score; not calibrated correctness probability",
+        "grid": "4x4 pooled RGB MAE",
+        "tau": 0.02494479901222676,
+        "bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "pixels": 9308150,
+            "mean_confidence": 0.05199456800028814,
+            "mean_predicted_error": 0.08119358641991953,
+            "mean_actual_error1": 0.07186788595838983,
+            "mean_actual_error2": 0.0715499089334827,
+            "mean_polar_update": 0.0040223220288479
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "pixels": 10605479,
+            "mean_confidence": 0.14989062133834016,
+            "mean_predicted_error": 0.047819011895538666,
+            "mean_actual_error1": 0.05777740060554848,
+            "mean_actual_error2": 0.05745461301939297,
+            "mean_polar_update": 0.003685589358101573
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "pixels": 11094615,
+            "mean_confidence": 0.2510130427084725,
+            "mean_predicted_error": 0.03464779268887654,
+            "mean_actual_error1": 0.04248866270276872,
+            "mean_actual_error2": 0.04242886741554302,
+            "mean_polar_update": 0.0032600462326765446
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "pixels": 11580971,
+            "mean_confidence": 0.3490903896462713,
+            "mean_predicted_error": 0.026336794188823492,
+            "mean_actual_error1": 0.03219653948968928,
+            "mean_actual_error2": 0.03217145948196492,
+            "mean_polar_update": 0.0030412729913397427
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "pixels": 8872984,
+            "mean_confidence": 0.4471691950987845,
+            "mean_predicted_error": 0.020127925921656842,
+            "mean_actual_error1": 0.025107108119958983,
+            "mean_actual_error2": 0.024971134145428068,
+            "mean_polar_update": 0.0030921817426897784
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "pixels": 7168548,
+            "mean_confidence": 0.5496319831361274,
+            "mean_predicted_error": 0.014964632568695034,
+            "mean_actual_error1": 0.01956660824813438,
+            "mean_actual_error2": 0.01948694362293002,
+            "mean_polar_update": 0.0029635779931441206
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "pixels": 6690583,
+            "mean_confidence": 0.6472100985368024,
+            "mean_predicted_error": 0.01087693341637199,
+            "mean_actual_error1": 0.015969231812721196,
+            "mean_actual_error2": 0.015944795544383807,
+            "mean_polar_update": 0.0027280458817548906
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "pixels": 2878337,
+            "mean_confidence": 0.7377824626868068,
+            "mean_predicted_error": 0.007601841219002524,
+            "mean_actual_error1": 0.011013418585249164,
+            "mean_actual_error2": 0.011110056078009509,
+            "mean_polar_update": 0.003026185877731704
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "pixels": 109323,
+            "mean_confidence": 0.812920736775628,
+            "mean_predicted_error": 0.005169250456512163,
+            "mean_actual_error1": 0.007799468296821516,
+            "mean_actual_error2": 0.008215127493280287,
+            "mean_polar_update": 0.0036822406754715353
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "pixels": 2,
+            "mean_confidence": 0.9123912155628204,
+            "mean_predicted_error": 0.0022871404653415084,
+            "mean_actual_error1": 0.009051024913787842,
+            "mean_actual_error2": 0.010674589313566685,
+            "mean_polar_update": 0.010450026486068964
+          }
+        ],
+        "spearman_image_mean": -0.4593833656961494,
+        "spearman_by_scene": {
+          "01": -0.36474904274849257,
+          "07": -0.46538680171933433,
+          "22": -0.381123284515817,
+          "30": -0.43518965072209825,
+          "36": -0.2986503740487069,
+          "41": -0.5679329590010607,
+          "55": -0.5662454087944869,
+          "56": -0.27820351283302014
+        },
+        "evaluation_seconds": 5823.422917127609
+      }
+    },
+    "test": {
+      "frames": 188,
+      "round1": {
+        "image_mean_psnr": 23.377752041471417,
+        "image_mean_ssim": 0.8790678879682053,
+        "scene_macro_psnr": 25.12416337848984,
+        "scene_macro_ssim": 0.8993509730643163
+      },
+      "round2": {
+        "image_mean_psnr": 23.42488414911834,
+        "image_mean_ssim": 0.8787084288419561,
+        "scene_macro_psnr": 25.183862327751832,
+        "scene_macro_ssim": 0.8993520759684284
+      },
+      "iteration_gain": {
+        "image_mean_psnr": 0.0471321076469175,
+        "image_mean_ssim": -0.00035945912624927277,
+        "scene_macro_psnr": 0.05969894926199597,
+        "scene_macro_ssim": 1.102904112053484e-06
+      },
+      "psnr_improved": 140,
+      "psnr_worsened": 48,
+      "ssim_improved": 51,
+      "both_improved": 51,
+      "median_psnr_gain": 0.04291522955501037,
+      "max_psnr_gain": 0.2810395889409172,
+      "min_psnr_gain": -0.16455537748924343,
+      "scenes": 8,
+      "psnr_scenes_improved": 6,
+      "per_scene": [
+        {
+          "scene": "00",
+          "frames": 15,
+          "round1": {
+            "psnr": 28.930016069179306,
+            "ssim": 0.9706891616185506
+          },
+          "round2": {
+            "psnr": 29.103332166681252,
+            "ssim": 0.969796601931254
+          },
+          "iteration_gain": {
+            "psnr": 0.1733160975019402,
+            "ssim": -0.0008925596872965494
+          }
+        },
+        {
+          "scene": "01",
+          "frames": 23,
+          "round1": {
+            "psnr": 27.79446098762004,
+            "ssim": 0.9474339847979338
+          },
+          "round2": {
+            "psnr": 27.86111526249298,
+            "ssim": 0.9467203409775443
+          },
+          "iteration_gain": {
+            "psnr": 0.06665427487294165,
+            "ssim": -0.0007136438203894573
+          }
+        },
+        {
+          "scene": "02",
+          "frames": 8,
+          "round1": {
+            "psnr": 30.021271770215435,
+            "ssim": 0.9638258889317513
+          },
+          "round2": {
+            "psnr": 29.95980620734082,
+            "ssim": 0.9630013406276703
+          },
+          "iteration_gain": {
+            "psnr": -0.061465562874617685,
+            "ssim": -0.0008245483040809631
+          }
+        },
+        {
+          "scene": "03",
+          "frames": 8,
+          "round1": {
+            "psnr": 20.949509336015886,
+            "ssim": 0.8592642620205879
+          },
+          "round2": {
+            "psnr": 21.106776919181282,
+            "ssim": 0.8626612946391106
+          },
+          "iteration_gain": {
+            "psnr": 0.15726758316539424,
+            "ssim": 0.003397032618522644
+          }
+        },
+        {
+          "scene": "04",
+          "frames": 50,
+          "round1": {
+            "psnr": 20.23346551769055,
+            "ssim": 0.8866095745563507
+          },
+          "round2": {
+            "psnr": 20.224892854220485,
+            "ssim": 0.8849443936347962
+          },
+          "iteration_gain": {
+            "psnr": -0.008572663470067283,
+            "ssim": -0.0016651809215545653
+          }
+        },
+        {
+          "scene": "05",
+          "frames": 14,
+          "round1": {
+            "psnr": 23.17043392678534,
+            "ssim": 0.8229669502803257
+          },
+          "round2": {
+            "psnr": 23.236912220254,
+            "ssim": 0.8252030568463462
+          },
+          "iteration_gain": {
+            "psnr": 0.06647829346865793,
+            "ssim": 0.0022361065660204205
+          }
+        },
+        {
+          "scene": "06",
+          "frames": 65,
+          "round1": {
+            "psnr": 22.14163655387073,
+            "ssim": 0.8292769468747653
+          },
+          "round2": {
+            "psnr": 22.192303212178576,
+            "ssim": 0.8292976049276498
+          },
+          "iteration_gain": {
+            "psnr": 0.05066665830785126,
+            "ssim": 2.0658052884615386e-05
+          }
+        },
+        {
+          "scene": "07",
+          "frames": 5,
+          "round1": {
+            "psnr": 27.752512866541416,
+            "ssim": 0.9147410154342651
+          },
+          "round2": {
+            "psnr": 27.785759779665284,
+            "ssim": 0.9131919741630554
+          },
+          "iteration_gain": {
+            "psnr": 0.033246913123867475,
+            "ssim": -0.0015490412712097167
+          }
+        }
+      ],
+      "confidence": {
+        "semantics": "T1 local quality score; not calibrated correctness probability",
+        "grid": "4x4 pooled RGB MAE",
+        "tau": 0.02494479901222676,
+        "bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "pixels": 3933709,
+            "mean_confidence": 0.03490384925610379,
+            "mean_predicted_error": 0.09830526395312314,
+            "mean_actual_error1": 0.09083491606394366,
+            "mean_actual_error2": 0.09048469807566618,
+            "mean_polar_update": 0.002719393412268131
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "pixels": 1822446,
+            "mean_confidence": 0.14861778705879186,
+            "mean_predicted_error": 0.048038515140037985,
+            "mean_actual_error1": 0.06048712860916363,
+            "mean_actual_error2": 0.06021416420198325,
+            "mean_polar_update": 0.0031417501242302684
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "pixels": 1626914,
+            "mean_confidence": 0.2493544102369253,
+            "mean_predicted_error": 0.03481430337610933,
+            "mean_actual_error1": 0.04232194130177389,
+            "mean_actual_error2": 0.04233383996523224,
+            "mean_polar_update": 0.0029024045579561057
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "pixels": 1670039,
+            "mean_confidence": 0.3511919608530348,
+            "mean_predicted_error": 0.026188409576270586,
+            "mean_actual_error1": 0.033785303176826806,
+            "mean_actual_error2": 0.033722866750307855,
+            "mean_polar_update": 0.002520409815246737
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "pixels": 2016062,
+            "mean_confidence": 0.45152897678614917,
+            "mean_predicted_error": 0.019884851482094696,
+            "mean_actual_error1": 0.027891972272060014,
+            "mean_actual_error2": 0.027875537948030448,
+            "mean_polar_update": 0.0021747690034716782
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "pixels": 1907621,
+            "mean_confidence": 0.5472095952085959,
+            "mean_predicted_error": 0.015073555227457552,
+            "mean_actual_error1": 0.02380641613866264,
+            "mean_actual_error2": 0.023893965951651424,
+            "mean_polar_update": 0.002075895252464205
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "pixels": 1219925,
+            "mean_confidence": 0.6475678607619981,
+            "mean_predicted_error": 0.010864643608666048,
+            "mean_actual_error1": 0.01826782488333607,
+            "mean_actual_error2": 0.01845495201852204,
+            "mean_polar_update": 0.002068315913257685
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "pixels": 499729,
+            "mean_confidence": 0.7365459658477022,
+            "mean_predicted_error": 0.007643871301221531,
+            "mean_actual_error1": 0.011645572936555562,
+            "mean_actual_error2": 0.011732199901741949,
+            "mean_polar_update": 0.0020832255121242638
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "pixels": 30723,
+            "mean_confidence": 0.8200343617008358,
+            "mean_predicted_error": 0.0049547972331066715,
+            "mean_actual_error1": 0.006286157693914304,
+            "mean_actual_error2": 0.006481395434089077,
+            "mean_polar_update": 0.003532867619913487
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "pixels": 0,
+            "mean_confidence": null,
+            "mean_predicted_error": null,
+            "mean_actual_error1": null,
+            "mean_actual_error2": null,
+            "mean_polar_update": null
+          }
+        ],
+        "spearman_image_mean": -0.46236991863482124,
+        "spearman_by_scene": {
+          "00": -0.3150988129579811,
+          "01": -0.3835448987853967,
+          "02": -0.28967344622124247,
+          "03": -0.549703940479911,
+          "04": -0.7441536145347071,
+          "05": -0.5195051723326258,
+          "06": -0.3463099456078047,
+          "07": 0.06567777211921905
+        },
+        "evaluation_seconds": 1255.077931880951
+      }
+    }
+  },
+  "training": {
+    "steps": 12000,
+    "all_rows_finite": true,
+    "unique_images": 5440,
+    "sampled_crops": 24000,
+    "min_visits": 4,
+    "max_visits": 5,
+    "actual_logged_frozen_stage_and_learning_rates_match": true
+  },
+  "mechanism": {
+    "frames": 28,
+    "checkpoint_step": 12000,
+    "means": {
+      "normal": {
+        "psnr": 27.27431727235471,
+        "ssim": 0.9130517308201108,
+        "increment_mae": 0.0029125169759416686,
+        "psnr_change_from_normal": 0.0
+      },
+      "no_feedback": {
+        "psnr": 27.240715646729534,
+        "ssim": 0.9125110166413444,
+        "increment_mae": 0.004562849536471601,
+        "psnr_change_from_normal": -0.033601625625177434
+      },
+      "no_polar_correction": {
+        "psnr": 27.246662452093638,
+        "ssim": 0.9122660223926816,
+        "increment_mae": 0.004499841215355056,
+        "psnr_change_from_normal": -0.027654820261073354
+      },
+      "confidence_zero": {
+        "psnr": 27.231173448087418,
+        "ssim": 0.9123430294649941,
+        "increment_mae": 0.004602787192977432,
+        "psnr_change_from_normal": -0.04314382426729324
+      },
+      "confidence_one": {
+        "psnr": 27.286942204846518,
+        "ssim": 0.913177130477769,
+        "increment_mae": 0.0018185807067701326,
+        "psnr_change_from_normal": 0.012624932491807073
+      }
+    },
+    "test_used": false,
+    "tuned_from_results": false,
+    "matched_training_ablation": false,
+    "polar_intervention": "remove second-round correction/features; original P0/T1 still carry polarization"
+  },
+  "retention": {
+    "step": 12000,
+    "frames": 28,
+    "psnr": 27.278509596134818,
+    "ssim": 0.9136105222361428,
+    "input": "raw P0 and original RGB, enhancer bypassed",
+    "original_size": true,
+    "paired_noise": true,
+    "test_used": false,
+    "used_for_weight_selection": false,
+    "psnr_change_from_official": 1.3048693524574624,
+    "ssim_change_from_official": 0.006215710725103074,
+    "net_g_relative_l2_drift": 0.005704538205489154,
+    "images_psnr_improved": 14
+  },
+  "system_probe": {
+    "step": 12000,
+    "frames": 28,
+    "test_used": false,
+    "selection": false,
+    "t1_psnr": 27.29082384515681,
+    "t2_psnr": 27.27024065108446,
+    "t1_change_from_fixed_initial": 1.2798841689483957,
+    "t2_change_from_fixed_initial_t1": 1.2593009748760444
+  },
+  "evaluation_completed_unix": 1791643095.7469509
+}

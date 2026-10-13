@@ -1,0 +1,185 @@
+{
+  "audit_date": "2026-10-08",
+  "scope": "Read-only audit of locally downloaded run records; no new training; no claim of convergence",
+  "manifest_source": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\state_condition_probe_20261007\\artifacts\\analysis\\reused_source\\pidsr_k2_929\\protocol\\manifest.csv",
+  "manifest_sha256": "d4f04a73e2d1b99d11a3487591b1143be79bfef2bb1ca61cc989823e190a57bb",
+  "splits": [
+    {
+      "split": "test",
+      "frames": 188,
+      "scene_labels": 8
+    },
+    {
+      "split": "train",
+      "frames": 5440,
+      "scene_labels": 51
+    },
+    {
+      "split": "validation",
+      "frames": 872,
+      "scene_labels": 8
+    }
+  ],
+  "crop_size": 128,
+  "batch_size": 2,
+  "coverage": [
+    {
+      "seed": 2026,
+      "steps": 200,
+      "patches": 400,
+      "unique_train_frames": 400,
+      "coverage_fraction": 0.07352941176470588,
+      "equivalent_frame_passes": 0.07352941176470588,
+      "frames_visited_once": 400,
+      "frames_visited_twice": 0,
+      "min_visits_among_seen": 1.0,
+      "max_visits_among_seen": 1.0,
+      "schedule_source": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\state_condition_probe_20261007\\artifacts\\analysis\\reused_source\\pidsr_k2_929\\protocol\\training_schedule.json",
+      "schedule_file_sha256": "f30c574a4f90e6218bafff5eb47bd2b475a7c827de969a3066802bbc35b43588"
+    },
+    {
+      "seed": 2026,
+      "steps": 1000,
+      "patches": 2000,
+      "unique_train_frames": 2000,
+      "coverage_fraction": 0.36764705882352944,
+      "equivalent_frame_passes": 0.36764705882352944,
+      "frames_visited_once": 2000,
+      "frames_visited_twice": 0,
+      "min_visits_among_seen": 1.0,
+      "max_visits_among_seen": 1.0,
+      "schedule_source": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\state_condition_probe_20261007\\artifacts\\analysis\\reused_source\\pidsr_k2_929\\protocol\\training_schedule.json",
+      "schedule_file_sha256": "f30c574a4f90e6218bafff5eb47bd2b475a7c827de969a3066802bbc35b43588"
+    },
+    {
+      "seed": 2026,
+      "steps": 3000,
+      "patches": 6000,
+      "unique_train_frames": 5440,
+      "coverage_fraction": 1,
+      "equivalent_frame_passes": 1.1029411764705883,
+      "frames_visited_once": 4880,
+      "frames_visited_twice": 560,
+      "min_visits_among_seen": 1.0,
+      "max_visits_among_seen": 2.0,
+      "schedule_source": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\state_condition_probe_20261007\\artifacts\\analysis\\reused_source\\pidsr_k2_929\\protocol\\training_schedule.json",
+      "schedule_file_sha256": "f30c574a4f90e6218bafff5eb47bd2b475a7c827de969a3066802bbc35b43588"
+    },
+    {
+      "seed": 2027,
+      "steps": 200,
+      "patches": 400,
+      "unique_train_frames": 400,
+      "coverage_fraction": 0.07352941176470588,
+      "equivalent_frame_passes": 0.07352941176470588,
+      "frames_visited_once": 400,
+      "frames_visited_twice": 0,
+      "min_visits_among_seen": 1.0,
+      "max_visits_among_seen": 1.0,
+      "schedule_source": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\normalized_threeway_20261002\\artifacts\\scripts\\schedules\\verified_server_schedule_2027.json",
+      "schedule_file_sha256": "0082f169c2c68f0b44acb8007a3503c50e16bf48a377f14720ab513e63db4bea"
+    },
+    {
+      "seed": 2027,
+      "steps": 1000,
+      "patches": 2000,
+      "unique_train_frames": 2000,
+      "coverage_fraction": 0.36764705882352944,
+      "equivalent_frame_passes": 0.36764705882352944,
+      "frames_visited_once": 2000,
+      "frames_visited_twice": 0,
+      "min_visits_among_seen": 1.0,
+      "max_visits_among_seen": 1.0,
+      "schedule_source": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\normalized_threeway_20261002\\artifacts\\scripts\\schedules\\verified_server_schedule_2027.json",
+      "schedule_file_sha256": "0082f169c2c68f0b44acb8007a3503c50e16bf48a377f14720ab513e63db4bea"
+    },
+    {
+      "seed": 2027,
+      "steps": 3000,
+      "patches": 6000,
+      "unique_train_frames": 5440,
+      "coverage_fraction": 1,
+      "equivalent_frame_passes": 1.1029411764705883,
+      "frames_visited_once": 4880,
+      "frames_visited_twice": 560,
+      "min_visits_among_seen": 1.0,
+      "max_visits_among_seen": 2.0,
+      "schedule_source": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\normalized_threeway_20261002\\artifacts\\scripts\\schedules\\verified_server_schedule_2027.json",
+      "schedule_file_sha256": "0082f169c2c68f0b44acb8007a3503c50e16bf48a377f14720ab513e63db4bea"
+    },
+    {
+      "seed": 2028,
+      "steps": 200,
+      "patches": 400,
+      "unique_train_frames": 400,
+      "coverage_fraction": 0.07352941176470588,
+      "equivalent_frame_passes": 0.07352941176470588,
+      "frames_visited_once": 400,
+      "frames_visited_twice": 0,
+      "min_visits_among_seen": 1.0,
+      "max_visits_among_seen": 1.0,
+      "schedule_source": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\normalized_threeway_20261002\\artifacts\\scripts\\schedules\\verified_server_schedule_2028.json",
+      "schedule_file_sha256": "bc8d82d579aa8ce6c410c94909634c61aab7a83628667ab1810ad2406eb95e98"
+    },
+    {
+      "seed": 2028,
+      "steps": 1000,
+      "patches": 2000,
+      "unique_train_frames": 2000,
+      "coverage_fraction": 0.36764705882352944,
+      "equivalent_frame_passes": 0.36764705882352944,
+      "frames_visited_once": 2000,
+      "frames_visited_twice": 0,
+      "min_visits_among_seen": 1.0,
+      "max_visits_among_seen": 1.0,
+      "schedule_source": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\normalized_threeway_20261002\\artifacts\\scripts\\schedules\\verified_server_schedule_2028.json",
+      "schedule_file_sha256": "bc8d82d579aa8ce6c410c94909634c61aab7a83628667ab1810ad2406eb95e98"
+    },
+    {
+      "seed": 2028,
+      "steps": 3000,
+      "patches": 6000,
+      "unique_train_frames": 5440,
+      "coverage_fraction": 1,
+      "equivalent_frame_passes": 1.1029411764705883,
+      "frames_visited_once": 4880,
+      "frames_visited_twice": 560,
+      "min_visits_among_seen": 1.0,
+      "max_visits_among_seen": 2.0,
+      "schedule_source": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\normalized_threeway_20261002\\artifacts\\scripts\\schedules\\verified_server_schedule_2028.json",
+      "schedule_file_sha256": "bc8d82d579aa8ce6c410c94909634c61aab7a83628667ab1810ad2406eb95e98"
+    }
+  ],
+  "representative_timings": [
+    {
+      "arm": "G6",
+      "seed": 2027,
+      "training_stage_wall_seconds": 1221.7948283157311,
+      "steady_step_seconds": 0.329820506165655,
+      "final_full_validation_seconds": 1410.717491865158,
+      "validation_frames": 872.0,
+      "training_and_final_validation_seconds": 2632.512320180889,
+      "source_root": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\normalized_threeway_20261002\\artifacts\\runs\\G6\\seed_2027"
+    },
+    {
+      "arm": "K1",
+      "seed": 2026,
+      "training_stage_wall_seconds": 1192.0103156664409,
+      "steady_step_seconds": 0.32630573619515535,
+      "final_full_validation_seconds": 1355.9800157546997,
+      "validation_frames": 872,
+      "training_and_final_validation_seconds": 2547.9903314211406,
+      "source_root": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\normalized_threeway_20261002\\artifacts\\runs\\K1\\seed_2026"
+    },
+    {
+      "arm": "K2",
+      "seed": 2026,
+      "training_stage_wall_seconds": 2056.57020179322,
+      "steady_step_seconds": 0.564261766286942,
+      "final_full_validation_seconds": 2528.7493782043457,
+      "validation_frames": 872,
+      "training_and_final_validation_seconds": 4585.319579997566,
+      "source_root": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\normalized_threeway_20261002\\artifacts\\runs\\K2\\seed_2026"
+    }
+  ]
+}

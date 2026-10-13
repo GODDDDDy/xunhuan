@@ -1,0 +1,142 @@
+{
+  "purpose": "verify diagnostic loss recomposition == official criterion",
+  "groups": {
+    "no_feedback": {
+      "perceptual_weight": 0.1,
+      "extractor_layer_names": [
+        "conv5_4"
+      ],
+      "extractor_use_input_norm": true,
+      "extractor_range_norm": true,
+      "n_checked": 4,
+      "max_abs_diff": 6.146728992462158e-08,
+      "identical_within_1e_12": false,
+      "identical_within_float32_eps": true,
+      "rows": [
+        {
+          "index": 0,
+          "sample_id": "validation/easy/01/0000",
+          "official_criterion": 1.704054594039917,
+          "manual_recomposition": 1.704054655507207,
+          "abs_diff": 6.146728992462158e-08,
+          "parts": {
+            "l1": 0.016340557485818863,
+            "ssim_term": 0.02733379602432251,
+            "phase": 1.6324061155319214,
+            "perceptual": 0.027974186465144157
+          }
+        },
+        {
+          "index": 1,
+          "sample_id": "validation/easy/01/0001",
+          "official_criterion": 1.7163749933242798,
+          "manual_recomposition": 1.7163750436156988,
+          "abs_diff": 5.029141902923584e-08,
+          "parts": {
+            "l1": 0.018258146941661835,
+            "ssim_term": 0.026775717735290527,
+            "phase": 1.6449298858642578,
+            "perceptual": 0.02641129307448864
+          }
+        },
+        {
+          "index": 2,
+          "sample_id": "validation/easy/01/0002",
+          "official_criterion": 1.7522732019424438,
+          "manual_recomposition": 1.7522732503712177,
+          "abs_diff": 4.842877388000488e-08,
+          "parts": {
+            "l1": 0.019765755161643028,
+            "ssim_term": 0.028108954429626465,
+            "phase": 1.67799973487854,
+            "perceptual": 0.026398805901408195
+          }
+        },
+        {
+          "index": 3,
+          "sample_id": "validation/easy/01/0003",
+          "official_criterion": 1.7218420505523682,
+          "manual_recomposition": 1.7218420580029488,
+          "abs_diff": 7.450580596923828e-09,
+          "parts": {
+            "l1": 0.02013399638235569,
+            "ssim_term": 0.027998387813568115,
+            "phase": 1.6471494436264038,
+            "perceptual": 0.026560230180621147
+          }
+        }
+      ]
+    },
+    "feedback": {
+      "perceptual_weight": 0.1,
+      "extractor_layer_names": [
+        "conv5_4"
+      ],
+      "extractor_use_input_norm": true,
+      "extractor_range_norm": true,
+      "n_checked": 4,
+      "max_abs_diff": 6.146728992462158e-08,
+      "identical_within_1e_12": false,
+      "identical_within_float32_eps": true,
+      "rows": [
+        {
+          "index": 0,
+          "sample_id": "validation/easy/01/0000",
+          "official_criterion": 1.704054594039917,
+          "manual_recomposition": 1.704054655507207,
+          "abs_diff": 6.146728992462158e-08,
+          "parts": {
+            "l1": 0.016340557485818863,
+            "ssim_term": 0.02733379602432251,
+            "phase": 1.6324061155319214,
+            "perceptual": 0.027974186465144157
+          }
+        },
+        {
+          "index": 1,
+          "sample_id": "validation/easy/01/0001",
+          "official_criterion": 1.7163749933242798,
+          "manual_recomposition": 1.7163750436156988,
+          "abs_diff": 5.029141902923584e-08,
+          "parts": {
+            "l1": 0.018258146941661835,
+            "ssim_term": 0.026775717735290527,
+            "phase": 1.6449298858642578,
+            "perceptual": 0.02641129307448864
+          }
+        },
+        {
+          "index": 2,
+          "sample_id": "validation/easy/01/0002",
+          "official_criterion": 1.7522732019424438,
+          "manual_recomposition": 1.7522732503712177,
+          "abs_diff": 4.842877388000488e-08,
+          "parts": {
+            "l1": 0.019765755161643028,
+            "ssim_term": 0.028108954429626465,
+            "phase": 1.67799973487854,
+            "perceptual": 0.026398805901408195
+          }
+        },
+        {
+          "index": 3,
+          "sample_id": "validation/easy/01/0003",
+          "official_criterion": 1.7218420505523682,
+          "manual_recomposition": 1.7218420580029488,
+          "abs_diff": 7.450580596923828e-09,
+          "parts": {
+            "l1": 0.02013399638235569,
+            "ssim_term": 0.027998387813568115,
+            "phase": 1.6471494436264038,
+            "perceptual": 0.026560230180621147
+          }
+        }
+      ]
+    }
+  },
+  "round_loss_weights": [
+    0.5,
+    1.0
+  ],
+  "training_objective": "total = round_weights[0]*criterion(T1) + round_weights[1]*criterion(T2) + lambda_feature_alignment*alignment_loss  (alignment only in group A paths)"
+}

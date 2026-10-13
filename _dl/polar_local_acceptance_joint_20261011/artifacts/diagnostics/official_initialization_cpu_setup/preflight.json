@@ -1,0 +1,157 @@
+{
+  "schema_version": 3,
+  "seed": 2026,
+  "paths": {
+    "base_config": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_local_acceptance_joint_20261011/config/base_server.yaml",
+    "source_root": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_local_acceptance_joint_20261011/source",
+    "manifest": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_local_acceptance_joint_20261011/config/manifest.csv",
+    "schedule": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_local_acceptance_joint_20261011/config/training_schedule_16000.json",
+    "validation_proxy": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_local_acceptance_joint_20261011/config/validation_proxy.json",
+    "pretrained_r2p": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_local_acceptance_joint_20261011/pretraining/checkpoints/selected.pt",
+    "reference_r2p": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/deps/r2p_film.py",
+    "output_root": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_local_acceptance_joint_20261011/downstream",
+    "pidsr_data": "/media/li/data3/25thstudent/DY/929work/research_data/PIDSR-dataset",
+    "source_checkpoint": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/weights/polarfree/net_g_latest.pth"
+  },
+  "data": {
+    "condition": "raw_mixed_rgb",
+    "crop_size": 128,
+    "batch_size": 2,
+    "workers": 2
+  },
+  "source_sha256": "a230e77fb19827a1ada41e4dc86374dee092e476915d2252841f81dd8c257ca2",
+  "scope": "one arm: local need/benefit judgement and final RGB update gate",
+  "pretrain": {
+    "kind": "reuse_verified_same_resolution_correction",
+    "checkpoint": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_local_acceptance_joint_20261011/pretraining/checkpoints/selected.pt",
+    "sha256": "a4ecebacba5cfc25546320974a9c37f1cc220c685f1318b3cc290ae4a68e9554",
+    "source_protocol_id": "576f788b73218610533cddb66089d3e0c0910f9aa97604a376c9692d71634007",
+    "source_run": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009",
+    "selected_step": 18000,
+    "training_stopped_step": 19000,
+    "retrained_in_this_run": false,
+    "test_metrics_reused": true
+  },
+  "downstream": {
+    "steps": 12000,
+    "effective_batch": 2,
+    "microbatch": 1,
+    "minimum_steps": 3000
+  },
+  "confidence": {
+    "warmup_steps": 500,
+    "calibration_training_crops": 256
+  },
+  "evaluation": {
+    "validation_frames": 872,
+    "test_frames": 188,
+    "original_size": true,
+    "tiles": false
+  },
+  "selection": "pretrain: best 10-scene validation mean angle PSNR; downstream: planned/time-only final",
+  "task_initialization": {
+    "kind": "official_polarfree",
+    "official_sha256": {
+      "net_g_latest.pth": "a230e77fb19827a1ada41e4dc86374dee092e476915d2252841f81dd8c257ca2",
+      "net_d_latest.pth": "f1d0e9acb244480e5d4ba4b5cee7ba35666fb97d41bccf4659f20911f46f1fb3",
+      "net_le_dm_latest.pth": "6b98bd2a715d3e669acd99582d9ea37594ff4a2ee7786df86764d8efdafd0546"
+    },
+    "overwrite_with_joint_weights": false,
+    "archived_source_dir": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_local_acceptance_joint_20261011/weights/source_polarfree"
+  },
+  "optimization": {
+    "correction_lr": 2e-05,
+    "interfaces_lr": 0.0001,
+    "task_lr": 1e-06,
+    "task_freeze_steps": 500,
+    "task_unfreeze_warmup": 200,
+    "gradient_clip": 1.0,
+    "enhancer_freeze_steps": 500
+  },
+  "retention_monitor": {
+    "validation_proxy_frames": 28,
+    "interval": 1000,
+    "after_freeze_step": 500,
+    "enhancer_bypassed": true,
+    "test_used": false,
+    "used_for_selection": false,
+    "paired_noise": true,
+    "purpose": "monitor net_g performance retention and relative parameter drift"
+  },
+  "bridge": {
+    "kind": "raw official gray plus floating enhanced-minus-observed luminance",
+    "original_rgb": true,
+    "zero_correction_matches_official": true,
+    "original_stokes_convention": true,
+    "both_rounds_anchor_raw": true,
+    "prior_requires_grad": false,
+    "prior_input_gradient": true
+  },
+  "experiment_rationale": {
+    "user_authorization": "去做吧: implement and run proposed local acceptance mechanism",
+    "historical_test_exploration": true,
+    "matched_control": false,
+    "single_seed": true,
+    "previous_experiments_immutable": true,
+    "new_run_budget_hours_cap": 24,
+    "planned_step_cap": 12000,
+    "minimum_steps": 3000
+  },
+  "correction_design": {
+    "state_channels": 16,
+    "decoder_scales": [
+      "half",
+      "quarter"
+    ],
+    "zero_initial_output": true,
+    "output": "T2=T1+0.25*tanh(learned_RGB_increment)",
+    "feature_injection_bound": 0.1,
+    "trusted_reference": "C times previous projected task features",
+    "correction_context": "raw RGB/observation polar summary/T1/I-T1/unscaled F1/polar features/C/1-C",
+    "quality_input_detached": true,
+    "quality_to_task_detached": true,
+    "first_and_second_backbone_shared": true,
+    "output_heads_shared": false,
+    "training_loss": "T1/3+2*gated_T2/3; .1 weighted gated MAE; .25 ungated candidate local error; .1 good-region candidate change; H NLL; .05 need/benefit classification; alignment",
+    "error_weight": "detach(clamp(1+T1 RGB error/(image mean error+1e-4),1,3)); normalized",
+    "no_extra_equivalent_residual_l1": true
+  },
+  "mechanism_diagnostics": {
+    "validation_frames": 28,
+    "conditions": [
+      "normal",
+      "no_feedback",
+      "no_polar_correction",
+      "confidence_zero",
+      "confidence_one",
+      "mask_zero",
+      "mask_one"
+    ],
+    "inference_interventions_only": true,
+    "test_used": false,
+    "checkpoint_selection": false
+  },
+  "local_acceptance": {
+    "grid": 4,
+    "judgement_input_detached": true,
+    "judgement_to_task_detached": true,
+    "outputs": [
+      "need",
+      "better",
+      "neutral",
+      "worse"
+    ],
+    "training_warmup": 500,
+    "transition_steps": 1000,
+    "good_threshold_rule": "256 initial training crops, local error 25th percentile",
+    "benefit_margin_rule": "max(.05*initial median local error,1e-4)",
+    "local_error": "RGB MAE+.25 edge MAE pooled4",
+    "candidate_loss_weight": 0.25,
+    "preservation_loss_weight": 0.1,
+    "judgement_loss_weight": 0.05,
+    "decision": "need>.5 and better>neutral and better>worse",
+    "magnitude": "need*(better-worse), bilinear; allow nearest enforces exact zeros",
+    "output": "T2=where(M=0,T1,T1+M*RGB_increment)",
+    "test_used": false
+  }
+}

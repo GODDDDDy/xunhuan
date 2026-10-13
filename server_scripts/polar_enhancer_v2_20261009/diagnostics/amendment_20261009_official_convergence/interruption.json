@@ -1,0 +1,30 @@
+{
+  "time_unix": 1791533180.7885332,
+  "reason": "User requested validation convergence and direct official PolarFree initialization before joint training",
+  "checkpoint_step": 8000,
+  "checkpoint_sha256": "1d9d5e8db98f1e663d98d94ef49969cb9b0451431e830984eea50b70a10af010",
+  "parent_protocol_id": "61fefac1e5772ce453560490cbfa14c12c1114b25a0bb9ff5ddf63ffd46b0db3",
+  "last_logged_step_before_stop": 8256,
+  "discarded_unsaved_updates": 256,
+  "stopped_members": [
+    {
+      "pid": 3791317,
+      "cmd": "/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/bin/python -u /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/scripts/controller.py --resume-preflight "
+    },
+    {
+      "pid": 3791663,
+      "cmd": "/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/bin/python /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/scripts/run_stage.py pretraining "
+    },
+    {
+      "pid": 3791727,
+      "cmd": "/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/bin/python /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/scripts/run_stage.py pretraining "
+    },
+    {
+      "pid": 3791731,
+      "cmd": "/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/bin/python /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/scripts/run_stage.py pretraining "
+    }
+  ],
+  "hard_deadline_unchanged": 1791605047.4916465,
+  "test_seen_before_amendment": false,
+  "new_gpu_process_launched": false
+}

@@ -1,0 +1,7 @@
+{"stage": "benchmark", "time_unix": 1791580120.631198}
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG19_Weights.IMAGENET1K_V1`. You can also use `weights=VGG19_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/deps/DfP/polarapp/losses.py:123: UserWarning: Specified kernel cache directory could not be created! This disables kernel caching. Specified directory is /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_float_bridge_joint_20261010/runtime/cache/torch/kernels. This warning will appear only once per process. (Triggered internally at ../aten/src/ATen/native/cuda/jit_utils.cpp:1442.)
+  phase_a = torch.angle(torch.fft.fft2(gray_a + self.epsilon))

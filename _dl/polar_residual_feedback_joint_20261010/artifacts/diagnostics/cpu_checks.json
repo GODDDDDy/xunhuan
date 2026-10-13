@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "zero_head_preserves_t1": true,
+  "GT_replacement_does_not_change_prediction": true,
+  "warmup_enhancer_and_task_unchanged": true,
+  "quality_gradient_isolation": true,
+  "second_polar_task_gradient_nonzero": true,
+  "first_task_feature_gradient_nonzero": true,
+  "prior_parameters_frozen": true,
+  "checkpoint_rng_restore_exact": true,
+  "confidence_extremes_and_missing_feedback_finite": true,
+  "temporary_hooks_removed": true,
+  "official_initialization": {
+    "kind": "official_polarfree",
+    "strict": true,
+    "source_sha256": "a230e77fb19827a1ada41e4dc86374dee092e476915d2252841f81dd8c257ca2",
+    "all_net_g_tensors_equal_official": true,
+    "prior_sha256": {
+      "net_g_latest.pth": "a230e77fb19827a1ada41e4dc86374dee092e476915d2252841f81dd8c257ca2",
+      "net_d_latest.pth": "f1d0e9acb244480e5d4ba4b5cee7ba35666fb97d41bccf4659f20911f46f1fb3",
+      "net_le_dm_latest.pth": "6b98bd2a715d3e669acd99582d9ea37594ff4a2ee7786df86764d8efdafd0546"
+    },
+    "historical_joint_weights_overwrite": false
+  },
+  "note": "Disposable perturbations are discarded; CPU structural checks use L1; actual task loss is verified in GPU preflight, not efficacy evidence"
+}

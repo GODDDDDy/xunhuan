@@ -1,0 +1,38 @@
+{
+  "checkpoints": [
+    {
+      "file": "initial.pt",
+      "step": 0,
+      "official_state_tensors": 436,
+      "equal_to_official": true,
+      "finite": true
+    },
+    {
+      "file": "step_500.pt",
+      "step": 500,
+      "official_state_tensors": 436,
+      "equal_to_official": true,
+      "finite": true
+    },
+    {
+      "file": "final.pt",
+      "step": 6000,
+      "official_state_tensors": 436,
+      "equal_to_official": false,
+      "finite": true
+    }
+  ],
+  "all_6000_step_logs_finite": true,
+  "lr_schedule_matches": true,
+  "training_images_seen": 5440,
+  "enhancer_migration_exact": true,
+  "enhancer_migration_state_tensors": 396,
+  "gpu_used": false,
+  "source_and_final_hashes": {
+    "weights/source_polarfree/net_g_latest.pth": "a230e77fb19827a1ada41e4dc86374dee092e476915d2252841f81dd8c257ca2",
+    "weights/source_polarfree/net_d_latest.pth": "f1d0e9acb244480e5d4ba4b5cee7ba35666fb97d41bccf4659f20911f46f1fb3",
+    "weights/source_polarfree/net_le_dm_latest.pth": "6b98bd2a715d3e669acd99582d9ea37594ff4a2ee7786df86764d8efdafd0546",
+    "pretraining/checkpoints/selected.pt": "a4ecebacba5cfc25546320974a9c37f1cc220c685f1318b3cc290ae4a68e9554",
+    "downstream/checkpoints/final.pt": "90720752bef847f7da3ba73849e0f5aa9ff3bd5b9b9f6c7efc0638b1e4297227"
+  }
+}

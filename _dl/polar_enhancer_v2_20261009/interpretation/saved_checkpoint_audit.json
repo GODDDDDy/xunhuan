@@ -1,0 +1,31 @@
+{
+  "checkpoints": [
+    {
+      "file": "initial.pt",
+      "step": 0,
+      "official_state_tensors": 436,
+      "equal_to_official": true,
+      "finite": true
+    },
+    {
+      "file": "step_500.pt",
+      "step": 500,
+      "official_state_tensors": 436,
+      "equal_to_official": true,
+      "finite": true
+    },
+    {
+      "file": "final.pt",
+      "step": 8000,
+      "official_state_tensors": 436,
+      "equal_to_official": false,
+      "finite": true
+    }
+  ],
+  "all_8000_step_logs_finite": true,
+  "lr_schedule_matches": true,
+  "training_images_seen": 5440,
+  "enhancer_migration_exact": true,
+  "enhancer_migration_state_tensors": 396,
+  "gpu_used": false
+}

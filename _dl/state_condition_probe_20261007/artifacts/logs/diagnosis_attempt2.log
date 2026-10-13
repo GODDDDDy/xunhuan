@@ -1,0 +1,88 @@
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG19_Weights.IMAGENET1K_V1`. You can also use `weights=VGG19_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Diagnostic 1/28 validation/easy/01/0000
+Diagnostic 2/28 validation/easy/01/0010
+Diagnostic 3/28 validation/hard/01/0000
+Diagnostic 4/28 validation/hard/01/0021
+Diagnostic 5/28 validation/easy/07/0000
+Diagnostic 6/28 validation/easy/07/0012
+Diagnostic 7/28 validation/hard/07/0000
+Diagnostic 8/28 validation/hard/07/0041
+Diagnostic 9/28 validation/easy/22/0000
+Diagnostic 10/28 validation/easy/22/0092
+Diagnostic 11/28 validation/hard/22/0000
+Diagnostic 12/28 validation/hard/22/0025
+Diagnostic 13/28 validation/easy/30/0000
+Diagnostic 14/28 validation/easy/30/0047
+Diagnostic 15/28 validation/hard/30/0000
+Diagnostic 16/28 validation/hard/30/0111
+Diagnostic 17/28 validation/easy/36/0000
+Diagnostic 18/28 validation/easy/36/0054
+Diagnostic 19/28 validation/hard/36/0000
+Diagnostic 20/28 validation/hard/36/0018
+Diagnostic 21/28 validation/easy/41/0000
+Diagnostic 22/28 validation/easy/41/0067
+Diagnostic 23/28 validation/hard/41/0000
+Diagnostic 24/28 validation/hard/41/0078
+Diagnostic 25/28 validation/easy/55/0000
+Diagnostic 26/28 validation/easy/55/0219
+Diagnostic 27/28 validation/hard/56/0000
+Diagnostic 28/28 validation/hard/56/0063
+{
+  "scope": "28 prelocked validation images, diagnostic only; current normalized phase0.1 K2 seed2026",
+  "checkpoint_sha256": "24a63f1fdbd1a28ceacd5a21fcfe8bcd53fa3d2fa5fd379bf4f09f060936fac3",
+  "delta_summary": {
+    "0.0": {
+      "image_mean_psnr": 0.0,
+      "image_mean_ssim": 0.0,
+      "scene_macro_psnr": 0.0,
+      "scene_macro_ssim": 0.0
+    },
+    "0.25": {
+      "image_mean_psnr": 0.011748228488762955,
+      "image_mean_ssim": 3.050480570111956e-06,
+      "scene_macro_psnr": 0.009148174912731122,
+      "scene_macro_ssim": -9.356066584587097e-06
+    },
+    "0.5": {
+      "image_mean_psnr": 0.017844369317854714,
+      "image_mean_ssim": 1.1808105877467564e-05,
+      "scene_macro_psnr": 0.014347882129766565,
+      "scene_macro_ssim": -1.4156103134155273e-06
+    },
+    "0.75": {
+      "image_mean_psnr": 0.03005100447902707,
+      "image_mean_ssim": 4.789658955165319e-07,
+      "scene_macro_psnr": 0.024426542364088366,
+      "scene_macro_ssim": -1.5256926417350769e-05
+    },
+    "1.0": {
+      "image_mean_psnr": 0.03709973241100961,
+      "image_mean_ssim": -1.8024018832615445e-05,
+      "scene_macro_psnr": 0.030756141502577772,
+      "scene_macro_ssim": -3.25273722410202e-05
+    }
+  },
+  "stage_changed_images": {
+    "gray": 28,
+    "aolp": 28,
+    "dolp": 28,
+    "condition": 28,
+    "prior": 28
+  },
+  "training_gate_passed": true,
+  "actual_forward_calls": {
+    "r2p": 56,
+    "tasknet": 196
+  },
+  "all_frozen": true,
+  "independent_endpoint_checks": 56,
+  "all_endpoints_passed": true,
+  "elapsed_seconds": 462.95744156837463,
+  "difficulty_counts": {
+    "easy": 14,
+    "hard": 14
+  }
+}

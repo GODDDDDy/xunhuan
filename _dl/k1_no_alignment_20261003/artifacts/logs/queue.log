@@ -1,0 +1,9 @@
+START K1 seed2026 preflight
+DONE K1 seed2026 preflight
+START K1 seed2026 train_0_200
+Traceback (most recent call last):
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/k1_no_alignment_20261003/scripts/run_queue.py", line 96, in <module>
+    call(arm, seed, 'train_0_200', ['train', '--steps', '200'])
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/k1_no_alignment_20261003/scripts/run_queue.py", line 48, in call
+    raise RuntimeError(f'{arm} seed{seed} {stage} failed; see {logfile}')
+RuntimeError: K1 seed2026 train_0_200 failed; see /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/k1_no_alignment_20261003/logs/K1_seed2026_train_0_200.log

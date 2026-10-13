@@ -1,0 +1,95 @@
+{
+  "seeds": [
+    2026,
+    2027,
+    2028
+  ],
+  "new_run_order": [
+    [
+      2026,
+      "K1"
+    ],
+    [
+      2026,
+      "K2"
+    ],
+    [
+      2027,
+      "G6"
+    ],
+    [
+      2027,
+      "K1"
+    ],
+    [
+      2027,
+      "K2"
+    ],
+    [
+      2028,
+      "G6"
+    ],
+    [
+      2028,
+      "K1"
+    ],
+    [
+      2028,
+      "K2"
+    ]
+  ],
+  "reused_G6_seed2026": {
+    "root": "/media/li/data3/25thstudent/DY/929work/k1_ablation_20260930/phase_objective_g6_20261002/runs/G6_phase01/seed_2026",
+    "metrics_sha256": "8c8c58a45236d6e4b5de5d0e5459a5e0b88df6c5b642a3e14038fd5df2ea2cd5",
+    "checkpoint_sha256": "cf13b14dba520ff0f1bdb801a09427bf819974671c38c553c6c3cd536ec6d752"
+  },
+  "steps": 3000,
+  "phase_weight": 0.1,
+  "task_weight_sum": 1.0,
+  "K1_K2_alignment_lambda": 0.030651881051471687,
+  "schedule_regeneration": {
+    "2027": {
+      "local_schedule_equals_server_regeneration": true,
+      "canonical_sha256": "d69b7da337298deedc07ab6fa747a63fdef43e2a1c929cecfd8b2ca2da4380d3"
+    },
+    "2028": {
+      "local_schedule_equals_server_regeneration": true,
+      "canonical_sha256": "ff3fe6f240426038cf2fc713a5ea920762c63bd189aef3cc852d2672b4393866"
+    }
+  },
+  "schedule_file_sha256": {
+    "2026": "f30c574a4f90e6218bafff5eb47bd2b475a7c827de969a3066802bbc35b43588",
+    "2027": "0082f169c2c68f0b44acb8007a3503c50e16bf48a377f14720ab513e63db4bea",
+    "2028": "bc8d82d579aa8ce6c410c94909634c61aab7a83628667ab1810ad2406eb95e98"
+  },
+  "locked_file_sha256": {
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/scripts/run_matched.py": "2f2749434ba6cd563f4802d1b1649326bfd2e24437e32fd6130d36ce32620f44",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/scripts/prepare_protocol.py": "9bb738846f6a3e044179f1523ddb30d8142d9d0de76df9df72a67d1923511d3c",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/scripts/run_queue.py": "25825580d648da4a07abedb89739be91fe38e731615de9ec1f1456497fabc8cc",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/scripts/run_g6_phase.py": "1522c53492d7b67d1436be715e2bb71e52283979920f746b4b89c429a06086a5",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/scripts/evaluate_matched.py": "3c1c90ada6cc130406dbff660f34737c5362e9bba9cffbe3326bda0f83d1e64c",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/scripts/run_phase_objective.py": "03158c9abde8dc896171f28fce76d5fd5c73638f9317786aac7e813849fcd512",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/scripts/reference/run_experiment_snapshot.py": "3aff6337b000c30418c7a19def03d248e2928ea96ff60882092cb77d413841c7",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/scripts/reference/k1_ablation_snapshot.py": "1915a0bf1b71c4b7a3788685a6a196a5b25ac7b75c89b17c9478c0f01d88b075",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/scripts/schedules/training_schedule_2027.json": "8b633727d0769f4cab5521c36ad942986888e6b5aead7f388f818fb0bc85d0a9",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/scripts/schedules/verified_server_schedule_2027.json": "0082f169c2c68f0b44acb8007a3503c50e16bf48a377f14720ab513e63db4bea",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/scripts/schedules/training_schedule_2028.json": "b5726e0b57975293c99e5aaa81e26d4b684d7036456e7a6208cb6b9af38dfacc",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/scripts/schedules/verified_server_schedule_2028.json": "bc8d82d579aa8ce6c410c94909634c61aab7a83628667ab1810ad2406eb95e98",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/configs/K1_seed2026.yaml": "63905c60401711b380aef0a7d9f3b7fe0172ecc3f9bb6d00f28d47f11b011e74",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/configs/K2_seed2027.yaml": "64e637388f8afb47c872e28af9a348887ee0924b96c8cf6470a5a23ef46c2cdf",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/configs/K1_seed2027.yaml": "4a04e5f7b9c77eb757f58bf221a1a935d3d4d2def6334d6df935183eaae263b1",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/configs/G6_seed2027.yaml": "ac02aa084c5dec958da49ba568fd84634c9ee2b63bd4530282d8a7188923be33",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/configs/K2_seed2026.yaml": "faae055b53edf248cc63bf23601066a8a25f49d8aa3ceeab07905c9d7edfa56b",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/configs/K1_seed2028.yaml": "fcbbd9da74028e116eff64b5518da72976da5b9c817b641eee166e4c9f94ca18",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/configs/G6_seed2028.yaml": "1589a797e5e93eec1dcec67ccce6a20d298897a5859f5628e08236b7dd8e3867",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/configs/K2_seed2028.yaml": "11fd733cf6c05bc6e284479d89c84b526800f492b2d27e1044acd87340dce0c8"
+  },
+  "scope": "Equal updates, not equal FLOPs; G6-vs-joint is whole-scheme comparison.",
+  "limits": [
+    "Three seeds are preliminary; no population significance/equivalence claim.",
+    "Validation has been used for exploration; no independent confirmation.",
+    "Normalized K2 differs from historical weights [0.5,1]; historical run is retained.",
+    "K1 and K2 use the same trainable trunk, joint clipping, initial weights and alignment.",
+    "Seed2026 exploration informed this design; new seeds are not an independent data split."
+  ]
+}

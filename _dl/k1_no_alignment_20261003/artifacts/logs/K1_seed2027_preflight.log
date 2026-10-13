@@ -1,0 +1,28 @@
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG19_Weights.IMAGENET1K_V1`. You can also use `weights=VGG19_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+{
+  "protocol_id": "406b0d97f750274e122c39a3e3b85d9248137bce9198e681a88c2c690864dc8e",
+  "actual_forward_calls": {
+    "r2p": 1,
+    "tasknet": 1
+  },
+  "single_round_aliases_verified": true,
+  "lambda_feature_alignment": 0.0,
+  "alignment_scalar_retained_as_diagnostic": 0.9703404307365417,
+  "task_only_vs_total_r2p_gradient_max_diff": 0.0,
+  "gradient_parity_tolerance": 1e-07,
+  "grad_norm_r2p": 0.0626974105834961,
+  "grad_norm_projections": 0.0,
+  "grad_norm_netg": 2.718055248260498,
+  "prior_frozen": true,
+  "unused_feedback_has_grad": false,
+  "all_gradients_finite": true,
+  "loss_finite": true,
+  "effective_task_weights": [
+    1.0
+  ],
+  "peak_vram_mb": 5642.68310546875,
+  "passed": true
+}

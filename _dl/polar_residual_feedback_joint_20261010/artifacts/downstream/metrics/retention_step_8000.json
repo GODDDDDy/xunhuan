@@ -1,0 +1,156 @@
+{
+  "step": 8000,
+  "frames": 28,
+  "per_image": [
+    {
+      "sample_id": "validation/easy/01/0000",
+      "psnr": 33.26907521716911,
+      "ssim": 0.9725854992866516
+    },
+    {
+      "sample_id": "validation/easy/01/0010",
+      "psnr": 31.057584737023877,
+      "ssim": 0.9643570780754089
+    },
+    {
+      "sample_id": "validation/hard/01/0000",
+      "psnr": 30.75250236270477,
+      "ssim": 0.9687246680259705
+    },
+    {
+      "sample_id": "validation/hard/01/0021",
+      "psnr": 25.056137399946795,
+      "ssim": 0.9292511940002441
+    },
+    {
+      "sample_id": "validation/easy/07/0000",
+      "psnr": 22.70463890401716,
+      "ssim": 0.9463161826133728
+    },
+    {
+      "sample_id": "validation/easy/07/0012",
+      "psnr": 22.86893811543183,
+      "ssim": 0.9483465552330017
+    },
+    {
+      "sample_id": "validation/hard/07/0000",
+      "psnr": 23.263388984959693,
+      "ssim": 0.9493224620819092
+    },
+    {
+      "sample_id": "validation/hard/07/0041",
+      "psnr": 25.333928143922147,
+      "ssim": 0.9410268664360046
+    },
+    {
+      "sample_id": "validation/easy/22/0000",
+      "psnr": 31.89726453771557,
+      "ssim": 0.9734318256378174
+    },
+    {
+      "sample_id": "validation/easy/22/0092",
+      "psnr": 27.289088403636136,
+      "ssim": 0.9430903196334839
+    },
+    {
+      "sample_id": "validation/hard/22/0000",
+      "psnr": 29.496236449416244,
+      "ssim": 0.9528817534446716
+    },
+    {
+      "sample_id": "validation/hard/22/0025",
+      "psnr": 27.079381529512577,
+      "ssim": 0.9516415596008301
+    },
+    {
+      "sample_id": "validation/easy/30/0000",
+      "psnr": 28.450236238268197,
+      "ssim": 0.9478521347045898
+    },
+    {
+      "sample_id": "validation/easy/30/0047",
+      "psnr": 25.29639707352348,
+      "ssim": 0.9045506715774536
+    },
+    {
+      "sample_id": "validation/hard/30/0000",
+      "psnr": 25.99386460798563,
+      "ssim": 0.9159452319145203
+    },
+    {
+      "sample_id": "validation/hard/30/0111",
+      "psnr": 27.101779278888458,
+      "ssim": 0.9312260150909424
+    },
+    {
+      "sample_id": "validation/easy/36/0000",
+      "psnr": 32.22653565570704,
+      "ssim": 0.9604148864746094
+    },
+    {
+      "sample_id": "validation/easy/36/0054",
+      "psnr": 31.059081371490514,
+      "ssim": 0.9374632835388184
+    },
+    {
+      "sample_id": "validation/hard/36/0000",
+      "psnr": 33.784514814833585,
+      "ssim": 0.9679473638534546
+    },
+    {
+      "sample_id": "validation/hard/36/0018",
+      "psnr": 30.446338289642306,
+      "ssim": 0.9349315762519836
+    },
+    {
+      "sample_id": "validation/easy/41/0000",
+      "psnr": 35.159510864227265,
+      "ssim": 0.9885229468345642
+    },
+    {
+      "sample_id": "validation/easy/41/0067",
+      "psnr": 23.226036667464747,
+      "ssim": 0.6877391934394836
+    },
+    {
+      "sample_id": "validation/hard/41/0000",
+      "psnr": 24.560434453392155,
+      "ssim": 0.772220253944397
+    },
+    {
+      "sample_id": "validation/hard/41/0078",
+      "psnr": 25.482888352400202,
+      "ssim": 0.7906203866004944
+    },
+    {
+      "sample_id": "validation/easy/55/0000",
+      "psnr": 21.198892534364955,
+      "ssim": 0.9155529737472534
+    },
+    {
+      "sample_id": "validation/easy/55/0219",
+      "psnr": 23.140519770793254,
+      "ssim": 0.9152592420578003
+    },
+    {
+      "sample_id": "validation/hard/56/0000",
+      "psnr": 23.96614547934319,
+      "ssim": 0.9348620176315308
+    },
+    {
+      "sample_id": "validation/hard/56/0063",
+      "psnr": 14.565827336476822,
+      "ssim": 0.6212685108184814
+    }
+  ],
+  "psnr": 26.990255984794917,
+  "ssim": 0.9131197375910622,
+  "input": "raw P0 and original RGB, enhancer bypassed",
+  "original_size": true,
+  "paired_noise": true,
+  "test_used": false,
+  "used_for_weight_selection": false,
+  "psnr_change_from_official": 1.0166157411175618,
+  "ssim_change_from_official": 0.005724926080022508,
+  "net_g_relative_l2_drift": 0.003849675908847049
+}

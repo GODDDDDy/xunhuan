@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012/recovery/resume_controller.py", line 27, in <module>
+    try:run()
+        ^^^^^
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012/recovery/resume_controller.py", line 21, in run
+    stage('diagnostic')
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012/recovery/resume_controller.py", line 10, in stage
+    if p.returncode:raise RuntimeError(f'{action} failed:{p.returncode}')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: diagnostic failed:1

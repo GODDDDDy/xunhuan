@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-13",
+  "repository": "GODDDDDy/xunhuan",
+  "purpose": "research_materials_and_ai_handoff",
+  "latest_experiment": {
+    "number": 22,
+    "run": "polar_gain_judgement_short_20261012",
+    "status": "completed",
+    "checkpoint_sha256": "279d0a329d0efebee9678c2156bf3e7b60c0646e75a5f37f8015c7b100f9e9a2",
+    "protocol_id": "8d4f7dd5e12ce21b92c4d3a3413b68da8786c7cb414e55a9ce31600de8fc6ad2",
+    "formal_judgement_steps": 3000,
+    "candidate_training_steps_in_run": 0,
+    "method_effective": false,
+    "all_final_images_equal_T1": true,
+    "modification_coverage": 0,
+    "validation_frames": 872,
+    "test_frames": 188,
+    "validation": {
+      "T1_PSNR": 26.080089,
+      "T2_PSNR": 26.080089,
+      "T1_SSIM": 0.90536781,
+      "T2_SSIM": 0.90536781
+    },
+    "test": {
+      "T1_PSNR": 23.377752,
+      "T2_PSNR": 23.377752,
+      "T1_SSIM": 0.87906789,
+      "T2_SSIM": 0.87906789
+    },
+    "completed_before_immutable_deadline": true,
+    "gpu_work_active_in_latest_run": false
+  },
+  "next_step": {
+    "status": "plan_only",
+    "document": "analysis/agent_handoffs/GAIN_JUDGEMENT_DIAGNOSIS_AND_INTERACTION_HANDOFF_ZH_20261013.md",
+    "default_scope_after_explicit_user_delegation": "stage_A_diagnostic_only",
+    "formal_B_and_factorial_C_not_started": true
+  },
+  "authoritative_source": "_dl/polar_gain_judgement_short_20261012/artifacts",
+  "external_weights_and_data_in_git": false,
+  "original_local_root": "F:/WORK/projects/pidsr_recurrent_joint_k2",
+  "original_server_parent": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929",
+  "limitations": [
+    "single_seed_recent_experiments",
+    "no_matched_continuation_control_in_prior_runs",
+    "historically_explored_test_set",
+    "official_pretraining_validation_exposure_not_fully_verified",
+    "short_training_not_proven_converged",
+    "inference_interventions_not_training_causal_ablations"
+  ]
+}

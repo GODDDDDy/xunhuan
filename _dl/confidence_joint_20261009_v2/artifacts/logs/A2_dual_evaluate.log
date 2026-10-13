@@ -1,0 +1,5 @@
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG19_Weights.IMAGENET1K_V1`. You can also use `weights=VGG19_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+{"unit": "A2_dual", "completed": true, "step": 16000, "test_round1": {"image_mean_psnr": 23.168142471402007, "scene_macro_psnr": 25.11723268172032, "image_mean_ssim": 0.8782271812570855, "scene_macro_ssim": 0.8959866254601814}, "test_round2": {"image_mean_psnr": 23.158842475164594, "scene_macro_psnr": 25.111739377892192, "image_mean_ssim": 0.8782538083639551, "scene_macro_ssim": 0.8960677403668964}}

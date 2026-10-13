@@ -1,0 +1,158 @@
+{
+  "step": 5000,
+  "frames": 28,
+  "per_image": [
+    {
+      "sample_id": "validation/easy/01/0000",
+      "psnr": 33.24846302167985,
+      "ssim": 0.9722317457199097
+    },
+    {
+      "sample_id": "validation/easy/01/0010",
+      "psnr": 31.067847355363515,
+      "ssim": 0.9642378091812134
+    },
+    {
+      "sample_id": "validation/hard/01/0000",
+      "psnr": 30.83902929138067,
+      "ssim": 0.9685246348381042
+    },
+    {
+      "sample_id": "validation/hard/01/0021",
+      "psnr": 25.033213593064932,
+      "ssim": 0.9291308522224426
+    },
+    {
+      "sample_id": "validation/easy/07/0000",
+      "psnr": 24.481546772054884,
+      "ssim": 0.9500858783721924
+    },
+    {
+      "sample_id": "validation/easy/07/0012",
+      "psnr": 24.906292854478696,
+      "ssim": 0.9520295262336731
+    },
+    {
+      "sample_id": "validation/hard/07/0000",
+      "psnr": 25.535465468139485,
+      "ssim": 0.9529090523719788
+    },
+    {
+      "sample_id": "validation/hard/07/0041",
+      "psnr": 27.57578148874616,
+      "ssim": 0.9443194270133972
+    },
+    {
+      "sample_id": "validation/easy/22/0000",
+      "psnr": 31.85717615962205,
+      "ssim": 0.9734379649162292
+    },
+    {
+      "sample_id": "validation/easy/22/0092",
+      "psnr": 27.194886805492906,
+      "ssim": 0.9430062174797058
+    },
+    {
+      "sample_id": "validation/hard/22/0000",
+      "psnr": 29.443785437658782,
+      "ssim": 0.9528231024742126
+    },
+    {
+      "sample_id": "validation/hard/22/0025",
+      "psnr": 26.920522392284873,
+      "ssim": 0.951431930065155
+    },
+    {
+      "sample_id": "validation/easy/30/0000",
+      "psnr": 28.201354104437428,
+      "ssim": 0.9470154047012329
+    },
+    {
+      "sample_id": "validation/easy/30/0047",
+      "psnr": 25.22739795184535,
+      "ssim": 0.9038757085800171
+    },
+    {
+      "sample_id": "validation/hard/30/0000",
+      "psnr": 25.930195928835232,
+      "ssim": 0.9151129722595215
+    },
+    {
+      "sample_id": "validation/hard/30/0111",
+      "psnr": 26.936035745099154,
+      "ssim": 0.9305537343025208
+    },
+    {
+      "sample_id": "validation/easy/36/0000",
+      "psnr": 32.15367487484084,
+      "ssim": 0.959907054901123
+    },
+    {
+      "sample_id": "validation/easy/36/0054",
+      "psnr": 31.069332656276657,
+      "ssim": 0.9372447729110718
+    },
+    {
+      "sample_id": "validation/hard/36/0000",
+      "psnr": 33.75930543818236,
+      "ssim": 0.966917872428894
+    },
+    {
+      "sample_id": "validation/hard/36/0018",
+      "psnr": 30.38130997857037,
+      "ssim": 0.9336099624633789
+    },
+    {
+      "sample_id": "validation/easy/41/0000",
+      "psnr": 34.73824733690224,
+      "ssim": 0.9873672723770142
+    },
+    {
+      "sample_id": "validation/easy/41/0067",
+      "psnr": 23.271606684599032,
+      "ssim": 0.6895798444747925
+    },
+    {
+      "sample_id": "validation/hard/41/0000",
+      "psnr": 24.576722109553735,
+      "ssim": 0.7707228660583496
+    },
+    {
+      "sample_id": "validation/hard/41/0078",
+      "psnr": 25.503409545245912,
+      "ssim": 0.7913993000984192
+    },
+    {
+      "sample_id": "validation/easy/55/0000",
+      "psnr": 21.686695924927214,
+      "ssim": 0.9198614358901978
+    },
+    {
+      "sample_id": "validation/easy/55/0219",
+      "psnr": 23.79752745632355,
+      "ssim": 0.9191548824310303
+    },
+    {
+      "sample_id": "validation/hard/56/0000",
+      "psnr": 23.860174633532587,
+      "ssim": 0.9333435893058777
+    },
+    {
+      "sample_id": "validation/hard/56/0063",
+      "psnr": 14.601267682636541,
+      "ssim": 0.6212598085403442
+    }
+  ],
+  "psnr": 27.278509596134818,
+  "ssim": 0.9136105222361428,
+  "input": "raw P0 and original RGB, enhancer bypassed",
+  "original_size": true,
+  "paired_noise": true,
+  "test_used": false,
+  "used_for_weight_selection": false,
+  "psnr_change_from_official": 0.0,
+  "ssim_change_from_official": 0.0,
+  "net_g_relative_l2_drift": 0.005704538205489154,
+  "all_net_g_tensors_unchanged_from_reused_source": true,
+  "reference_kind": "reused previous final; absolute official drift is inherited"
+}

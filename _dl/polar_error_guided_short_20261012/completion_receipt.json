@@ -1,0 +1,80 @@
+{
+  "recorded_at": "2026-10-12T11:56:01.566110+00:00",
+  "implementation_and_experiment_completed": true,
+  "method_iteration_improvement_observed": false,
+  "reason": "All updates rejected: zero coverage and T2 exactly T1 on all1060 frames.",
+  "protocol_id": "921ae3dc9fe004949efab2afdb434719a11a8268cb80bd44718bc59a9a99787d",
+  "raw_archive_sha256": "be4ef423c82ec7b61e3f6c42883774e2dcc4efcedc92e378a1e3c07e1587b292",
+  "raw_files_verified": 226,
+  "original_archive_unchanged": true,
+  "source_and_final_weights_verified": true,
+  "source_checkpoint_sha256": "e79af90811baa46aadfb354a682d0c5dad93886e2dfe1eabeaceb407e6cae112",
+  "final_checkpoint_sha256": "cecdcfa47d290b0a2d6b662b96bb4407a7043ef5789e9e87d70768f2c683916d",
+  "candidate_steps": 2000,
+  "judgement_steps": 1000,
+  "training_images_across_roles": 5440,
+  "validation_frames": 872,
+  "test_frames": 188,
+  "original_size": true,
+  "tiling": false,
+  "first_round_exactly_unchanged": true,
+  "candidate_and_q_frozen_during_judgement": true,
+  "saved_action_example_scenes": 16,
+  "saved_confidence_example_scenes": 16,
+  "evaluation_completed_unix": 1791800749.237087,
+  "deadline_unix": 1791812345.895052,
+  "local_postprocessing_gpu_used": false,
+  "post_deadline_gpu_training_or_evaluation": false,
+  "supplemental_files": [
+    {
+      "path": "operations/finalize_delivery.py",
+      "bytes": 4614,
+      "sha256": "7444dcbba5a12abb94c04963f6832d93143976369ea012bf3e2c74a6e75d4950"
+    },
+    {
+      "path": "operations/summarize_results.py",
+      "bytes": 10830,
+      "sha256": "f37a323e14d843352ddd8a1b2a1a0648708bf74c2b913fc7b6aa14a48e33be60"
+    },
+    {
+      "path": "operations/verify_archive.py",
+      "bytes": 1711,
+      "sha256": "a02f176846836eb96a6a35c3a11c06fe01ec2facdfc61517944af924d4e614d6"
+    },
+    {
+      "path": "interpretation/documents/POLAR_ERROR_GUIDED_SHORT_PROTOCOL_ZH_20261012.md",
+      "bytes": 8480,
+      "sha256": "2c71f5cfd8d861d130dab1d0e250a41f6916fa73d0882a9a1df020e9797ddb3b"
+    },
+    {
+      "path": "interpretation/documents/POLAR_ERROR_GUIDED_SHORT_RESULTS_ZH_20261012.md",
+      "bytes": 9801,
+      "sha256": "991ceb1736e26450378fc5fde39582135e6c250ace381662c255cfe4ed8d04f7"
+    },
+    {
+      "path": "interpretation/documents/实验记录_20261012第21组完成快照.md",
+      "bytes": 41123,
+      "sha256": "d87ada6fb169619184c98c1751d6bef091dc2b61b17b6827280175571bc4f88e"
+    },
+    {
+      "path": "interpretation/final_cpu_weight_audit.json",
+      "bytes": 781,
+      "sha256": "850527308542b3f36c25df5469a68f1b37dbc8808096734b81eed12918de86f9"
+    },
+    {
+      "path": "interpretation/result_summary.json",
+      "bytes": 52203,
+      "sha256": "04bc10142c200e702858ae7bc5b4a7c3f55776cc7a9da2d2141058eeed86246c"
+    },
+    {
+      "path": "interpretation/test_per_image.csv",
+      "bytes": 28382,
+      "sha256": "b5f54e9958193527ce757ad88d5ce34d23afa0bf2d251a62e3f2eef2bfbab85d"
+    },
+    {
+      "path": "interpretation/validation_per_image.csv",
+      "bytes": 132925,
+      "sha256": "952997c5e7a5b64ff9faff8f77f68153679d1731cbff9c29ceee4204c1c633c8"
+    }
+  ]
+}

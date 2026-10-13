@@ -1,0 +1,267 @@
+{
+  "canvas": {
+    "width": 1780,
+    "height": 980
+  },
+  "style": {
+    "font_family": "Microsoft YaHei, Arial, sans-serif",
+    "font_size": 18
+  },
+  "nodes": [
+    {
+      "id": "f",
+      "label": "第一轮F1/F2/F3\n96/96/192→参考8/16/16",
+      "x": 230,
+      "y": 145,
+      "width": 350,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "p",
+      "label": "第一轮P1/P2/P3\n48/96/192→偏振参考各8",
+      "x": 670,
+      "y": 145,
+      "width": 350,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "obs",
+      "label": "I、T1、I−T1、原偏振摘要\nC、1−C；未缩放观测可访问",
+      "x": 1160,
+      "y": 145,
+      "width": 440,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "z",
+      "label": "三级状态 Z1/Z2/Z3（各16通道）\nConcat(32/40/40)→1×1→GELU→DW3×3\nGELU→1×1→GELU",
+      "x": 670,
+      "y": 330,
+      "width": 820,
+      "height": 110,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "q",
+      "label": "修复需求 Q（直接观测输入）\nI/T1/I−T1/偏振/b/C/F1投影8\n24→Conv32→DW32→Conv1→sigmoid",
+      "x": 230,
+      "y": 525,
+      "width": 350,
+      "height": 125,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "qi",
+      "label": "Q注入三级状态\n[qZ,(1−q)参考,q,C]→ResidualAdapter\nZ更新，q停止梯度",
+      "x": 670,
+      "y": 525,
+      "width": 410,
+      "height": 125,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "ep",
+      "label": "第二轮E的1/2、1/4适配\nZ(16)→ResidualAdapter→96/192\n加至增强器特征",
+      "x": 1190,
+      "y": 525,
+      "width": 410,
+      "height": 125,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "pc",
+      "label": "第二轮偏振特征投影\nP1/P2/P3→8/16/16",
+      "x": 1580,
+      "y": 525,
+      "width": 300,
+      "height": 110,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "dp",
+      "label": "第二轮任务解码适配\n[任务投影16,C参考16,P16,Z16,C,1−C]\n66→ResidualAdapter→96/192",
+      "x": 1190,
+      "y": 740,
+      "width": 480,
+      "height": 130,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "out",
+      "label": "专用RGB修正头（59输入）\n[任务16,Z16,C参考8,P8,I3,T1 3,D2−T1 3,C,1−C]\nConv1×1→Conv3×3→Conv3×3→0.25tanh\n候选U=T1+Δ",
+      "x": 480,
+      "y": 745,
+      "width": 800,
+      "height": 135,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    }
+  ],
+  "edges": [
+    {
+      "from": "f",
+      "to": "z",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "p",
+      "to": "z",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "obs",
+      "to": "z",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "q",
+      "to": "qi",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "z",
+      "to": "qi",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "qi",
+      "to": "ep",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "ep",
+      "to": "pc",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "qi",
+      "to": "dp",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "pc",
+      "to": "dp",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "dp",
+      "to": "out",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "pc",
+      "to": "out",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "qi",
+      "to": "out",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    }
+  ],
+  "groups": [],
+  "labels": [
+    {
+      "x": 35,
+      "y": 34,
+      "text": "跨轮状态、修复需求与第二轮专用纠错接口",
+      "font_size": 26,
+      "anchor": "start",
+      "color": "#173B4E"
+    },
+    {
+      "x": 40,
+      "y": 902,
+      "text": "ResidualAdapter：1×1→GELU→DW3×3→GELU→1×1→0.1tanh；输出层最初零初始化，此次继承已训练参数。",
+      "font_size": 17,
+      "anchor": "start",
+      "color": "#586676"
+    },
+    {
+      "x": 40,
+      "y": 945,
+      "text": "Q的BCE只用训练GT局部误差代理；Q不是反射标注。候选损失不能反向教Q选择方向；当前全部冻结。",
+      "font_size": 17,
+      "anchor": "start",
+      "color": "#586676"
+    }
+  ]
+}

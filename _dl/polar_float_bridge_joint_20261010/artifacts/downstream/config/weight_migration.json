@@ -1,0 +1,23 @@
+{
+  "strict": true,
+  "keys": 396,
+  "mismatches": [],
+  "enhancer_sha256": "a4ecebacba5cfc25546320974a9c37f1cc220c685f1318b3cc290ae4a68e9554",
+  "task_source_sha256": "a230e77fb19827a1ada41e4dc86374dee092e476915d2252841f81dd8c257ca2",
+  "task_initialization": {
+    "kind": "official_polarfree",
+    "strict": true,
+    "source_sha256": "a230e77fb19827a1ada41e4dc86374dee092e476915d2252841f81dd8c257ca2",
+    "all_net_g_tensors_equal_official": true,
+    "prior_sha256": {
+      "net_g_latest.pth": "a230e77fb19827a1ada41e4dc86374dee092e476915d2252841f81dd8c257ca2",
+      "net_d_latest.pth": "f1d0e9acb244480e5d4ba4b5cee7ba35666fb97d41bccf4659f20911f46f1fb3",
+      "net_le_dm_latest.pth": "6b98bd2a715d3e669acd99582d9ea37594ff4a2ee7786df86764d8efdafd0546"
+    },
+    "historical_joint_weights_overwrite": false
+  },
+  "enhancer_checkpoint_protocol_id": "576f788b73218610533cddb66089d3e0c0910f9aa97604a376c9692d71634007",
+  "downstream_protocol_id": "c3cca742318e5d89bab57311c014a56a658e9c4a143024ac558bf033ab93de5f",
+  "old_enhancer_inherited": false,
+  "sr_branch": false
+}

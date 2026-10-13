@@ -1,0 +1,46 @@
+{
+  "protocol_id": "c6f1c9045e7e2e3d0e6fe7e4b6c597eb35c369e0d34c77267278309e64ca12fc",
+  "actual_forward_calls": {
+    "r2p": 1,
+    "tasknet": 2
+  },
+  "identity_polar": true,
+  "zero_output_max_diff": 0.0,
+  "condition_requires_grad": false,
+  "trainable_r2p_tensors": 18,
+  "grad_norm_r2p": 0.004271009936928749,
+  "grad_norm_netg": 0.0,
+  "gradients": {
+    "rgb_encoder.net.0.weight": 0.0,
+    "rgb_encoder.net.0.bias": 0.0,
+    "rgb_encoder.net.2.weight": 0.0,
+    "rgb_encoder.net.2.bias": 0.0,
+    "polar_encoder.net.0.weight": 0.0,
+    "polar_encoder.net.0.bias": 0.0,
+    "polar_encoder.net.2.weight": 0.0,
+    "polar_encoder.net.2.bias": 0.0,
+    "gate.weight": 0.0,
+    "gate.bias": 0.0,
+    "film.weight": 0.0,
+    "film.bias": 0.0,
+    "body.0.weight": 0.0,
+    "body.0.bias": 0.0,
+    "body.2.weight": 0.0,
+    "body.2.bias": 0.0,
+    "body.4.weight": 0.0005368203856050968,
+    "body.4.bias": 0.004237139131873846
+  },
+  "all_gradients_finite": true,
+  "frozen_hashes_unchanged": true,
+  "no_task_gradients": true,
+  "peak_vram_mb": 5018.3662109375,
+  "passed": true,
+  "proxy_step0_parity": {
+    "n": 28,
+    "all_passed": true,
+    "baseline_replay_max_diff": {
+      "psnr": 0.0,
+      "ssim": 0.0
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "archive": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/state_condition_probe_20261007/exports/state_condition_probe_evidence_without_checkpoints.tar.gz",
+  "sha256": "21211358953d14016e3d1f875ae11a9f3ed364a6555a48c66f880e6007e867b7",
+  "bytes": 2024940,
+  "indexed_files": 238,
+  "checkpoints_retained_on_server": true,
+  "audits": {
+    "mixed_rgb": {
+      "passed": true,
+      "netg_exact_source_G6": true,
+      "all_saved_frozen_audits_passed": true,
+      "optimizer_active_tensors": 18,
+      "initial_zero_output": true,
+      "baseline_replay_max_diff": {
+        "psnr": 0.0,
+        "ssim": 0.0
+      },
+      "actual_tasknet_forwards": 1744,
+      "actual_r2p_forwards": 872,
+      "checkpoint_sha256": "15edffa3f3f0009460137761568569763b7566e53230326416e5cedc4b46554b",
+      "source_G6_sha256": "cf13b14dba520ff0f1bdb801a09427bf819974671c38c553c6c3cd536ec6d752",
+      "condition_clip_fraction": 0.003405990312825329
+    },
+    "task_prediction": {
+      "passed": true,
+      "netg_exact_source_G6": true,
+      "all_saved_frozen_audits_passed": true,
+      "optimizer_active_tensors": 18,
+      "initial_zero_output": true,
+      "baseline_replay_max_diff": {
+        "psnr": 0.0,
+        "ssim": 0.0
+      },
+      "actual_tasknet_forwards": 1744,
+      "actual_r2p_forwards": 872,
+      "checkpoint_sha256": "571d9af58c65ac055a2085a7b6d8bc5462204a3fb58a95157be6454c846f0514",
+      "source_G6_sha256": "cf13b14dba520ff0f1bdb801a09427bf819974671c38c553c6c3cd536ec6d752",
+      "condition_clip_fraction": 0.003405990312825329
+    }
+  }
+}

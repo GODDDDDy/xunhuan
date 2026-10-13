@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/scripts/controller.py", line 80, in <module>
+    try:run()
+        ^^^^^
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/scripts/controller.py", line 48, in run
+    pre=pretrain.benchmark(cfg,device)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/scripts/pretrain.py", line 95, in benchmark
+    torch.nn.utils.clip_grad_norm_(model.parameters(),1,error_if_nonfinite=True)
+  File "/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torch/nn/utils/clip_grad.py", line 30, in _no_grad_wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torch/nn/utils/clip_grad.py", line 99, in clip_grad_norm_
+    raise RuntimeError(
+RuntimeError: The total norm of order 2.0 for gradients from `parameters` is non-finite, so it cannot be clipped. To disable this error and scale the gradients by the non-finite norm anyway, set `error_if_nonfinite=False`

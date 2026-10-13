@@ -1,0 +1,48 @@
+{
+  "schema_version": 3,
+  "seed": 2026,
+  "paths": {
+    "base_config": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/protocol/base_server.yaml",
+    "source_root": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/deps/rgb_final_confirmation/src",
+    "manifest": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/config/manifest.csv",
+    "schedule": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/config/training_schedule_16000.json",
+    "validation_proxy": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/config/validation_proxy.json",
+    "pretrained_r2p": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/weights/r2p_pretrained_pidsr_e42.pt",
+    "reference_r2p": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/deps/r2p_film.py",
+    "output_root": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/downstream",
+    "pidsr_data": "/media/li/data3/25thstudent/DY/929work/research_data/PIDSR-dataset",
+    "source_checkpoint": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/direct_t1_joint_20261008_memorysafe_v2/run/checkpoints/step_10000.pt"
+  },
+  "data": {
+    "condition": "raw_mixed_rgb",
+    "crop_size": 128,
+    "batch_size": 2,
+    "workers": 2
+  },
+  "source_sha256": "eb17a5537bcd26583b73670a34a258f948056935f851b42c7a44eb62e1dd15ea",
+  "scope": "one new enhancer plus confidence K2; same-resolution PIDSR correction pretraining",
+  "pretrain": {
+    "steps": 12000,
+    "effective_batch": 8,
+    "microbatch": 1,
+    "learning_rate": 0.0003,
+    "minimum_steps": 6000
+  },
+  "downstream": {
+    "steps": 8000,
+    "effective_batch": 2,
+    "microbatch": 1,
+    "minimum_steps": 3000
+  },
+  "confidence": {
+    "warmup_steps": 500,
+    "calibration_training_crops": 256
+  },
+  "evaluation": {
+    "validation_frames": 872,
+    "test_frames": 188,
+    "original_size": true,
+    "tiles": false
+  },
+  "selection": "pretrain: best 10-scene validation mean angle PSNR; downstream: planned/time-only final"
+}

@@ -1,0 +1,72 @@
+{
+  "phase1": {
+    "checkpoints": {
+      "200": {
+        "checkpoint_sha256": "ec6ea813b10ef8e7f389277a8e07bd50f9c9fc6d9c02fb8dfea5fe442a01e0ef",
+        "optimizer_steps": [
+          200
+        ],
+        "optimizer_state_count": 457,
+        "learning_rates": [
+          0.0001,
+          1e-05
+        ],
+        "passed": true
+      },
+      "3000": {
+        "checkpoint_sha256": "dfed75d6c4955ae770de0518d35c84d40dc9f4d3dd6b00f8b15c2c8ca8262a6c",
+        "optimizer_steps": [
+          3000
+        ],
+        "optimizer_state_count": 457,
+        "learning_rates": [
+          0.0001,
+          1e-05
+        ],
+        "passed": true
+      }
+    },
+    "training_log": {
+      "continuous_steps_1_to_3000": true,
+      "all_logged_values_finite": true,
+      "model_group_preclip_norm_gt1_count": 403,
+      "netg_preclip_norm_gt1_count": 3000,
+      "note": "Counts reconstructed from disjoint no-feedback parameter block norms; threshold is 1."
+    }
+  },
+  "phase01": {
+    "checkpoints": {
+      "200": {
+        "checkpoint_sha256": "abf86e09c8ed0d731609dab20b7b888e66b6f153ebf0460273b6b76c5403dfe1",
+        "optimizer_steps": [
+          200
+        ],
+        "optimizer_state_count": 457,
+        "learning_rates": [
+          0.0001,
+          1e-05
+        ],
+        "passed": true
+      },
+      "3000": {
+        "checkpoint_sha256": "36a67f355ba5389b763c838f5b5547efac9ab266d41fc2e2483a8283115c2b88",
+        "optimizer_steps": [
+          3000
+        ],
+        "optimizer_state_count": 457,
+        "learning_rates": [
+          0.0001,
+          1e-05
+        ],
+        "passed": true
+      }
+    },
+    "training_log": {
+      "continuous_steps_1_to_3000": true,
+      "all_logged_values_finite": true,
+      "model_group_preclip_norm_gt1_count": 64,
+      "netg_preclip_norm_gt1_count": 2975,
+      "note": "Counts reconstructed from disjoint no-feedback parameter block norms; threshold is 1."
+    }
+  }
+}

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_error_guided_short_20261012/scripts/short_controller.py", line 48, in <module>
+    try:run()
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_error_guided_short_20261012/scripts/short_controller.py", line 19, in run
+    stage('verify')
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_error_guided_short_20261012/scripts/short_controller.py", line 13, in stage
+    if p.returncode:raise RuntimeError(f'{action} failed with exit {p.returncode}')
+RuntimeError: verify failed with exit 1

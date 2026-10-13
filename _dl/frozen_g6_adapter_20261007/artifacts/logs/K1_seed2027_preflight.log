@@ -1,0 +1,288 @@
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG19_Weights.IMAGENET1K_V1`. You can also use `weights=VGG19_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+{
+  "protocol_id": "ceea02ad439dac0fa0dc89f8e4560efc4b625a5e1a08ca34d942db36499ed187",
+  "actual_forward_calls": {
+    "r2p": 1,
+    "tasknet": 1
+  },
+  "initial_polar_identity": true,
+  "initial_delta_max": 0.0,
+  "input_gradient_norm": 0.20576025545597076,
+  "grad_norm_r2p": 0.01680251955986023,
+  "grad_norm_netg": 0.0,
+  "no_frozen_task_gradients": true,
+  "r2p_parameters_with_nonzero_gradient": [
+    "body.4.weight",
+    "body.4.bias"
+  ],
+  "other_model_gradients_absent": true,
+  "all_gradients_finite": true,
+  "peak_vram_mb": 5034.11572265625,
+  "lambda_feature_alignment": 0.0,
+  "loss_finite": true,
+  "proxy_step0_parity": {
+    "n": 28,
+    "all_passed": true,
+    "output_tolerance": 0.0001,
+    "historical_psnr_tolerance": 1e-05,
+    "historical_ssim_tolerance": 1e-07,
+    "per_image": [
+      {
+        "sample_id": "validation/easy/01/0000",
+        "scene": "01",
+        "input_max_diff": 0.0,
+        "output_max_diff": 0.0,
+        "historical_G6_psnr_abs_diff": 0.0,
+        "historical_G6_ssim_abs_diff": 0.0,
+        "passed": true
+      },
+      {
+        "sample_id": "validation/easy/01/0010",
+        "scene": "01",
+        "input_max_diff": 0.0,
+        "output_max_diff": 0.0,
+        "historical_G6_psnr_abs_diff": 0.0,
+        "historical_G6_ssim_abs_diff": 0.0,
+        "passed": true
+      },
+      {
+        "sample_id": "validation/hard/01/0000",
+        "scene": "01",
+        "input_max_diff": 0.0,
+        "output_max_diff": 0.0,
+        "historical_G6_psnr_abs_diff": 0.0,
+        "historical_G6_ssim_abs_diff": 0.0,
+        "passed": true
+      },
+      {
+        "sample_id": "validation/hard/01/0021",
+        "scene": "01",
+        "input_max_diff": 0.0,
+        "output_max_diff": 0.0,
+        "historical_G6_psnr_abs_diff": 0.0,
+        "historical_G6_ssim_abs_diff": 0.0,
+        "passed": true
+      },
+      {
+        "sample_id": "validation/easy/07/0000",
+        "scene": "07",
+        "input_max_diff": 0.0,
+        "output_max_diff": 0.0,
+        "historical_G6_psnr_abs_diff": 0.0,
+        "historical_G6_ssim_abs_diff": 0.0,
+        "passed": true
+      },
+      {
+        "sample_id": "validation/easy/07/0012",
+        "scene": "07",
+        "input_max_diff": 0.0,
+        "output_max_diff": 0.0,
+        "historical_G6_psnr_abs_diff": 0.0,
+        "historical_G6_ssim_abs_diff": 0.0,
+        "passed": true
+      },
+      {
+        "sample_id": "validation/hard/07/0000",
+        "scene": "07",
+        "input_max_diff": 0.0,
+        "output_max_diff": 0.0,
+        "historical_G6_psnr_abs_diff": 0.0,
+        "historical_G6_ssim_abs_diff": 0.0,
+        "passed": true
+      },
+      {
+        "sample_id": "validation/hard/07/0041",
+        "scene": "07",
+        "input_max_diff": 0.0,
+        "output_max_diff": 0.0,
+        "historical_G6_psnr_abs_diff": 0.0,
+        "historical_G6_ssim_abs_diff": 0.0,
+        "passed": true
+      },
+      {
+        "sample_id": "validation/easy/22/0000",
+        "scene": "22",
+        "input_max_diff": 0.0,
+        "output_max_diff": 0.0,
+        "historical_G6_psnr_abs_diff": 0.0,
+        "historical_G6_ssim_abs_diff": 0.0,
+        "passed": true
+      },
+      {
+        "sample_id": "validation/easy/22/0092",
+        "scene": "22",
+        "input_max_diff": 0.0,
+        "output_max_diff": 0.0,
+        "historical_G6_psnr_abs_diff": 0.0,
+        "historical_G6_ssim_abs_diff": 0.0,
+        "passed": true
+      },
+      {
+        "sample_id": "validation/hard/22/0000",
+        "scene": "22",
+        "input_max_diff": 0.0,
+        "output_max_diff": 0.0,
+        "historical_G6_psnr_abs_diff": 0.0,
+        "historical_G6_ssim_abs_diff": 0.0,
+        "passed": true
+      },
+      {
+        "sample_id": "validation/hard/22/0025",
+        "scene": "22",
+        "input_max_diff": 0.0,
+        "output_max_diff": 0.0,
+        "historical_G6_psnr_abs_diff": 0.0,
+        "historical_G6_ssim_abs_diff": 0.0,
+        "passed": true
+      },
+      {
+        "sample_id": "validation/easy/30/0000",
+        "scene": "30",
+        "input_max_diff": 0.0,
+        "output_max_diff": 0.0,
+        "historical_G6_psnr_abs_diff": 0.0,
+        "historical_G6_ssim_abs_diff": 0.0,
+        "passed": true
+      },
+      {
+        "sample_id": "validation/easy/30/0047",
+        "scene": "30",
+        "input_max_diff": 0.0,
+        "output_max_diff": 0.0,
+        "historical_G6_psnr_abs_diff": 0.0,
+        "historical_G6_ssim_abs_diff": 0.0,
+        "passed": true
+      },
+      {
+        "sample_id": "validation/hard/30/0000",
+        "scene": "30",
+        "input_max_diff": 0.0,
+        "output_max_diff": 0.0,
+        "historical_G6_psnr_abs_diff": 0.0,
+        "historical_G6_ssim_abs_diff": 0.0,
+        "passed": true
+      },
+      {
+        "sample_id": "validation/hard/30/0111",
+        "scene": "30",
+        "input_max_diff": 0.0,
+        "output_max_diff": 0.0,
+        "historical_G6_psnr_abs_diff": 0.0,
+        "historical_G6_ssim_abs_diff": 0.0,
+        "passed": true
+      },
+      {
+        "sample_id": "validation/easy/36/0000",
+        "scene": "36",
+        "input_max_diff": 0.0,
+        "output_max_diff": 0.0,
+        "historical_G6_psnr_abs_diff": 0.0,
+        "historical_G6_ssim_abs_diff": 0.0,
+        "passed": true
+      },
+      {
+        "sample_id": "validation/easy/36/0054",
+        "scene": "36",
+        "input_max_diff": 0.0,
+        "output_max_diff": 0.0,
+        "historical_G6_psnr_abs_diff": 0.0,
+        "historical_G6_ssim_abs_diff": 0.0,
+        "passed": true
+      },
+      {
+        "sample_id": "validation/hard/36/0000",
+        "scene": "36",
+        "input_max_diff": 0.0,
+        "output_max_diff": 0.0,
+        "historical_G6_psnr_abs_diff": 0.0,
+        "historical_G6_ssim_abs_diff": 0.0,
+        "passed": true
+      },
+      {
+        "sample_id": "validation/hard/36/0018",
+        "scene": "36",
+        "input_max_diff": 0.0,
+        "output_max_diff": 0.0,
+        "historical_G6_psnr_abs_diff": 0.0,
+        "historical_G6_ssim_abs_diff": 0.0,
+        "passed": true
+      },
+      {
+        "sample_id": "validation/easy/41/0000",
+        "scene": "41",
+        "input_max_diff": 0.0,
+        "output_max_diff": 0.0,
+        "historical_G6_psnr_abs_diff": 0.0,
+        "historical_G6_ssim_abs_diff": 0.0,
+        "passed": true
+      },
+      {
+        "sample_id": "validation/easy/41/0067",
+        "scene": "41",
+        "input_max_diff": 0.0,
+        "output_max_diff": 0.0,
+        "historical_G6_psnr_abs_diff": 0.0,
+        "historical_G6_ssim_abs_diff": 0.0,
+        "passed": true
+      },
+      {
+        "sample_id": "validation/hard/41/0000",
+        "scene": "41",
+        "input_max_diff": 0.0,
+        "output_max_diff": 0.0,
+        "historical_G6_psnr_abs_diff": 0.0,
+        "historical_G6_ssim_abs_diff": 0.0,
+        "passed": true
+      },
+      {
+        "sample_id": "validation/hard/41/0078",
+        "scene": "41",
+        "input_max_diff": 0.0,
+        "output_max_diff": 0.0,
+        "historical_G6_psnr_abs_diff": 0.0,
+        "historical_G6_ssim_abs_diff": 0.0,
+        "passed": true
+      },
+      {
+        "sample_id": "validation/easy/55/0000",
+        "scene": "55",
+        "input_max_diff": 0.0,
+        "output_max_diff": 0.0,
+        "historical_G6_psnr_abs_diff": 0.0,
+        "historical_G6_ssim_abs_diff": 0.0,
+        "passed": true
+      },
+      {
+        "sample_id": "validation/easy/55/0219",
+        "scene": "55",
+        "input_max_diff": 0.0,
+        "output_max_diff": 0.0,
+        "historical_G6_psnr_abs_diff": 0.0,
+        "historical_G6_ssim_abs_diff": 0.0,
+        "passed": true
+      },
+      {
+        "sample_id": "validation/hard/56/0000",
+        "scene": "56",
+        "input_max_diff": 0.0,
+        "output_max_diff": 0.0,
+        "historical_G6_psnr_abs_diff": 0.0,
+        "historical_G6_ssim_abs_diff": 0.0,
+        "passed": true
+      },
+      {
+        "sample_id": "validation/hard/56/0063",
+        "scene": "56",
+        "input_max_diff": 0.0,
+        "output_max_diff": 0.0,
+        "historical_G6_psnr_abs_diff": 0.0,
+        "historical_G6_ssim_abs_diff": 0.0,
+        "passed": true
+      }
+    ]
+  },
+  "passed": true
+}

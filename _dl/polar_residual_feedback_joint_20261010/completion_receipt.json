@@ -1,0 +1,75 @@
+{
+  "recorded_at": "2026-10-11T06:11:58.101211+00:00",
+  "implementation_and_experiment_completed": true,
+  "method_fully_validated": false,
+  "reason": "Small positive PSNR iteration gains, negative image-mean SSIM; no matched training control or multi-seed confirmation.",
+  "raw_archive_sha256": "80685b43ee9328337288561b92c73544eb51554aa76b049b247d049a45c9d7eb",
+  "original_archive_unchanged": true,
+  "original_files_verified": 159,
+  "source_and_final_weights_match": true,
+  "frozen_runtime_sources_preserved": true,
+  "steps": 12000,
+  "validation_frames": 872,
+  "test_frames": 188,
+  "mechanism_validation_frames": 28,
+  "saved_scene_examples": 16,
+  "post_deadline_gpu_training_or_evaluation": false,
+  "local_postprocessing_gpu_used": false,
+  "supplemental_files": [
+    {
+      "path": "operations/finalize_delivery.py",
+      "bytes": 3064,
+      "sha256": "326ca41ddcf1e13b2658c5fe6d1bf3bae6f8ea9b037b04027f7a2b199493aac2"
+    },
+    {
+      "path": "operations/summarize_results.py",
+      "bytes": 6141,
+      "sha256": "0c5bdd2e4e800e2c28bcd7f48a15998c8d4a87e893ad522f17266b581382ddea"
+    },
+    {
+      "path": "operations/verify_archive.py",
+      "bytes": 1711,
+      "sha256": "a02f176846836eb96a6a35c3a11c06fe01ec2facdfc61517944af924d4e614d6"
+    },
+    {
+      "path": "interpretation/confidence_maps/test_scene_00.png",
+      "bytes": 766381,
+      "sha256": "a28351ce54d85dbd7fad09644154f8b77e4bfc663a4c1ec24da789829d4a6c90"
+    },
+    {
+      "path": "interpretation/confidence_maps/validation_scene_01.png",
+      "bytes": 900273,
+      "sha256": "2bf5d12de0edfbdfee71916b96bd5225f7c1f0e3c5896d3c16ec51b8eaf7b593"
+    },
+    {
+      "path": "interpretation/documents/POLAR_RESIDUAL_FEEDBACK_PROTOCOL_ZH_20261010.md",
+      "bytes": 11690,
+      "sha256": "b2d07b22a55aeedc503a2d106872d945338ea9a8591d7976b1f2f6b1f9563830"
+    },
+    {
+      "path": "interpretation/documents/POLAR_RESIDUAL_FEEDBACK_RESULTS_ZH_20261010.md",
+      "bytes": 8491,
+      "sha256": "dc598336d4974965f6068c6e2424f6392900abf9742fa36288fd47e684d2517b"
+    },
+    {
+      "path": "interpretation/documents/实验记录_20261011快照.md",
+      "bytes": 26008,
+      "sha256": "fe3c78fd979c861dcf1f4e77bcc43fab19ab3759272a2f05c57f48c93252c216"
+    },
+    {
+      "path": "interpretation/render_confidence.py",
+      "bytes": 2064,
+      "sha256": "4ffad29008b2769bcef986fd9497c2dd702f018afb3e5981bd7d3110d87df672"
+    },
+    {
+      "path": "interpretation/result_summary.json",
+      "bytes": 21154,
+      "sha256": "f4c3bdac62f2dfd153b33b4c591f58d0c2a9caa1d837c09b0d8300608333b630"
+    },
+    {
+      "path": "supplemental_failure_records/evaluation_recovery_20261010/archive_manifest.json",
+      "bytes": 21662,
+      "sha256": "8c35a2fed5e39d5aaecc155b9c4a7ebc44523cfef8bdbd7b6b28bf302c33df41"
+    }
+  ]
+}

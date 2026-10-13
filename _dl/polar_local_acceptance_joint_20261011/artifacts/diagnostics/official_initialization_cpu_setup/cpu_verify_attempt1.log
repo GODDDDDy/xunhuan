@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_local_acceptance_joint_20261011/scripts/verify.py", line 12, in <module>
+    model,task,criterion,rawcfg=study.components(cfg,device,with_loss=False)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_local_acceptance_joint_20261011/scripts/study.py", line 27, in components
+    raw=base.build_base_config(cfg)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_local_acceptance_joint_20261011/scripts/reference/run_experiment_snapshot.py", line 242, in build_base_config
+    base = load_config(config["paths"]["base_config"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_local_acceptance_joint_20261011/source/rgb_final_confirmation/config.py", line 51, in load_config
+    _validate_config(config)
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_local_acceptance_joint_20261011/source/rgb_final_confirmation/config.py", line 60, in _validate_config
+    raise ValueError("project_root must identify the bundled dependency")
+ValueError: project_root must identify the bundled dependency

@@ -1,0 +1,4556 @@
+{
+  "frames": 188,
+  "scenes": 8,
+  "round1": {
+    "image_mean_psnr": 23.28481172348264,
+    "scene_macro_psnr": 25.02950705195312,
+    "image_mean_ssim": 0.876771903735526,
+    "scene_macro_ssim": 0.897497144062247
+  },
+  "round2": {
+    "image_mean_psnr": 23.28481172348264,
+    "scene_macro_psnr": 25.02950705195312,
+    "image_mean_ssim": 0.876771903735526,
+    "scene_macro_ssim": 0.897497144062247
+  },
+  "iteration_gain": {
+    "image_mean_psnr": 0.0,
+    "scene_macro_psnr": 0.0,
+    "image_mean_ssim": 0.0,
+    "scene_macro_ssim": 0.0
+  },
+  "polar_update": {
+    "polar1": {
+      "mean_abs": 0.008765104184660347,
+      "relative_signal_change": 0.020022835186187256,
+      "ratio_gt_0_02": 0.054099357429337,
+      "ratio_gt_0_05": 0.0038096331872440443
+    },
+    "polar2": {
+      "mean_abs": 0.0,
+      "relative_signal_change": 0.0,
+      "ratio_gt_0_02": 0.0,
+      "ratio_gt_0_05": 0.0
+    }
+  },
+  "image_mean_psnr": 23.28481172348264,
+  "scene_macro_psnr": 25.02950705195312,
+  "image_mean_ssim": 0.876771903735526,
+  "scene_macro_ssim": 0.897497144062247,
+  "r2p_relative_l2_drift_from_pidsr": 0.1596767623201103,
+  "feedback_scale": 0.0,
+  "per_image": [
+    {
+      "sample_id": "test/official/00/0000",
+      "scene": "00",
+      "round1": {
+        "psnr": 33.42052277243,
+        "ssim": 0.9756022691726685
+      },
+      "round2": {
+        "psnr": 33.42052277243,
+        "ssim": 0.9756022691726685
+      },
+      "polar1": {
+        "mean_abs": 0.00842890702188015,
+        "relative_signal_change": 0.019184095785021782,
+        "ratio_gt_0_02": 0.01040882058441639,
+        "ratio_gt_0_05": 0.0002678765158634633
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/00/0001",
+      "scene": "00",
+      "round1": {
+        "psnr": 32.35665128732019,
+        "ssim": 0.9715960025787354
+      },
+      "round2": {
+        "psnr": 32.35665128732019,
+        "ssim": 0.9715960025787354
+      },
+      "polar1": {
+        "mean_abs": 0.00817701406776905,
+        "relative_signal_change": 0.019195135682821274,
+        "ratio_gt_0_02": 0.010982670821249485,
+        "ratio_gt_0_05": 0.00030331412563100457
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/00/0002",
+      "scene": "00",
+      "round1": {
+        "psnr": 30.973558946493473,
+        "ssim": 0.9723925590515137
+      },
+      "round2": {
+        "psnr": 30.973558946493473,
+        "ssim": 0.9723925590515137
+      },
+      "polar1": {
+        "mean_abs": 0.008264093659818172,
+        "relative_signal_change": 0.019170936197042465,
+        "ratio_gt_0_02": 0.01028834655880928,
+        "ratio_gt_0_05": 0.00026388728292658925
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/00/0003",
+      "scene": "00",
+      "round1": {
+        "psnr": 33.764152303071555,
+        "ssim": 0.9746424555778503
+      },
+      "round2": {
+        "psnr": 33.764152303071555,
+        "ssim": 0.9746424555778503
+      },
+      "polar1": {
+        "mean_abs": 0.008343380875885487,
+        "relative_signal_change": 0.019303180277347565,
+        "ratio_gt_0_02": 0.011054344475269318,
+        "ratio_gt_0_05": 0.00027439225232228637
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/00/0004",
+      "scene": "00",
+      "round1": {
+        "psnr": 31.512666898785696,
+        "ssim": 0.9704539179801941
+      },
+      "round2": {
+        "psnr": 31.512666898785696,
+        "ssim": 0.9704539179801941
+      },
+      "polar1": {
+        "mean_abs": 0.008676470257341862,
+        "relative_signal_change": 0.018358435481786728,
+        "ratio_gt_0_02": 0.01309596374630928,
+        "ratio_gt_0_05": 0.0002337021433049813
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/00/0005",
+      "scene": "00",
+      "round1": {
+        "psnr": 30.006478643626092,
+        "ssim": 0.9669014811515808
+      },
+      "round2": {
+        "psnr": 30.006478643626092,
+        "ssim": 0.9669014811515808
+      },
+      "polar1": {
+        "mean_abs": 0.008682156912982464,
+        "relative_signal_change": 0.01858552359044552,
+        "ratio_gt_0_02": 0.013531320728361607,
+        "ratio_gt_0_05": 0.00024879470583982766
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/00/0006",
+      "scene": "00",
+      "round1": {
+        "psnr": 25.988627879180946,
+        "ssim": 0.9638705849647522
+      },
+      "round2": {
+        "psnr": 25.988627879180946,
+        "ssim": 0.9638705849647522
+      },
+      "polar1": {
+        "mean_abs": 0.009128826670348644,
+        "relative_signal_change": 0.018019890412688255,
+        "ratio_gt_0_02": 0.012967577204108238,
+        "ratio_gt_0_05": 0.0002128916821675375
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/00/0007",
+      "scene": "00",
+      "round1": {
+        "psnr": 25.486813289885056,
+        "ssim": 0.9573776125907898
+      },
+      "round2": {
+        "psnr": 25.486813289885056,
+        "ssim": 0.9573776125907898
+      },
+      "polar1": {
+        "mean_abs": 0.00910908356308937,
+        "relative_signal_change": 0.01783466897904873,
+        "ratio_gt_0_02": 0.01276273000985384,
+        "ratio_gt_0_05": 0.00011216373241040856
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/00/0008",
+      "scene": "00",
+      "round1": {
+        "psnr": 23.415596610168908,
+        "ssim": 0.9578208327293396
+      },
+      "round2": {
+        "psnr": 23.415596610168908,
+        "ssim": 0.9578208327293396
+      },
+      "polar1": {
+        "mean_abs": 0.009220283478498459,
+        "relative_signal_change": 0.01792263053357601,
+        "ratio_gt_0_02": 0.013133795000612736,
+        "ratio_gt_0_05": 0.0002423454716335982
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/00/0009",
+      "scene": "00",
+      "round1": {
+        "psnr": 24.469851854940657,
+        "ssim": 0.9660041928291321
+      },
+      "round2": {
+        "psnr": 24.469851854940657,
+        "ssim": 0.9660041928291321
+      },
+      "polar1": {
+        "mean_abs": 0.008831119164824486,
+        "relative_signal_change": 0.018499217927455902,
+        "ratio_gt_0_02": 0.011654390022158623,
+        "ratio_gt_0_05": 0.00023017832427285612
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/00/0010",
+      "scene": "00",
+      "round1": {
+        "psnr": 27.399169991932112,
+        "ssim": 0.9735968708992004
+      },
+      "round2": {
+        "psnr": 27.399169991932112,
+        "ssim": 0.9735968708992004
+      },
+      "polar1": {
+        "mean_abs": 0.008658918552100658,
+        "relative_signal_change": 0.018844394013285637,
+        "ratio_gt_0_02": 0.011123756878077984,
+        "ratio_gt_0_05": 0.00028463127091526985
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/00/0011",
+      "scene": "00",
+      "round1": {
+        "psnr": 27.479120626920924,
+        "ssim": 0.9747695922851562
+      },
+      "round2": {
+        "psnr": 27.479120626920924,
+        "ssim": 0.9747695922851562
+      },
+      "polar1": {
+        "mean_abs": 0.008509701117873192,
+        "relative_signal_change": 0.019214047119021416,
+        "ratio_gt_0_02": 0.010371522046625614,
+        "ratio_gt_0_05": 0.00028955130255781114
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/00/0012",
+      "scene": "00",
+      "round1": {
+        "psnr": 28.326677335530846,
+        "ssim": 0.9709630012512207
+      },
+      "round2": {
+        "psnr": 28.326677335530846,
+        "ssim": 0.9709630012512207
+      },
+      "polar1": {
+        "mean_abs": 0.008353433571755886,
+        "relative_signal_change": 0.019362719729542732,
+        "ratio_gt_0_02": 0.010835202410817146,
+        "ratio_gt_0_05": 0.0002960670390166342
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/00/0013",
+      "scene": "00",
+      "round1": {
+        "psnr": 26.344916669413067,
+        "ssim": 0.9702587127685547
+      },
+      "round2": {
+        "psnr": 26.344916669413067,
+        "ssim": 0.9702587127685547
+      },
+      "polar1": {
+        "mean_abs": 0.008435980416834354,
+        "relative_signal_change": 0.01920256018638611,
+        "ratio_gt_0_02": 0.010932140983641148,
+        "ratio_gt_0_05": 0.00025431314134038985
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/00/0014",
+      "scene": "00",
+      "round1": {
+        "psnr": 28.10114281426751,
+        "ssim": 0.9726496934890747
+      },
+      "round2": {
+        "psnr": 28.10114281426751,
+        "ssim": 0.9726496934890747
+      },
+      "polar1": {
+        "mean_abs": 0.008423839695751667,
+        "relative_signal_change": 0.019298706203699112,
+        "ratio_gt_0_02": 0.0110365254804492,
+        "ratio_gt_0_05": 0.000288022099994123
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/01/0000",
+      "scene": "01",
+      "round1": {
+        "psnr": 24.621365965525182,
+        "ssim": 0.940754234790802
+      },
+      "round2": {
+        "psnr": 24.621365965525182,
+        "ssim": 0.940754234790802
+      },
+      "polar1": {
+        "mean_abs": 0.012098737061023712,
+        "relative_signal_change": 0.018845027312636375,
+        "ratio_gt_0_02": 0.09401468187570572,
+        "ratio_gt_0_05": 0.005487578921020031
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/01/0001",
+      "scene": "01",
+      "round1": {
+        "psnr": 26.03882917478844,
+        "ssim": 0.9474785327911377
+      },
+      "round2": {
+        "psnr": 26.03882917478844,
+        "ssim": 0.9474785327911377
+      },
+      "polar1": {
+        "mean_abs": 0.012112313881516457,
+        "relative_signal_change": 0.01878892071545124,
+        "ratio_gt_0_02": 0.09259624779224396,
+        "ratio_gt_0_05": 0.005312318913638592
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/01/0002",
+      "scene": "01",
+      "round1": {
+        "psnr": 24.944636214218278,
+        "ssim": 0.9326198697090149
+      },
+      "round2": {
+        "psnr": 24.944636214218278,
+        "ssim": 0.9326198697090149
+      },
+      "polar1": {
+        "mean_abs": 0.01229001209139824,
+        "relative_signal_change": 0.018759198486804962,
+        "ratio_gt_0_02": 0.0993441566824913,
+        "ratio_gt_0_05": 0.00563185615465045
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/01/0003",
+      "scene": "01",
+      "round1": {
+        "psnr": 25.08309885300488,
+        "ssim": 0.9442979097366333
+      },
+      "round2": {
+        "psnr": 25.08309885300488,
+        "ssim": 0.9442979097366333
+      },
+      "polar1": {
+        "mean_abs": 0.012181630358099937,
+        "relative_signal_change": 0.01855645142495632,
+        "ratio_gt_0_02": 0.09285953640937805,
+        "ratio_gt_0_05": 0.004963594023138285
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/01/0004",
+      "scene": "01",
+      "round1": {
+        "psnr": 23.566998555670168,
+        "ssim": 0.9165971875190735
+      },
+      "round2": {
+        "psnr": 23.566998555670168,
+        "ssim": 0.9165971875190735
+      },
+      "polar1": {
+        "mean_abs": 0.012189632281661034,
+        "relative_signal_change": 0.018243547528982162,
+        "ratio_gt_0_02": 0.10450781136751175,
+        "ratio_gt_0_05": 0.005248690955340862
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/01/0005",
+      "scene": "01",
+      "round1": {
+        "psnr": 22.377820450224647,
+        "ssim": 0.9046618938446045
+      },
+      "round2": {
+        "psnr": 22.377820450224647,
+        "ssim": 0.9046618938446045
+      },
+      "polar1": {
+        "mean_abs": 0.012055112048983574,
+        "relative_signal_change": 0.0179425161331892,
+        "ratio_gt_0_02": 0.10157506167888641,
+        "ratio_gt_0_05": 0.004890126176178455
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/01/0006",
+      "scene": "01",
+      "round1": {
+        "psnr": 22.188135622279617,
+        "ssim": 0.9016854166984558
+      },
+      "round2": {
+        "psnr": 22.188135622279617,
+        "ssim": 0.9016854166984558
+      },
+      "polar1": {
+        "mean_abs": 0.012029041536152363,
+        "relative_signal_change": 0.018024634569883347,
+        "ratio_gt_0_02": 0.10078991949558258,
+        "ratio_gt_0_05": 0.005209197755903006
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/01/0007",
+      "scene": "01",
+      "round1": {
+        "psnr": 23.2777290983139,
+        "ssim": 0.9253107905387878
+      },
+      "round2": {
+        "psnr": 23.2777290983139,
+        "ssim": 0.9253107905387878
+      },
+      "polar1": {
+        "mean_abs": 0.012201809324324131,
+        "relative_signal_change": 0.01831933483481407,
+        "ratio_gt_0_02": 0.10010204464197159,
+        "ratio_gt_0_05": 0.0053769443184137344
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/01/0008",
+      "scene": "01",
+      "round1": {
+        "psnr": 24.16291207698729,
+        "ssim": 0.9277770519256592
+      },
+      "round2": {
+        "psnr": 24.16291207698729,
+        "ssim": 0.9277770519256592
+      },
+      "polar1": {
+        "mean_abs": 0.012284251861274242,
+        "relative_signal_change": 0.018535051494836807,
+        "ratio_gt_0_02": 0.10299190133810043,
+        "ratio_gt_0_05": 0.005678263958543539
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/01/0009",
+      "scene": "01",
+      "round1": {
+        "psnr": 24.443770110043182,
+        "ssim": 0.9363270401954651
+      },
+      "round2": {
+        "psnr": 24.443770110043182,
+        "ssim": 0.9363270401954651
+      },
+      "polar1": {
+        "mean_abs": 0.01222093217074871,
+        "relative_signal_change": 0.018514305353164673,
+        "ratio_gt_0_02": 0.09601075947284698,
+        "ratio_gt_0_05": 0.005212788004428148
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/01/0010",
+      "scene": "01",
+      "round1": {
+        "psnr": 27.294999857751506,
+        "ssim": 0.9467193484306335
+      },
+      "round2": {
+        "psnr": 27.294999857751506,
+        "ssim": 0.9467193484306335
+      },
+      "polar1": {
+        "mean_abs": 0.011791644617915154,
+        "relative_signal_change": 0.020014474168419838,
+        "ratio_gt_0_02": 0.09015277773141861,
+        "ratio_gt_0_05": 0.006297790911048651
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/01/0011",
+      "scene": "01",
+      "round1": {
+        "psnr": 27.03551920767756,
+        "ssim": 0.9485893845558167
+      },
+      "round2": {
+        "psnr": 27.03551920767756,
+        "ssim": 0.9485893845558167
+      },
+      "polar1": {
+        "mean_abs": 0.011736959218978882,
+        "relative_signal_change": 0.02000739797949791,
+        "ratio_gt_0_02": 0.08761084824800491,
+        "ratio_gt_0_05": 0.006042812950909138
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/01/0012",
+      "scene": "01",
+      "round1": {
+        "psnr": 27.32604914858575,
+        "ssim": 0.9485722184181213
+      },
+      "round2": {
+        "psnr": 27.32604914858575,
+        "ssim": 0.9485722184181213
+      },
+      "polar1": {
+        "mean_abs": 0.011804768815636635,
+        "relative_signal_change": 0.02018456533551216,
+        "ratio_gt_0_02": 0.08890435099601746,
+        "ratio_gt_0_05": 0.006481959950178862
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/01/0013",
+      "scene": "01",
+      "round1": {
+        "psnr": 27.84454963753856,
+        "ssim": 0.9555025696754456
+      },
+      "round2": {
+        "psnr": 27.84454963753856,
+        "ssim": 0.9555025696754456
+      },
+      "polar1": {
+        "mean_abs": 0.011662967503070831,
+        "relative_signal_change": 0.020628049969673157,
+        "ratio_gt_0_02": 0.08502928167581558,
+        "ratio_gt_0_05": 0.006185294594615698
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/01/0014",
+      "scene": "01",
+      "round1": {
+        "psnr": 29.887877897591203,
+        "ssim": 0.9588147401809692
+      },
+      "round2": {
+        "psnr": 29.887877897591203,
+        "ssim": 0.9588147401809692
+      },
+      "polar1": {
+        "mean_abs": 0.011634144932031631,
+        "relative_signal_change": 0.020902294665575027,
+        "ratio_gt_0_02": 0.08631428331136703,
+        "ratio_gt_0_05": 0.006420725490897894
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/01/0015",
+      "scene": "01",
+      "round1": {
+        "psnr": 31.208200082078736,
+        "ssim": 0.9639312624931335
+      },
+      "round2": {
+        "psnr": 31.208200082078736,
+        "ssim": 0.9639312624931335
+      },
+      "polar1": {
+        "mean_abs": 0.01152328122407198,
+        "relative_signal_change": 0.021178821101784706,
+        "ratio_gt_0_02": 0.08501352369785309,
+        "ratio_gt_0_05": 0.006336286664009094
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/01/0016",
+      "scene": "01",
+      "round1": {
+        "psnr": 31.570915784606104,
+        "ssim": 0.9650631546974182
+      },
+      "round2": {
+        "psnr": 31.570915784606104,
+        "ssim": 0.9650631546974182
+      },
+      "polar1": {
+        "mean_abs": 0.011471143923699856,
+        "relative_signal_change": 0.021310579031705856,
+        "ratio_gt_0_02": 0.08434446901082993,
+        "ratio_gt_0_05": 0.006345129571855068
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/01/0017",
+      "scene": "01",
+      "round1": {
+        "psnr": 31.680522049020894,
+        "ssim": 0.9638984203338623
+      },
+      "round2": {
+        "psnr": 31.680522049020894,
+        "ssim": 0.9638984203338623
+      },
+      "polar1": {
+        "mean_abs": 0.011471662670373917,
+        "relative_signal_change": 0.02116466872394085,
+        "ratio_gt_0_02": 0.0837070569396019,
+        "ratio_gt_0_05": 0.006336419843137264
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/01/0018",
+      "scene": "01",
+      "round1": {
+        "psnr": 31.295432545440246,
+        "ssim": 0.9630630016326904
+      },
+      "round2": {
+        "psnr": 31.295432545440246,
+        "ssim": 0.9630630016326904
+      },
+      "polar1": {
+        "mean_abs": 0.011487932875752449,
+        "relative_signal_change": 0.021013857796788216,
+        "ratio_gt_0_02": 0.08319742977619171,
+        "ratio_gt_0_05": 0.006575108505785465
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/01/0019",
+      "scene": "01",
+      "round1": {
+        "psnr": 31.287156182218794,
+        "ssim": 0.9624610543251038
+      },
+      "round2": {
+        "psnr": 31.287156182218794,
+        "ssim": 0.9624610543251038
+      },
+      "polar1": {
+        "mean_abs": 0.011489211581647396,
+        "relative_signal_change": 0.020911192521452904,
+        "ratio_gt_0_02": 0.08274811506271362,
+        "ratio_gt_0_05": 0.006570121739059687
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/01/0020",
+      "scene": "01",
+      "round1": {
+        "psnr": 30.357713460634894,
+        "ssim": 0.9620484709739685
+      },
+      "round2": {
+        "psnr": 30.357713460634894,
+        "ssim": 0.9620484709739685
+      },
+      "polar1": {
+        "mean_abs": 0.011540349572896957,
+        "relative_signal_change": 0.02066989801824093,
+        "ratio_gt_0_02": 0.08220664411783218,
+        "ratio_gt_0_05": 0.006790792569518089
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/01/0021",
+      "scene": "01",
+      "round1": {
+        "psnr": 29.94329007442078,
+        "ssim": 0.9599189162254333
+      },
+      "round2": {
+        "psnr": 29.94329007442078,
+        "ssim": 0.9599189162254333
+      },
+      "polar1": {
+        "mean_abs": 0.011570996604859829,
+        "relative_signal_change": 0.020721150562167168,
+        "ratio_gt_0_02": 0.08310741186141968,
+        "ratio_gt_0_05": 0.006706287618726492
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/01/0022",
+      "scene": "01",
+      "round1": {
+        "psnr": 28.64211424745827,
+        "ssim": 0.9552931189537048
+      },
+      "round2": {
+        "psnr": 28.64211424745827,
+        "ssim": 0.9552931189537048
+      },
+      "polar1": {
+        "mean_abs": 0.011649362742900848,
+        "relative_signal_change": 0.02049587294459343,
+        "ratio_gt_0_02": 0.08411674946546555,
+        "ratio_gt_0_05": 0.006830618251115084
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/02/0000",
+      "scene": "02",
+      "round1": {
+        "psnr": 31.00033167761337,
+        "ssim": 0.9650829434394836
+      },
+      "round2": {
+        "psnr": 31.00033167761337,
+        "ssim": 0.9650829434394836
+      },
+      "polar1": {
+        "mean_abs": 0.009280269034206867,
+        "relative_signal_change": 0.01952356845140457,
+        "ratio_gt_0_02": 0.05252048373222351,
+        "ratio_gt_0_05": 0.0018517986172810197
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/02/0001",
+      "scene": "02",
+      "round1": {
+        "psnr": 31.28147134931945,
+        "ssim": 0.9644274711608887
+      },
+      "round2": {
+        "psnr": 31.28147134931945,
+        "ssim": 0.9644274711608887
+      },
+      "polar1": {
+        "mean_abs": 0.009659784846007824,
+        "relative_signal_change": 0.019094714894890785,
+        "ratio_gt_0_02": 0.05480072647333145,
+        "ratio_gt_0_05": 0.0020474037155508995
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/02/0002",
+      "scene": "02",
+      "round1": {
+        "psnr": 30.822099952124855,
+        "ssim": 0.9678282141685486
+      },
+      "round2": {
+        "psnr": 30.822099952124855,
+        "ssim": 0.9678282141685486
+      },
+      "polar1": {
+        "mean_abs": 0.009353487752377987,
+        "relative_signal_change": 0.01923631690442562,
+        "ratio_gt_0_02": 0.051626965403556824,
+        "ratio_gt_0_05": 0.0013508183183148503
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/02/0003",
+      "scene": "02",
+      "round1": {
+        "psnr": 30.04094286420638,
+        "ssim": 0.9665044546127319
+      },
+      "round2": {
+        "psnr": 30.04094286420638,
+        "ssim": 0.9665044546127319
+      },
+      "polar1": {
+        "mean_abs": 0.009439794346690178,
+        "relative_signal_change": 0.01923847757279873,
+        "ratio_gt_0_02": 0.052603259682655334,
+        "ratio_gt_0_05": 0.0016434281133115292
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/02/0004",
+      "scene": "02",
+      "round1": {
+        "psnr": 30.099056335520615,
+        "ssim": 0.9575796127319336
+      },
+      "round2": {
+        "psnr": 30.099056335520615,
+        "ssim": 0.9575796127319336
+      },
+      "polar1": {
+        "mean_abs": 0.009272074326872826,
+        "relative_signal_change": 0.019209833815693855,
+        "ratio_gt_0_02": 0.048432327806949615,
+        "ratio_gt_0_05": 0.0014972893986850977
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/02/0005",
+      "scene": "02",
+      "round1": {
+        "psnr": 29.86811934305369,
+        "ssim": 0.9557631611824036
+      },
+      "round2": {
+        "psnr": 29.86811934305369,
+        "ssim": 0.9557631611824036
+      },
+      "polar1": {
+        "mean_abs": 0.009294519200921059,
+        "relative_signal_change": 0.01918310485780239,
+        "ratio_gt_0_02": 0.04836025461554527,
+        "ratio_gt_0_05": 0.0014793379232287407
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/02/0006",
+      "scene": "02",
+      "round1": {
+        "psnr": 30.9108579026094,
+        "ssim": 0.9610576033592224
+      },
+      "round2": {
+        "psnr": 30.9108579026094,
+        "ssim": 0.9610576033592224
+      },
+      "polar1": {
+        "mean_abs": 0.008937806822359562,
+        "relative_signal_change": 0.020095767453312874,
+        "ratio_gt_0_02": 0.04778248071670532,
+        "ratio_gt_0_05": 0.0018892973894253373
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/02/0007",
+      "scene": "02",
+      "round1": {
+        "psnr": 30.415320742412405,
+        "ssim": 0.9690693616867065
+      },
+      "round2": {
+        "psnr": 30.415320742412405,
+        "ssim": 0.9690693616867065
+      },
+      "polar1": {
+        "mean_abs": 0.009377545677125454,
+        "relative_signal_change": 0.01956150308251381,
+        "ratio_gt_0_02": 0.053295526653528214,
+        "ratio_gt_0_05": 0.00215345062315464
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/03/0000",
+      "scene": "03",
+      "round1": {
+        "psnr": 23.153237229652667,
+        "ssim": 0.8840702772140503
+      },
+      "round2": {
+        "psnr": 23.153237229652667,
+        "ssim": 0.8840702772140503
+      },
+      "polar1": {
+        "mean_abs": 0.009799834340810776,
+        "relative_signal_change": 0.017284700646996498,
+        "ratio_gt_0_02": 0.07489984482526779,
+        "ratio_gt_0_05": 0.0033804033882915974
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/03/0001",
+      "scene": "03",
+      "round1": {
+        "psnr": 22.09231352900477,
+        "ssim": 0.8746833801269531
+      },
+      "round2": {
+        "psnr": 22.09231352900477,
+        "ssim": 0.8746833801269531
+      },
+      "polar1": {
+        "mean_abs": 0.009931237436830997,
+        "relative_signal_change": 0.01714276522397995,
+        "ratio_gt_0_02": 0.07314930111169815,
+        "ratio_gt_0_05": 0.0031873248517513275
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/03/0002",
+      "scene": "03",
+      "round1": {
+        "psnr": 20.609153203485423,
+        "ssim": 0.8603918552398682
+      },
+      "round2": {
+        "psnr": 20.609153203485423,
+        "ssim": 0.8603918552398682
+      },
+      "polar1": {
+        "mean_abs": 0.010097355581820011,
+        "relative_signal_change": 0.01693086326122284,
+        "ratio_gt_0_02": 0.07121971249580383,
+        "ratio_gt_0_05": 0.0029506308492273092
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/03/0003",
+      "scene": "03",
+      "round1": {
+        "psnr": 18.853048544048058,
+        "ssim": 0.8454105854034424
+      },
+      "round2": {
+        "psnr": 18.853048544048058,
+        "ssim": 0.8454105854034424
+      },
+      "polar1": {
+        "mean_abs": 0.010237756185233593,
+        "relative_signal_change": 0.01664014905691147,
+        "ratio_gt_0_02": 0.06816855818033218,
+        "ratio_gt_0_05": 0.002734481357038021
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/03/0004",
+      "scene": "03",
+      "round1": {
+        "psnr": 18.24473539719642,
+        "ssim": 0.82720947265625
+      },
+      "round2": {
+        "psnr": 18.24473539719642,
+        "ssim": 0.82720947265625
+      },
+      "polar1": {
+        "mean_abs": 0.010347403585910797,
+        "relative_signal_change": 0.016235405579209328,
+        "ratio_gt_0_02": 0.06383858621120453,
+        "ratio_gt_0_05": 0.002256173174828291
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/03/0005",
+      "scene": "03",
+      "round1": {
+        "psnr": 17.663390175464833,
+        "ssim": 0.8218600153923035
+      },
+      "round2": {
+        "psnr": 17.663390175464833,
+        "ssim": 0.8218600153923035
+      },
+      "polar1": {
+        "mean_abs": 0.010375546291470528,
+        "relative_signal_change": 0.01622370444238186,
+        "ratio_gt_0_02": 0.06355900317430496,
+        "ratio_gt_0_05": 0.0022889513056725264
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/03/0006",
+      "scene": "03",
+      "round1": {
+        "psnr": 21.03756107540752,
+        "ssim": 0.8641090393066406
+      },
+      "round2": {
+        "psnr": 21.03756107540752,
+        "ssim": 0.8641090393066406
+      },
+      "polar1": {
+        "mean_abs": 0.010073910467326641,
+        "relative_signal_change": 0.016936438158154488,
+        "ratio_gt_0_02": 0.07140322029590607,
+        "ratio_gt_0_05": 0.0029697127174586058
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/03/0007",
+      "scene": "03",
+      "round1": {
+        "psnr": 23.00194329080993,
+        "ssim": 0.8867453336715698
+      },
+      "round2": {
+        "psnr": 23.00194329080993,
+        "ssim": 0.8867453336715698
+      },
+      "polar1": {
+        "mean_abs": 0.009732190519571304,
+        "relative_signal_change": 0.017367113381624222,
+        "ratio_gt_0_02": 0.07498760521411896,
+        "ratio_gt_0_05": 0.0036160338204354048
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0000",
+      "scene": "04",
+      "round1": {
+        "psnr": 22.94592546619416,
+        "ssim": 0.9219199419021606
+      },
+      "round2": {
+        "psnr": 22.94592546619416,
+        "ssim": 0.9219199419021606
+      },
+      "polar1": {
+        "mean_abs": 0.00847687479108572,
+        "relative_signal_change": 0.01984269730746746,
+        "ratio_gt_0_02": 0.06971397995948792,
+        "ratio_gt_0_05": 0.003968681208789349
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0001",
+      "scene": "04",
+      "round1": {
+        "psnr": 21.701347576164448,
+        "ssim": 0.9002447128295898
+      },
+      "round2": {
+        "psnr": 21.701347576164448,
+        "ssim": 0.9002447128295898
+      },
+      "polar1": {
+        "mean_abs": 0.00855250470340252,
+        "relative_signal_change": 0.01981954462826252,
+        "ratio_gt_0_02": 0.07307516783475876,
+        "ratio_gt_0_05": 0.003968814387917519
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0002",
+      "scene": "04",
+      "round1": {
+        "psnr": 21.004522723821438,
+        "ssim": 0.8924262523651123
+      },
+      "round2": {
+        "psnr": 21.004522723821438,
+        "ssim": 0.8924262523651123
+      },
+      "polar1": {
+        "mean_abs": 0.008620708249509335,
+        "relative_signal_change": 0.01957782357931137,
+        "ratio_gt_0_02": 0.07240557670593262,
+        "ratio_gt_0_05": 0.0038934180047363043
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0003",
+      "scene": "04",
+      "round1": {
+        "psnr": 20.790154069017056,
+        "ssim": 0.9092872142791748
+      },
+      "round2": {
+        "psnr": 20.790154069017056,
+        "ssim": 0.9092872142791748
+      },
+      "polar1": {
+        "mean_abs": 0.009100140072405338,
+        "relative_signal_change": 0.019318705424666405,
+        "ratio_gt_0_02": 0.07101234048604965,
+        "ratio_gt_0_05": 0.003453871700912714
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0004",
+      "scene": "04",
+      "round1": {
+        "psnr": 19.79921679309054,
+        "ssim": 0.8359326720237732
+      },
+      "round2": {
+        "psnr": 19.79921679309054,
+        "ssim": 0.8359326720237732
+      },
+      "polar1": {
+        "mean_abs": 0.009264820255339146,
+        "relative_signal_change": 0.019889019429683685,
+        "ratio_gt_0_02": 0.08025377988815308,
+        "ratio_gt_0_05": 0.003589306026697159
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0005",
+      "scene": "04",
+      "round1": {
+        "psnr": 20.602675412238618,
+        "ssim": 0.8523734211921692
+      },
+      "round2": {
+        "psnr": 20.602675412238618,
+        "ssim": 0.8523734211921692
+      },
+      "polar1": {
+        "mean_abs": 0.009312708862125874,
+        "relative_signal_change": 0.019598592072725296,
+        "ratio_gt_0_02": 0.07764795422554016,
+        "ratio_gt_0_05": 0.0033734224271029234
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0006",
+      "scene": "04",
+      "round1": {
+        "psnr": 21.315882385624075,
+        "ssim": 0.8563332557678223
+      },
+      "round2": {
+        "psnr": 21.315882385624075,
+        "ssim": 0.8563332557678223
+      },
+      "polar1": {
+        "mean_abs": 0.00914954487234354,
+        "relative_signal_change": 0.019393611699342728,
+        "ratio_gt_0_02": 0.076907217502594,
+        "ratio_gt_0_05": 0.00325208343565464
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0007",
+      "scene": "04",
+      "round1": {
+        "psnr": 21.399031917603306,
+        "ssim": 0.8641476631164551
+      },
+      "round2": {
+        "psnr": 21.399031917603306,
+        "ssim": 0.8641476631164551
+      },
+      "polar1": {
+        "mean_abs": 0.009008958004415035,
+        "relative_signal_change": 0.019332097843289375,
+        "ratio_gt_0_02": 0.07386916130781174,
+        "ratio_gt_0_05": 0.002986201550811529
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0008",
+      "scene": "04",
+      "round1": {
+        "psnr": 20.425054321186785,
+        "ssim": 0.8769850134849548
+      },
+      "round2": {
+        "psnr": 20.425054321186785,
+        "ssim": 0.8769850134849548
+      },
+      "polar1": {
+        "mean_abs": 0.00904767494648695,
+        "relative_signal_change": 0.019238119944930077,
+        "ratio_gt_0_02": 0.07147116959095001,
+        "ratio_gt_0_05": 0.0029908556025475264
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0009",
+      "scene": "04",
+      "round1": {
+        "psnr": 20.54714238495457,
+        "ssim": 0.8713881373405457
+      },
+      "round2": {
+        "psnr": 20.54714238495457,
+        "ssim": 0.8713881373405457
+      },
+      "polar1": {
+        "mean_abs": 0.009013334289193153,
+        "relative_signal_change": 0.019263263791799545,
+        "ratio_gt_0_02": 0.07157156616449356,
+        "ratio_gt_0_05": 0.0029477719217538834
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0010",
+      "scene": "04",
+      "round1": {
+        "psnr": 21.931456045168282,
+        "ssim": 0.9048328995704651
+      },
+      "round2": {
+        "psnr": 21.931456045168282,
+        "ssim": 0.9048328995704651
+      },
+      "polar1": {
+        "mean_abs": 0.008661354891955853,
+        "relative_signal_change": 0.019458144903182983,
+        "ratio_gt_0_02": 0.0692376047372818,
+        "ratio_gt_0_05": 0.003337186761200428
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0011",
+      "scene": "04",
+      "round1": {
+        "psnr": 22.550378369814705,
+        "ssim": 0.9130229949951172
+      },
+      "round2": {
+        "psnr": 22.550378369814705,
+        "ssim": 0.9130229949951172
+      },
+      "polar1": {
+        "mean_abs": 0.008509653620421886,
+        "relative_signal_change": 0.01993236318230629,
+        "ratio_gt_0_02": 0.07024209201335907,
+        "ratio_gt_0_05": 0.0035853830631822348
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0012",
+      "scene": "04",
+      "round1": {
+        "psnr": 22.11985294649172,
+        "ssim": 0.9051584005355835
+      },
+      "round2": {
+        "psnr": 22.11985294649172,
+        "ssim": 0.9051584005355835
+      },
+      "polar1": {
+        "mean_abs": 0.008550764061510563,
+        "relative_signal_change": 0.01959013007581234,
+        "ratio_gt_0_02": 0.07129870355129242,
+        "ratio_gt_0_05": 0.0034088599495589733
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0013",
+      "scene": "04",
+      "round1": {
+        "psnr": 21.899968674979956,
+        "ssim": 0.8880359530448914
+      },
+      "round2": {
+        "psnr": 21.899968674979956,
+        "ssim": 0.8880359530448914
+      },
+      "polar1": {
+        "mean_abs": 0.008704709820449352,
+        "relative_signal_change": 0.019453544169664383,
+        "ratio_gt_0_02": 0.07446980476379395,
+        "ratio_gt_0_05": 0.0033169747330248356
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0014",
+      "scene": "04",
+      "round1": {
+        "psnr": 21.29476723986448,
+        "ssim": 0.8706976175308228
+      },
+      "round2": {
+        "psnr": 21.29476723986448,
+        "ssim": 0.8706976175308228
+      },
+      "polar1": {
+        "mean_abs": 0.008837378583848476,
+        "relative_signal_change": 0.01931873708963394,
+        "ratio_gt_0_02": 0.07455224543809891,
+        "ratio_gt_0_05": 0.0029277591966092587
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0015",
+      "scene": "04",
+      "round1": {
+        "psnr": 20.716389995917645,
+        "ssim": 0.8611260056495667
+      },
+      "round2": {
+        "psnr": 20.716389995917645,
+        "ssim": 0.8611260056495667
+      },
+      "polar1": {
+        "mean_abs": 0.008981338702142239,
+        "relative_signal_change": 0.019044727087020874,
+        "ratio_gt_0_02": 0.07505694776773453,
+        "ratio_gt_0_05": 0.0027525657787919044
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0016",
+      "scene": "04",
+      "round1": {
+        "psnr": 19.283143935185684,
+        "ssim": 0.8164532780647278
+      },
+      "round2": {
+        "psnr": 19.283143935185684,
+        "ssim": 0.8164532780647278
+      },
+      "polar1": {
+        "mean_abs": 0.009141850285232067,
+        "relative_signal_change": 0.018847854807972908,
+        "ratio_gt_0_02": 0.07892730087041855,
+        "ratio_gt_0_05": 0.002595124300569296
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0017",
+      "scene": "04",
+      "round1": {
+        "psnr": 15.548490505067436,
+        "ssim": 0.7880191802978516
+      },
+      "round2": {
+        "psnr": 15.548490505067436,
+        "ssim": 0.7880191802978516
+      },
+      "polar1": {
+        "mean_abs": 0.009301899001002312,
+        "relative_signal_change": 0.017508339136838913,
+        "ratio_gt_0_02": 0.06541645526885986,
+        "ratio_gt_0_05": 0.0016607812140136957
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0018",
+      "scene": "04",
+      "round1": {
+        "psnr": 19.922021140671742,
+        "ssim": 0.8915712237358093
+      },
+      "round2": {
+        "psnr": 19.922021140671742,
+        "ssim": 0.8915712237358093
+      },
+      "polar1": {
+        "mean_abs": 0.00846702978014946,
+        "relative_signal_change": 0.02030826173722744,
+        "ratio_gt_0_02": 0.06732742488384247,
+        "ratio_gt_0_05": 0.003354273969307542
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0019",
+      "scene": "04",
+      "round1": {
+        "psnr": 21.259604205441217,
+        "ssim": 0.9000023007392883
+      },
+      "round2": {
+        "psnr": 21.259604205441217,
+        "ssim": 0.9000023007392883
+      },
+      "polar1": {
+        "mean_abs": 0.00835391040891409,
+        "relative_signal_change": 0.020060041919350624,
+        "ratio_gt_0_02": 0.06679233908653259,
+        "ratio_gt_0_05": 0.0035430972930043936
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0020",
+      "scene": "04",
+      "round1": {
+        "psnr": 21.255913200862334,
+        "ssim": 0.9115122556686401
+      },
+      "round2": {
+        "psnr": 21.255913200862334,
+        "ssim": 0.9115122556686401
+      },
+      "polar1": {
+        "mean_abs": 0.00822482444345951,
+        "relative_signal_change": 0.020097732543945312,
+        "ratio_gt_0_02": 0.06612946093082428,
+        "ratio_gt_0_05": 0.0037253384944051504
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0021",
+      "scene": "04",
+      "round1": {
+        "psnr": 20.74480351471653,
+        "ssim": 0.9224087595939636
+      },
+      "round2": {
+        "psnr": 20.74480351471653,
+        "ssim": 0.9224087595939636
+      },
+      "polar1": {
+        "mean_abs": 0.008128708228468895,
+        "relative_signal_change": 0.020414963364601135,
+        "ratio_gt_0_02": 0.06441210210323334,
+        "ratio_gt_0_05": 0.0036454210057854652
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0022",
+      "scene": "04",
+      "round1": {
+        "psnr": 20.26145750310928,
+        "ssim": 0.9190558195114136
+      },
+      "round2": {
+        "psnr": 20.26145750310928,
+        "ssim": 0.9190558195114136
+      },
+      "polar1": {
+        "mean_abs": 0.008093958720564842,
+        "relative_signal_change": 0.02077404037117958,
+        "ratio_gt_0_02": 0.06519179791212082,
+        "ratio_gt_0_05": 0.003698012325912714
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0023",
+      "scene": "04",
+      "round1": {
+        "psnr": 20.64961293655044,
+        "ssim": 0.9191580414772034
+      },
+      "round2": {
+        "psnr": 20.64961293655044,
+        "ssim": 0.9191580414772034
+      },
+      "polar1": {
+        "mean_abs": 0.008165211416780949,
+        "relative_signal_change": 0.021095117554068565,
+        "ratio_gt_0_02": 0.0670127421617508,
+        "ratio_gt_0_05": 0.003924001939594746
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0024",
+      "scene": "04",
+      "round1": {
+        "psnr": 21.021227945813234,
+        "ssim": 0.9243759512901306
+      },
+      "round2": {
+        "psnr": 21.021227945813234,
+        "ssim": 0.9243759512901306
+      },
+      "polar1": {
+        "mean_abs": 0.008234276436269283,
+        "relative_signal_change": 0.02086060866713524,
+        "ratio_gt_0_02": 0.06717610359191895,
+        "ratio_gt_0_05": 0.003959306515753269
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0025",
+      "scene": "04",
+      "round1": {
+        "psnr": 22.72426276151808,
+        "ssim": 0.9155371189117432
+      },
+      "round2": {
+        "psnr": 22.72426276151808,
+        "ssim": 0.9155371189117432
+      },
+      "polar1": {
+        "mean_abs": 0.008417799137532711,
+        "relative_signal_change": 0.020557589828968048,
+        "ratio_gt_0_02": 0.07135920226573944,
+        "ratio_gt_0_05": 0.004427508916705847
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0026",
+      "scene": "04",
+      "round1": {
+        "psnr": 19.907726261205564,
+        "ssim": 0.9088838696479797
+      },
+      "round2": {
+        "psnr": 19.907726261205564,
+        "ssim": 0.9088838696479797
+      },
+      "polar1": {
+        "mean_abs": 0.008567939512431622,
+        "relative_signal_change": 0.020074211061000824,
+        "ratio_gt_0_02": 0.07181929796934128,
+        "ratio_gt_0_05": 0.004649509210139513
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0027",
+      "scene": "04",
+      "round1": {
+        "psnr": 19.906392854980513,
+        "ssim": 0.9054002165794373
+      },
+      "round2": {
+        "psnr": 19.906392854980513,
+        "ssim": 0.9054002165794373
+      },
+      "polar1": {
+        "mean_abs": 0.00885431095957756,
+        "relative_signal_change": 0.019478924572467804,
+        "ratio_gt_0_02": 0.0709657371044159,
+        "ratio_gt_0_05": 0.004381765611469746
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0028",
+      "scene": "04",
+      "round1": {
+        "psnr": 16.581860682280578,
+        "ssim": 0.8884838223457336
+      },
+      "round2": {
+        "psnr": 16.581860682280578,
+        "ssim": 0.8884838223457336
+      },
+      "polar1": {
+        "mean_abs": 0.009464452043175697,
+        "relative_signal_change": 0.019262883812189102,
+        "ratio_gt_0_02": 0.07804860174655914,
+        "ratio_gt_0_05": 0.005130077712237835
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0029",
+      "scene": "04",
+      "round1": {
+        "psnr": 15.754924373594765,
+        "ssim": 0.8824484348297119
+      },
+      "round2": {
+        "psnr": 15.754924373594765,
+        "ssim": 0.8824484348297119
+      },
+      "polar1": {
+        "mean_abs": 0.00952479150146246,
+        "relative_signal_change": 0.018591424450278282,
+        "ratio_gt_0_02": 0.07538213580846786,
+        "ratio_gt_0_05": 0.004371792543679476
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0030",
+      "scene": "04",
+      "round1": {
+        "psnr": 18.074148838035953,
+        "ssim": 0.8833785653114319
+      },
+      "round2": {
+        "psnr": 18.074148838035953,
+        "ssim": 0.8833785653114319
+      },
+      "polar1": {
+        "mean_abs": 0.009823540225625038,
+        "relative_signal_change": 0.017855104058980942,
+        "ratio_gt_0_02": 0.07420192658901215,
+        "ratio_gt_0_05": 0.003910571336746216
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0031",
+      "scene": "04",
+      "round1": {
+        "psnr": 14.082985336756282,
+        "ssim": 0.8213220238685608
+      },
+      "round2": {
+        "psnr": 14.082985336756282,
+        "ssim": 0.8213220238685608
+      },
+      "polar1": {
+        "mean_abs": 0.010123368352651596,
+        "relative_signal_change": 0.017287636175751686,
+        "ratio_gt_0_02": 0.07356797158718109,
+        "ratio_gt_0_05": 0.004272593650966883
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0032",
+      "scene": "04",
+      "round1": {
+        "psnr": 18.023463031338235,
+        "ssim": 0.8467132449150085
+      },
+      "round2": {
+        "psnr": 18.023463031338235,
+        "ssim": 0.8467132449150085
+      },
+      "polar1": {
+        "mean_abs": 0.009935615584254265,
+        "relative_signal_change": 0.01661938987672329,
+        "ratio_gt_0_02": 0.06279519945383072,
+        "ratio_gt_0_05": 0.00299896695651114
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0033",
+      "scene": "04",
+      "round1": {
+        "psnr": 18.84323067729259,
+        "ssim": 0.8835148215293884
+      },
+      "round2": {
+        "psnr": 18.84323067729259,
+        "ssim": 0.8835148215293884
+      },
+      "polar1": {
+        "mean_abs": 0.009813345968723297,
+        "relative_signal_change": 0.017365863546729088,
+        "ratio_gt_0_02": 0.06860338151454926,
+        "ratio_gt_0_05": 0.0035062634851783514
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0034",
+      "scene": "04",
+      "round1": {
+        "psnr": 20.823127810952613,
+        "ssim": 0.9172148704528809
+      },
+      "round2": {
+        "psnr": 20.823127810952613,
+        "ssim": 0.9172148704528809
+      },
+      "polar1": {
+        "mean_abs": 0.009129523299634457,
+        "relative_signal_change": 0.019184017553925514,
+        "ratio_gt_0_02": 0.07056541740894318,
+        "ratio_gt_0_05": 0.004304640460759401
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0035",
+      "scene": "04",
+      "round1": {
+        "psnr": 23.72510181445599,
+        "ssim": 0.9354237914085388
+      },
+      "round2": {
+        "psnr": 23.72510181445599,
+        "ssim": 0.9354237914085388
+      },
+      "polar1": {
+        "mean_abs": 0.008368936367332935,
+        "relative_signal_change": 0.02039373479783535,
+        "ratio_gt_0_02": 0.06966231763362885,
+        "ratio_gt_0_05": 0.00450589694082737
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0036",
+      "scene": "04",
+      "round1": {
+        "psnr": 23.110012214069112,
+        "ssim": 0.9148942828178406
+      },
+      "round2": {
+        "psnr": 23.110012214069112,
+        "ssim": 0.9148942828178406
+      },
+      "polar1": {
+        "mean_abs": 0.00842284131795168,
+        "relative_signal_change": 0.01988999731838703,
+        "ratio_gt_0_02": 0.06966657936573029,
+        "ratio_gt_0_05": 0.004007443320006132
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0037",
+      "scene": "04",
+      "round1": {
+        "psnr": 22.764810435364108,
+        "ssim": 0.9008710384368896
+      },
+      "round2": {
+        "psnr": 22.764810435364108,
+        "ssim": 0.9008710384368896
+      },
+      "polar1": {
+        "mean_abs": 0.008581156842410564,
+        "relative_signal_change": 0.0199735090136528,
+        "ratio_gt_0_02": 0.07173698395490646,
+        "ratio_gt_0_05": 0.004020408261567354
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0038",
+      "scene": "04",
+      "round1": {
+        "psnr": 22.227007169903285,
+        "ssim": 0.8958979249000549
+      },
+      "round2": {
+        "psnr": 22.227007169903285,
+        "ssim": 0.8958979249000549
+      },
+      "polar1": {
+        "mean_abs": 0.008686556480824947,
+        "relative_signal_change": 0.020157642662525177,
+        "ratio_gt_0_02": 0.07341724634170532,
+        "ratio_gt_0_05": 0.003957710694521666
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0039",
+      "scene": "04",
+      "round1": {
+        "psnr": 20.81614594548606,
+        "ssim": 0.8370632529258728
+      },
+      "round2": {
+        "psnr": 20.81614594548606,
+        "ssim": 0.8370632529258728
+      },
+      "polar1": {
+        "mean_abs": 0.008844682946801186,
+        "relative_signal_change": 0.020583171397447586,
+        "ratio_gt_0_02": 0.08076240867376328,
+        "ratio_gt_0_05": 0.004127053543925285
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0040",
+      "scene": "04",
+      "round1": {
+        "psnr": 21.67045502908209,
+        "ssim": 0.8824269771575928
+      },
+      "round2": {
+        "psnr": 21.67045502908209,
+        "ssim": 0.8824269771575928
+      },
+      "polar1": {
+        "mean_abs": 0.008617250248789787,
+        "relative_signal_change": 0.02010437846183777,
+        "ratio_gt_0_02": 0.07213284820318222,
+        "ratio_gt_0_05": 0.00391349708661437
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0041",
+      "scene": "04",
+      "round1": {
+        "psnr": 22.94727744671127,
+        "ssim": 0.9172328114509583
+      },
+      "round2": {
+        "psnr": 22.94727744671127,
+        "ssim": 0.9172328114509583
+      },
+      "polar1": {
+        "mean_abs": 0.008460910059511662,
+        "relative_signal_change": 0.019882557913661003,
+        "ratio_gt_0_02": 0.0677042081952095,
+        "ratio_gt_0_05": 0.003729261225089431
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0042",
+      "scene": "04",
+      "round1": {
+        "psnr": 23.286365345632667,
+        "ssim": 0.9161149263381958
+      },
+      "round2": {
+        "psnr": 23.286365345632667,
+        "ssim": 0.9161149263381958
+      },
+      "polar1": {
+        "mean_abs": 0.008420553989708424,
+        "relative_signal_change": 0.019953817129135132,
+        "ratio_gt_0_02": 0.06686893105506897,
+        "ratio_gt_0_05": 0.0037337823305279016
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0043",
+      "scene": "04",
+      "round1": {
+        "psnr": 22.501317161915573,
+        "ssim": 0.8773648142814636
+      },
+      "round2": {
+        "psnr": 22.501317161915573,
+        "ssim": 0.8773648142814636
+      },
+      "polar1": {
+        "mean_abs": 0.008630936965346336,
+        "relative_signal_change": 0.019915223121643066,
+        "ratio_gt_0_02": 0.0713719055056572,
+        "ratio_gt_0_05": 0.0038346434012055397
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0044",
+      "scene": "04",
+      "round1": {
+        "psnr": 21.754783657739377,
+        "ssim": 0.8696083426475525
+      },
+      "round2": {
+        "psnr": 21.754783657739377,
+        "ssim": 0.8696083426475525
+      },
+      "polar1": {
+        "mean_abs": 0.008703956380486488,
+        "relative_signal_change": 0.020095916464924812,
+        "ratio_gt_0_02": 0.07370420545339584,
+        "ratio_gt_0_05": 0.0038684187456965446
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0045",
+      "scene": "04",
+      "round1": {
+        "psnr": 22.31981342580226,
+        "ssim": 0.9045254588127136
+      },
+      "round2": {
+        "psnr": 22.31981342580226,
+        "ssim": 0.9045254588127136
+      },
+      "polar1": {
+        "mean_abs": 0.008655679412186146,
+        "relative_signal_change": 0.019507337361574173,
+        "ratio_gt_0_02": 0.07005000859498978,
+        "ratio_gt_0_05": 0.003736042883247137
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0046",
+      "scene": "04",
+      "round1": {
+        "psnr": 19.496653997089638,
+        "ssim": 0.8443005084991455
+      },
+      "round2": {
+        "psnr": 19.496653997089638,
+        "ssim": 0.8443005084991455
+      },
+      "polar1": {
+        "mean_abs": 0.009007615968585014,
+        "relative_signal_change": 0.01959856227040291,
+        "ratio_gt_0_02": 0.0796116515994072,
+        "ratio_gt_0_05": 0.0037977430038154125
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0047",
+      "scene": "04",
+      "round1": {
+        "psnr": 19.161330412936156,
+        "ssim": 0.8729499578475952
+      },
+      "round2": {
+        "psnr": 19.161330412936156,
+        "ssim": 0.8729499578475952
+      },
+      "polar1": {
+        "mean_abs": 0.009065903723239899,
+        "relative_signal_change": 0.019405830651521683,
+        "ratio_gt_0_02": 0.07417625933885574,
+        "ratio_gt_0_05": 0.003314581234008074
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0048",
+      "scene": "04",
+      "round1": {
+        "psnr": 19.462208747223805,
+        "ssim": 0.8796639442443848
+      },
+      "round2": {
+        "psnr": 19.462208747223805,
+        "ssim": 0.8796639442443848
+      },
+      "polar1": {
+        "mean_abs": 0.008875862695276737,
+        "relative_signal_change": 0.019898278638720512,
+        "ratio_gt_0_02": 0.07168904691934586,
+        "ratio_gt_0_05": 0.00325700337998569
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/04/0049",
+      "scene": "04",
+      "round1": {
+        "psnr": 16.137313087586723,
+        "ssim": 0.7637762427330017
+      },
+      "round2": {
+        "psnr": 16.137313087586723,
+        "ssim": 0.7637762427330017
+      },
+      "polar1": {
+        "mean_abs": 0.008923029527068138,
+        "relative_signal_change": 0.020777305588126183,
+        "ratio_gt_0_02": 0.07891393452882767,
+        "ratio_gt_0_05": 0.0034428348299115896
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/05/0000",
+      "scene": "05",
+      "round1": {
+        "psnr": 25.459972780838388,
+        "ssim": 0.8808898329734802
+      },
+      "round2": {
+        "psnr": 25.459972780838388,
+        "ssim": 0.8808898329734802
+      },
+      "polar1": {
+        "mean_abs": 0.007712252903729677,
+        "relative_signal_change": 0.026124142110347748,
+        "ratio_gt_0_02": 0.057920366525650024,
+        "ratio_gt_0_05": 0.005005879793316126
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/05/0001",
+      "scene": "05",
+      "round1": {
+        "psnr": 25.460483287828627,
+        "ssim": 0.8766692876815796
+      },
+      "round2": {
+        "psnr": 25.460483287828627,
+        "ssim": 0.8766692876815796
+      },
+      "polar1": {
+        "mean_abs": 0.007749014999717474,
+        "relative_signal_change": 0.026203447952866554,
+        "ratio_gt_0_02": 0.05959005653858185,
+        "ratio_gt_0_05": 0.0050971005111932755
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/05/0002",
+      "scene": "05",
+      "round1": {
+        "psnr": 22.57432865816061,
+        "ssim": 0.8480036854743958
+      },
+      "round2": {
+        "psnr": 22.57432865816061,
+        "ssim": 0.8480036854743958
+      },
+      "polar1": {
+        "mean_abs": 0.007960474118590355,
+        "relative_signal_change": 0.022945551201701164,
+        "ratio_gt_0_02": 0.05440719053149223,
+        "ratio_gt_0_05": 0.004158102907240391
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/05/0003",
+      "scene": "05",
+      "round1": {
+        "psnr": 21.155538631184175,
+        "ssim": 0.8343983292579651
+      },
+      "round2": {
+        "psnr": 21.155538631184175,
+        "ssim": 0.8343983292579651
+      },
+      "polar1": {
+        "mean_abs": 0.008068839088082314,
+        "relative_signal_change": 0.02207259088754654,
+        "ratio_gt_0_02": 0.055243197828531265,
+        "ratio_gt_0_05": 0.003907712642103434
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/05/0004",
+      "scene": "05",
+      "round1": {
+        "psnr": 27.320313534150536,
+        "ssim": 0.8831800818443298
+      },
+      "round2": {
+        "psnr": 27.320313534150536,
+        "ssim": 0.8831800818443298
+      },
+      "polar1": {
+        "mean_abs": 0.007509408984333277,
+        "relative_signal_change": 0.02855324000120163,
+        "ratio_gt_0_02": 0.05909000709652901,
+        "ratio_gt_0_05": 0.005523681640625
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/05/0005",
+      "scene": "05",
+      "round1": {
+        "psnr": 26.367917327900003,
+        "ssim": 0.8452873229980469
+      },
+      "round2": {
+        "psnr": 26.367917327900003,
+        "ssim": 0.8452873229980469
+      },
+      "polar1": {
+        "mean_abs": 0.007600372191518545,
+        "relative_signal_change": 0.026099620386958122,
+        "ratio_gt_0_02": 0.05680770426988602,
+        "ratio_gt_0_05": 0.004379571415483952
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/05/0006",
+      "scene": "05",
+      "round1": {
+        "psnr": 24.659411105550628,
+        "ssim": 0.8320814371109009
+      },
+      "round2": {
+        "psnr": 24.659411105550628,
+        "ssim": 0.8320814371109009
+      },
+      "polar1": {
+        "mean_abs": 0.00790627021342516,
+        "relative_signal_change": 0.02218349650502205,
+        "ratio_gt_0_02": 0.054745808243751526,
+        "ratio_gt_0_05": 0.002757419366389513
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/05/0007",
+      "scene": "05",
+      "round1": {
+        "psnr": 21.658329570504314,
+        "ssim": 0.7917449474334717
+      },
+      "round2": {
+        "psnr": 21.658329570504314,
+        "ssim": 0.7917449474334717
+      },
+      "polar1": {
+        "mean_abs": 0.008919287472963333,
+        "relative_signal_change": 0.018548835068941116,
+        "ratio_gt_0_02": 0.058192431926727295,
+        "ratio_gt_0_05": 0.0013318030396476388
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/05/0008",
+      "scene": "05",
+      "round1": {
+        "psnr": 20.738520193601317,
+        "ssim": 0.7771855592727661
+      },
+      "round2": {
+        "psnr": 20.738520193601317,
+        "ssim": 0.7771855592727661
+      },
+      "polar1": {
+        "mean_abs": 0.009453919716179371,
+        "relative_signal_change": 0.017373627051711082,
+        "ratio_gt_0_02": 0.05901441350579262,
+        "ratio_gt_0_05": 0.0006651369039900601
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/05/0009",
+      "scene": "05",
+      "round1": {
+        "psnr": 19.728115799693093,
+        "ssim": 0.7581959962844849
+      },
+      "round2": {
+        "psnr": 19.728115799693093,
+        "ssim": 0.7581959962844849
+      },
+      "polar1": {
+        "mean_abs": 0.010181372985243797,
+        "relative_signal_change": 0.016794659197330475,
+        "ratio_gt_0_02": 0.06409921497106552,
+        "ratio_gt_0_05": 0.0005925330333411694
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/05/0010",
+      "scene": "05",
+      "round1": {
+        "psnr": 19.278837221758437,
+        "ssim": 0.7265391945838928
+      },
+      "round2": {
+        "psnr": 19.278837221758437,
+        "ssim": 0.7265391945838928
+      },
+      "polar1": {
+        "mean_abs": 0.010831356048583984,
+        "relative_signal_change": 0.01655169576406479,
+        "ratio_gt_0_02": 0.07040870189666748,
+        "ratio_gt_0_05": 0.0008977752877399325
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/05/0011",
+      "scene": "05",
+      "round1": {
+        "psnr": 19.37537343897601,
+        "ssim": 0.716884970664978
+      },
+      "round2": {
+        "psnr": 19.37537343897601,
+        "ssim": 0.716884970664978
+      },
+      "polar1": {
+        "mean_abs": 0.010948662646114826,
+        "relative_signal_change": 0.01662612333893776,
+        "ratio_gt_0_02": 0.07292337715625763,
+        "ratio_gt_0_05": 0.0010832742555066943
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/05/0012",
+      "scene": "05",
+      "round1": {
+        "psnr": 24.077822837809713,
+        "ssim": 0.842837393283844
+      },
+      "round2": {
+        "psnr": 24.077822837809713,
+        "ssim": 0.842837393283844
+      },
+      "polar1": {
+        "mean_abs": 0.008062542416155338,
+        "relative_signal_change": 0.021617118269205093,
+        "ratio_gt_0_02": 0.05806244909763336,
+        "ratio_gt_0_05": 0.0026217191480100155
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/05/0013",
+      "scene": "05",
+      "round1": {
+        "psnr": 27.01584483831673,
+        "ssim": 0.8624881505966187
+      },
+      "round2": {
+        "psnr": 27.01584483831673,
+        "ssim": 0.8624881505966187
+      },
+      "polar1": {
+        "mean_abs": 0.00769717525690794,
+        "relative_signal_change": 0.026815641671419144,
+        "ratio_gt_0_02": 0.059867244213819504,
+        "ratio_gt_0_05": 0.004867520183324814
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0000",
+      "scene": "06",
+      "round1": {
+        "psnr": 18.26611223756192,
+        "ssim": 0.831325352191925
+      },
+      "round2": {
+        "psnr": 18.26611223756192,
+        "ssim": 0.831325352191925
+      },
+      "polar1": {
+        "mean_abs": 0.008140204474329948,
+        "relative_signal_change": 0.02004537545144558,
+        "ratio_gt_0_02": 0.044038526713848114,
+        "ratio_gt_0_05": 0.006362216547131538
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0001",
+      "scene": "06",
+      "round1": {
+        "psnr": 20.84266310067408,
+        "ssim": 0.809658944606781
+      },
+      "round2": {
+        "psnr": 20.84266310067408,
+        "ssim": 0.809658944606781
+      },
+      "polar1": {
+        "mean_abs": 0.009077128022909164,
+        "relative_signal_change": 0.017531560733914375,
+        "ratio_gt_0_02": 0.03946547582745552,
+        "ratio_gt_0_05": 0.002367406152188778
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0002",
+      "scene": "06",
+      "round1": {
+        "psnr": 21.28685352395675,
+        "ssim": 0.8157536387443542
+      },
+      "round2": {
+        "psnr": 21.28685352395675,
+        "ssim": 0.8157536387443542
+      },
+      "polar1": {
+        "mean_abs": 0.009126914665102959,
+        "relative_signal_change": 0.017269771546125412,
+        "ratio_gt_0_02": 0.03782856464385986,
+        "ratio_gt_0_05": 0.002553436905145645
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0003",
+      "scene": "06",
+      "round1": {
+        "psnr": 20.837934136751425,
+        "ssim": 0.8116740584373474
+      },
+      "round2": {
+        "psnr": 20.837934136751425,
+        "ssim": 0.8116740584373474
+      },
+      "polar1": {
+        "mean_abs": 0.009145745076239109,
+        "relative_signal_change": 0.01703803427517414,
+        "ratio_gt_0_02": 0.03607636317610741,
+        "ratio_gt_0_05": 0.002159633906558156
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0004",
+      "scene": "06",
+      "round1": {
+        "psnr": 20.009650503299234,
+        "ssim": 0.79398113489151
+      },
+      "round2": {
+        "psnr": 20.009650503299234,
+        "ssim": 0.79398113489151
+      },
+      "polar1": {
+        "mean_abs": 0.009072698652744293,
+        "relative_signal_change": 0.017369750887155533,
+        "ratio_gt_0_02": 0.03745816648006439,
+        "ratio_gt_0_05": 0.0029737018048763275
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0005",
+      "scene": "06",
+      "round1": {
+        "psnr": 21.08194337004634,
+        "ssim": 0.8133291006088257
+      },
+      "round2": {
+        "psnr": 21.08194337004634,
+        "ssim": 0.8133291006088257
+      },
+      "polar1": {
+        "mean_abs": 0.008783870376646519,
+        "relative_signal_change": 0.017535559833049774,
+        "ratio_gt_0_02": 0.035090427845716476,
+        "ratio_gt_0_05": 0.003532193601131439
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0006",
+      "scene": "06",
+      "round1": {
+        "psnr": 21.116859901796378,
+        "ssim": 0.8108590841293335
+      },
+      "round2": {
+        "psnr": 21.116859901796378,
+        "ssim": 0.8108590841293335
+      },
+      "polar1": {
+        "mean_abs": 0.008545974269509315,
+        "relative_signal_change": 0.017655499279499054,
+        "ratio_gt_0_02": 0.03297507390379906,
+        "ratio_gt_0_05": 0.0035242149606347084
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0007",
+      "scene": "06",
+      "round1": {
+        "psnr": 21.547312367561634,
+        "ssim": 0.8161641359329224
+      },
+      "round2": {
+        "psnr": 21.547312367561634,
+        "ssim": 0.8161641359329224
+      },
+      "polar1": {
+        "mean_abs": 0.008479681797325611,
+        "relative_signal_change": 0.017828304320573807,
+        "ratio_gt_0_02": 0.032846156507730484,
+        "ratio_gt_0_05": 0.0035883751697838306
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0008",
+      "scene": "06",
+      "round1": {
+        "psnr": 22.078610990067006,
+        "ssim": 0.8211489319801331
+      },
+      "round2": {
+        "psnr": 22.078610990067006,
+        "ssim": 0.8211489319801331
+      },
+      "polar1": {
+        "mean_abs": 0.008590168319642544,
+        "relative_signal_change": 0.018061479553580284,
+        "ratio_gt_0_02": 0.03526562079787254,
+        "ratio_gt_0_05": 0.003605595324188471
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0009",
+      "scene": "06",
+      "round1": {
+        "psnr": 22.525790968219095,
+        "ssim": 0.8293030261993408
+      },
+      "round2": {
+        "psnr": 22.525790968219095,
+        "ssim": 0.8293030261993408
+      },
+      "polar1": {
+        "mean_abs": 0.00843741837888956,
+        "relative_signal_change": 0.01833532191812992,
+        "ratio_gt_0_02": 0.03636565059423447,
+        "ratio_gt_0_05": 0.0036564578767865896
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0010",
+      "scene": "06",
+      "round1": {
+        "psnr": 22.71817168443182,
+        "ssim": 0.8228615522384644
+      },
+      "round2": {
+        "psnr": 22.71817168443182,
+        "ssim": 0.8228615522384644
+      },
+      "polar1": {
+        "mean_abs": 0.008208940736949444,
+        "relative_signal_change": 0.018651925027370453,
+        "ratio_gt_0_02": 0.03767797350883484,
+        "ratio_gt_0_05": 0.003611180232837796
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0011",
+      "scene": "06",
+      "round1": {
+        "psnr": 22.482739797484562,
+        "ssim": 0.8417275547981262
+      },
+      "round2": {
+        "psnr": 22.482739797484562,
+        "ssim": 0.8417275547981262
+      },
+      "polar1": {
+        "mean_abs": 0.007898740470409393,
+        "relative_signal_change": 0.019403858110308647,
+        "ratio_gt_0_02": 0.03866291046142578,
+        "ratio_gt_0_05": 0.0038081149104982615
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0012",
+      "scene": "06",
+      "round1": {
+        "psnr": 22.558378236220193,
+        "ssim": 0.847722053527832
+      },
+      "round2": {
+        "psnr": 22.558378236220193,
+        "ssim": 0.847722053527832
+      },
+      "polar1": {
+        "mean_abs": 0.007736918516457081,
+        "relative_signal_change": 0.019897669553756714,
+        "ratio_gt_0_02": 0.038596559315919876,
+        "ratio_gt_0_05": 0.004138555843383074
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0013",
+      "scene": "06",
+      "round1": {
+        "psnr": 22.57900730253944,
+        "ssim": 0.8516308665275574
+      },
+      "round2": {
+        "psnr": 22.57900730253944,
+        "ssim": 0.8516308665275574
+      },
+      "polar1": {
+        "mean_abs": 0.006927249953150749,
+        "relative_signal_change": 0.022475499659776688,
+        "ratio_gt_0_02": 0.03780004382133484,
+        "ratio_gt_0_05": 0.006053716875612736
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0014",
+      "scene": "06",
+      "round1": {
+        "psnr": 22.937697510306737,
+        "ssim": 0.8598271608352661
+      },
+      "round2": {
+        "psnr": 22.937697510306737,
+        "ssim": 0.8598271608352661
+      },
+      "polar1": {
+        "mean_abs": 0.006700396072119474,
+        "relative_signal_change": 0.023088162764906883,
+        "ratio_gt_0_02": 0.0369560532271862,
+        "ratio_gt_0_05": 0.006234827451407909
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0015",
+      "scene": "06",
+      "round1": {
+        "psnr": 23.83057856514107,
+        "ssim": 0.8753955960273743
+      },
+      "round2": {
+        "psnr": 23.83057856514107,
+        "ssim": 0.8753955960273743
+      },
+      "polar1": {
+        "mean_abs": 0.006003896705806255,
+        "relative_signal_change": 0.024392524734139442,
+        "ratio_gt_0_02": 0.0346306674182415,
+        "ratio_gt_0_05": 0.006440804339945316
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0016",
+      "scene": "06",
+      "round1": {
+        "psnr": 23.779320776385923,
+        "ssim": 0.8790889382362366
+      },
+      "round2": {
+        "psnr": 23.779320776385923,
+        "ssim": 0.8790889382362366
+      },
+      "polar1": {
+        "mean_abs": 0.006146754138171673,
+        "relative_signal_change": 0.024033481255173683,
+        "ratio_gt_0_02": 0.03478943929076195,
+        "ratio_gt_0_05": 0.006243803072720766
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0017",
+      "scene": "06",
+      "round1": {
+        "psnr": 23.478296759323783,
+        "ssim": 0.8642194271087646
+      },
+      "round2": {
+        "psnr": 23.478296759323783,
+        "ssim": 0.8642194271087646
+      },
+      "polar1": {
+        "mean_abs": 0.006668264977633953,
+        "relative_signal_change": 0.02267942763864994,
+        "ratio_gt_0_02": 0.03684880957007408,
+        "ratio_gt_0_05": 0.005480664316564798
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0018",
+      "scene": "06",
+      "round1": {
+        "psnr": 23.16465657306843,
+        "ssim": 0.8562092781066895
+      },
+      "round2": {
+        "psnr": 23.16465657306843,
+        "ssim": 0.8562092781066895
+      },
+      "polar1": {
+        "mean_abs": 0.006859019864350557,
+        "relative_signal_change": 0.022036433219909668,
+        "ratio_gt_0_02": 0.036811713129282,
+        "ratio_gt_0_05": 0.005003818776458502
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0019",
+      "scene": "06",
+      "round1": {
+        "psnr": 22.921154281623526,
+        "ssim": 0.8403429388999939
+      },
+      "round2": {
+        "psnr": 22.921154281623526,
+        "ssim": 0.8403429388999939
+      },
+      "polar1": {
+        "mean_abs": 0.006968334782868624,
+        "relative_signal_change": 0.02092410810291767,
+        "ratio_gt_0_02": 0.036058612167835236,
+        "ratio_gt_0_05": 0.0038578473031520844
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0020",
+      "scene": "06",
+      "round1": {
+        "psnr": 22.85193155545585,
+        "ssim": 0.8404054045677185
+      },
+      "round2": {
+        "psnr": 22.85193155545585,
+        "ssim": 0.8404054045677185
+      },
+      "polar1": {
+        "mean_abs": 0.0071412050165236,
+        "relative_signal_change": 0.02028147503733635,
+        "ratio_gt_0_02": 0.03539752960205078,
+        "ratio_gt_0_05": 0.003618560265749693
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0021",
+      "scene": "06",
+      "round1": {
+        "psnr": 23.208320747746836,
+        "ssim": 0.8538076281547546
+      },
+      "round2": {
+        "psnr": 23.208320747746836,
+        "ssim": 0.8538076281547546
+      },
+      "polar1": {
+        "mean_abs": 0.007001945748925209,
+        "relative_signal_change": 0.020198773592710495,
+        "ratio_gt_0_02": 0.033311765640974045,
+        "ratio_gt_0_05": 0.0036389052402228117
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0022",
+      "scene": "06",
+      "round1": {
+        "psnr": 23.454235349842776,
+        "ssim": 0.8553798198699951
+      },
+      "round2": {
+        "psnr": 23.454235349842776,
+        "ssim": 0.8553798198699951
+      },
+      "polar1": {
+        "mean_abs": 0.006980421952903271,
+        "relative_signal_change": 0.020728034898638725,
+        "ratio_gt_0_02": 0.03511495888233185,
+        "ratio_gt_0_05": 0.0037674913182854652
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0023",
+      "scene": "06",
+      "round1": {
+        "psnr": 23.574658879892645,
+        "ssim": 0.854918360710144
+      },
+      "round2": {
+        "psnr": 23.574658879892645,
+        "ssim": 0.854918360710144
+      },
+      "polar1": {
+        "mean_abs": 0.006878862157464027,
+        "relative_signal_change": 0.02022765576839447,
+        "ratio_gt_0_02": 0.03306948393583298,
+        "ratio_gt_0_05": 0.003744885791093111
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0024",
+      "scene": "06",
+      "round1": {
+        "psnr": 22.777458408001205,
+        "ssim": 0.8472166061401367
+      },
+      "round2": {
+        "psnr": 22.777458408001205,
+        "ssim": 0.8472166061401367
+      },
+      "polar1": {
+        "mean_abs": 0.007032054476439953,
+        "relative_signal_change": 0.01988924853503704,
+        "ratio_gt_0_02": 0.03450467437505722,
+        "ratio_gt_0_05": 0.003867753781378269
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0025",
+      "scene": "06",
+      "round1": {
+        "psnr": 21.625067074182617,
+        "ssim": 0.8227961659431458
+      },
+      "round2": {
+        "psnr": 21.625067074182617,
+        "ssim": 0.8227961659431458
+      },
+      "polar1": {
+        "mean_abs": 0.007292840629816055,
+        "relative_signal_change": 0.019507084041833878,
+        "ratio_gt_0_02": 0.03602949157357216,
+        "ratio_gt_0_05": 0.003918683156371117
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0026",
+      "scene": "06",
+      "round1": {
+        "psnr": 21.202098189648467,
+        "ssim": 0.8446443676948547
+      },
+      "round2": {
+        "psnr": 21.202098189648467,
+        "ssim": 0.8446443676948547
+      },
+      "polar1": {
+        "mean_abs": 0.007638209033757448,
+        "relative_signal_change": 0.020295510068535805,
+        "ratio_gt_0_02": 0.04077640175819397,
+        "ratio_gt_0_05": 0.005462912376970053
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0027",
+      "scene": "06",
+      "round1": {
+        "psnr": 20.559069434998367,
+        "ssim": 0.8080493211746216
+      },
+      "round2": {
+        "psnr": 20.559069434998367,
+        "ssim": 0.8080493211746216
+      },
+      "polar1": {
+        "mean_abs": 0.008294864557683468,
+        "relative_signal_change": 0.02015083096921444,
+        "ratio_gt_0_02": 0.04245314002037048,
+        "ratio_gt_0_05": 0.005683250725269318
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0028",
+      "scene": "06",
+      "round1": {
+        "psnr": 20.284020561375122,
+        "ssim": 0.799257755279541
+      },
+      "round2": {
+        "psnr": 20.284020561375122,
+        "ssim": 0.799257755279541
+      },
+      "polar1": {
+        "mean_abs": 0.009157473221421242,
+        "relative_signal_change": 0.018925407901406288,
+        "ratio_gt_0_02": 0.04719327390193939,
+        "ratio_gt_0_05": 0.004820913076400757
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0029",
+      "scene": "06",
+      "round1": {
+        "psnr": 20.240100945771687,
+        "ssim": 0.7974111437797546
+      },
+      "round2": {
+        "psnr": 20.240100945771687,
+        "ssim": 0.7974111437797546
+      },
+      "polar1": {
+        "mean_abs": 0.009431680664420128,
+        "relative_signal_change": 0.018445149064064026,
+        "ratio_gt_0_02": 0.047895509749650955,
+        "ratio_gt_0_05": 0.00422851275652647
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0030",
+      "scene": "06",
+      "round1": {
+        "psnr": 21.799905956585324,
+        "ssim": 0.8069060444831848
+      },
+      "round2": {
+        "psnr": 21.799905956585324,
+        "ssim": 0.8069060444831848
+      },
+      "polar1": {
+        "mean_abs": 0.009250703267753124,
+        "relative_signal_change": 0.018810709938406944,
+        "ratio_gt_0_02": 0.04543003439903259,
+        "ratio_gt_0_05": 0.004616664722561836
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0031",
+      "scene": "06",
+      "round1": {
+        "psnr": 21.80588182560505,
+        "ssim": 0.7970986366271973
+      },
+      "round2": {
+        "psnr": 21.80588182560505,
+        "ssim": 0.7970986366271973
+      },
+      "polar1": {
+        "mean_abs": 0.009375522844493389,
+        "relative_signal_change": 0.01851683109998703,
+        "ratio_gt_0_02": 0.044043976813554764,
+        "ratio_gt_0_05": 0.004096203483641148
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0032",
+      "scene": "06",
+      "round1": {
+        "psnr": 21.91741124341588,
+        "ssim": 0.8165493011474609
+      },
+      "round2": {
+        "psnr": 21.91741124341588,
+        "ssim": 0.8165493011474609
+      },
+      "polar1": {
+        "mean_abs": 0.008821520023047924,
+        "relative_signal_change": 0.01915682479739189,
+        "ratio_gt_0_02": 0.0406629778444767,
+        "ratio_gt_0_05": 0.004774438217282295
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0033",
+      "scene": "06",
+      "round1": {
+        "psnr": 21.990819390391607,
+        "ssim": 0.8034576177597046
+      },
+      "round2": {
+        "psnr": 21.990819390391607,
+        "ssim": 0.8034576177597046
+      },
+      "polar1": {
+        "mean_abs": 0.008706577122211456,
+        "relative_signal_change": 0.019531993195414543,
+        "ratio_gt_0_02": 0.04256211221218109,
+        "ratio_gt_0_05": 0.004803426563739777
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0034",
+      "scene": "06",
+      "round1": {
+        "psnr": 21.986455411570894,
+        "ssim": 0.8012372255325317
+      },
+      "round2": {
+        "psnr": 21.986455411570894,
+        "ssim": 0.8012372255325317
+      },
+      "polar1": {
+        "mean_abs": 0.008068681694567204,
+        "relative_signal_change": 0.01971244625747204,
+        "ratio_gt_0_02": 0.03732499107718468,
+        "ratio_gt_0_05": 0.0048744347877800465
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0035",
+      "scene": "06",
+      "round1": {
+        "psnr": 22.318239415559464,
+        "ssim": 0.806167483329773
+      },
+      "round2": {
+        "psnr": 22.318239415559464,
+        "ssim": 0.806167483329773
+      },
+      "polar1": {
+        "mean_abs": 0.007333152927458286,
+        "relative_signal_change": 0.020915502682328224,
+        "ratio_gt_0_02": 0.03381979092955589,
+        "ratio_gt_0_05": 0.005127285607159138
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0036",
+      "scene": "06",
+      "round1": {
+        "psnr": 20.247993022235228,
+        "ssim": 0.7784527540206909
+      },
+      "round2": {
+        "psnr": 20.247993022235228,
+        "ssim": 0.7784527540206909
+      },
+      "polar1": {
+        "mean_abs": 0.007236886769533157,
+        "relative_signal_change": 0.021608157083392143,
+        "ratio_gt_0_02": 0.03720458224415779,
+        "ratio_gt_0_05": 0.0053845238871872425
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0037",
+      "scene": "06",
+      "round1": {
+        "psnr": 20.150989177547363,
+        "ssim": 0.7843526601791382
+      },
+      "round2": {
+        "psnr": 20.150989177547363,
+        "ssim": 0.7843526601791382
+      },
+      "polar1": {
+        "mean_abs": 0.0071281916461884975,
+        "relative_signal_change": 0.021679900586605072,
+        "ratio_gt_0_02": 0.03633180633187294,
+        "ratio_gt_0_05": 0.005414243787527084
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0038",
+      "scene": "06",
+      "round1": {
+        "psnr": 20.36162706401406,
+        "ssim": 0.7882174253463745
+      },
+      "round2": {
+        "psnr": 20.36162706401406,
+        "ssim": 0.7882174253463745
+      },
+      "polar1": {
+        "mean_abs": 0.007011982146650553,
+        "relative_signal_change": 0.02178187295794487,
+        "ratio_gt_0_02": 0.03551753982901573,
+        "ratio_gt_0_05": 0.005445359740406275
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0039",
+      "scene": "06",
+      "round1": {
+        "psnr": 22.324430431482124,
+        "ssim": 0.7994537949562073
+      },
+      "round2": {
+        "psnr": 22.324430431482124,
+        "ssim": 0.7994537949562073
+      },
+      "polar1": {
+        "mean_abs": 0.007071810774505138,
+        "relative_signal_change": 0.021496271714568138,
+        "ratio_gt_0_02": 0.03446797654032707,
+        "ratio_gt_0_05": 0.005552736576646566
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0040",
+      "scene": "06",
+      "round1": {
+        "psnr": 20.8882213683558,
+        "ssim": 0.7880971431732178
+      },
+      "round2": {
+        "psnr": 20.8882213683558,
+        "ssim": 0.7880971431732178
+      },
+      "polar1": {
+        "mean_abs": 0.006929419003427029,
+        "relative_signal_change": 0.022117719054222107,
+        "ratio_gt_0_02": 0.03675932064652443,
+        "ratio_gt_0_05": 0.005576007068157196
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0041",
+      "scene": "06",
+      "round1": {
+        "psnr": 21.957528552451265,
+        "ssim": 0.8187942504882812
+      },
+      "round2": {
+        "psnr": 21.957528552451265,
+        "ssim": 0.8187942504882812
+      },
+      "polar1": {
+        "mean_abs": 0.0062371534295380116,
+        "relative_signal_change": 0.022883493453264236,
+        "ratio_gt_0_02": 0.03079535998404026,
+        "ratio_gt_0_05": 0.0054149748757481575
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0042",
+      "scene": "06",
+      "round1": {
+        "psnr": 22.23617746568289,
+        "ssim": 0.8284927010536194
+      },
+      "round2": {
+        "psnr": 22.23617746568289,
+        "ssim": 0.8284927010536194
+      },
+      "polar1": {
+        "mean_abs": 0.005988301709294319,
+        "relative_signal_change": 0.023347482085227966,
+        "ratio_gt_0_02": 0.029949776828289032,
+        "ratio_gt_0_05": 0.005343501456081867
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0043",
+      "scene": "06",
+      "round1": {
+        "psnr": 20.933738036140586,
+        "ssim": 0.8048916459083557
+      },
+      "round2": {
+        "psnr": 20.933738036140586,
+        "ssim": 0.8048916459083557
+      },
+      "polar1": {
+        "mean_abs": 0.0062439399771392345,
+        "relative_signal_change": 0.023424070328474045,
+        "ratio_gt_0_02": 0.033696725964546204,
+        "ratio_gt_0_05": 0.00553684588521719
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0044",
+      "scene": "06",
+      "round1": {
+        "psnr": 20.63899880874546,
+        "ssim": 0.7710864543914795
+      },
+      "round2": {
+        "psnr": 20.63899880874546,
+        "ssim": 0.7710864543914795
+      },
+      "polar1": {
+        "mean_abs": 0.007943034172058105,
+        "relative_signal_change": 0.019697600975632668,
+        "ratio_gt_0_02": 0.03809710592031479,
+        "ratio_gt_0_05": 0.0038650943897664547
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0045",
+      "scene": "06",
+      "round1": {
+        "psnr": 20.123723331005422,
+        "ssim": 0.7663841843605042
+      },
+      "round2": {
+        "psnr": 20.123723331005422,
+        "ssim": 0.7663841843605042
+      },
+      "polar1": {
+        "mean_abs": 0.008242877200245857,
+        "relative_signal_change": 0.019099457189440727,
+        "ratio_gt_0_02": 0.035315487533807755,
+        "ratio_gt_0_05": 0.004115484654903412
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0046",
+      "scene": "06",
+      "round1": {
+        "psnr": 20.703005830661255,
+        "ssim": 0.7753250002861023
+      },
+      "round2": {
+        "psnr": 20.703005830661255,
+        "ssim": 0.7753250002861023
+      },
+      "polar1": {
+        "mean_abs": 0.00849223043769598,
+        "relative_signal_change": 0.018988100811839104,
+        "ratio_gt_0_02": 0.038206279277801514,
+        "ratio_gt_0_05": 0.0044580926187336445
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0047",
+      "scene": "06",
+      "round1": {
+        "psnr": 21.56672064097169,
+        "ssim": 0.7813715934753418
+      },
+      "round2": {
+        "psnr": 21.56672064097169,
+        "ssim": 0.7813715934753418
+      },
+      "polar1": {
+        "mean_abs": 0.007966455072164536,
+        "relative_signal_change": 0.019699065014719963,
+        "ratio_gt_0_02": 0.036933783441782,
+        "ratio_gt_0_05": 0.0046106805093586445
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0048",
+      "scene": "06",
+      "round1": {
+        "psnr": 21.396433728907738,
+        "ssim": 0.7829328179359436
+      },
+      "round2": {
+        "psnr": 21.396433728907738,
+        "ssim": 0.7829328179359436
+      },
+      "polar1": {
+        "mean_abs": 0.008363517001271248,
+        "relative_signal_change": 0.019712243229150772,
+        "ratio_gt_0_02": 0.040431004017591476,
+        "ratio_gt_0_05": 0.0047308895736932755
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0049",
+      "scene": "06",
+      "round1": {
+        "psnr": 21.781621514167707,
+        "ssim": 0.7893719673156738
+      },
+      "round2": {
+        "psnr": 21.781621514167707,
+        "ssim": 0.7893719673156738
+      },
+      "polar1": {
+        "mean_abs": 0.00819304957985878,
+        "relative_signal_change": 0.01995687559247017,
+        "ratio_gt_0_02": 0.040708452463150024,
+        "ratio_gt_0_05": 0.004878956358879805
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0050",
+      "scene": "06",
+      "round1": {
+        "psnr": 22.00097442399977,
+        "ssim": 0.7922981977462769
+      },
+      "round2": {
+        "psnr": 22.00097442399977,
+        "ssim": 0.7922981977462769
+      },
+      "polar1": {
+        "mean_abs": 0.008030422963202,
+        "relative_signal_change": 0.020258110016584396,
+        "ratio_gt_0_02": 0.038682859390974045,
+        "ratio_gt_0_05": 0.004923236556351185
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0051",
+      "scene": "06",
+      "round1": {
+        "psnr": 21.60903204164579,
+        "ssim": 0.7994296550750732
+      },
+      "round2": {
+        "psnr": 21.60903204164579,
+        "ssim": 0.7994296550750732
+      },
+      "polar1": {
+        "mean_abs": 0.0077665639109909534,
+        "relative_signal_change": 0.020747561007738113,
+        "ratio_gt_0_02": 0.03774884715676308,
+        "ratio_gt_0_05": 0.005179344676434994
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0052",
+      "scene": "06",
+      "round1": {
+        "psnr": 21.587189392717136,
+        "ssim": 0.8134660124778748
+      },
+      "round2": {
+        "psnr": 21.587189392717136,
+        "ssim": 0.8134660124778748
+      },
+      "polar1": {
+        "mean_abs": 0.007684614043682814,
+        "relative_signal_change": 0.02088632620871067,
+        "ratio_gt_0_02": 0.037473391741514206,
+        "ratio_gt_0_05": 0.005400281399488449
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0053",
+      "scene": "06",
+      "round1": {
+        "psnr": 21.14058650770382,
+        "ssim": 0.7986676692962646
+      },
+      "round2": {
+        "psnr": 21.14058650770382,
+        "ssim": 0.7986676692962646
+      },
+      "polar1": {
+        "mean_abs": 0.007571717724204063,
+        "relative_signal_change": 0.02118014171719551,
+        "ratio_gt_0_02": 0.03768548369407654,
+        "ratio_gt_0_05": 0.005535516422241926
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0054",
+      "scene": "06",
+      "round1": {
+        "psnr": 20.759156401888763,
+        "ssim": 0.8109117150306702
+      },
+      "round2": {
+        "psnr": 20.759156401888763,
+        "ssim": 0.8109117150306702
+      },
+      "polar1": {
+        "mean_abs": 0.0076596541330218315,
+        "relative_signal_change": 0.02102523110806942,
+        "ratio_gt_0_02": 0.037525251507759094,
+        "ratio_gt_0_05": 0.005521686747670174
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0055",
+      "scene": "06",
+      "round1": {
+        "psnr": 20.624988846709634,
+        "ssim": 0.8262124061584473
+      },
+      "round2": {
+        "psnr": 20.624988846709634,
+        "ssim": 0.8262124061584473
+      },
+      "polar1": {
+        "mean_abs": 0.007656947709619999,
+        "relative_signal_change": 0.02136405184864998,
+        "ratio_gt_0_02": 0.03700578585267067,
+        "ratio_gt_0_05": 0.005809443071484566
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0056",
+      "scene": "06",
+      "round1": {
+        "psnr": 20.258420243058254,
+        "ssim": 0.8394021391868591
+      },
+      "round2": {
+        "psnr": 20.258420243058254,
+        "ssim": 0.8394021391868591
+      },
+      "polar1": {
+        "mean_abs": 0.007570564281195402,
+        "relative_signal_change": 0.021526124328374863,
+        "ratio_gt_0_02": 0.03856118768453598,
+        "ratio_gt_0_05": 0.006032972596585751
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0057",
+      "scene": "06",
+      "round1": {
+        "psnr": 21.807006244603684,
+        "ssim": 0.8690056204795837
+      },
+      "round2": {
+        "psnr": 21.807006244603684,
+        "ssim": 0.8690056204795837
+      },
+      "polar1": {
+        "mean_abs": 0.007261387072503567,
+        "relative_signal_change": 0.021799232810735703,
+        "ratio_gt_0_02": 0.037737078964710236,
+        "ratio_gt_0_05": 0.006018079351633787
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0058",
+      "scene": "06",
+      "round1": {
+        "psnr": 23.259174807476843,
+        "ssim": 0.8840869665145874
+      },
+      "round2": {
+        "psnr": 23.259174807476843,
+        "ssim": 0.8840869665145874
+      },
+      "polar1": {
+        "mean_abs": 0.006823766510933638,
+        "relative_signal_change": 0.02247939445078373,
+        "ratio_gt_0_02": 0.03612203896045685,
+        "ratio_gt_0_05": 0.005958839785307646
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0059",
+      "scene": "06",
+      "round1": {
+        "psnr": 23.619124620289483,
+        "ssim": 0.8974567651748657
+      },
+      "round2": {
+        "psnr": 23.619124620289483,
+        "ssim": 0.8974567651748657
+      },
+      "polar1": {
+        "mean_abs": 0.006503036245703697,
+        "relative_signal_change": 0.02313421666622162,
+        "ratio_gt_0_02": 0.03475892171263695,
+        "ratio_gt_0_05": 0.006046602502465248
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0060",
+      "scene": "06",
+      "round1": {
+        "psnr": 23.247252952606292,
+        "ssim": 0.882828414440155
+      },
+      "round2": {
+        "psnr": 23.247252952606292,
+        "ssim": 0.882828414440155
+      },
+      "polar1": {
+        "mean_abs": 0.00658944109454751,
+        "relative_signal_change": 0.02312086708843708,
+        "ratio_gt_0_02": 0.034974340349435806,
+        "ratio_gt_0_05": 0.0061292462050914764
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0061",
+      "scene": "06",
+      "round1": {
+        "psnr": 23.29794702493672,
+        "ssim": 0.8948717713356018
+      },
+      "round2": {
+        "psnr": 23.29794702493672,
+        "ssim": 0.8948717713356018
+      },
+      "polar1": {
+        "mean_abs": 0.006222281139343977,
+        "relative_signal_change": 0.02358195371925831,
+        "ratio_gt_0_02": 0.0335225947201252,
+        "ratio_gt_0_05": 0.005515703000128269
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0062",
+      "scene": "06",
+      "round1": {
+        "psnr": 23.600290085044733,
+        "ssim": 0.9088999032974243
+      },
+      "round2": {
+        "psnr": 23.600290085044733,
+        "ssim": 0.9088999032974243
+      },
+      "polar1": {
+        "mean_abs": 0.005942763295024633,
+        "relative_signal_change": 0.02440325729548931,
+        "ratio_gt_0_02": 0.03305073454976082,
+        "ratio_gt_0_05": 0.005699207540601492
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0063",
+      "scene": "06",
+      "round1": {
+        "psnr": 24.282402877121513,
+        "ssim": 0.9180530309677124
+      },
+      "round2": {
+        "psnr": 24.282402877121513,
+        "ssim": 0.9180530309677124
+      },
+      "polar1": {
+        "mean_abs": 0.005771204829216003,
+        "relative_signal_change": 0.02464550919830799,
+        "ratio_gt_0_02": 0.03183136135339737,
+        "ratio_gt_0_05": 0.005438976921141148
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/06/0064",
+      "scene": "06",
+      "round1": {
+        "psnr": 25.15166466381682,
+        "ssim": 0.9233584403991699
+      },
+      "round2": {
+        "psnr": 25.15166466381682,
+        "ssim": 0.9233584403991699
+      },
+      "polar1": {
+        "mean_abs": 0.00559461722150445,
+        "relative_signal_change": 0.025074832141399384,
+        "ratio_gt_0_02": 0.031867001205682755,
+        "ratio_gt_0_05": 0.005788965150713921
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/07/0000",
+      "scene": "07",
+      "round1": {
+        "psnr": 27.571156630441035,
+        "ssim": 0.9174538254737854
+      },
+      "round2": {
+        "psnr": 27.571156630441035,
+        "ssim": 0.9174538254737854
+      },
+      "polar1": {
+        "mean_abs": 0.007008127402514219,
+        "relative_signal_change": 0.02182970568537712,
+        "ratio_gt_0_02": 0.01961030252277851,
+        "ratio_gt_0_05": 0.00013470285921357572
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/07/0001",
+      "scene": "07",
+      "round1": {
+        "psnr": 27.85730115473629,
+        "ssim": 0.9122214913368225
+      },
+      "round2": {
+        "psnr": 27.85730115473629,
+        "ssim": 0.9122214913368225
+      },
+      "polar1": {
+        "mean_abs": 0.006983786355704069,
+        "relative_signal_change": 0.021818870678544044,
+        "ratio_gt_0_02": 0.019028274342417717,
+        "ratio_gt_0_05": 0.00012446384062059224
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/07/0002",
+      "scene": "07",
+      "round1": {
+        "psnr": 27.44931638269279,
+        "ssim": 0.9007202386856079
+      },
+      "round2": {
+        "psnr": 27.44931638269279,
+        "ssim": 0.9007202386856079
+      },
+      "polar1": {
+        "mean_abs": 0.007075897883623838,
+        "relative_signal_change": 0.021532870829105377,
+        "ratio_gt_0_02": 0.01928059384226799,
+        "ratio_gt_0_05": 0.00012373249046504498
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/07/0003",
+      "scene": "07",
+      "round1": {
+        "psnr": 27.53611596329837,
+        "ssim": 0.8951236009597778
+      },
+      "round2": {
+        "psnr": 27.53611596329837,
+        "ssim": 0.8951236009597778
+      },
+      "polar1": {
+        "mean_abs": 0.006978072226047516,
+        "relative_signal_change": 0.021788371726870537,
+        "ratio_gt_0_02": 0.01922055520117283,
+        "ratio_gt_0_05": 0.00011648539657471702
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    },
+    {
+      "sample_id": "test/official/07/0004",
+      "scene": "07",
+      "round1": {
+        "psnr": 27.752151014325534,
+        "ssim": 0.9439554214477539
+      },
+      "round2": {
+        "psnr": 27.752151014325534,
+        "ssim": 0.9439554214477539
+      },
+      "polar1": {
+        "mean_abs": 0.006794565822929144,
+        "relative_signal_change": 0.02246229164302349,
+        "ratio_gt_0_02": 0.018351834267377853,
+        "ratio_gt_0_05": 0.00016814586706459522
+      },
+      "polar2": {
+        "mean_abs": 0.0,
+        "relative_signal_change": 0.0,
+        "ratio_gt_0_02": 0.0,
+        "ratio_gt_0_05": 0.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+CPU zero-head and no-GT-leak checks passed
+CPU warmup freeze and separated quality gradients passed
+Traceback (most recent call last):
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_local_acceptance_joint_20261011/scripts/verify.py", line 115, in <module>
+    assert torch.equal(expected,changed.t2) and torch.equal(mask,changed.update_mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

@@ -1,0 +1,8 @@
+{
+  "stage": "interrupted_for_memory_revision",
+  "time_unix": 1791454426.0991309,
+  "additional_step": 0,
+  "target_steps": 10000,
+  "stage_before_interruption": "training",
+  "reason": "Load resume/evaluation checkpoints on CPU to avoid unused CUDA copies; restart from original K1 in a separate immutable run"
+}

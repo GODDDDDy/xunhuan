@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "source_tensors": 526,
+  "frozen_tensors": 518,
+  "all_net_g_equal_source": true,
+  "actual_rounds": {
+    "E": 2,
+    "D": 2
+  },
+  "inherited_judgement_weights_strict_except_7_zero_input_channels": true,
+  "gt_replacement_output_invariant": true,
+  "t1_and_candidate_fixed_after_optimizer_update": true,
+  "action_cost_algebra_exact": true,
+  "optimizer_rng_restore_exact": true,
+  "judgement_gradient_isolated": true,
+  "mask_zero_exact": true,
+  "diagnostic_updates_discarded": true
+}

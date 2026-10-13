@@ -1,0 +1,17 @@
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG19_Weights.IMAGENET1K_V1`. You can also use `weights=VGG19_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+[no_feedback] step 200 |g_TASKSUM|=0.358762 |g_align|=0.00744939 cos(L1,L2)real=0.2396 iso=0.2410 cos(ph1,ph2)=0.4792
+[no_feedback] step 600 |g_TASKSUM|=0.197782 |g_align|=0.0144694 cos(L1,L2)real=0.9826 iso=0.9828 cos(ph1,ph2)=0.9611
+[no_feedback] step 1200 |g_TASKSUM|=0.201769 |g_align|=0.0192095 cos(L1,L2)real=-0.0221 iso=-0.0219 cos(ph1,ph2)=-0.0796
+[no_feedback] step 2000 |g_TASKSUM|=0.338322 |g_align|=0.0141914 cos(L1,L2)real=0.5813 iso=0.5789 cos(ph1,ph2)=0.5676
+[no_feedback] step 2800 |g_TASKSUM|=0.293835 |g_align|=0.00744254 cos(L1,L2)real=0.3178 iso=0.3216 cos(ph1,ph2)=0.3200
+[no_feedback] done (42.9 s)
+[feedback] step 200 |g_TASKSUM|=0.375205 |g_align|=0.00798608 cos(L1,L2)real=0.9662 iso=0.9651 cos(ph1,ph2)=0.3812
+[feedback] step 600 |g_TASKSUM|=0.162984 |g_align|=0.0159728 cos(L1,L2)real=0.9144 iso=0.9124 cos(ph1,ph2)=0.9408
+[feedback] step 1200 |g_TASKSUM|=1.00569 |g_align|=0.0156288 cos(L1,L2)real=0.8598 iso=0.8585 cos(ph1,ph2)=0.8921
+[feedback] step 2000 |g_TASKSUM|=0.401512 |g_align|=0.0164946 cos(L1,L2)real=0.3371 iso=0.3396 cos(ph1,ph2)=0.5385
+[feedback] step 2800 |g_TASKSUM|=0.293011 |g_align|=0.00880591 cos(L1,L2)real=0.9319 iso=0.9317 cos(ph1,ph2)=0.9166
+[feedback] done (88.9 s)
+WROTE /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/phase_objective_20261002/diagnostics/gradient_diagnostics_v2.json

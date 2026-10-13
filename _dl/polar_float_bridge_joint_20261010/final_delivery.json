@@ -1,0 +1,77 @@
+{
+  "completed_utc": "2026-10-10T01:43:00.078975+00:00",
+  "implementation_and_experiment_complete": true,
+  "iteration_benefit_demonstrated": false,
+  "formal_steps": 6000,
+  "all_training_frames": 5440,
+  "validation_frames": 872,
+  "test_frames": 188,
+  "original_size": true,
+  "tiling": false,
+  "source_archive_sha256": "35f9473faf89658e5f86a57a9c8417e1bbbcf9bb965df4a147a9d3f5352f423a",
+  "archive_files_verified": 109,
+  "source_and_final_weight_hashes": {
+    "weights/source_polarfree/net_g_latest.pth": "a230e77fb19827a1ada41e4dc86374dee092e476915d2252841f81dd8c257ca2",
+    "weights/source_polarfree/net_d_latest.pth": "f1d0e9acb244480e5d4ba4b5cee7ba35666fb97d41bccf4659f20911f46f1fb3",
+    "weights/source_polarfree/net_le_dm_latest.pth": "6b98bd2a715d3e669acd99582d9ea37594ff4a2ee7786df86764d8efdafd0546",
+    "pretraining/checkpoints/selected.pt": "a4ecebacba5cfc25546320974a9c37f1cc220c685f1318b3cc290ae4a68e9554",
+    "downstream/checkpoints/final.pt": "90720752bef847f7da3ba73849e0f5aa9ff3bd5b9b9f6c7efc0638b1e4297227"
+  },
+  "test_used_for_selection_or_tuning": false,
+  "matched_control": false,
+  "seeds": 1,
+  "historical_test_exploration": true,
+  "pretraining_reused_not_retrained": true,
+  "gpu_deadline_unix": 1791605047.4916465,
+  "gpu_work_finished": true,
+  "supplements": [
+    {
+      "path": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\实验记录.md",
+      "sha256": "bb02f599e255dfbd09d53163ebcf0e872ccf30967dfc48681cf9764ebbaa05b1"
+    },
+    {
+      "path": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\analysis\\POLAR_FLOAT_BRIDGE_RESULTS_ZH_20261010.md",
+      "sha256": "3acc6a7be652ba96454c572dff343c9d604942ea1f9d10dd2edf32d9a572bbd4"
+    },
+    {
+      "path": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\analysis\\POLAR_FLOAT_BRIDGE_PROTOCOL_ZH_20261010.md",
+      "sha256": "1ef97e5839686bdc3bb9f77b4fd5fd5be393227fe0faf9e38db74d39488c95d8"
+    },
+    {
+      "path": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\polar_float_bridge_joint_20261010\\archive_receipt.json",
+      "sha256": "3f81f631330d038949a79380a73da0172f519b040be3ba3854f756363b9eafd8"
+    },
+    {
+      "path": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\polar_float_bridge_joint_20261010\\interpretation\\saved_checkpoint_audit.json",
+      "sha256": "39f40d1e7428d62ac43c0c948e9e094d8df108861728fea00b7d1da2b1c94df8"
+    },
+    {
+      "path": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\polar_float_bridge_joint_20261010\\interpretation\\result_summary.json",
+      "sha256": "819da356125ce71fdcfb25f7bddc804265d1cb4a63253182cda070152c1bafd3"
+    },
+    {
+      "path": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\polar_float_bridge_joint_20261010\\interpretation\\retention_summary.json",
+      "sha256": "b777f4bc9da4e85f7a98927864542064aa5950724512563c2af4a91bd5c18124"
+    },
+    {
+      "path": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\polar_float_bridge_joint_20261010\\interpretation\\confidence_maps\\test_scene_00.png",
+      "sha256": "d528ea62a5d83405db00c2a343659e59049785c5be721b9d8d4cbe7ab91bdb97"
+    },
+    {
+      "path": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\polar_float_bridge_joint_20261010\\interpretation\\confidence_maps\\validation_scene_01.png",
+      "sha256": "8c88c2fd624e701d476e6d5f6e95de57203272e978c9bbbb3e911ca79cea754b"
+    },
+    {
+      "path": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\polar_float_bridge_joint_20261010\\operations\\audit_saved_checkpoints.py",
+      "sha256": "e861fa9f4b70f16dd84a53b41d69e4a5ebafd0c8c0cb13853048f0fd351f123e"
+    },
+    {
+      "path": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\polar_float_bridge_joint_20261010\\operations\\verify_archive.py",
+      "sha256": "a02f176846836eb96a6a35c3a11c06fe01ec2facdfc61517944af924d4e614d6"
+    },
+    {
+      "path": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\polar_float_bridge_joint_20261010\\interpretation\\render_confidence.py",
+      "sha256": "544628854dd74144f9d9f8130c9fdc89d5e2d8e94b60d609af2f914245c00370"
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+schema_version: 2
+project_root: /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012
+dataset_root: /media/li/data3/Dataset/polargb
+experiment_root: /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/runs/feedback/seed_2026
+official:
+  polarfree_root: /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/weights/polarfree
+  polarapp_dfp_root: /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/deps/DfP
+  dm_config: /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/deps/DfP/configs/dm_config.yaml
+  checkpoint_dir: /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/weights/polarfree
+  expected_checkpoints:
+  - net_g_latest.pth
+  - net_le_dm_latest.pth
+  - net_d_latest.pth
+split:
+  validation_scene_ids:
+  - '01'
+  - '07'
+  - '22'
+  - '30'
+  - '36'
+  - '41'
+  - '55'
+  - '56'
+  expected_train_frames: 5440
+  expected_validation_frames: 872
+  expected_test_frames: 188
+seed: 2026
+groups:
+- A0
+- A1
+- A2
+data:
+  angles:
+  - '000'
+  - '045'
+  - 090
+  - '135'
+  crop_size: 128
+  batch_size: 2
+  workers: 2
+  value_range:
+  - 0.0
+  - 1.0
+model:
+  widths:
+  - 48
+  - 96
+  - 192
+  task_feature_channels:
+  - 96
+  - 96
+  - 192
+  blocks_per_stage: 2
+  group_norm_groups: 8
+  attention_heads: 8
+  attention_window: 8
+  residual_alpha: 0.05
+  frm_lambda_channel: 0.5
+  frm_lambda_spatial: 0.5
+preprocessing:
+  allow_approximation: true
+  approved_max_abs_error: 2.0e-06
+loss:
+  perceptual_weight: 0.1
+  calibration:
+    probe_steps: 20
+    measurement_batches: 8
+    auxiliary_gradient_fraction: 0.1
+    proposal: /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/protocol/original/loss_weight_proposal.json
+  locked: true
+  lambda_feature_alignment: 0.0072643601155340685
+  lambda_residual: 0.5300942749407217
+optimization:
+  optimizer: Adam
+  betas:
+  - 0.9
+  - 0.999
+  weight_decay: 0.0
+  lr_r2p: 0.0001
+  grad_clip: 1.0
+  sanity_steps: 200
+  pilot_steps: 3000
+  extended_steps: 5000
+  validation_steps:
+  - 200
+  - 1000
+  - 2000
+  - 2500
+  - 3000
+  - 4000
+  - 4500
+  - 5000
+validation:
+  proxy_frames_per_scene_difficulty: 2
+  full_steps: []
+decision:
+  equivalence_psnr_db: 0.1
+  equivalence_ssim: 0.001
+  require_two_rising_intervals: true
+  primary_metric: scene_macro_psnr
+  secondary_metric: scene_macro_ssim
+paths:
+  manifest: /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/protocol/manifest.csv
+  split_audit: /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/protocol/original/split_audit.json
+  validation_proxy: /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/protocol/validation_proxy.json
+  weight_audit: /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/runs/feedback/seed_2026/config/weight_audit.json
+  preprocessing_parity: /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/protocol/original/preprocessing_parity.json
+  schedule: /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/protocol/training_schedule.json
+  initial_state: /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/protocol/original/initial_r2p_seed2026.pt
+  initial_state_audit: /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/protocol/original/initial_r2p_seed2026.json
+  outputs: /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/runs/feedback/seed_2026

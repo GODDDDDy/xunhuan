@@ -1,0 +1,19 @@
+{
+  "purpose": "Read-only diagnosis of final enhancer weights on fixed 28 validation images",
+  "training": false,
+  "test_used": false,
+  "original_size": true,
+  "variants": [
+    "standard",
+    "confidence_zero",
+    "confidence_one",
+    "no_feedback"
+  ],
+  "float_candidate": false,
+  "source_checkpoint_sha256": "3be8b40c1f06cc0b9828f6cfc23deaaba6db9a3be1a7a28b6bb4a5cca8fb8d76",
+  "deadline_unix": 1791605047.4916465,
+  "code_sha256": {
+    "watchdog.py": "b017bd662cde5fd06efcbe0c429c344214f914d8c4410c9042899efbef3280df",
+    "diagnose.py": "6c9d30f4648e6aef3f983c2fcfa6f0b5d6b72da8b73ec03d062a0585b456b17f"
+  }
+}

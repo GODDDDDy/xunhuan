@@ -1,0 +1,71 @@
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG19_Weights.IMAGENET1K_V1`. You can also use `weights=VGG19_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Evaluated 25 images
+Evaluated 50 images
+Evaluated 75 images
+Evaluated 100 images
+Evaluated 125 images
+Evaluated 150 images
+Evaluated 175 images
+{
+  "frames": 188,
+  "scenes": 8,
+  "round1": {
+    "image_mean_psnr": 23.50572671008287,
+    "scene_macro_psnr": 25.181134752317178,
+    "image_mean_ssim": 0.8783865212760074,
+    "scene_macro_ssim": 0.8984961732357817
+  },
+  "round2": {
+    "image_mean_psnr": 23.50572671008287,
+    "scene_macro_psnr": 25.181134752317178,
+    "image_mean_ssim": 0.8783865212760074,
+    "scene_macro_ssim": 0.8984961732357817
+  },
+  "iteration_gain": {
+    "image_mean_psnr": 0.0,
+    "scene_macro_psnr": 0.0,
+    "image_mean_ssim": 0.0,
+    "scene_macro_ssim": 0.0
+  },
+  "polar_update": {
+    "polar1": {
+      "mean_abs": 0.004945092399832495,
+      "relative_signal_change": 0.011465378313701837,
+      "ratio_gt_0_02": 0.05098583886617834,
+      "ratio_gt_0_05": 0.008269883637772278
+    },
+    "polar2": {
+      "mean_abs": 0.0,
+      "relative_signal_change": 0.0,
+      "ratio_gt_0_02": 0.0,
+      "ratio_gt_0_05": 0.0
+    }
+  },
+  "image_mean_psnr": 23.50572671008287,
+  "scene_macro_psnr": 25.181134752317178,
+  "image_mean_ssim": 0.8783865212760074,
+  "scene_macro_ssim": 0.8984961732357817,
+  "r2p_relative_l2_drift_from_pidsr": 0.10260849385053869,
+  "feedback_scale": 0.0,
+  "unit_id": "K1_no_alignment_seed2028",
+  "family": "K1_no_alignment",
+  "training_seed": 2028,
+  "evaluation_seed": 2026,
+  "split": "test",
+  "checkpoint_step": 3000,
+  "checkpoint": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/k1_no_alignment_20261003/runs/K1/seed_2028/checkpoints/step_3000.pt",
+  "checkpoint_sha256": "d8f38f444725e51517cd85b1fd2b9dfb631e10f7cef192525f0c247aefc5ae1a",
+  "actual_rounds": 1,
+  "actual_forward_calls": {
+    "r2p": 188,
+    "tasknet": 188
+  },
+  "phase_weight": 0.1,
+  "evaluation_seconds": 287.391494512558,
+  "evaluator_sha256": "779a6ac31db9ec9e245ab6ae1530e93f78085473304367d20d40dce44aeef7df",
+  "protocol_lock_sha256": "684802ffe866b758be2dc4d99cddb86d6625c630fcee3bd1a775f5d64922edf0",
+  "scope": "fixed-checkpoint inference on previously examined test split"
+}

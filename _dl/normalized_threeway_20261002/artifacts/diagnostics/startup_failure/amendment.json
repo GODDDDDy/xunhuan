@@ -1,0 +1,17 @@
+{
+  "reason": "Fixed calibration called the old wrapper protocol helper, omitting matched extension hash.",
+  "repair": "Bind fixed unchanged lambda to base.protocol_id of the matched wrapper.",
+  "optimizer_updates_before_repair": 0,
+  "loss_or_hyperparameter_change": false,
+  "failed_logs_preserved": true,
+  "changed_files": {
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/scripts/run_matched.py": {
+      "before": "2f2749434ba6cd563f4802d1b1649326bfd2e24437e32fd6130d36ce32620f44",
+      "after": "19b14a1bbc1f02cbd17d824b96b5461f79ba33dc26d8424c30276e7378da297b"
+    },
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/scripts/run_queue.py": {
+      "before": "25825580d648da4a07abedb89739be91fe38e731615de9ec1f1456497fabc8cc",
+      "after": "af317ab9fce93887307f1d9be90d6fa3bc52824fd1d22d1c9d22f68c15de7457"
+    }
+  }
+}

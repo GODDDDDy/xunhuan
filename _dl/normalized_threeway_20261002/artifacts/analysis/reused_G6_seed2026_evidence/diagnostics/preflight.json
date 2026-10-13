@@ -1,0 +1,33 @@
+{
+  "bypass_r2p": true,
+  "bypass_nan_probe": {
+    "task_loss_with_nan_r2p": 0.5933567881584167,
+    "task_loss_reference": 0.5933567881584167,
+    "identical": true,
+    "refined_polar_is_raw_input": true
+  },
+  "group": "G6_phase01",
+  "strict_pretrained_load": true,
+  "pretrain_epoch": 42,
+  "pretrained_sha256": "e979881e7d03e3b75d6b9a4e875a29eac2e1a15430582ec319289e6ae32f5541",
+  "output_shape": [
+    2,
+    12,
+    128,
+    128
+  ],
+  "output_min": 0.04313725605607033,
+  "output_max": 0.800000011920929,
+  "task_loss": 0.5933567881584167,
+  "alignment_loss": null,
+  "lambda_feature_alignment": 0.0,
+  "r2p_grad_norm": 0.0,
+  "projection_grad_norm": 0.0,
+  "tasknet_grad_norm": 9.374017715454102,
+  "r2p_has_grad": false,
+  "projection_has_grad": false,
+  "tasknet_has_grad": true,
+  "frozen_prior_has_grad": false,
+  "cuda_peak_memory_bytes": 5614839296,
+  "preflight_problems": []
+}

@@ -1,0 +1,38 @@
+{
+  "step": 18000,
+  "sha256": "a4ecebacba5cfc25546320974a9c37f1cc220c685f1318b3cc290ae4a68e9554",
+  "validation_psnr": 36.17466267471728,
+  "selection": "best validation mean angle PSNR",
+  "updates": 19000,
+  "test_read_for_selection": false,
+  "convergence": {
+    "enabled": true,
+    "stable": true,
+    "step": 19000,
+    "minimum_steps": 16000,
+    "maximum_steps": 20000,
+    "rule": {
+      "minimum_steps": 16000,
+      "window": 4,
+      "psnr_span_db": 0.15,
+      "psnr_slope_db_per_1000": 0.025,
+      "recovery_loss_relative_span": 0.03,
+      "selection": "stability heuristic on validation only"
+    },
+    "test_used": false,
+    "interpretation": "validation stability only; no guarantee of global or distributional convergence",
+    "validation_steps": [
+      16000,
+      17000,
+      18000,
+      19000
+    ],
+    "psnr_span": 0.12643755802919543,
+    "psnr_slope_db_per_1000": 0.01684977542204229,
+    "recovery_loss_relative_span": 0.014072345406609656,
+    "reason": "validation stabilized",
+    "time_limit_reached": false
+  },
+  "parent_protocol_id": "61fefac1e5772ce453560490cbfa14c12c1114b25a0bb9ff5ddf63ffd46b0db3",
+  "selected_checkpoint_protocol_id": "576f788b73218610533cddb66089d3e0c0910f9aa97604a376c9692d71634007"
+}

@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012/scripts/gain_controller.py", line 44, in <module>
+    try:run()
+        ^^^^^
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012/scripts/gain_controller.py", line 37, in run
+    status('plan_locked',protocol_id=cfg['protocol_id'],judgement_steps=3000,deadline_unix=budget['deadline_unix']);stage('diagnostic')
+                                                                                                                    ^^^^^^^^^^^^^^^^^^^
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012/scripts/gain_controller.py", line 14, in stage
+    if p.returncode:raise RuntimeError(f'{action} failed with exit {p.returncode}')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: diagnostic failed with exit 1

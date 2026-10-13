@@ -1,0 +1,26 @@
+{
+  "protocol_id": "40782ff44b8cf1e5011d9e247e9739d94a90d6977895bbcee74b5f431abd91ad",
+  "actual_forward_calls": {
+    "r2p": 2,
+    "tasknet": 2
+  },
+  "image_feedback_enabled": true,
+  "confidence_enabled": false,
+  "source_K1_sha256": "f87e8b75d1335c7ae979ee563cac14270258c130ac2953a5903b7eb7de647b64",
+  "second_condition_equals_clamped_T1": true,
+  "round2_loss_to_T1_image_grad_norm": 0.00040183207602240145,
+  "round2_loss_to_T1_image_grad_finite": true,
+  "polar_round_difference": 0.005574825219810009,
+  "task_round_difference": 0.0004362327163107693,
+  "lambda_feature_alignment": 0.030651881051471687,
+  "grad_norm_r2p": 0.02076409012079239,
+  "grad_norm_projections": 0.00779389264062047,
+  "grad_norm_net_g": 1.1933166980743408,
+  "forward_finite": true,
+  "backward_finite": true,
+  "diffusion_prior_frozen": true,
+  "unused_feature_feedback_has_no_grad": true,
+  "deterministic_forward": true,
+  "peak_vram_mb": 5768.07861328125,
+  "passed": true
+}

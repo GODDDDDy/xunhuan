@@ -1,0 +1,91 @@
+ 
+ 
+ 
+ 
+ 
+ CVPR 2019 Open Access Repository 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+ 
+ 
+ CVPR 2019 open access 
+
+
+ 
+These CVPR 2019 papers are the Open Access versions, provided by the Computer Vision Foundation. Except for the watermark, they are identical to the accepted versions; the final published version of the proceedings is available on IEEE Xplore.
+
+ 
+This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked by each author's copyright. 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+ 
+ 
+ 
+ 
+Uncertainty Guided Multi-Scale Residual Learning-Using a Cycle Spinning CNN for Single Image De-Raining
+
+ 
+ Rajeev Yasarla, Vishal M. Patel ; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2019, pp. 8405-8414
+
+ 
+ Abstract 
+ 
+ 
+Single image de-raining is an extremely challenging problem since the rainy image may contain rain streaks which may vary in size, direction and density. Previous approaches have attempted to address this problem by leveraging some prior information to remove rain streaks from a single image. One of the major limitations of these approaches is that they do not consider the location information of rain drops in the image. The proposed Uncertainty guided Multi-scale Residual Learning (UMRL) network attempts to address this issue by learning the rain content at different scales and using them to estimate the final de-rained output. In addition, we introduce a technique which guides the network to learn the network weights based on the confidence measure about the estimate. Furthermore, we introduce a new training and testing procedure based on the notion of cycle spinning to improve the final de-raining performance. Extensive experiments on synthetic and real datasets to demonstrate that the proposed method achieves significant improvements over the recent state-of-the-art methods.
+
+ 
+ Related Material 
+ 
+ 
+[ pdf ]
+[ supp ]
+ [ bibtex ]
+ 
+@InProceedings{Yasarla_2019_CVPR, 
+author = {Yasarla, Rajeev and Patel, Vishal M.}, 
+title = {Uncertainty Guided Multi-Scale Residual Learning-Using a Cycle Spinning CNN for Single Image De-Raining}, 
+booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, 
+month = {June}, 
+year = {2019} 
+}
+
+
+
+
+ 
+ 
+
+
+ 
+ 
+
+

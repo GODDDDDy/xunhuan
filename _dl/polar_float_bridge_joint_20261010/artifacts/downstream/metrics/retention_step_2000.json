@@ -1,0 +1,156 @@
+{
+  "step": 2000,
+  "frames": 28,
+  "per_image": [
+    {
+      "sample_id": "validation/easy/01/0000",
+      "psnr": 33.15131771931955,
+      "ssim": 0.9726466536521912
+    },
+    {
+      "sample_id": "validation/easy/01/0010",
+      "psnr": 30.947257726936,
+      "ssim": 0.964029848575592
+    },
+    {
+      "sample_id": "validation/hard/01/0000",
+      "psnr": 30.617972098801218,
+      "ssim": 0.9685277938842773
+    },
+    {
+      "sample_id": "validation/hard/01/0021",
+      "psnr": 25.181903651110883,
+      "ssim": 0.9294623732566833
+    },
+    {
+      "sample_id": "validation/easy/07/0000",
+      "psnr": 19.257773509845563,
+      "ssim": 0.9324102401733398
+    },
+    {
+      "sample_id": "validation/easy/07/0012",
+      "psnr": 19.129459095042662,
+      "ssim": 0.934962809085846
+    },
+    {
+      "sample_id": "validation/hard/07/0000",
+      "psnr": 19.078513709936978,
+      "ssim": 0.9346622824668884
+    },
+    {
+      "sample_id": "validation/hard/07/0041",
+      "psnr": 21.22310900889581,
+      "ssim": 0.93011075258255
+    },
+    {
+      "sample_id": "validation/easy/22/0000",
+      "psnr": 31.92769060205137,
+      "ssim": 0.97304767370224
+    },
+    {
+      "sample_id": "validation/easy/22/0092",
+      "psnr": 27.407236348355873,
+      "ssim": 0.9428093433380127
+    },
+    {
+      "sample_id": "validation/hard/22/0000",
+      "psnr": 29.53797483301554,
+      "ssim": 0.9528558254241943
+    },
+    {
+      "sample_id": "validation/hard/22/0025",
+      "psnr": 27.243920662232046,
+      "ssim": 0.951140284538269
+    },
+    {
+      "sample_id": "validation/easy/30/0000",
+      "psnr": 28.84188255532811,
+      "ssim": 0.9485328197479248
+    },
+    {
+      "sample_id": "validation/easy/30/0047",
+      "psnr": 25.41537513725902,
+      "ssim": 0.9044985771179199
+    },
+    {
+      "sample_id": "validation/hard/30/0000",
+      "psnr": 26.255001441568638,
+      "ssim": 0.9171437621116638
+    },
+    {
+      "sample_id": "validation/hard/30/0111",
+      "psnr": 27.192748333561592,
+      "ssim": 0.9302367568016052
+    },
+    {
+      "sample_id": "validation/easy/36/0000",
+      "psnr": 32.412785767352695,
+      "ssim": 0.9615530371665955
+    },
+    {
+      "sample_id": "validation/easy/36/0054",
+      "psnr": 31.245907262544286,
+      "ssim": 0.9385233521461487
+    },
+    {
+      "sample_id": "validation/hard/36/0000",
+      "psnr": 34.0621635331545,
+      "ssim": 0.9704659581184387
+    },
+    {
+      "sample_id": "validation/hard/36/0018",
+      "psnr": 30.69460769617628,
+      "ssim": 0.9380086064338684
+    },
+    {
+      "sample_id": "validation/easy/41/0000",
+      "psnr": 35.09384354437052,
+      "ssim": 0.989146888256073
+    },
+    {
+      "sample_id": "validation/easy/41/0067",
+      "psnr": 23.036387174139065,
+      "ssim": 0.685272753238678
+    },
+    {
+      "sample_id": "validation/hard/41/0000",
+      "psnr": 24.43527045542742,
+      "ssim": 0.7729868292808533
+    },
+    {
+      "sample_id": "validation/hard/41/0078",
+      "psnr": 25.33824709166285,
+      "ssim": 0.7893816232681274
+    },
+    {
+      "sample_id": "validation/easy/55/0000",
+      "psnr": 20.31093173977226,
+      "ssim": 0.9084411263465881
+    },
+    {
+      "sample_id": "validation/easy/55/0219",
+      "psnr": 21.809762424836094,
+      "ssim": 0.9052412509918213
+    },
+    {
+      "sample_id": "validation/hard/56/0000",
+      "psnr": 24.081387112081963,
+      "ssim": 0.9366198182106018
+    },
+    {
+      "sample_id": "validation/hard/56/0063",
+      "psnr": 14.692263581677416,
+      "ssim": 0.6192128658294678
+    }
+  ],
+  "psnr": 26.415096207730578,
+  "ssim": 0.9107832823480878,
+  "input": "raw P0 and original RGB, enhancer bypassed",
+  "original_size": true,
+  "paired_noise": true,
+  "test_used": false,
+  "used_for_weight_selection": false,
+  "psnr_change_from_official": 0.4414559640532225,
+  "ssim_change_from_official": 0.0033884708370480743,
+  "net_g_relative_l2_drift": 0.001248861044447756
+}

@@ -1,0 +1,215 @@
+{
+  "created_at_unix": 1791864701.409993,
+  "run": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_objective_audit_20261013_120028",
+  "source22": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012",
+  "stage": "A0",
+  "verified": true,
+  "files": [
+    {
+      "name": "judgement.npz",
+      "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012/diagnostics/feature_cache/judgement.npz",
+      "bytes": 23095877,
+      "sha256": "ccd747f96b6318c881f02c167b8a17a8acf31167450147c367da438926ec7c8d",
+      "ok": true
+    },
+    {
+      "name": "bias.npz",
+      "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012/diagnostics/feature_cache/bias.npz",
+      "bytes": 11546391,
+      "sha256": "9c37ffea74006667de50228941f8976c2c826d3dc0187ffdf4c720df634c6cdc",
+      "ok": true
+    },
+    {
+      "name": "safety.npz",
+      "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012/diagnostics/feature_cache/safety.npz",
+      "bytes": 23087905,
+      "sha256": "766a741d911a079fdf7d969df0ff56ff1cde4c8c7698260344a5333ce3a91d8f",
+      "ok": true
+    },
+    {
+      "name": "final.pt_22nd",
+      "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012/downstream/checkpoints/final.pt",
+      "bytes": 99787162,
+      "sha256": "279d0a329d0efebee9678c2156bf3e7b60c0646e75a5f37f8015c7b100f9e9a2",
+      "ok": true
+    },
+    {
+      "name": "reused_final.pt_21st",
+      "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012/weights/reused_final.pt",
+      "bytes": 99779098,
+      "sha256": "cecdcfa47d290b0a2d6b662b96bb4407a7043ef5789e9e87d70768f2c683916d",
+      "ok": true
+    },
+    {
+      "name": "manifest.csv",
+      "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012/config/manifest.csv",
+      "bytes": 2765679,
+      "sha256": "a00caa099b6e4dd3dcc16df494574d42a97b2b84c51ff84d8580c8685d252ad4",
+      "ok": true
+    },
+    {
+      "name": "locked_run.json",
+      "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012/config/locked_run.json",
+      "bytes": 33429,
+      "sha256": "8c5d4784fd21897db47e1fb5391c9252315341fde9ab658a612a8fb662ccb66a",
+      "ok": true
+    },
+    {
+      "name": "cache_receipt.json",
+      "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012/recovery/cache_receipt.json",
+      "bytes": 255,
+      "sha256": "ecdc3d696f4c1b7a460da02f74dedd52a206b54ae2e11885b3bae0ac0f0c64ee",
+      "ok": true
+    }
+  ],
+  "role_scenes": {
+    "judgement": [
+      "03",
+      "13",
+      "14",
+      "15",
+      "20",
+      "21",
+      "31",
+      "38",
+      "43",
+      "48",
+      "50",
+      "53"
+    ],
+    "bias": [
+      "11",
+      "39",
+      "40",
+      "58"
+    ],
+    "safety": [
+      "04",
+      "17",
+      "33",
+      "34"
+    ]
+  },
+  "role_scenes_disjoint": true,
+  "label_scale": {
+    "generation_code": "gain22.crop_records -> y = action_costs(...)[:,1:] / model.cost_scale",
+    "model.cost_scale_source": "staged.components -> source=21st final checkpoint (weights/reused_final.pt)['cost_scale']",
+    "scale_22nd_calibration": 0.000934407114982605,
+    "scale_21st_action_calibration_json": 0.000934407114982605,
+    "scale_21st_checkpoint_field": 0.000934407114982605,
+    "checkpoint_load_error": null,
+    "scale_used_for_cache_labels": 0.000934407114982605,
+    "documented_21st_scale_reference": "21st run downstream config action_calibration.json (see POLAR_ERROR_GUIDED_SHORT_RESULTS)",
+    "scale_verified": true,
+    "scale_differs_from_22nd": false,
+    "explanation_if_identical": "The 21st and 22nd cost scales coincide because T1 and the candidate delta are frozen and identical across both runs; the 95th-percentile absolute action-cost statistic therefore has the same numeric value. Verified by reading both sources, not assumed."
+  },
+  "cache_structure": {
+    "judgement": {
+      "x": {
+        "shape": [
+          65536,
+          50
+        ],
+        "dtype": "float32",
+        "finite": true,
+        "min": -2.9089741706848145,
+        "max": 3.269700765609741
+      },
+      "y": {
+        "shape": [
+          65536,
+          3
+        ],
+        "dtype": "float32",
+        "finite": true,
+        "min": -53.17706298828125,
+        "max": 133.9631805419922
+      },
+      "scene": {
+        "shape": [
+          65536
+        ],
+        "dtype": "<U2"
+      },
+      "files": [
+        "x",
+        "legacy",
+        "y",
+        "scene"
+      ]
+    },
+    "bias": {
+      "x": {
+        "shape": [
+          32768,
+          50
+        ],
+        "dtype": "float32",
+        "finite": true,
+        "min": -2.3727941513061523,
+        "max": 2.595738410949707
+      },
+      "y": {
+        "shape": [
+          32768,
+          3
+        ],
+        "dtype": "float32",
+        "finite": true,
+        "min": -21.846038818359375,
+        "max": 31.1359920501709
+      },
+      "scene": {
+        "shape": [
+          32768
+        ],
+        "dtype": "<U2"
+      },
+      "files": [
+        "x",
+        "legacy",
+        "y",
+        "scene"
+      ]
+    },
+    "safety": {
+      "x": {
+        "shape": [
+          65536,
+          50
+        ],
+        "dtype": "float32",
+        "finite": true,
+        "min": -2.558448553085327,
+        "max": 3.0379726886749268
+      },
+      "y": {
+        "shape": [
+          65536,
+          3
+        ],
+        "dtype": "float32",
+        "finite": true,
+        "min": -67.30754852294922,
+        "max": 45.75089645385742
+      },
+      "scene": {
+        "shape": [
+          65536
+        ],
+        "dtype": "<U2"
+      },
+      "files": [
+        "x",
+        "legacy",
+        "y",
+        "scene"
+      ]
+    }
+  },
+  "channel_stats_role": "judgement_training_cache_only",
+  "no_test_read": true,
+  "no_validation_read": true,
+  "no_gpu": true
+}

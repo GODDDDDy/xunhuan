@@ -1,0 +1,175 @@
+{
+  "time_unix": 1791562652.583982,
+  "status": {
+    "stage": "downstream_training",
+    "time_unix": 1791562614.8380156,
+    "step": 6000,
+    "target_steps": 8000
+  },
+  "budget": {
+    "start_unix": 1791518647.4916465,
+    "deadline_unix": 1791605047.4916465,
+    "process_group": 3926206,
+    "device": "server RTX3080Ti",
+    "hours": 24,
+    "starts_at": "first GPU preflight"
+  },
+  "watchdog": {
+    "pid": 3926207,
+    "deadline_unix": 1791605047.4916465
+  },
+  "code_hash_mismatches": [],
+  "processes": [
+    {
+      "pid": 3926206,
+      "ppid": 1,
+      "pgid": 3926206,
+      "state": "S",
+      "cmd": "/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/bin/python -u /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/scripts/controller.py --resume-run "
+    },
+    {
+      "pid": 3926207,
+      "ppid": 3926206,
+      "pgid": 3926207,
+      "state": "S",
+      "cmd": "/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/bin/python /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/scripts/watchdog.py "
+    },
+    {
+      "pid": 4086217,
+      "ppid": 3926206,
+      "pgid": 3926206,
+      "state": "R",
+      "cmd": "/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/bin/python /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/scripts/run_stage.py training "
+    },
+    {
+      "pid": 4086296,
+      "ppid": 4086217,
+      "pgid": 3926206,
+      "state": "S",
+      "cmd": "/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/bin/python /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/scripts/run_stage.py training "
+    },
+    {
+      "pid": 4086300,
+      "ppid": 4086217,
+      "pgid": 3926206,
+      "state": "S",
+      "cmd": "/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/bin/python /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/scripts/run_stage.py training "
+    }
+  ],
+  "downstream_steps": 6000,
+  "last_training_row": {
+    "step": "6000",
+    "loss": "-3.193997383117676",
+    "task": "0.3624606430530548",
+    "alignment": "0.5498563647270203",
+    "quality": "-3.55824875831604",
+    "grad_norm": "3.990133285522461",
+    "seconds": "1.3225718010216951",
+    "sample_ids": "train/easy/26/0078;train/easy/39/0016",
+    "tasknet_trainable": "True",
+    "correction_lr": "2e-05",
+    "interfaces_lr": "0.0001",
+    "task_lr": "1e-06"
+  },
+  "last_100_finite": true,
+  "lr_schedule_mismatches": [],
+  "retention": [
+    {
+      "step": 0,
+      "frames": 28,
+      "psnr": 25.973640243677355,
+      "ssim": 0.9073948115110397,
+      "input": "raw P0 and original RGB, enhancer bypassed",
+      "original_size": true,
+      "paired_noise": true,
+      "test_used": false,
+      "used_for_weight_selection": false,
+      "net_g_relative_l2_drift": 0.0
+    },
+    {
+      "step": 500,
+      "frames": 28,
+      "psnr": 25.973640243677355,
+      "ssim": 0.9073948115110397,
+      "input": "raw P0 and original RGB, enhancer bypassed",
+      "original_size": true,
+      "paired_noise": true,
+      "test_used": false,
+      "used_for_weight_selection": false,
+      "psnr_change_from_official": 0.0,
+      "ssim_change_from_official": 0.0,
+      "net_g_relative_l2_drift": 0.0
+    },
+    {
+      "step": 1000,
+      "frames": 28,
+      "psnr": 26.15241666076894,
+      "ssim": 0.9090250432491302,
+      "input": "raw P0 and original RGB, enhancer bypassed",
+      "original_size": true,
+      "paired_noise": true,
+      "test_used": false,
+      "used_for_weight_selection": false,
+      "psnr_change_from_official": 0.17877641709158354,
+      "ssim_change_from_official": 0.0016302317380905151,
+      "net_g_relative_l2_drift": 0.0004644602840446536
+    },
+    {
+      "step": 2000,
+      "frames": 28,
+      "psnr": 26.414244498997657,
+      "ssim": 0.9108257506574903,
+      "input": "raw P0 and original RGB, enhancer bypassed",
+      "original_size": true,
+      "paired_noise": true,
+      "test_used": false,
+      "used_for_weight_selection": false,
+      "psnr_change_from_official": 0.44060425532030223,
+      "ssim_change_from_official": 0.00343093914645054,
+      "net_g_relative_l2_drift": 0.001276839539651989
+    },
+    {
+      "step": 3000,
+      "frames": 28,
+      "psnr": 26.557846878923264,
+      "ssim": 0.911609736936433,
+      "input": "raw P0 and original RGB, enhancer bypassed",
+      "original_size": true,
+      "paired_noise": true,
+      "test_used": false,
+      "used_for_weight_selection": false,
+      "psnr_change_from_official": 0.5842066352459092,
+      "ssim_change_from_official": 0.004214925425393257,
+      "net_g_relative_l2_drift": 0.0019535242134901083
+    },
+    {
+      "step": 4000,
+      "frames": 28,
+      "psnr": 26.695159826562364,
+      "ssim": 0.9122853726148605,
+      "input": "raw P0 and original RGB, enhancer bypassed",
+      "original_size": true,
+      "paired_noise": true,
+      "test_used": false,
+      "used_for_weight_selection": false,
+      "psnr_change_from_official": 0.7215195828850085,
+      "ssim_change_from_official": 0.004890561103820801,
+      "net_g_relative_l2_drift": 0.002646235610687083
+    },
+    {
+      "step": 5000,
+      "frames": 28,
+      "psnr": 26.772694424138,
+      "ssim": 0.9125623234680721,
+      "input": "raw P0 and original RGB, enhancer bypassed",
+      "original_size": true,
+      "paired_noise": true,
+      "test_used": false,
+      "used_for_weight_selection": false,
+      "psnr_change_from_official": 0.7990541804606437,
+      "ssim_change_from_official": 0.005167511957032356,
+      "net_g_relative_l2_drift": 0.0033213774036113925
+    }
+  ],
+  "gpu": "NVIDIA GeForce RTX 3080 Ti, 11569 MiB, 100 %"
+}

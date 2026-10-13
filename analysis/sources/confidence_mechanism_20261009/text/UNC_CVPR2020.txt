@@ -1,0 +1,1101 @@
+=== PDF PAGE 1 ===
+Uncertainty-Aware CNNs for Depth Completion:
+Uncertainty from Beginning to End
+Abdelrahman Eldesokey Michael Felsberg Karl Holmquist Michael Persson
+Computer Vision Laboratory, Link  ̈oping University, Sweden
+Abstract
+The focus in deep learning research has been mostly to
+push the limits of prediction accuracy. However , this was
+often achieved at the cost of increased complexity, rais-
+ing concerns about the interpretability and the reliability of
+deep networks. Recently, an increasing attention has been
+given to untangling the complexity of deep networks and
+quantifying their uncertainty for different computer vision
+tasks. Differently, the task of depth completion has not re-
+ceived enough attention despite the inherent noisy nature of
+depth sensors. In this work, we thus focus on modeling the
+uncertainty of depth data in depth completion starting from
+the sparse noisy input all the way to the final prediction.
+We propose a novel approach to identify disturbed mea-
+surements in the input by learning an input confidence es-
+timator in a self-supervised manner based on the normal-
+ized convolutional neural networks (NCNNs). Further , we
+propose a probabilistic version of NCNNs that produces a
+statistically meaningful uncertainty measure for the final
+prediction. When we evaluate our approach on the KITTI
+dataset for depth completion, we outperform all the exist-
+ing Bayesian Deep Learning approaches in terms of pre-
+diction accuracy, quality of the uncertainty measure, and
+the computational efficiency. Moreover , our small network
+with 670k parameters performs on-par with conventional
+approaches with millions of parameters. These results give
+strong evidence that separating the network into parallel
+uncertainty and prediction streams leads to state-of-the-art
+performance with accurate uncertainty estimates.
+1. Introduction
+The recent surge of deep neural networks (DNNs) has
+led to remarkable breakthroughs on several computer vision
+tasks, e.g. object classification and detection [
+31, 25, 22, 2],
+semantic segmentation [37, 30], and object tracking [ 6, 34].
+However, this was achieved at the cost of increased model
+complexity, inducing new concerns such as: how do these
+black-box models infer their predictions? and how certain
+are they about these predictions? Failing to address these
+concerns impairs the reliability of DNNs. For instance,
+NCNN
+(a)
+ (b)
+NCNN NCNN
+Disturbed Input
+GT
+Binary Input 
+Confidence
+Estimated Input 
+Confidence
+Estimated Input 
+Confidence
+ෝy c
+L
+E
+ෝy c
+L
+E
+ෝy c
+L
+E
+c
+0
+c
+0
+c
+0
+Threshold
+h(x)
+h(x)
+(c)
+RGB
+Low High
+Figure 1. The confidence c0 for the input data is usually unknown.
+NCNNs [8] assume binary input confidence, which leads to severe
+artifacts (a). We propose to learn the input confidence in a self-
+supervised manner, which leads to improved prediction (b). How-
+ever, the output confidence cL is not strongly correlated with the
+error E. Therefore, we propose a probabilistic version of NCNN
+that produces a proper output uncertainty measure (c).
+Huang et al. [13] showed that it is possible to fool state-
+of-the-art object detectors to produce false and highly cer-
+tain predictions using physical and digital manipulations.
+Therefore, there is a compelling need for investigating in-
+terpretability and uncertainty of DNNs to be able to trust
+them in safety-critical environments.
+Recently, a growing attention was given towards untan-
+gling the complexity of DNNs to enhance their reliability by
+analyzing how they make predictions and quantifying the
+uncertainty of these predictions. Probabilistic approaches
+such as Bayesian deep learning (BDL) have contributed to
+this endeavor by modifying DNNs to output the parame-
+ters of a probabilistic distribution, e.g. mean and variance,
+which yields uncertainty information about the predictions
+[
+18]. The availability of a reliable uncertainty measure fa-
+cilitates the understanding of DNNs and applying safety
+procedures in case of model failure or high uncertainty.
+Several BDL approaches were proposed for different com-
+puter vision tasks such as object classification and segmen-
+12014
+
+
+=== PDF PAGE 2 ===
+tation [9, 20, 18], optical flow [15, 10], and object detection
+[21, 5]. All these approaches assume undisturbed dense in-
+put images, but to the best of our knowledge, there exist no
+statistical approach that addresses sparse problems.
+An essential task of this type is scene depth completion .
+Modeling uncertainty for this task is crucial due to the in-
+herent noisy and sparse nature of depth sensors, caused by
+multi-path interference and depth ambiguities [
+11]. Previ-
+ous approaches proposed to learn some intermediate confi-
+dence masks to mitigate the impact of disturbed measure-
+ments inside their networks [
+28, 33, 36]. However, none of
+these approaches has demonstrated the probabilistic valid-
+ity of the intermediate confidence masks. Moreover, they
+do not provide an uncertainty measure for the final predic-
+tion. Therefore, it is still an open problem to fully model the
+uncertainty in DNN approaches to scene depth completion.
+Gustafsson et al. [
+12] made an attempt by evaluating
+two of the existing BDL approaches for dense regression
+problems, i.e. MC-Dropout [
+9] and ensembling [ 20], on
+the task of depth completion. They utilized the Sparse-to-
+Dense network [
+24] as a baseline and modified it to estimate
+the parameters of a Gaussian distribution. Experiments on
+the KITTI-Depth dataset [
+32] showed that both approaches
+can produce high-quality uncertainty maps for the final pre-
+diction, but with the prediction accuracy severely degraded
+compared to the baseline model. Besides, both approaches
+train an ensemble of the baseline model requiring multiple
+inferences during test time. This leads to computational and
+memory overhead making these approaches unsuitable for
+the task of depth completion in practice due to their poor
+prediction accuracy and computational inefficiency.
+Specifically designed for confidence-accompanied and
+sparse data are the normalized convolutional neural net-
+works (NCNNs) [
+7, 8]. NCNNs consist of a serialization
+of confidence-equipped convolution layers that make use of
+an input confidence map. These layers produce the output
+of the convolution operation as well as an output confidence
+that is propagated to the following layer. When applied to
+the problem of depth completion, input confidences at the
+first layer are assumed to be binary following [
+32], ones
+at valid input points and zeros otherwise. However, this as-
+sumption is problematic since depth data can be disturbed as
+noted in the KITTI-Depth dataset [
+28]. Therefore, the use of
+binary masks for modeling input uncertainty in NCNNs be-
+comes inappropriate, and hinders their use as the true input
+confidence is unknown. Also, the output confidence from
+NCNNs according to [
+7, 8] lacks any probabilistic interpre-
+tation that qualifies it as a reliable uncertainty measure.
+1.1. Contributions
+In this paper, we propose two main contributions. First,
+we employ the inherent dependency of NCNNs on the in-
+put confidence to train an estimator for this confidence in a
+self-supervised manner. Since disturbed measurements are
+expected to increase the prediction error, we back-propagate
+the error gradients to learn the input confidence that mini-
+mizes the error. This way, the network learns to assign low
+confidences to disturbed measurements that increase the er-
+ror and high confidences to valid measurements. This ap-
+proach establishes a new methodology for handling sparse
+and noisy data by suppressing the disturbed measurements
+before feeding them to the network. As shown empirically,
+this approach is more interpretable and efficient than utiliz-
+ing a complex black-box model that is expected to implic-
+itly rectify for the disturbed measurements.
+Second, we derive a probabilistic NCNN (pNCNN)
+framework that produces meaningful uncertainty estimates
+in the probabilistic sense, whereas the output confidence
+from the standard NCNNs lacks any probabilistic charac-
+teristics. We formulate the training process as a maximum
+likelihood estimation problem and we derive the loss func-
+tion for pNCNN training. These reformulations are the nec-
+essary extensions for fully Bayesian NCNNs.
+By applying our approach to the task of unguided depth
+completion on the KITTI-Depth dataset [
+32], we achieve a
+remarkably better prediction accuracy at a very low com-
+putational cost compared to the existing BDL approaches.
+Moreover, the quality of the uncertainty measure from our
+single network is better than BDL approaches with en-
+sembles of 1-32 networks. When compared against non-
+statistical approaches, we perform on par with state-of-the-
+art methods with millions of parameters using a signifi-
+cantly smaller network (670k parameters). Besides, and
+contrarily to state-of-the-art methods, we produce a high-
+quality prediction uncertainty measure aside with the pre-
+diction. Finally, we show that our approach is applicable to
+other sparse problems by evaluating it on multi-path inter-
+ference correction [
+11] and sparse optical flow rectification.
+2. Related Work
+The task of scene depth completion is receiving an in-
+creasing attention due to the impact of depth information
+on different computer vision tasks. Typically, it aims to
+produce a dense and denoised depth map y from a noisy
+sparse input x. Several approaches were proposed to learn
+a mapping y = f (x) by exploiting different input modal-
+ities, where f is a DNN. Ma et al. [
+24] proposed a deep
+regression model that combines the sparse input depth with
+the corresponding RGB modality. Jaritz et al. [
+16] evalu-
+ated different fusion schemes to combine the sparse depth
+with RGB images. Chen et al. [
+3] proposed a joint network
+that exploits 2D and 3D representations for the depth data.
+The key similarity between these approaches is that they all
+perform very well in terms of prediction accuracy and they
+implicitly handle disturbed measurements in the network.
+Nonetheless, none of these methods considered modeling
+12015
+
+
+=== PDF PAGE 3 ===
+the uncertainty of the data or the prediction.
+Recently, several approaches promoted the use of con-
+fidences to filter out noisy predictions within the network.
+Qui et al. [
+28] learned confidence masks from RGB images
+to mask out noisy depth measurements at occluded regions.
+Gansbeke et al. [
+33] proposed the use of confidences to fuse
+two network streams utilizing sparse depth and RGB im-
+ages respectively. Similarly, Xu et al. [
+36] predict a con-
+fidence mask that is used to mitigate the impact of noisy
+measurements on different components of their network.
+However, none of these methods provided any prediction
+uncertainty measure for the final prediction.
+This was addressed by another approach that utilizes
+confidences and provides an output confidence for the fi-
+nal prediction. Normalized convolutional neural networks
+(NCNNs) [
+7, 8] take sparse depth x and a confidence mask
+c0 as input, propagate the confidence, and produce a dense
+output y as well as an output confidence map cL, i.e.,
+(y, cL) = f (x, c0), for a DNN with L layers. However,
+since the input confidence is unknown, a binary input con-
+fidence c0 is assumed, which is problematic in case of dis-
+turbed input as shown in Figure (
+1a). Further, the output
+confidence cL has no probabilistic interpretation and shows
+no significant correlation with the prediction error.
+To address these challenges, we look at the problem from
+a different perspective. We propose to learn the input con-
+fidence from the disturbed measurements by employing the
+confidence propagation property of NCNNs. We attach a
+network h to a NCNN and we train them end-to-end to learn
+the input confidence that minimizes the prediction error,i.e.,
+(y, cL) = f (x, h(x)). Further, to produce accurate uncer-
+tainty measure for the final prediction, we derive a proba-
+bilistic version of the NCNNs and we formulate the train-
+ing as a maximum likelihood problem. When our proposed
+approach is evaluated on the KITTI-Depth dataset [
+32], it
+performs on par with state-of-the-art approaches with mil-
+lions of parameters using a significantly smaller network,
+while providing a highly accurate uncertainty measure for
+the final prediction. In contrast to BDL approaches in [
+12],
+we achieve excellent uncertainty estimation without sacri-
+ficing prediction accuracy or computational efficiency.
+The rest of the paper is organized as follows. We briefly
+describe the method of NCNNs in
+3.1 and 3.2, and our pro-
+posed approach for learning the input confidence in sec-
+tion
+3.3. Afterwards, we introduce a probabilistic version
+of NCNNs, derive the loss for training, and describe our ar-
+chitecture in section
+4. Experiments and analysis are given
+in section 5. Finally, we conclude the paper in section 6.
+3. Self-supervised Input Confidence Learning
+The signal/confidence philosophy [19] promotes the sep-
+aration between the signal and its confidence for efficiently
+handling noisy and sparse signals. For example, this sep-
+aration allows differentiating missing signal points with no
+information from zero-valued valid points. The normalized
+convolution [
+19] is one approach that follows the this phi-
+losophy to perform the convolution operation.
+For confidence-equipped signals, the normalized convo-
+lution performs convolution using only the confident points
+of the signal, while estimating the non-confident ones from
+their vicinity using some applicability function . This pre-
+vents noisy and missing measurements from disturbing the
+calculations. In this section, we give a brief description of
+normalized convolution and the trainable normalized con-
+volution layer that can estimate an optimal applicability
+[
+7, 8]. Subsequently, we propose a novel approach to learn
+the input confidence in a self-supervised manner.
+Throughout the paper, we assume a global signal Y with
+a finite size N that is convolved in a sliding window fashion.
+At each point in the signal yi, a local signal y of size n
+constitutes the neighborhood at this point. The local signal
+y will be referred to as the signal, and yi will be referred to
+as the signal center.
+3.1. The Normalized Convolution
+The fundamental idea of the normalized convolution is
+to project the confidence-equipped signal y ∈ Cn to a new
+subspace spanned by a set of basis functions {bj}m
+j=0 using
+only the confident parts of the signal. Afterwards, the full
+signal is reconstructed from this subspace, where the non-
+confident parts are interpolated from their vicinity using a
+weighting kernel denoted as the applicability function. The
+confidence is provided as non-negative real vector c ∈ Rn
++
+that has the same length as the signal y, while the applica-
+bility a ∈ Rn
++ is usually chosen as some low-pass filter.
+If we arrange the basis functions into the columns of a
+matrix B, then the image of the signal under the subspace
+spanned by the basis is obtained as y = Br, where r is a
+vector of coordinates. These coordinates can be estimated
+from a weighted least-squares problem (WLS) between the
+signal y and the image of it under the new basis:
+ˆrWLS = arg min
+r∈Cm
+∥ Br − y ∥W , (1)
+where the weights matrix W is a product of Wa = diag(a)
+and Wc = diag(c). The WLS solution is given as [
+19]:
+ˆrWLS = (B∗WaWcB)−1
+  
+Reconstruct
+B∗WaWcy  
+Project
+. (2)
+Finally, the WLS solution ˆrWLS can be used to approximate
+the signal under the new basis as:
+ˆy = BˆrWLS . (3)
+3.2. Normalized Convolutional Neural Networks
+In normalized convolution, the applicability is chosen
+manually. Eldesokey et al. [8] proposed a normalized con-
+volutional neural network layer (NCNN) that utilized the
+12016
+
+
+=== PDF PAGE 4 ===
+ሶy
+ሶ
+Y
+c
+0
+*
+*
+*
+*
+... *
+*
+C
+Ƹ r
+i
+L
+c
+i
+L
+Y
+y
+i
+nc
+0
+nc
+1
+nc
+L
+(b) Normalized Convolution Network [ 8 ](a) Input Confidence Estimation Network
+(c) Noise Variance Estimation Network
+y
+i
+(4)
+(5)
+( 12 )
+Section 3.3 Section 3.2
+Section 4.2Section 4.3
+Input data Input Conf.
+NCNN Conf.
+NCNN Prediction
+Distrubed InputGroundtruth
+s
+i
+Figure 2. An overview of network architecture to predict a denoised signal Y from a disturbed signal  ̇Y. We show the pipeline for a single
+observation yi of the whole signal Y. Our contributions are described in sections 3.3, 4.2, and 4.3.
+standard back-propagation in DNNs to learn the optimal ap-
+plicability function a for a given dataset, while assuming a
+binary input confidence. This was achieved by using the
+na ̈ıve basis in (
+2), i.e. B = 1n:
+ˆri = (1∗
+nWaWc1n)−11∗
+nWaWcy = ⟨a|(y ⊙ c)⟩
+⟨a|c⟩ , (4)
+where 1n is a vector of ones, ⊙ is the Hadamard product,
+⟨.|.⟩ is the scalar product, ˆri is a scalar which is equivalent
+to the estimated value at the signal center ˆyi. They proposed
+to propagate the confidence from the NCNN layer as:
+ˆci = ⟨a|c⟩
+⟨1n|a⟩ , (5)
+where the output confidence from one layer is the input con-
+fidence to the next layer.
+3.3. Self­Supervised Input Confidence Estimation
+using NCNNs
+The assumption of binary input confidences adopted by
+[
+7, 8] can be problematic in real datasets. An example is
+the KITTI-Depth dataset [ 32], where some of the input val-
+ues do not match the groundtruth due to LiDAR projection
+errors (shown in Figure
+4 top). In this case, a binary in-
+put confidence would lead to artifacts in the output as NC-
+NNs are dependent on the input confidence as shown in the
+calculations of (
+4). This dependency of the outputs on the
+input confidences facilitates learning the confidences. The
+inclusion of the input confidences in the calculations of the
+output from each layer indicates that the loss of the net-
+work would constitute gradients with respect to these confi-
+dences. Therefore, we can employ these gradients to learn
+input confidences that minimize the loss function.
+We propose to use an input confidence estimation net-
+work that receives the input data and produces an estimate
+for the input confidence that is fed to the first layer of the
+NCNN. This network is trained end-to-end with the NCNN
+and the error gradients from the NCNN are back-propagated
+to the confidence estimation network, allowing it to learn
+the input confidence that minimizes the overall prediction
+error. We use a compact UNet [
+29] for the confidence esti-
+mation network with a Softplus activation at the final layer
+that will produce valid confidence values in the interval
+[0, ∞ [. The pipeline is illustrated in Figure
+2 (upper part).
+4. Probabilistic NCNNs
+Figure ( 1b) shows an example of the output confidence
+from the last NCNN layer when we estimate the input confi-
+dences using our proposed approach from the previous sec-
+tion. The figure shows that the output confidences do not
+exhibit a proper uncertainty measure that is strongly corre-
+lated with the error.
+To obtain proper uncertainties from NCNNs, we intro-
+duce a probabilistic version of NCNNs by deriving the con-
+nection between the normalized convolution and statistical
+least-squares approaches. Then, we utilize this connection
+to produce reliable uncertainties with probabilistic charac-
+teristics. Finally, we apply the proposed theory to NCNNs
+and we derive a loss function for training them to produce
+accurate uncertainties.
+4.1. Connection between NCNN and Generalized
+Least­Squares
+In ordinary least-squares (OLS) problems, constant vari-
+ance is assumed for all observations of the signal. Gener-
+alized least-squares (GLS), on the other hand, offers more
+flexibility to handle individual variance per observation.
+The weighted-least squares problem in (
+2) can be viewed
+as a special case of the GLS, where observations are het-
+eroskedastic with unequal noise levels.
+12017
+
+
+=== PDF PAGE 5 ===
+Assume the image of the signal under the subspace B is
+defined as y = Br + e, where e is a random noise variable
+with zero mean and variance σ2V. This variance models
+the heteroscedastic uncertainty of the observations in the
+signal, where σ2 is global for each signal, and V is a pos-
+itive definite matrix describing the covariance between the
+observations. The GLS solution to this problem reads [
+1]:
+ˆrGLS = (B∗V−1B)−1B∗V−1y . (6)
+When comparing the two solutions in ( 2) and ( 6), they are
+only equivalent if V−1 is diagonal, which leads to V =
+(WaWc)−1. The diagonality of the covariance matrix in-
+dicates that different samples of the signal are independent
+and have different variances depending on the confidence
+and the applicability function.
+We utilize the GLS solution ˆrGLS to estimate the signal
+similar to (
+3) as ˆy = BˆrGLS. The uncertainty of ˆy can be
+estimated as:
+cov(ˆy) = cov(BˆrGLS) = B cov(ˆrGLS)B∗
+= σ2B(B∗V−1B)−1B∗
+= σ2B(B∗WaWcB)−1B∗ .
+(7)
+Note that Wa and Wc are non-stochastic, where the for-
+mer is estimated during NCNN training and the latter can
+be learned using our proposed approach in section
+3.3. On
+the other hand, σ2 is unknown and needs to be estimated.
+4.2. Output Uncertainty for NCNNs
+In case of NCNNs with the na  ̈ıve basis B = 1n, the un-
+certainty measure in ( 7) simplifies to:
+cov(ˆy) = cov(1nˆr) = σ21n(1∗
+nWaWc1n)−11∗
+n
+= 1n
+σ2
+⟨a|c⟩ 1∗
+n .
+(8)
+This indicates an equal uncertainty for the whole neighbor-
+hood, but since we are only interested in signal center ˆyi,
+(
+8) reduces to:
+var(ˆyi) = σ2
+i
+⟨a|c⟩ . (9)
+It is evident that the output confidence described in ( 5)
+disregards the stochastic noise variance σ2
+i . However, to
+obtain a proper uncertainty measure, this variance needs to
+be incorporated in the output confidence. We propose to
+estimate the noise variance σ2
+i from the output confidence
+of the last NCNN layer by means of a noise variance esti-
+mation network as illustrated in Figure
+2. To achieve this,
+we need a loss function that allows training the proposed
+framework.
+4.3. The Loss Function for Probabilistic NCNNs
+We consider each point yi in the global signal Y,
+where the neighborhood at this point is the local sig-
+nal y. This local signal can be represented under some
+basis as ˆy = Bˆr, where the estimated coordinates ˆr
+are calculated from (
+6,2). We assume that the estimate
+of the signal follows a multivariate normal distribution
+ˆy ∼ N m(Bˆr, σ2B(B∗WaWcB)−1B∗) where the vari-
+ance is defined in ( 7). In case of the na  ̈ıve basis, we will
+have a univariate normal distribution ˆyi ∼ N (ˆri, σ2
+i /⟨a|c⟩),
+where the variance is defined in ( 9). More formally, a
+NCNN outputs the mean ˆrL
+i of the normal distribution
+around ˆyi, and the scalar product ⟨a|c⟩ in the denomina-
+tor of the variance. Y et, the noise variance σ2 needs to be
+estimated to comply with the definition in ( 9).
+We denote the variance term as si = σ2
+i /⟨a|c⟩, where
+a and c are the applicability and the output confidence from
+the last NCNN layer. The least squares solution in ( 4) can
+be formulated as a maximum likelihood problem of a Gaus-
+sian error model for the last NCNN layer L:
+l(w) = 1
+√ 2πsi
+exp
+(
+− ∥ yi − ˆrL
+i ∥2
+2si
+)
+, (10)
+where w denotes the network parameters, and ˆrL
+i is calcu-
+lated based on ( 4). By taking log likelihood of ( 10) instead,
+we obtain:
+L(w) = − 1
+2 log(2π) − 1
+2 log(si) − ∥ yi − ˆrL
+i ∥2
+2si
+. (11)
+The first term is a constant and is ignored, and the cost func-
+tion is defined as minimizing the negative log likelihood:
+C(w) = 1
+N
+N∑
+i=1
+∥ yi − ˆrL
+i ∥2
+si  
+Data term
++ log(si)  
+Regl. term
+, (12)
+where the scalar 1/2 has been discarded. This cost func-
+tion shares similarity with the aleatoric uncertainty loss pro-
+posed in [
+18]. The difference is that si in our case depicts
+an uncertainty measure that encodes observation noise vari-
+ance and the output confidence from NCNN, while in [
+18],
+it is the variance of the noise. Note that this cost function
+can be derived using any error model from the exponential
+family, e.g. Laplace distribution as in [
+15]. Next, we show
+the architecture design that is used for training our proposed
+probabilistic approach.
+4.4. Probabilistic NCNN Architecture
+Given a dataset that contains undisturbed data Y as
+groundtruth and a disturbed version  ̇Y as input, we aim to
+train a network that produces the clean data given the dis-
+turbed one. An illustration for our full pipeline is shown
+12018
+
+
+=== PDF PAGE 6 ===
+in Figure 2. The first component estimates the input con-
+fidence from the disturbed input and feed both of them to
+the NCNN network. The output confidence from the last
+NCNN layer is fed to another compact UNet to estimate the
+noise parameter σ2
+i and to produce si in (
+12). Finally, the
+prediction from the NCNN network and the estimated un-
+certainty si are fed to the loss.
+Note that the noise variance estimation network takes
+only the output confidence from the NCNN as input, con-
+trarily to existing approaches that estimate the uncertainty
+from the final prediction [
+12, 15]. This indicates that our
+confidences can efficiently encode the uncertainty informa-
+tion, which is also demonstrated in the experiments section.
+5. Experiments
+To demonstrate the capabilities of our proposed ap-
+proach, we evaluate it on the KITTI-Depth dataset [
+32] for
+the task of unguided depth completion (no RGB guidance
+is used). We first compare against Bayesian Deep Learn-
+ing approaches, e.g. MC-Dropout [
+9] and ensembling [ 20],
+in terms of prediction accuracy and the quality of the un-
+certainty measure. Then, we show comparison against the
+conventional non-statistical approaches. Afterwards, we
+perform an ablation study for different components of our
+pipeline and we experiment with an ensemble of our pro-
+posed network. Finally, we demonstrate the generalization
+capabilities of our approach by evaluating it on multi-path
+interference correction [
+11] and optical flow rectification.
+The source code is available on Github 1.
+5.1. Experimental Setup
+Our pipeline is illustrated in Figure 2 and more details
+are given in the supplementary materials. We evaluate three
+variations of our network: our network where only the in-
+put confidence estimation part that is trained using the L1 or
+the L2 norm ( NCNN-Conf ), our full network trained with
+the proposed loss in (
+12) ( pNCNN), and our full network
+trained with a modified version of the loss in ( 12), where
+we apply an exponential function to si in the data term
+(pNCNN-Exp). This modification is to robustify our loss
+to outliers violating the presumed Gaussian error model for
+the data term. Training was performed using the Adam op-
+timizer with an initial learning rate of 0.01 that is decayed
+with a factor of 10−1 every 3 epochs.
+Evaluation Metrics We use the following two measures:
+Prediction Error We use the error metrics from the KITTI-
+Depth [
+32] such as Mean Average Error (MAE), Root Mean
+Square Error (RMSE) and their inverses.
+Quality of Uncertainty We use the sparsitification error
+plots and the area under sparsification error plots (AUSE)
+[
+15] as a measure for the quality of the uncertainty.
+1https://github.com/abdo-eldesokey/pncnn
+0.055 0.060 0.065 0.070 0.075 0.080
+AUSE
+1000
+1200
+1400
+1600
+1800
+2000
+2200RMSE [mm]
+OursOurs
+NCNN-Conf-L2 [0.7]
+Ens1
+Ens4
+Ens16
+Ens32
+MC1
+MC4
+MC16
+MC32
+pNCNN
+pNCNN-Exp
+Figure 3. A comparison between statistical approaches in terms
+of RMSE and AUSE metrics where bottom-left is better. The
+two variations of our approach outperforms other methods w.r.t.
+RMSE and pNCNN trained with (
+12) produces the best uncertainty
+measure. Note that NCNN-Conf-L2 only achieves AUSE of 0.7.
+5.2. Results Compared to Statistical Methods
+Gustafsson et al. [12] evaluated the MC-Dropout [9] and
+ensembling [ 20] by modifying the head of the Sparse-to-
+Dense (S2D) [ 24] network to output the parameters of a
+Gaussian distribution. They evaluated an ensemble of 1-32
+instances of S2D with 26M parameters each an taking the
+mean of these instances for the final prediction. Note that
+their network utilizes both depth and RGB images, while
+our approach consist of a single network that is fully un-
+guided and uses only depth data.
+Figure
+3 shows a two-metric comparison with respect to
+AUSE and RMSE. Our NCNN-Conf performs best in terms
+of RMSE, while it performs worst in terms of AUSE. On
+the other hand, our full network trained with the proposed
+loss, pNCNN, produces the best uncertainty measure with
+an AUSE of 0.053 outperforming an ensemble of 32 net-
+works. Moreover, it achieves a significantly lower RMSE
+than MC-Dropout and ensembling. However, it performs
+inferior to NCNN-Conf in terms of RMSE with a moder-
+ate gap. The variation of our network that is trained with
+a modified loss, pNCNN-Exp, closes this gap and performs
+on-par with NCNN-Conf in terms of RMSE with a minor
+degradation of AUSE compared to pNCNN.
+5.3. Results Compared to Non­Statistical Methods
+We also compare our proposed approach against the non-
+statistical unguided approaches. Table
+1 summarizes the re-
+sults on the test set of the KITTI-Depth dataset. Our NCNN-
+Conf-L1 outperforms all other methods on three out of
+four metrics when compared individually, except for Spade,
+where we are better on two metrics and on-par on one met-
+ric. Note the improvement of our approach over the stan-
+dalone NCNN, where we achieve a performance boost of
+12019
+
+
+=== PDF PAGE 7 ===
+MAE
+[mm]
+RMSE
+[mm]
+iMAE
+[1/km]
+iRMSE
+[1/km]
+#P
+SparseConv [32] 481.27 1601.33 1.78 4.94 25k
+ADNN [4] 439.48 1325.37 3.19 59.39 1.7k
+NCNN [7] 360.28 1268.22 1.52 4.67 0.5k
+S2D [24] 288.64 954.36 1.35 3.21 26M
+HMS-Net [14] 258.48 937.48 1.14 2.93 -
+SDC [33] 249.11 922.93 1.07 2.80 2.5M
+Spade [17] 248.32 1035.29 0.98 2.60 5.3M
+NCNN-Conf-L1 228.53 988.57 1.00 2.71 330k
+NCNN-Conf-L2 258.68 954.34 1.17 3.40 330k
+pNCNN-Exp 251.77 960.05 1.05 3.37 670k
+Table 1. Quantitative results on the test set of the KITTI-Depth for
+unguided depth completion. #P is the number of parameters.
+∼ 45% by providing more accurate input confidences. Our
+probabilistic model trained using a Gaussian error model
+and a Laplace error model, pNCNN-Exp trained with the
+modified loss performs equally good to the NCNN-Conf-L2,
+but additionally providing proper output uncertainties.
+5.4. Ablation Study
+First we show the impact of each component of our pro-
+posed network on a qualitative example from the KITTI-
+Depth dataset. Figure
+4 shows an example where the input
+measurements do not coincide with the groundtruth. The
+standard NCNN assigns 1-confidences to all measurements,
+which results in a corrupted prediction (first row). When
+we apply our input confidence estimation, the disturbed
+measurements are successfully identified and assigned zero
+confidence (second row). However, the output confidence
+is almost identical to the input confidence and shows no
+strong correlation with the accuracy. When we apply our
+full pipeline, the disturbed measurements are identified and
+the output uncertainty becomes highly correlated with the
+prediction error (third row).
+Next, we show in Table
+2 the impact of modifying dif-
+ferent components of our pipeline. When the confidence
+estimation is discarded in w/o conf-est and binary input
+confidence is used, the RMSE is degraded, while the net-
+work still manages to achieve good AUSE. Similarly, when
+the noise variance estimation network is discarded in w/o
+var-est, the RMSE is severely degraded as the input confi-
+dence estimation network tries to make up for the absence
+of the variance estimation network. When the final predic-
+tion from the NCNN is fed along with the output confidence
+to the noise variance estimation network in w depth-pred ,
+no improvement is gained in terms of AUSE. This demon-
+strates that our uncertainty measure efficiently encode the
+uncertainty information in the NCNN confidence stream
+Disturbed Input
+GT
+Prediction
+Input Conf.
+Out. Conf.
+Abs Error
+Figure 4. A qualitative example from the KITTI-Depth dataset
+showing the impact of each component of our proposed approach.
+First row is the standard NCNN, the second is NCNN-Conf-L2, and
+the third is pNCNN.
+RMSE MAE AUSE
+pNCNN 1237.65 283.41 0.055
+- w/o conf-est 1540.00 405.00 0.058
+- w/o var-est 1703.50 604.10 0.123
+- w depth-pred 1215.64 292.68 0.055
+- w Laplace-loss 1272.32 248.26 0.089
+Table 2. The results for the ablation study when trained on a subset
+of the training set evaluated on the selected validation set of the
+KITTI-Depth dataset.
+without looking at the prediction. Finally, when we employ
+a Laplace error model for the loss in w Laplace-loss , i.e.,
+the L1 norm for residuals, the MAE improves, while AUSE
+is degraded since it is calculated based on the RMSE.
+5.5. Ensemble of pNCNN
+To examine whether our probabilistic approach can be
+extended to a fully Bayesian approach, we form an ensem-
+ble of four pNCNN network that were initialized randomly
+and trained on random subset of the KITTI-Depth dataset.
+We evaluate multiple fusion approaches which are summa-
+rized in Table
+3. Fusion by selecting the most confident
+pixel from each network, maxConf, achieves the best re-
+sults, outperforming taking the mean, which is commonly
+used. Taking a weighted mean using confidences, wMean,
+or a maximum likelihood estimation, MLE, also gives bet-
+ter results than the standard mean. This demonstrated the
+potential of using the proposed output confidences in more
+sophisticated fusion schemes.
+12020
+
+
+=== PDF PAGE 8 ===
+RMSE MAE Fusion RMSE MAE
+Net-1 1337.5 290.5 Mean 1287.3 290.5
+Net-2 1325.1 303.1 wMean 1261.3 285.9
+Net-3 1315.1 296.9 maxConf 1260.7 283.8
+Net-4 1321.1 288.3 MLE 1264.1 282.4
+Table 3. Fusion schemes for an ensemble of pNCNN trained on a
+subset of the KITTI-Depth and evaluated on the selected validation
+set. MLE refers to Maximum Likelihood Estimation.
+5.6. Mutli­Path Interference (MPI) Correction
+To demonstrate the generalization capabilities of our ap-
+proach on other kinds of noise, we evaluate it on depth data
+from a Time-of-Flight (ToF) camera, i.e. Kinect2, that suf-
+fers from MPI. We use the FLA T dataset [
+11] for this pur-
+pose which provides raw measurements for three different
+frequencies and phases. We use the libfreenect2 [
+35] to cal-
+culate the depth from the measurements and we compare
+against applying the bilateral filtering on the noisy depth.
+Table
+4 summarizes the results, where we outperform
+the Bilateral filtering with a significant margin in terms of
+RMSE error when evaluated both on noisy and clean data
+with no MPI. Bilateral filtering on the other hand performs
+worse than doing no processing as it assigns zeros to pixels
+close to edges. When edges are not considered for evalu-
+ation, bilateral filtering improves the results slightly, but is
+outperformed by our approach.
+5.7. Sparse Optical Flow Rectification
+We generate the input flow by applying the Lucas-
+Kanade method [
+23] to pairs of images from driving se-
+quences. The groundtruth is produced by geometrical veri-
+fication over several frames under a multiple rigid body as-
+sumption [
+27]. Figure 5 shows an example for rectifying the
+corrupted measurement and densifying the flow field. More
+results are given in the supplementary materials.
+5.8. What happens if the input is undisturbed?
+An essential question is how our confidence estimation
+network will perform if the input data is not disturbed? To
+RMSE [mm] Ours Biateral No-Proc
+No-MPI 231 444 415
+MPI 283 429 449
+No-MPI-Masked 175 263 288
+MPI-Masked 205 282 299
+Table 4. The RMSE error in millimeters for Multi-Path Interfer-
+ence (MPI) correction on the FLA T dataset [
+11]. No-Proc refers
+to evaluating the depth without any processing. The masked ver-
+sion disregards edges from the evaluation.
+Figure 5. Qualitative example for optical flow outliers rejection.
+In right-bottom order, RGB frame, raw flow input, groundtruth
+flow, and estimated flow.
+Figure 6. A qualitative example
+from the NYU dataset [
+26]. Top-
+to-bottom: groundtruth, NCNN
+[
+7], NCNN-Conf.
+RMSE
+MAE
+NCNN [7] 0.165 0.07
+NCNN-Conf 0.135 0.05
+pNCNN 0.144 0.06
+Figure 7. Quantitative results
+on the NYU dataset [
+26] in
+meters.
+answer this question, we train our network NCNN-Conf and
+pNCNN on the NYU dataset [ 26], where the input is sam-
+pled from the groundtruth depth. We use 1000 depth points
+sampled uniformly with a sparsity level of 0.6%. Figure
+6
+and Table 7 show that both our methods surprisingly im-
+proves the results compared to the standalone NCNN [ 7].
+This is a result of allowing the confidence estimation net-
+work to assign proper confidences to points based on their
+proximity to edges similar to non-linear filtering. This leads
+to sharper edges and better reconstruction of objects.
+6. Conclusion
+We proposed a self-supervised approach for estimating
+the input confidence for sparse data based on the NCNNs.
+We also introduced a probabilistic version of NCNNs that
+enable the to output meaningful uncertainty measures. Ex-
+periments on the KITTI dataset for unguided depth com-
+pletion showed that our small network with 670k parame-
+ters achieves state-of-the-art results in terms of prediction
+accuracy and it provides an accurate uncertainty measure.
+When compared against the existing probabilistic method
+for dense problems, our proposed approach outperforms all
+of them in terms of the prediction accuracy, the quality of
+the uncertainty measure, and the computational efficiency.
+Moreover, we showed that our approach can be applied to
+other sparse problems as well. These results demonstrate
+the gains from adhering to the signal/uncertainty philoso-
+phy compared to conventional black-box models.
+Acknowledgments: This work was supported by the Wal-
+lenberg AI, Autonomous Systems and Software Program
+(W ASP) and Swedish Research Council grant 2018-04673.
+12021
+
+
+=== PDF PAGE 9 ===
+References
+[1] Alexander C Aitken. Iv.on least squares and linear combi-
+nation of observations. Proceedings of the Royal Society of
+Edinburgh, 55:42–48, 1936.
+[2] Y ue Cao, Jiarui Xu, Stephen Lin, Fangyun Wei, and Han
+Hu. Gcnet: Non-local networks meet squeeze-excitation net-
+works and beyond. arXiv preprint arXiv:1904.11492, 2019.
+[3] Y un Chen, Bin Y ang, Ming Liang, and Raquel Urtasun.
+Learning joint 2d-3d representations for depth completion.
+In ICCV, 2019.
+[4] Nathaniel Chodosh, Chaoyang Wang, and Simon Lucey.
+Deep Convolutional Compressed Sensing for LiDAR Depth
+Completion. mar 2018.
+[5] Jiwoong Choi, Dayoung Chun, Hyun Kim, and Hyuk-Jae
+Lee. Gaussian yolov3: An accurate and fast object detec-
+tor using localization uncertainty for autonomous driving.
+In The IEEE International Conference on Computer Vision
+(ICCV), October 2019.
+[6] Martin Danelljan, Goutam Bhat, Fahad Shahbaz Khan, and
+Michael Felsberg. Atom: Accurate tracking by overlap max-
+imization. In Proceedings of the IEEE Conference on Com-
+puter Vision and Pattern Recognition , pages 4660–4669,
+2019.
+[7] Abdelrahman Eldesokey, Michael Felsberg, and Fahad Shah-
+baz Khan. Propagating confidences through cnns for sparse
+data regression. In The British Machine Vision Conference
+(BMVC), Northumbria University, Newcastle upon Tyne,
+England, UK, 3-6 September , 2018, 2018.
+[8] Abdelrahman Eldesokey, Michael Felsberg, and Fahad Shah-
+baz Khan. Confidence propagation through cnns for guided
+sparse depth regression. IEEE transactions on pattern anal-
+ysis and machine intelligence , 2019.
+[9] Y arin Gal and Zoubin Ghahramani. Dropout as a bayesian
+approximation: Representing model uncertainty in deep
+learning. In international conference on machine learning ,
+pages 1050–1059, 2016.
+[10] Jochen Gast and Stefan Roth. Lightweight probabilistic deep
+networks. In Proceedings of the IEEE Conference on Com-
+puter Vision and Pattern Recognition , pages 3369–3378,
+2018.
+[11] Qi Guo, Iuri Frosio, Orazio Gallo, Todd Zickler, and Jan
+Kautz. Tackling 3d tof artifacts through learning and the
+flat dataset. In Proceedings of the European Conference on
+Computer Vision (ECCV), pages 368–383, 2018.
+[12] Fredrik K Gustafsson, Martin Danelljan, and Thomas B
+Sch ̈on. Evaluating scalable bayesian deep learning
+methods for robust computer vision. arXiv preprint
+arXiv:1906.01620, 2019.
+[13] Lifeng Huang, Chengying Gao, Y uyin Zhou, Changqing
+Zou, Cihang Xie, Alan Y uille, and Ning Liu. Upc: Learn-
+ing universal physical camouflage attacks on object detec-
+tors, 2019.
+[14] Z. Huang, J. Fan, S. Yi, X. Wang, and H. Li. HMS-Net: Hi-
+erarchical Multi-scale Sparsity-invariant Network for Sparse
+Depth Completion. ArXiv e-prints, Aug. 2018.
+[15] Eddy Ilg, Ozgun Cicek, Silvio Galesso, Aaron Klein, Osama
+Makansi, Frank Hutter, and Thomas Brox. Uncertainty es-
+timates and multi-hypotheses networks for optical flow. In
+Proceedings of the European Conference on Computer Vi-
+sion (ECCV), pages 652–667, 2018.
+[16] Maximilian Jaritz, Raoul De Charette, Emilie Wirbel, Xavier
+Perrotton, and Fawzi Nashashibi. Sparse and dense data with
+cnns: Depth completion and semantic segmentation. In 2018
+International Conference on 3D Vision (3DV) , pages 52–60.
+IEEE, 2018.
+[17] Maximilian Jaritz, Raoul de Charette, Emilie Wirbel, Xavier
+Perrotton, and Fawzi Nashashibi. Sparse and dense data with
+cnns: Depth completion and semantic segmentation. arXiv
+preprint arXiv:1808.00769, 2018.
+[18] Alex Kendall and Y arin Gal. What uncertainties do we need
+in bayesian deep learning for computer vision? In Advances
+in neural information processing systems, pages 5574–5584,
+2017.
+[19] Hans Knutsson and Carl-Fredrik Westin. Normalized and
+differential convolution. In Proceedings of IEEE Conference
+on Computer Vision and Pattern Recognition , pages 515–
+523. IEEE, 1993.
+[20] Balaji Lakshminarayanan, Alexander Pritzel, and Charles
+Blundell. Simple and scalable predictive uncertainty esti-
+mation using deep ensembles. In Advances in Neural Infor-
+mation Processing Systems, pages 6402–6413, 2017.
+[21] Hei Law and Jia Deng. Cornernet: Detecting objects as
+paired keypoints. In Proceedings of the European Confer-
+ence on Computer Vision (ECCV) , pages 734–750, 2018.
+[22] Y anghao Li, Y untao Chen, Naiyan Wang, and Zhaoxiang
+Zhang. Scale-aware trident networks for object detection.
+arXiv preprint arXiv:1901.01892, 2019.
+[23] Bruce D Lucas, Takeo Kanade, et al. An iterative image
+registration technique with an application to stereo vision.
+1981.
+[24] Fangchang Ma, Guilherme V enturelli Cavalheiro, and Sertac
+Karaman. Self-supervised sparse-to-dense: self-supervised
+depth completion from lidar and monocular camera. In
+2019 International Conference on Robotics and Automation
+(ICRA), pages 3288–3295. IEEE, 2019.
+[25] Dhruv Mahajan, Ross Girshick, Vignesh Ramanathan,
+Kaiming He, Manohar Paluri, Yixuan Li, Ashwin Bharambe,
+and Laurens van der Maaten. Exploring the limits of weakly
+supervised pretraining. In Proceedings of the European Con-
+ference on Computer Vision (ECCV), pages 181–196, 2018.
+[26] Pushmeet Kohli Nathan Silberman, Derek Hoiem and Rob
+Fergus. Indoor segmentation and support inference from
+rgbd images. In ECCV, 2012.
+[27] Mikael Persson, Tommaso Piccini, Michael Felsberg, and
+Rudolf Mester. Robust stereo visual odometry from monocu-
+lar techniques. In 2015 IEEE Intelligent V ehicles Symposium
+(IV), pages 686–691. IEEE, 2015.
+[28] Jiaxiong Qiu, Zhaopeng Cui, Yinda Zhang, Xingdi Zhang,
+Shuaicheng Liu, Bing Zeng, and Marc Pollefeys. Deepli-
+dar: Deep surface normal guided depth prediction for out-
+door scene from sparse lidar data and single color image.
+In Proceedings of the IEEE Conference on Computer Vision
+and Pattern Recognition, pages 3313–3322, 2019.
+12022
+
+
+=== PDF PAGE 10 ===
+[29] Olaf Ronneberger, Philipp Fischer, and Thomas Brox. U-
+net: Convolutional networks for biomedical image segmen-
+tation. In International Conference on Medical image com-
+puting and computer-assisted intervention , pages 234–241.
+Springer, 2015.
+[30] Towaki Takikawa, David Acuna, V arun Jampani, and Sanja
+Fidler. Gated-scnn: Gated shape cnns for semantic segmen-
+tation. arXiv preprint arXiv:1907.05740, 2019.
+[31] Hugo Touvron, Andrea V edaldi, Matthijs Douze, and Herv  ́e
+J ́egou. Fixing the train-test resolution discrepancy. arXiv
+preprint arXiv:1906.06423, 2019.
+[32] Jonas Uhrig, Nick Schneider, Lukas Schneider, Uwe Franke,
+Thomas Brox, and Andreas Geiger. Sparsity invariant cnns.
+In 2017 International Conference on 3D Vision (3DV), pages
+11–20. IEEE, 2017.
+[33] Wouter V an Gansbeke, Davy Neven, Bert De Brabandere,
+and Luc V an Gool. Sparse and noisy lidar completion with
+rgb guidance and uncertainty. In 2019 16th International
+Conference on Machine Vision Applications (MVA) , pages
+1–6. IEEE, 2019.
+[34] Qiang Wang, Li Zhang, Luca Bertinetto, Weiming Hu, and
+Philip HS Torr. Fast online object tracking and segmentation:
+A unifying approach. In Proceedings of the IEEE Conference
+on Computer Vision and Pattern Recognition , pages 1328–
+1338, 2019.
+[35] Lingzhu Xiang, Florian Echtler, Christian Kerl, Thiemo
+Wiedemeyer, Lars, hanyazou, Ryan Gordon, Francisco Fa-
+cioni, laborer2008, Rich Wareham, and et al. libfreenect2:
+Release 0.2. Apr 2016.
+[36] Y an Xu, Xinge Zhu, Jianping Shi, Guofeng Zhang, Hujun
+Bao, and Hongsheng Li. Depth completion from sparse li-
+dar data with depth-normal constraints. In The IEEE Inter-
+national Conference on Computer Vision (ICCV) , October
+2019.
+[37] Yi Zhu, Karan Sapra, Fitsum A Reda, Kevin J Shih, Shawn
+Newsam, Andrew Tao, and Bryan Catanzaro. Improving se-
+mantic segmentation via video propagation and label relax-
+ation. In Proceedings of the IEEE Conference on Computer
+Vision and Pattern Recognition, pages 8856–8865, 2019.
+12023

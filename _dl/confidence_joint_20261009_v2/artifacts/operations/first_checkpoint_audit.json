@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "step": 200,
+  "optimizer_groups": [
+    "r2p_and_alignment",
+    "tasknet_net_g",
+    "quality_head"
+  ],
+  "optimizer_state_count": 469,
+  "all_adam_steps": 200,
+  "existing_modules_inherited": true,
+  "confidence_parameters_checkpointed": true,
+  "locked_code_unchanged": true,
+  "checkpoint_sha256": "5a6c42cb1ae70a79ac7486ca241e33a5570116425fe3b81693fa35c035c26f2e"
+}

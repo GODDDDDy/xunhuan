@@ -1,0 +1,41 @@
+{
+  "experiment": "K1_warmstart_direct_T1_joint",
+  "seed": 2026,
+  "source_K1_checkpoint": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/runs/K1/seed_2026/checkpoints/step_3000.pt",
+  "source_K1_sha256": "f87e8b75d1335c7ae979ee563cac14270258c130ac2953a5903b7eb7de647b64",
+  "source_training_steps": 3000,
+  "additional_training_steps": 10000,
+  "total_training_steps": 13000,
+  "batch_size": 2,
+  "crop_size": 128,
+  "train_frames": 5440,
+  "patches": 20000,
+  "unique_train_frames": 5440,
+  "min_frame_visits": 3,
+  "max_frame_visits": 4,
+  "optimizer_initialization": "fresh_Adam",
+  "alignment": "first_round_three_level_cosine_stop_target",
+  "lambda_alignment": 0.030651881051471687,
+  "round_loss_weights": [
+    0.3333333333333333,
+    0.6666666666666666
+  ],
+  "second_R2P_condition": "clamp(T1,0,1), without detach",
+  "TaskNet_RGB": "original mixed RGB both rounds",
+  "internal_feature_feedback": false,
+  "confidence": false,
+  "prior_parameters_frozen": true,
+  "final_evaluation": "872 full-resolution validation, no test",
+  "checkpoint_selection": "fixed_additional_step10000",
+  "code_sha256": {
+    "scripts/prepare_study.py": "7d4c13f02a332cb0b7d62442c2c4c7a6c2f22faa30805bc15afb554a9b62ec80",
+    "scripts/reference/run_experiment_snapshot.py": "3aff6337b000c30418c7a19def03d248e2928ea96ff60882092cb77d413841c7",
+    "scripts/run_direct_t1.py": "4c614ce5fadef64d6ebc9f34ec4e445839e756e7b665b614ca0256f83e245371",
+    "scripts/run_matched.py": "19b14a1bbc1f02cbd17d824b96b5461f79ba33dc26d8424c30276e7378da297b",
+    "scripts/run_phase_objective.py": "03158c9abde8dc896171f28fce76d5fd5c73638f9317786aac7e813849fcd512",
+    "scripts/run_study.py": "f24b0acae382da6244ab5e25d96639bdff1b19cd8380ff58e5710b8910ab7c48"
+  },
+  "config_sha256": "0aeb59df92ee2fb6c338b7c98c540e7ae84ab4b86432d38678ea4e0fbf70bb6f",
+  "manifest_sha256": "d4f04a73e2d1b99d11a3487591b1143be79bfef2bb1ca61cc989823e190a57bb",
+  "schedule_sha256": "aa722b87a7311db546b74ca0fa174834f15642fb153923eea20ca4232f0f04db"
+}

@@ -1,0 +1,28 @@
+{
+  "enabled": true,
+  "stable": true,
+  "step": 19000,
+  "minimum_steps": 16000,
+  "maximum_steps": 20000,
+  "rule": {
+    "minimum_steps": 16000,
+    "window": 4,
+    "psnr_span_db": 0.15,
+    "psnr_slope_db_per_1000": 0.025,
+    "recovery_loss_relative_span": 0.03,
+    "selection": "stability heuristic on validation only"
+  },
+  "test_used": false,
+  "interpretation": "validation stability only; no guarantee of global or distributional convergence",
+  "validation_steps": [
+    16000,
+    17000,
+    18000,
+    19000
+  ],
+  "psnr_span": 0.12643755802919543,
+  "psnr_slope_db_per_1000": 0.01684977542204229,
+  "recovery_loss_relative_span": 0.014072345406609656,
+  "reason": "validation stabilized",
+  "time_limit_reached": false
+}

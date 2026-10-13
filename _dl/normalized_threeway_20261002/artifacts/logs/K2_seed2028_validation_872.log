@@ -1,0 +1,80 @@
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG19_Weights.IMAGENET1K_V1`. You can also use `weights=VGG19_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Evaluated 50 images
+Evaluated 100 images
+Evaluated 150 images
+Evaluated 200 images
+Evaluated 250 images
+Evaluated 300 images
+Evaluated 350 images
+Evaluated 400 images
+Evaluated 450 images
+Evaluated 500 images
+Evaluated 550 images
+Evaluated 600 images
+Evaluated 650 images
+Evaluated 700 images
+Evaluated 750 images
+Evaluated 800 images
+Evaluated 850 images
+{
+  "checkpoint": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/runs/K2/seed_2028/checkpoints/step_3000.pt",
+  "checkpoint_step": 3000,
+  "checkpoint_sha256": "9b6f27c1f0de3f3413b0f6a9a3df0f935d7166cc8784af22af78f51f04eb25d8",
+  "protocol_id": "f81a450d9b131eab9b0e48e2874f333839170dd2e465c3416c7b62b0d1acc80a",
+  "frames": 872,
+  "scenes": 8,
+  "round1": {
+    "image_mean_psnr": 25.954420993124945,
+    "scene_macro_psnr": 26.0116056393225,
+    "image_mean_ssim": 0.9029104738333903,
+    "scene_macro_ssim": 0.9060932451722797
+  },
+  "round2": {
+    "image_mean_psnr": 25.959428250614124,
+    "scene_macro_psnr": 26.020060428375892,
+    "image_mean_ssim": 0.9029025861976343,
+    "scene_macro_ssim": 0.9060698495711352
+  },
+  "iteration_gain": {
+    "image_mean_psnr": 0.005007257489179295,
+    "scene_macro_psnr": 0.00845478905339192,
+    "image_mean_ssim": -7.88763575598761e-06,
+    "scene_macro_ssim": -2.3395601144504674e-05
+  },
+  "polar_update": {
+    "polar1": {
+      "mean_abs": 0.006279482217046321,
+      "relative_signal_change": 0.015929158555382197,
+      "ratio_gt_0_02": 0.06450860232721509,
+      "ratio_gt_0_05": 0.008760888093157814
+    },
+    "polar2": {
+      "mean_abs": 0.006298674502807302,
+      "relative_signal_change": 0.01584417752252994,
+      "ratio_gt_0_02": 0.06495243002393532,
+      "ratio_gt_0_05": 0.008828670834714607
+    }
+  },
+  "image_mean_psnr": 25.959428250614124,
+  "scene_macro_psnr": 26.020060428375892,
+  "image_mean_ssim": 0.9029025861976343,
+  "scene_macro_ssim": 0.9060698495711352,
+  "r2p_relative_l2_drift_from_pidsr": 0.15799602410432367,
+  "feedback_scale": 0.0,
+  "arm": "K2",
+  "seed": 2028,
+  "phase_weight": 0.1,
+  "training_seed": 2028,
+  "evaluation_seed": 2026,
+  "effective_task_weights": [
+    0.3333333333333333,
+    0.6666666666666666
+  ],
+  "actual_tasknet_forwards": 1744,
+  "actual_rounds": 2,
+  "evaluation_seconds": 2528.662548303604,
+  "scope": "full872 validation; exploratory; three paired seeds"
+}

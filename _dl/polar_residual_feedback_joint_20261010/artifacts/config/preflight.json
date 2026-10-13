@@ -1,0 +1,132 @@
+{
+  "schema_version": 3,
+  "seed": 2026,
+  "paths": {
+    "base_config": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/protocol/base_server.yaml",
+    "source_root": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/deps/rgb_final_confirmation/src",
+    "manifest": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_residual_feedback_joint_20261010/config/manifest.csv",
+    "schedule": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_residual_feedback_joint_20261010/config/training_schedule_16000.json",
+    "validation_proxy": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_residual_feedback_joint_20261010/config/validation_proxy.json",
+    "pretrained_r2p": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_residual_feedback_joint_20261010/pretraining/checkpoints/selected.pt",
+    "reference_r2p": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/deps/r2p_film.py",
+    "output_root": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_residual_feedback_joint_20261010/downstream",
+    "pidsr_data": "/media/li/data3/25thstudent/DY/929work/research_data/PIDSR-dataset",
+    "source_checkpoint": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/weights/polarfree/net_g_latest.pth"
+  },
+  "data": {
+    "condition": "raw_mixed_rgb",
+    "crop_size": 128,
+    "batch_size": 2,
+    "workers": 2
+  },
+  "source_sha256": "a230e77fb19827a1ada41e4dc86374dee092e476915d2252841f81dd8c257ca2",
+  "scope": "one arm: dedicated RGB residual correction with direct cross-round task/polar feature feedback",
+  "pretrain": {
+    "kind": "reuse_verified_same_resolution_correction",
+    "checkpoint": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_residual_feedback_joint_20261010/pretraining/checkpoints/selected.pt",
+    "sha256": "a4ecebacba5cfc25546320974a9c37f1cc220c685f1318b3cc290ae4a68e9554",
+    "source_protocol_id": "576f788b73218610533cddb66089d3e0c0910f9aa97604a376c9692d71634007",
+    "source_run": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009",
+    "selected_step": 18000,
+    "training_stopped_step": 19000,
+    "retrained_in_this_run": false,
+    "test_metrics_reused": true
+  },
+  "downstream": {
+    "steps": 12000,
+    "effective_batch": 2,
+    "microbatch": 1,
+    "minimum_steps": 3000
+  },
+  "confidence": {
+    "warmup_steps": 500,
+    "calibration_training_crops": 256
+  },
+  "evaluation": {
+    "validation_frames": 872,
+    "test_frames": 188,
+    "original_size": true,
+    "tiles": false
+  },
+  "selection": "pretrain: best 10-scene validation mean angle PSNR; downstream: planned/time-only final",
+  "task_initialization": {
+    "kind": "official_polarfree",
+    "official_sha256": {
+      "net_g_latest.pth": "a230e77fb19827a1ada41e4dc86374dee092e476915d2252841f81dd8c257ca2",
+      "net_d_latest.pth": "f1d0e9acb244480e5d4ba4b5cee7ba35666fb97d41bccf4659f20911f46f1fb3",
+      "net_le_dm_latest.pth": "6b98bd2a715d3e669acd99582d9ea37594ff4a2ee7786df86764d8efdafd0546"
+    },
+    "overwrite_with_joint_weights": false,
+    "archived_source_dir": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_residual_feedback_joint_20261010/weights/source_polarfree"
+  },
+  "optimization": {
+    "correction_lr": 2e-05,
+    "interfaces_lr": 0.0001,
+    "task_lr": 1e-06,
+    "task_freeze_steps": 500,
+    "task_unfreeze_warmup": 200,
+    "gradient_clip": 1.0,
+    "enhancer_freeze_steps": 500
+  },
+  "retention_monitor": {
+    "validation_proxy_frames": 28,
+    "interval": 1000,
+    "after_freeze_step": 500,
+    "enhancer_bypassed": true,
+    "test_used": false,
+    "used_for_selection": false,
+    "paired_noise": true,
+    "purpose": "monitor net_g performance retention and relative parameter drift"
+  },
+  "bridge": {
+    "kind": "raw official gray plus floating enhanced-minus-observed luminance",
+    "original_rgb": true,
+    "zero_correction_matches_official": true,
+    "original_stokes_convention": true,
+    "both_rounds_anchor_raw": true,
+    "prior_requires_grad": false,
+    "prior_input_gradient": true
+  },
+  "experiment_rationale": {
+    "user_authorization": "启动: implement and launch researched correction design",
+    "historical_test_exploration": true,
+    "matched_control": false,
+    "single_seed": true,
+    "previous_experiments_immutable": true,
+    "new_run_budget_hours_cap": 24,
+    "planned_step_cap": 12000,
+    "minimum_steps": 3000
+  },
+  "correction_design": {
+    "state_channels": 16,
+    "decoder_scales": [
+      "half",
+      "quarter"
+    ],
+    "zero_initial_output": true,
+    "output": "T2=T1+0.25*tanh(learned_RGB_increment)",
+    "feature_injection_bound": 0.1,
+    "trusted_reference": "C times previous projected task features",
+    "correction_context": "raw RGB/observation polar summary/T1/I-T1/unscaled F1/polar features/C/1-C",
+    "quality_input_detached": true,
+    "quality_to_task_detached": true,
+    "first_and_second_backbone_shared": true,
+    "output_heads_shared": false,
+    "training_loss": "official T1/3+2*T2/3; +0.1 bounded error-weighted T2 RGB MAE; quality NLL; alignment",
+    "error_weight": "detach(clamp(1+T1 RGB error/(image mean error+1e-4),1,3)); normalized",
+    "no_extra_equivalent_residual_l1": true
+  },
+  "mechanism_diagnostics": {
+    "validation_frames": 28,
+    "conditions": [
+      "normal",
+      "no_feedback",
+      "no_polar_correction",
+      "confidence_zero",
+      "confidence_one"
+    ],
+    "inference_interventions_only": true,
+    "test_used": false,
+    "checkpoint_selection": false
+  }
+}

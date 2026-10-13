@@ -1,0 +1,46 @@
+schema_version: 2
+seed: 2026
+
+paths:
+  base_config: F:/AAAketi/rgb_final_confirmation/config/experiment.yaml
+  source_root: F:/AAAketi/rgb_final_confirmation/src
+  manifest: F:/WORK/experiments/r2p_four_group/seed_2026/config/manifest.csv
+  schedule: F:/WORK/experiments/r2p_four_group/seed_2026/config/training_schedule.json
+  validation_proxy: F:/WORK/experiments/r2p_four_group/seed_2026/config/validation_proxy.json
+  pretrained_r2p: F:/WORK/materials/pidsr_r2p_handover/R2P_PIDSR_handover/weights/r2p_pretrained_pidsr_e42.pt
+  reference_r2p: F:/WORK/materials/pidsr_r2p_handover/R2P_PIDSR_handover/reference/r2p_film.py
+  output_root: F:/WORK/experiments/pidsr_recurrent_joint_k2/no_feedback/seed_2026
+
+data:
+  condition: raw_mixed_rgb
+  crop_size: 128
+  batch_size: 2
+  workers: 2
+
+model:
+  r2p_width: 48
+  max_residual: 0.10
+  task_feature_channels: [96, 96, 192]
+
+optimization:
+  lr_r2p: 1.0e-4
+  lr_tasknet: 1.0e-5
+  betas: [0.9, 0.999]
+  weight_decay: 0.0
+  grad_clip: 1.0
+  total_steps: 3000
+  validation_steps: [0, 200, 1000, 2000, 3000]
+  checkpoint_interval: 200
+
+alignment:
+  objective: cosine_stop_gradient_task_target
+  calibration_batches: 4
+  target_gradient_fraction: 0.10
+  lambda_min: 1.0e-4
+  lambda_max: 1.0
+
+
+recurrent:
+  feedback: false
+  round_loss_weights: [0.5, 1.0]
+

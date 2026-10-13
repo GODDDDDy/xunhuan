@@ -1,0 +1,50 @@
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG19_Weights.IMAGENET1K_V1`. You can also use `weights=VGG19_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+{
+  "protocol_id": "df263f659163141d1d8e8d059a1978124add5e6aa12605b51f96a080119b1a99",
+  "actual_forward_calls": {
+    "r2p": 1,
+    "tasknet": 2
+  },
+  "identity_polar": true,
+  "zero_output_max_diff": 0.0,
+  "condition_requires_grad": false,
+  "trainable_r2p_tensors": 18,
+  "grad_norm_r2p": 0.00428840983659029,
+  "grad_norm_netg": 0.0,
+  "gradients": {
+    "rgb_encoder.net.0.weight": 0.0,
+    "rgb_encoder.net.0.bias": 0.0,
+    "rgb_encoder.net.2.weight": 0.0,
+    "rgb_encoder.net.2.bias": 0.0,
+    "polar_encoder.net.0.weight": 0.0,
+    "polar_encoder.net.0.bias": 0.0,
+    "polar_encoder.net.2.weight": 0.0,
+    "polar_encoder.net.2.bias": 0.0,
+    "gate.weight": 0.0,
+    "gate.bias": 0.0,
+    "film.weight": 0.0,
+    "film.bias": 0.0,
+    "body.0.weight": 0.0,
+    "body.0.bias": 0.0,
+    "body.2.weight": 0.0,
+    "body.2.bias": 0.0,
+    "body.4.weight": 0.0006611430435441434,
+    "body.4.bias": 0.004237139131873846
+  },
+  "all_gradients_finite": true,
+  "frozen_hashes_unchanged": true,
+  "no_task_gradients": true,
+  "peak_vram_mb": 5017.9912109375,
+  "passed": true,
+  "proxy_step0_parity": {
+    "n": 28,
+    "all_passed": true,
+    "baseline_replay_max_diff": {
+      "psnr": 0.0,
+      "ssim": 0.0
+    }
+  }
+}

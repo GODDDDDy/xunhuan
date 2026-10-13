@@ -1,0 +1,23 @@
+{
+  "reason": "Mechanism entry-point dependency search path missing before import",
+  "fix": "Set PYTHONPATH to existing, frozen task source directory for evaluation children",
+  "training_restarted": false,
+  "model_or_hyperparameters_changed": false,
+  "frozen_code_changed": false,
+  "checkpoint_step": 12000,
+  "checkpoint_sha256": "ec7f0e6e79d0dcf21c536dc71958d44514bd7e78a8624bb936f16c02c37e81e8",
+  "protocol_id": "87b0691d59aa2ae342e321ff2ecc9534782585453ba16a659cbaeef52614aeeb",
+  "previous_budget": {
+    "start_unix": 1791609870.5695198,
+    "deadline_unix": 1791696270.5695198,
+    "process_group": 338989,
+    "device": "server RTX3080Ti",
+    "hours": 24,
+    "new_experiment_budget": true,
+    "old_budget_reused": false,
+    "authorization": "User explicitly requested launch of new researched residual-feedback experiment",
+    "starts_at": "immediately before first GPU preflight; immutable thereafter",
+    "previous_run_deadline_unix": 1791605047.4916465
+  },
+  "recorded_unix": 1791635077.4050863
+}

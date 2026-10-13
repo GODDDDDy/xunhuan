@@ -1,0 +1,36 @@
+{
+  "train_frames": 5440,
+  "train_patches": 32000,
+  "unique_train_frames": 5440,
+  "min_visits": 5,
+  "max_visits": 6,
+  "deadline_unix": 1791507333.0,
+  "target_steps": 16000,
+  "order": [
+    "A2_dual",
+    "A0_direct"
+  ],
+  "evaluation_reserve_seconds": 7800,
+  "source_sha256": "eb17a5537bcd26583b73670a34a258f948056935f851b42c7a44eb62e1dd15ea",
+  "mandatory_validation_frames": 872,
+  "mandatory_test_frames": 188,
+  "selection": "common saved checkpoint by time and step only; no metric selection",
+  "manifest_sha256": "d4f04a73e2d1b99d11a3487591b1143be79bfef2bb1ca61cc989823e190a57bb",
+  "schedule_sha256": "97ff589d0323047d00dbe4c2ecc77f7076992eaca2f830c18d08e378d9ba954a",
+  "code_sha256": {
+    "scripts/confidence.py": "e043bdd1f5ae39986babf721f85040d5d1d3d3c38c4ad16792cc171c5dfe6cd5",
+    "scripts/prepare.py": "81095639bf579a6420c59616b66270d8c5541302d9333dd1cb0ff2a7e59f50ea",
+    "scripts/quality_metrics.py": "f38316fd1dffcb9ea668e6eebb9b916072754cd2ca43fcdaf9225d4d0fe16c1d",
+    "scripts/reference/run_experiment_snapshot.py": "507c86cab8ac6c81dee04b36634d1619504a05eca6bc1cfb73eaf1ea42ccb6e5",
+    "scripts/reference/source_snapshot_unmodified.py": "474e3c48e9081381e2e962e73c4e207dea984b0cff4b0486963101fa692b1a76",
+    "scripts/run_arm.py": "473c7ad006354e033ceea83b3cd61bb00e70c1695c25afa516b45dd9a1f6fcf1",
+    "scripts/run_matched.py": "19b14a1bbc1f02cbd17d824b96b5461f79ba33dc26d8424c30276e7378da297b",
+    "scripts/run_overnight.py": "293d513cd521256254d2e57327d221e1f605c326e79cac1d05b891fd791349d4",
+    "scripts/run_phase_objective.py": "03158c9abde8dc896171f28fce76d5fd5c73638f9317786aac7e813849fcd512"
+  },
+  "config_sha256": {
+    "A0_direct": "e5a4236d5b59b4596d95fc12d6d76d4b86ec35c4097934801ee34794508ef97d",
+    "A2_dual": "4d3bc35d64b60d68eb82025b52682a936e2d42c3940fae53730e84b63fd48f48"
+  },
+  "quality_calibration_sha256": "8fe05c36d5aafcb3c99447bf6a551b50410146c829059e8c3a09dea5dcf621cd"
+}

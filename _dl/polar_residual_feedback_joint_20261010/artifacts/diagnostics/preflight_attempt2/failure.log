@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_residual_feedback_joint_20261010/scripts/controller.py", line 66, in <module>
+    try:run()
+        ^^^^^
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_residual_feedback_joint_20261010/scripts/controller.py", line 44, in run
+    status('preflight');stage('benchmark')
+                        ^^^^^^^^^^^^^^^^^^
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_residual_feedback_joint_20261010/scripts/controller.py", line 19, in stage
+    subprocess.run([sys.executable,str(ROOT/'scripts/run_stage.py'),action],cwd=ROOT,stdout=f,stderr=subprocess.STDOUT,check=True)
+  File "/home/li/.conda/envs/llama-factory/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/bin/python', '/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_residual_feedback_joint_20261010/scripts/run_stage.py', 'benchmark']' returned non-zero exit status 1.

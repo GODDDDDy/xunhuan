@@ -1,0 +1,547 @@
+{
+  "stage": "A0",
+  "run": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_objective_audit_20261013_120028",
+  "source22": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012",
+  "cpu_only": true,
+  "gpu_used": false,
+  "test_used": false,
+  "validation_used_for_any_rule": false,
+  "integrity": {
+    "judgement.npz": {
+      "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012/diagnostics/feature_cache/judgement.npz",
+      "exists": true,
+      "bytes": 23095877,
+      "sha256": "ccd747f96b6318c881f02c167b8a17a8acf31167450147c367da438926ec7c8d",
+      "bytes_match": true,
+      "sha_match": true,
+      "ok": true,
+      "expected_sha256": "ccd747f96b6318c881f02c167b8a17a8acf31167450147c367da438926ec7c8d",
+      "expected_bytes": 23095877
+    },
+    "bias.npz": {
+      "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012/diagnostics/feature_cache/bias.npz",
+      "exists": true,
+      "bytes": 11546391,
+      "sha256": "9c37ffea74006667de50228941f8976c2c826d3dc0187ffdf4c720df634c6cdc",
+      "bytes_match": true,
+      "sha_match": true,
+      "ok": true,
+      "expected_sha256": "9c37ffea74006667de50228941f8976c2c826d3dc0187ffdf4c720df634c6cdc",
+      "expected_bytes": 11546391
+    },
+    "safety.npz": {
+      "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012/diagnostics/feature_cache/safety.npz",
+      "exists": true,
+      "bytes": 23087905,
+      "sha256": "766a741d911a079fdf7d969df0ff56ff1cde4c8c7698260344a5333ce3a91d8f",
+      "bytes_match": true,
+      "sha_match": true,
+      "ok": true,
+      "expected_sha256": "766a741d911a079fdf7d969df0ff56ff1cde4c8c7698260344a5333ce3a91d8f",
+      "expected_bytes": 23087905
+    },
+    "final.pt_22nd": {
+      "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012/downstream/checkpoints/final.pt",
+      "exists": true,
+      "bytes": 99787162,
+      "sha256": "279d0a329d0efebee9678c2156bf3e7b60c0646e75a5f37f8015c7b100f9e9a2",
+      "bytes_match": true,
+      "sha_match": true,
+      "ok": true,
+      "expected_sha256": "279d0a329d0efebee9678c2156bf3e7b60c0646e75a5f37f8015c7b100f9e9a2",
+      "expected_bytes": 99787162
+    },
+    "reused_final.pt_21st": {
+      "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012/weights/reused_final.pt",
+      "exists": true,
+      "bytes": 99779098,
+      "sha256": "cecdcfa47d290b0a2d6b662b96bb4407a7043ef5789e9e87d70768f2c683916d",
+      "bytes_match": true,
+      "sha_match": true,
+      "ok": true,
+      "expected_sha256": "cecdcfa47d290b0a2d6b662b96bb4407a7043ef5789e9e87d70768f2c683916d",
+      "expected_bytes": 99779098
+    },
+    "manifest.csv": {
+      "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012/config/manifest.csv",
+      "exists": true,
+      "bytes": 2765679,
+      "sha256": "a00caa099b6e4dd3dcc16df494574d42a97b2b84c51ff84d8580c8685d252ad4",
+      "bytes_match": true,
+      "sha_match": true,
+      "ok": true,
+      "expected_sha256": "a00caa099b6e4dd3dcc16df494574d42a97b2b84c51ff84d8580c8685d252ad4"
+    },
+    "locked_run.json": {
+      "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012/config/locked_run.json",
+      "exists": true,
+      "bytes": 33429,
+      "sha256": "8c5d4784fd21897db47e1fb5391c9252315341fde9ab658a612a8fb662ccb66a",
+      "bytes_match": true,
+      "sha_match": true,
+      "ok": true
+    },
+    "cache_receipt.json": {
+      "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012/recovery/cache_receipt.json",
+      "exists": true,
+      "bytes": 255,
+      "sha256": "ecdc3d696f4c1b7a460da02f74dedd52a206b54ae2e11885b3bae0ac0f0c64ee",
+      "bytes_match": true,
+      "sha_match": true,
+      "ok": true
+    }
+  },
+  "cache_structure": {
+    "judgement": {
+      "x": {
+        "shape": [
+          65536,
+          50
+        ],
+        "dtype": "float32",
+        "finite": true,
+        "min": -2.9089741706848145,
+        "max": 3.269700765609741
+      },
+      "legacy": {
+        "shape": [
+          65536,
+          50
+        ],
+        "dtype": "float32",
+        "finite": true,
+        "min": -2.9089741706848145,
+        "max": 3.269700765609741
+      },
+      "y": {
+        "shape": [
+          65536,
+          3
+        ],
+        "dtype": "float32",
+        "finite": true,
+        "min": -53.17706298828125,
+        "max": 133.9631805419922
+      },
+      "scene": {
+        "shape": [
+          65536
+        ],
+        "dtype": "<U2"
+      },
+      "files": [
+        "x",
+        "legacy",
+        "y",
+        "scene"
+      ]
+    },
+    "bias": {
+      "x": {
+        "shape": [
+          32768,
+          50
+        ],
+        "dtype": "float32",
+        "finite": true,
+        "min": -2.3727941513061523,
+        "max": 2.595738410949707
+      },
+      "legacy": {
+        "shape": [
+          32768,
+          50
+        ],
+        "dtype": "float32",
+        "finite": true,
+        "min": -2.3727941513061523,
+        "max": 2.595738410949707
+      },
+      "y": {
+        "shape": [
+          32768,
+          3
+        ],
+        "dtype": "float32",
+        "finite": true,
+        "min": -21.846038818359375,
+        "max": 31.1359920501709
+      },
+      "scene": {
+        "shape": [
+          32768
+        ],
+        "dtype": "<U2"
+      },
+      "files": [
+        "x",
+        "legacy",
+        "y",
+        "scene"
+      ]
+    },
+    "safety": {
+      "x": {
+        "shape": [
+          65536,
+          50
+        ],
+        "dtype": "float32",
+        "finite": true,
+        "min": -2.558448553085327,
+        "max": 3.0379726886749268
+      },
+      "legacy": {
+        "shape": [
+          65536,
+          50
+        ],
+        "dtype": "float32",
+        "finite": true,
+        "min": -2.558448553085327,
+        "max": 3.0379726886749268
+      },
+      "y": {
+        "shape": [
+          65536,
+          3
+        ],
+        "dtype": "float32",
+        "finite": true,
+        "min": -67.30754852294922,
+        "max": 45.75089645385742
+      },
+      "scene": {
+        "shape": [
+          65536
+        ],
+        "dtype": "<U2"
+      },
+      "files": [
+        "x",
+        "legacy",
+        "y",
+        "scene"
+      ]
+    }
+  },
+  "roles": {
+    "scenes": {
+      "judgement": [
+        "03",
+        "13",
+        "14",
+        "15",
+        "20",
+        "21",
+        "31",
+        "38",
+        "43",
+        "48",
+        "50",
+        "53"
+      ],
+      "bias": [
+        "11",
+        "39",
+        "40",
+        "58"
+      ],
+      "safety": [
+        "04",
+        "17",
+        "33",
+        "34"
+      ]
+    },
+    "scene_overlap": {
+      "judgement_bias": [],
+      "judgement_safety": [],
+      "bias_safety": []
+    },
+    "sample_counts": {
+      "judgement": {
+        "crops": 256,
+        "unique_crops": 256,
+        "audit_crops_key": [
+          "crops",
+          "sample_ids"
+        ],
+        "x_rows": 65536,
+        "rows_per_crop": 256,
+        "rows_consistent": true
+      },
+      "bias": {
+        "crops": 128,
+        "unique_crops": 128,
+        "audit_crops_key": [
+          "crops",
+          "sample_ids"
+        ],
+        "x_rows": 32768,
+        "rows_per_crop": 256,
+        "rows_consistent": true
+      },
+      "safety": {
+        "crops": 256,
+        "unique_crops": 256,
+        "audit_crops_key": [
+          "crops",
+          "sample_ids"
+        ],
+        "x_rows": 65536,
+        "rows_per_crop": 256,
+        "rows_consistent": true
+      }
+    },
+    "scenes_disjoint": true
+  },
+  "label_scale": {
+    "generation_code": "gain22.crop_records -> y = action_costs(...)[:,1:] / model.cost_scale",
+    "model.cost_scale_source": "staged.components -> source=21st final checkpoint (weights/reused_final.pt)['cost_scale']",
+    "scale_22nd_calibration": 0.000934407114982605,
+    "scale_21st_action_calibration_json": 0.000934407114982605,
+    "scale_21st_checkpoint_field": 0.000934407114982605,
+    "checkpoint_load_error": null,
+    "scale_used_for_cache_labels": 0.000934407114982605,
+    "documented_21st_scale_reference": "21st run downstream config action_calibration.json (see POLAR_ERROR_GUIDED_SHORT_RESULTS)",
+    "scale_verified": true,
+    "scale_differs_from_22nd": false,
+    "explanation_if_identical": "The 21st and 22nd cost scales coincide because T1 and the candidate delta are frozen and identical across both runs; the 95th-percentile absolute action-cost statistic therefore has the same numeric value. Verified by reading both sources, not assumed."
+  },
+  "channel_stats_judgement_only": {
+    "n_channels": 50,
+    "mean": [
+      0.4391930771815282,
+      0.4607298032434528,
+      0.3810103411211401,
+      0.4023859012347515,
+      0.4091636010398858,
+      0.31992497042451973,
+      0.40361218036415636,
+      0.4093538969948085,
+      0.32093056653043384,
+      0.001226279149179832,
+      0.0001902961644462131,
+      0.001005596137553244,
+      0.446561618785438,
+      0.011660785292606946,
+      0.005646130278570638,
+      0.09073021130036552,
+      0.9681634902954102,
+      0.029191424851866543,
+      0.3886888830435812,
+      0.5122866220906985,
+      -1.2238258848567511,
+      0.6987092350717035,
+      -0.39719920013300225,
+      1.055491568797379,
+      1.0730641078856706,
+      -0.7007115048633068,
+      0.4677216537358859,
+      0.0685966015810493,
+      0.20445927785237927,
+      -0.03827018661468884,
+      0.31742841577556646,
+      -0.08983308326589778,
+      0.11062670291693166,
+      -0.06641013734427759,
+      0.09844342633664205,
+      -0.07887962161103701,
+      0.1803851378017498,
+      -0.13646400102061307,
+      0.09661241544279875,
+      -0.08034421649301748,
+      0.0896639657092333,
+      0.06453626258059231,
+      -0.015240060821737789,
+      6.761451674957895e-05,
+      8.456845442435915e-05,
+      9.97947705789219e-05,
+      0.003934452816254597,
+      0.0047535396802032,
+      0.004836179845464583,
+      0.8154711412901463
+    ],
+    "std": [
+      0.24663956330927633,
+      0.25366749387114307,
+      0.21400946722986988,
+      0.259410422048708,
+      0.269633754312434,
+      0.21893882921544544,
+      0.2597579364012374,
+      0.26861396245049995,
+      0.2190456389414177,
+      0.006436496777328987,
+      0.00798276485628575,
+      0.008183350619801754,
+      0.24130836790692783,
+      0.08623434953107728,
+      0.04084448056770719,
+      0.07533282377869578,
+      0.1613129003595387,
+      0.020931196702776763,
+      0.19655870410664994,
+      0.4289877912218248,
+      0.40995142045881267,
+      0.44924506880157444,
+      0.4172292862029294,
+      0.435068368483353,
+      0.45778633894721865,
+      0.3823097570247437,
+      0.43739664376833237,
+      0.015820338927580467,
+      0.022047359572538432,
+      0.018414815856073578,
+      0.048324324333557336,
+      0.0067146603982800234,
+      0.040098573903862164,
+      0.011704082159981224,
+      0.03328700169007948,
+      0.009371239645400337,
+      0.03655418548334369,
+      0.002224069362732943,
+      0.04082086196556089,
+      0.008908226860408059,
+      0.04554105155602657,
+      0.017066465237479064,
+      0.020024154715761057,
+      0.00039522266065400175,
+      0.0003870726636038659,
+      0.0005243604555669017,
+      0.006082224782922522,
+      0.006956188202931356,
+      0.007552397213751646,
+      0.22903611209212915
+    ],
+    "near_zero_variance_channels_std_lt_1e-6": [],
+    "small_variance_channels_std_lt_1e-3": [
+      43,
+      44,
+      45
+    ],
+    "legacy_vs_x_mean_abs_diff": 0.01659141387027499,
+    "role": "judgement_training_cache_only"
+  },
+  "label_distribution_judgement": {
+    "units": "normalized cost (= raw cost / scale); negative = improvement",
+    "neutral_band_abs_le": 0.02,
+    "per_action": {
+      "0.25": {
+        "mean": -0.020115469673434482,
+        "std": 0.49672018221568126,
+        "min": -14.824039459228516,
+        "max": 30.527326583862305,
+        "frac_improvement_lt_neg02": 0.2334747314453125,
+        "frac_neutral_abs_le_02": 0.5841827392578125,
+        "frac_harm_gt_pos02": 0.182342529296875
+      },
+      "0.5": {
+        "mean": -0.028994858258639802,
+        "std": 1.0051413521498072,
+        "min": -28.628225326538086,
+        "max": 63.030303955078125,
+        "frac_improvement_lt_neg02": 0.2965545654296875,
+        "frac_neutral_abs_le_02": 0.450225830078125,
+        "frac_harm_gt_pos02": 0.2532196044921875
+      },
+      "1.0": {
+        "mean": -0.01304540153280393,
+        "std": 2.0755875320344326,
+        "min": -53.17706298828125,
+        "max": 133.9631805419922,
+        "frac_improvement_lt_neg02": 0.3463134765625,
+        "frac_neutral_abs_le_02": 0.3197479248046875,
+        "frac_harm_gt_pos02": 0.3339385986328125
+      }
+    },
+    "best_action_cost_mean": -0.17543213941083324,
+    "frac_any_improvement_lt_neg02": 0.35333251953125,
+    "frac_all_neutral": 0.317291259765625,
+    "zero_baseline_mae": 0.24563409568793815,
+    "mean_baseline_mae": 0.2514802149063908,
+    "best_constant_action_mae": 0.10590113587180937,
+    "real_units_zero_baseline_mae": 0.00022952224669312742,
+    "real_units_mean_baseline_mae": 0.0002349849020858861
+  },
+  "quadratic_structure_judgement": {
+    "formula": "cost(a)=a*A+a^2*B ; A=2*mean(e*d), B=mean(d^2)",
+    "A_from_labels_mean": -0.10293403150175526,
+    "B_from_labels_mean": 0.08988862996895133,
+    "frac_B_negative": 0.0,
+    "reconstructed_c1_max_abs_err": 0.0,
+    "reconstructed_c025_max_abs_err": 8.7738037109375e-05,
+    "note": "labels come from the same costs; reconstruction error must be ~0 for the quadratic identity"
+  },
+  "loss_gradient_check": {
+    "example_true_cost_all_actions": [
+      0.0,
+      0.1,
+      0.3,
+      -0.2
+    ],
+    "predicted_set_to_exact_true": [
+      0.1,
+      0.3,
+      -0.2
+    ],
+    "L_fit_pred_grad": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "L_fit_pred_grad_all_zero": true,
+    "L_policy_analytic_grad": [
+      -0.0019256941261822115,
+      -0.005408055224540165,
+      0.0068760255804194105
+    ],
+    "L_policy_finite_difference_grad": [
+      -0.001925694127053422,
+      -0.005408055224562919,
+      0.006876025580838073
+    ],
+    "L_policy_grad_magnitudes": [
+      0.0019256941261822115,
+      0.005408055224540165,
+      0.0068760255804194105
+    ],
+    "L_policy_grad_abs_values_match_tech_review_1p9e-3_5p4e-3_6p9e-3": true,
+    "nonzero_expected_gradient_confirm": true,
+    "sign_note": "analytic derivative of softmax(-costs) expectation w.r.t. predicted; matches finite difference and the technical review values",
+    "analytic_matches_finite_difference": true,
+    "fp32": true
+  },
+  "sign_scale_correspondence": {
+    "action_order": [
+      0.0,
+      0.25,
+      0.5,
+      1.0
+    ],
+    "cost_negative_means": "improvement (cost = MSE(T(a)) - MSE(T1))",
+    "label_is_nonzero_actions_only": true,
+    "zero_action_cost_defined_zero": true,
+    "three_nonzero_independent_outputs": true,
+    "y_is_normalized_by_generation_cost_scale": true
+  },
+  "gt_isolation": {
+    "cache_contains_keys": [
+      "x",
+      "legacy",
+      "y",
+      "scene"
+    ],
+    "cache_only_x_y_scene_legacy": true,
+    "conclusion": "This cache-level check cannot replace a real forward GT-replacement isolation test; the real test is in the 22nd-run CPU preflight and is reused as evidence, not re-performed here."
+  },
+  "failures": [],
+  "A0_passed": true,
+  "status": "cached_numeric_audit_complete",
+  "notes": [
+    "y scale traced to the 21st run (cache generation source), not the 22nd calibration scale.",
+    "channel statistics computed from the judgement training cache only; bias/safety excluded.",
+    "no 188 test read; no 872 re-run; no new recovery model."
+  ]
+}

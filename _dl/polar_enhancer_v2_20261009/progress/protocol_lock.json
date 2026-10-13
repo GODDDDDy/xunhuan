@@ -1,0 +1,71 @@
+{
+  "code_sha256": {
+    "scripts/archive.py": "558435a5578d3bf17e25a686dc66cf73ef8214f36eb122c0861b291f4f97451d",
+    "scripts/common.py": "13b317cd89258316a2b74854b48b6c94650cf33bbf3f328b6f4ddf0ecf43a895",
+    "scripts/controller.py": "9c23c0c3d3300a17ecb1b028ef88f80d4a1e674e2c44a71381e1039f9e941999",
+    "scripts/enhancer.py": "2bf2b4822d2f50598f7122ba08d75af02b01042e9d00365c33ffb0c36d29deab",
+    "scripts/pidsr_data.py": "f7b746ad4798f05318ad61cde376624aaa2696f91b1b23c7ab1584e650ade4ee",
+    "scripts/polar_loss.py": "8e73d77cbbb8d76fa96b2b514afc72d5859c9b87e632b0056039845e1c5f127f",
+    "scripts/prepare.py": "eb8e154e82d8b43be1d3ae2e1ec7ceca67d8e020492632f36eef18ae83164f7b",
+    "scripts/pretrain.py": "3f432bd3a38e7d210b42601f7b60b923e3b74629ec43d58f0d0719bd04a22ed9",
+    "scripts/quality_metrics.py": "a04d547d16fd21f94e51086d13e1cf1f6974db1b64e8bf313180ff79c41e6d9c",
+    "scripts/reference/run_experiment_snapshot.py": "507c86cab8ac6c81dee04b36634d1619504a05eca6bc1cfb73eaf1ea42ccb6e5",
+    "scripts/run_stage.py": "4cb46005d909faebd63c58ad25daed44f695d1403ccd827aaa474ec80056594e",
+    "scripts/study.py": "96af5bdf04bdf4fc48c0603b916eb6ed770fc2324a425cd5491c38f0ca3141c3",
+    "scripts/vendor/pidsr_data_official.py": "7fbfd48cfa9129226c3bc425045cab7fcac84cd4380bf7bf8d844e6797d98209",
+    "scripts/vendor/pidsr_official.py": "b3e8b3146536f240dab8517bd96918abc9b71ed306d3f483f6402dc08a1d7d4f",
+    "scripts/vendor/sgsc_networks.py": "f168ac4c8768dfb997687c1fcd77b4b812f47014b898821ebfd2cb00d8f01bb3",
+    "scripts/vendor/sgsc_primitives.py": "90727f97b82411f825dcdffafda8e9defdcb2331a4c326c47162e56035cf6262",
+    "scripts/vendor/sgsc_reference.py": "c84f52b3076c91e83af50473537cfe8d28636ed7482f44384974db9153d89cc3",
+    "scripts/watchdog.py": "32936711746458bae2e96e832478411f80690597227fbf5bf3136c0d43455fd3"
+  },
+  "sources_sha256": {
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/protocol/base_server.yaml": "9a55ac6bf92a7d41c2ce4a1d45a4f60f36b1bd688408a9e4233c7ac162fe215c",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/config/manifest.csv": "d4f04a73e2d1b99d11a3487591b1143be79bfef2bb1ca61cc989823e190a57bb",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/config/training_schedule_16000.json": "97ff589d0323047d00dbe4c2ecc77f7076992eaca2f830c18d08e378d9ba954a",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/config/validation_proxy.json": "a32602bb240f18a9d91bbb3c588694f6e5314ffd1cef2cd3eb8e44401ab103aa",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/direct_t1_joint_20261008_memorysafe_v2/run/checkpoints/step_10000.pt": "eb17a5537bcd26583b73670a34a258f948056935f851b42c7a44eb62e1dd15ea",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/deps/rgb_final_confirmation/src/rgb_final_confirmation/training.py": "4f5e4a49be0869e54c5127854c969bf84464d844a2c58db530be6ff21c4a5ce8",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/deps/rgb_final_confirmation/src/rgb_final_confirmation/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/deps/rgb_final_confirmation/src/rgb_final_confirmation/data.py": "1b2ac29b7e78ede36647aaff7f5359d9436c949b93359ceb489cce04b548cb96",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/deps/rgb_final_confirmation/src/rgb_final_confirmation/r2p.py": "d98d11e4d2ca6703fa6d4638e700b7f2f4e4f834a5d1ba47c4e04b96ecaed133",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/deps/rgb_final_confirmation/src/rgb_final_confirmation/losses.py": "b1fc621f0247915f734ea5c2bbb7bf3d8a1c528d4010dc8df7b020cfd24412a6",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/deps/rgb_final_confirmation/src/rgb_final_confirmation/initialization.py": "803073e54a8a36a58a3b6de9f6cb57750b00db7fc667860e432ec8d73891d75b",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/deps/rgb_final_confirmation/src/rgb_final_confirmation/evaluation.py": "2b71efa332d282c916d771656d289e003a8bd4a619fe6f7f6deb6217d95434c7",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/deps/rgb_final_confirmation/src/rgb_final_confirmation/runner.py": "0195d1557dbc6e0d7e149d433ec09e066505a2979d30419a3937912aba540d0b",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/deps/rgb_final_confirmation/src/rgb_final_confirmation/__init__.py": "b0b8571aa1e4d8bb89c92445ab72446a10981870a8f742b57657297279b48896",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/deps/rgb_final_confirmation/src/rgb_final_confirmation/config.py": "ff5e9bf083f87656aa0670037382205fc4ae2449b989988e165346d0e60a4fdc",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/deps/rgb_final_confirmation/src/rgb_final_confirmation/cli.py": "129c8b089364f0d7c3bd9d7812f987868fba599002817a9d5fe98f7a691fcbbd",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/deps/rgb_final_confirmation/src/rgb_final_confirmation/polarfree.py": "80d7bb81b945610f387ea04a7cdd2cbffb8a621a80d5a4228ce64dcbf5b65fe1",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/weights/polarfree/net_g_latest.pth": "a230e77fb19827a1ada41e4dc86374dee092e476915d2252841f81dd8c257ca2",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/weights/polarfree/net_d_latest.pth": "f1d0e9acb244480e5d4ba4b5cee7ba35666fb97d41bccf4659f20911f46f1fb3",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/weights/polarfree/net_le_dm_latest.pth": "6b98bd2a715d3e669acd99582d9ea37594ff4a2ee7786df86764d8efdafd0546",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/diagnostics/amendment_20261009_official_convergence/checkpoint_step_8000.pt": "1d9d5e8db98f1e663d98d94ef49969cb9b0451431e830984eea50b70a10af010"
+  },
+  "pidsr_manifest_sha256": "2bdfc630cb605590971a813353149d329628c83f210cb44c2833a69541096cdf",
+  "downstream_split_counts": {
+    "train": 5440,
+    "validation": 872,
+    "test": 188
+  },
+  "official_checkpoint_unused": true,
+  "old_clean_RGB_guide_unused": true,
+  "references": [
+    "https://github.com/PRIS-CV/PIDSR",
+    "https://arxiv.org/html/2402.18134v2",
+    "https://github.com/fourson/Learning-to-Deblur-Polarized-Images",
+    "https://arxiv.org/html/2501.13134"
+  ],
+  "amendment": {
+    "time_unix": 1791534431.6885927,
+    "authorization": "User requested sufficient correction pretraining and direct official PolarFree initialization with separate learning rates",
+    "parent_protocol_id": "61fefac1e5772ce453560490cbfa14c12c1114b25a0bb9ff5ddf63ffd46b0db3",
+    "test_seen_before_amendment": false,
+    "original_task_source": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/direct_t1_joint_20261008_memorysafe_v2/run/checkpoints/step_10000.pt",
+    "original_task_source_sha256": "eb17a5537bcd26583b73670a34a258f948056935f851b42c7a44eb62e1dd15ea",
+    "discarded_unsaved_updates": 256,
+    "hard_deadline_unchanged": 1791605047.4916465,
+    "scope": "one latest arm; no additional test-dependent runs or controls"
+  },
+  "active_protocol_id": "576f788b73218610533cddb66089d3e0c0910f9aa97604a376c9692d71634007"
+}

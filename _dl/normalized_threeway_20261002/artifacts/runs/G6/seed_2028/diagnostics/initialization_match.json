@@ -1,0 +1,18 @@
+{
+  "reference": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/phase_objective_20261002/runs/phase01/seed_2026/config/tasknet_initial.pt",
+  "reference_sha256": "cedb5c3f39fbb658d5e351192049b2135d7e209e047fc13596373c9ce1348088",
+  "parameter_tensors": 436,
+  "changed_keys": [],
+  "passed": true,
+  "source_hashes": {
+    "manifest": "d4f04a73e2d1b99d11a3487591b1143be79bfef2bb1ca61cc989823e190a57bb",
+    "schedule": "bc8d82d579aa8ce6c410c94909634c61aab7a83628667ab1810ad2406eb95e98",
+    "base_config": "9a55ac6bf92a7d41c2ce4a1d45a4f60f36b1bd688408a9e4233c7ac162fe215c",
+    "pretrained_r2p": "e979881e7d03e3b75d6b9a4e875a29eac2e1a15430582ec319289e6ae32f5541"
+  },
+  "torch": "2.5.1+cu121",
+  "cuda": "12.1",
+  "cudnn": 90100,
+  "cudnn_tf32": true,
+  "matmul_tf32": false
+}

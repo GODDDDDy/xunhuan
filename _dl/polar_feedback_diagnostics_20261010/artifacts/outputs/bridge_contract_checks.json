@@ -1,0 +1,17 @@
+{
+  "zero_correction_official_exact_cases": [
+    "random_u8",
+    "dark",
+    "saturated",
+    "weak"
+  ],
+  "finite_gradients": true,
+  "float64_gradcheck": true,
+  "tiny_update_preserved": true,
+  "official_tiny_update_erased": true,
+  "CPU_only": true,
+  "training": false,
+  "test_used": false,
+  "time_unix": 1791579258.3430498,
+  "initial_check_failure": "Missing optional common helper import before checks; removed unused import, no algorithm change"
+}

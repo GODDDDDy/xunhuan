@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "initial_closed_gate_preserves_t1": true,
+  "GT_replacement_does_not_change_prediction": true,
+  "warmup_enhancer_and_task_unchanged": true,
+  "quality_gradient_isolation": true,
+  "second_polar_task_gradient_nonzero": true,
+  "acceptance_gradient_isolation": true,
+  "mask_zero_exactly_preserves_t1": true,
+  "mask_one_equals_ungated_candidate": true,
+  "rejected_candidate_gradient_nonzero": true,
+  "local_benefit_labels_better_neutral_worse": true,
+  "first_round_fixed_when_second_interfaces_change": true,
+  "prior_parameters_frozen": true,
+  "checkpoint_rng_restore_exact": true,
+  "confidence_extremes_and_missing_feedback_finite": true,
+  "temporary_hooks_removed": true,
+  "official_initialization": {
+    "kind": "verified_previous_final",
+    "strict": true,
+    "source_sha256": "a230e77fb19827a1ada41e4dc86374dee092e476915d2252841f81dd8c257ca2",
+    "all_net_g_tensors_equal_official": false,
+    "prior_sha256": {
+      "net_g_latest.pth": "a230e77fb19827a1ada41e4dc86374dee092e476915d2252841f81dd8c257ca2",
+      "net_d_latest.pth": "f1d0e9acb244480e5d4ba4b5cee7ba35666fb97d41bccf4659f20911f46f1fb3",
+      "net_le_dm_latest.pth": "6b98bd2a715d3e669acd99582d9ea37594ff4a2ee7786df86764d8efdafd0546"
+    },
+    "historical_joint_weights_overwrite": false,
+    "starting_weights_equal_previous_net_g": true,
+    "warmstart_sha256": "ec7f0e6e79d0dcf21c536dc71958d44514bd7e78a8624bb936f16c02c37e81e8",
+    "source_originally_official": true
+  },
+  "warmstart_exact": {
+    "source_sha256": "ec7f0e6e79d0dcf21c536dc71958d44514bd7e78a8624bb936f16c02c37e81e8",
+    "source_step": 12000,
+    "inherited_keys": 484,
+    "new_keys": [
+      "update_gate.feature_projection.weight",
+      "update_gate.feature_projection.bias",
+      "update_gate.body.0.weight",
+      "update_gate.body.0.bias",
+      "update_gate.body.2.weight",
+      "update_gate.body.2.bias",
+      "update_gate.body.4.weight",
+      "update_gate.body.4.bias"
+    ],
+    "all_existing_tensors_equal": true,
+    "source_protocol_id": "87b0691d59aa2ae342e321ff2ecc9534782585453ba16a659cbaeef52614aeeb"
+  },
+  "note": "Disposable perturbations are discarded; CPU structural checks use L1; actual task loss is verified in GPU preflight, not efficacy evidence"
+}

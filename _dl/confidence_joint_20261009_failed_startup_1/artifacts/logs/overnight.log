@@ -1,0 +1,14 @@
+{"stage": "starting", "time_unix": 1791479192.296669, "deadline_unix": 1791507333.0, "target_steps": 16000, "order": ["A2_dual", "A0_direct"]}
+{"stage": "calibrate", "time_unix": 1791479192.2967935, "unit": "A2_dual", "target_step": 16000}
+{"stage": "train", "time_unix": 1791479240.322618, "unit": "A2_dual", "target_step": 16000}
+{"stage": "failed", "time_unix": 1791479364.0077662, "error": "CalledProcessError(1, ['/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/bin/python', '/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/confidence_joint_20261009/scripts/run_arm.py', 'train', '--unit', 'A2_dual', '--step', '16000'])", "traceback": "Traceback (most recent call last):\n  File \"/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/confidence_joint_20261009/scripts/run_overnight.py\", line 100, in <module>\n    main()\n  File \"/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/confidence_joint_20261009/scripts/run_overnight.py\", line 75, in main\n    run('train', unit)\n  File \"/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/confidence_joint_20261009/scripts/run_overnight.py\", line 25, in run\n    subprocess.run([sys.executable, str(ROOT / 'scripts/run_arm.py'), action,\n  File \"/home/li/.conda/envs/llama-factory/lib/python3.11/subprocess.py\", line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/bin/python', '/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/confidence_joint_20261009/scripts/run_arm.py', 'train', '--unit', 'A2_dual', '--step', '16000']' returned non-zero exit status 1.\n", "test_completed": false}
+Traceback (most recent call last):
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/confidence_joint_20261009/scripts/run_overnight.py", line 100, in <module>
+    main()
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/confidence_joint_20261009/scripts/run_overnight.py", line 75, in main
+    run('train', unit)
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/confidence_joint_20261009/scripts/run_overnight.py", line 25, in run
+    subprocess.run([sys.executable, str(ROOT / 'scripts/run_arm.py'), action,
+  File "/home/li/.conda/envs/llama-factory/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/bin/python', '/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/confidence_joint_20261009/scripts/run_arm.py', 'train', '--unit', 'A2_dual', '--step', '16000']' returned non-zero exit status 1.

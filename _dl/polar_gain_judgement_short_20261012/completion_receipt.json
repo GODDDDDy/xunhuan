@@ -1,0 +1,123 @@
+{
+  "recorded_at": "2026-10-12T19:33:25.411225+00:00",
+  "implementation_and_experiment_completed": true,
+  "method_iteration_improvement_observed": false,
+  "reason": "All updates rejected: zero coverage and T2 exactly T1 on all1060 frames.",
+  "protocol_id": "8d4f7dd5e12ce21b92c4d3a3413b68da8786c7cb414e55a9ce31600de8fc6ad2",
+  "raw_archive_sha256": "f36a1a0618b19cf3abadf26b6f76c42a2aca2ec4dfdf6189c46e99ed8f85b0c1",
+  "raw_files_verified": 1171,
+  "original_archive_unchanged": true,
+  "source_and_final_weights_verified": true,
+  "source_checkpoint_sha256": "cecdcfa47d290b0a2d6b662b96bb4407a7043ef5789e9e87d70768f2c683916d",
+  "final_checkpoint_sha256": "279d0a329d0efebee9678c2156bf3e7b60c0646e75a5f37f8015c7b100f9e9a2",
+  "candidate_steps": 0,
+  "judgement_steps": 3000,
+  "training_manifest_images": 5440,
+  "current_training_unique_images": 1140,
+  "current_calibration_unique_images": 660,
+  "candidate_role_images_not_updated": 3640,
+  "validation_frames": 872,
+  "test_frames": 188,
+  "original_size": true,
+  "tiling": false,
+  "first_round_exactly_unchanged": true,
+  "candidate_and_q_frozen_entire_run": true,
+  "saved_action_example_scenes": 16,
+  "saved_confidence_example_scenes": 16,
+  "evaluation_completed_unix": 1791827321.8453705,
+  "deadline_unix": 1791839076.3391461,
+  "local_postprocessing_gpu_used": false,
+  "post_deadline_gpu_training_or_evaluation": false,
+  "failure_packages": {
+    "recording_failure_20261012": {
+      "archive_sha256": "3557bd2d0694462503d8a4d7ad86c968535f214057e300250c4ad8107ce715e1",
+      "bytes": 295225577,
+      "files_verified": 93,
+      "all_hashes_match": true,
+      "archive_completed": false,
+      "gpu_used": false,
+      "source_archive_unchanged": true
+    },
+    "reference_failure_20261012": {
+      "archive_sha256": "3d3bc2c45801330fd2d62247945e9f466a0baf314a56d6bbd16d283e321c3c21",
+      "bytes": 295361197,
+      "files_verified": 149,
+      "all_hashes_match": true,
+      "archive_completed": false,
+      "gpu_used": false,
+      "source_archive_unchanged": true
+    }
+  },
+  "supplemental_files": [
+    {
+      "path": "operations/finalize_delivery.py",
+      "bytes": 5584,
+      "sha256": "a2e0758a640dbfb205636a34c5e0916ac8623d4adeae98a01d432dba41551876"
+    },
+    {
+      "path": "operations/summarize_results.py",
+      "bytes": 12496,
+      "sha256": "a66572fc9ae5a5dc9659ee2eb4107c1329d95a8910710388d8f1841d4e7c9563"
+    },
+    {
+      "path": "operations/verify_archive.py",
+      "bytes": 2142,
+      "sha256": "ab0934577b7e60d882bc6ea516eda2174bd20b3a3c75b76d0270e625bd8d95ef"
+    },
+    {
+      "path": "interpretation/documents/POLAR_GAIN_JUDGEMENT_SHORT_PROTOCOL_ZH_20261012.md",
+      "bytes": 11734,
+      "sha256": "35cf9b5ac8340ddf20ab4bb713de7b0e5bf4a532c1fb6dca7c70b96dac58594e"
+    },
+    {
+      "path": "interpretation/documents/POLAR_GAIN_JUDGEMENT_SHORT_RESULTS_ZH_20261012.md",
+      "bytes": 10193,
+      "sha256": "42ed0cb85fca0c54025df7cbb49b277268ea99091f682c42f2dd0cf74428cf85"
+    },
+    {
+      "path": "interpretation/documents/POLAR_GAIN_PREDICTABILITY_NEXT_STEP_ZH_20261012.md",
+      "bytes": 11648,
+      "sha256": "ae844214c1a94af130170be60fb486da67fbca853126b7cab7f9202a89c6f338"
+    },
+    {
+      "path": "interpretation/documents/sources/external_next_step_20261012/chatgpt_suggestion_1.png",
+      "bytes": 376565,
+      "sha256": "9255e8a7d2145da8c5a9155bf596448b5c11d35669ec577771bb7bc029204c3f"
+    },
+    {
+      "path": "interpretation/documents/sources/external_next_step_20261012/chatgpt_suggestion_2.png",
+      "bytes": 238875,
+      "sha256": "1f162abcbffe398925d2929cfec5a3bc7dcee1eb8173d3d4e73a9a0ca1f6482e"
+    },
+    {
+      "path": "interpretation/documents/sources/external_next_step_20261012/chatgpt_suggestion_3.png",
+      "bytes": 233662,
+      "sha256": "09e578f59850abf5d5ec503b83de41ad68822bd5e28226c23ebc223b04445051"
+    },
+    {
+      "path": "interpretation/documents/实验记录_20261013第22项完成快照.md",
+      "bytes": 46028,
+      "sha256": "b28e36230b6701735eec1f2f3bdd596afce2f012482b2b4e726f3ddcc7636488"
+    },
+    {
+      "path": "interpretation/final_cpu_weight_audit.json",
+      "bytes": 827,
+      "sha256": "31a5556eb1b1246c262f0bd9f1fadfdb3f82ff391f0b978c6769a1e72516cd13"
+    },
+    {
+      "path": "interpretation/result_summary.json",
+      "bytes": 1181483,
+      "sha256": "ea8e266a82a475e7b8f9d02bf89974ef92fea26a25dbfde8077532d07146cbd1"
+    },
+    {
+      "path": "interpretation/test_per_image.csv",
+      "bytes": 28382,
+      "sha256": "b5f54e9958193527ce757ad88d5ce34d23afa0bf2d251a62e3f2eef2bfbab85d"
+    },
+    {
+      "path": "interpretation/validation_per_image.csv",
+      "bytes": 132925,
+      "sha256": "952997c5e7a5b64ff9faff8f77f68153679d1731cbff9c29ceee4204c1c633c8"
+    }
+  ]
+}

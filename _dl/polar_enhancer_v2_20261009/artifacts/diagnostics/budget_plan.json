@@ -1,0 +1,109 @@
+{
+  "pretrain": {
+    "step_seconds": 1.953483680728823,
+    "validation_scene_seconds": 0.18389199720695615,
+    "peak_vram_mb": 458.15966796875,
+    "microbatch": 1
+  },
+  "downstream": {
+    "step_seconds": 1.3210310987196863,
+    "full_image_seconds": 6.337949036154896,
+    "full_image_shape": [
+      1,
+      12,
+      1024,
+      1224
+    ],
+    "sample_id": [
+      "validation/hard/56/0063"
+    ],
+    "train_peak_vram_mb": 3219.86669921875,
+    "eval_peak_vram_mb": 9214.05859375,
+    "full_forward": true,
+    "microbatch": 1,
+    "effective_batch": 2
+  },
+  "configuration": {
+    "schema_version": 3,
+    "seed": 2026,
+    "paths": {
+      "base_config": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/protocol/base_server.yaml",
+      "source_root": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/deps/rgb_final_confirmation/src",
+      "manifest": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/config/manifest.csv",
+      "schedule": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/config/training_schedule_16000.json",
+      "validation_proxy": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/config/validation_proxy.json",
+      "pretrained_r2p": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/weights/r2p_pretrained_pidsr_e42.pt",
+      "reference_r2p": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/deps/r2p_film.py",
+      "output_root": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/downstream",
+      "pidsr_data": "/media/li/data3/25thstudent/DY/929work/research_data/PIDSR-dataset",
+      "source_checkpoint": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/direct_t1_joint_20261008_memorysafe_v2/run/checkpoints/step_10000.pt"
+    },
+    "data": {
+      "condition": "raw_mixed_rgb",
+      "crop_size": 128,
+      "batch_size": 2,
+      "workers": 2
+    },
+    "source_sha256": "eb17a5537bcd26583b73670a34a258f948056935f851b42c7a44eb62e1dd15ea",
+    "scope": "one new enhancer plus confidence K2; same-resolution PIDSR correction pretraining",
+    "pretrain": {
+      "steps": 12000,
+      "effective_batch": 8,
+      "microbatch": 1,
+      "learning_rate": 0.0003,
+      "minimum_steps": 6000,
+      "deadline_unix": 1791557938.9210548
+    },
+    "downstream": {
+      "steps": 8000,
+      "effective_batch": 2,
+      "microbatch": 1,
+      "minimum_steps": 3000,
+      "deadline_unix": 1791590647.4916465
+    },
+    "confidence": {
+      "warmup_steps": 500,
+      "calibration_training_crops": 256
+    },
+    "evaluation": {
+      "validation_frames": 872,
+      "test_frames": 188,
+      "original_size": true,
+      "tiles": false
+    },
+    "selection": "pretrain: best 10-scene validation mean angle PSNR; downstream: planned/time-only final",
+    "budget": {
+      "start_unix": 1791518647.4916465,
+      "deadline_unix": 1791605047.4916465,
+      "process_group": 3791317,
+      "device": "server RTX3080Ti",
+      "hours": 24,
+      "starts_at": "first GPU preflight",
+      "evaluation_reserve_seconds": 14400,
+      "estimated_eval_seconds": 6723.7427382403985,
+      "preparation_reserve_seconds": 779.6602294258773,
+      "formal_feasible": true
+    },
+    "code_sha256": {
+      "scripts/archive.py": "96f772dbe5f0d1ee17a786aefa0b7a9304bb8f4bd125f7b32e0f1a43d8410a20",
+      "scripts/common.py": "13b317cd89258316a2b74854b48b6c94650cf33bbf3f328b6f4ddf0ecf43a895",
+      "scripts/controller.py": "90eff30351de2890d8930855df8aafc5d6f914d509b5033cbf86207d598a7acc",
+      "scripts/enhancer.py": "2bf2b4822d2f50598f7122ba08d75af02b01042e9d00365c33ffb0c36d29deab",
+      "scripts/pidsr_data.py": "f7b746ad4798f05318ad61cde376624aaa2696f91b1b23c7ab1584e650ade4ee",
+      "scripts/polar_loss.py": "8e73d77cbbb8d76fa96b2b514afc72d5859c9b87e632b0056039845e1c5f127f",
+      "scripts/prepare.py": "eb8e154e82d8b43be1d3ae2e1ec7ceca67d8e020492632f36eef18ae83164f7b",
+      "scripts/pretrain.py": "27a2563456ff48ea2c80139132f771a2ce7156d04ffa67bceb022efa45aa208c",
+      "scripts/quality_metrics.py": "a04d547d16fd21f94e51086d13e1cf1f6974db1b64e8bf313180ff79c41e6d9c",
+      "scripts/reference/run_experiment_snapshot.py": "507c86cab8ac6c81dee04b36634d1619504a05eca6bc1cfb73eaf1ea42ccb6e5",
+      "scripts/run_stage.py": "4cb46005d909faebd63c58ad25daed44f695d1403ccd827aaa474ec80056594e",
+      "scripts/study.py": "6d11426083ca2e83cad18777054d5fe973f15aef04eb6fd55ff10d481dd253c3",
+      "scripts/vendor/pidsr_data_official.py": "7fbfd48cfa9129226c3bc425045cab7fcac84cd4380bf7bf8d844e6797d98209",
+      "scripts/vendor/pidsr_official.py": "b3e8b3146536f240dab8517bd96918abc9b71ed306d3f483f6402dc08a1d7d4f",
+      "scripts/vendor/sgsc_networks.py": "f168ac4c8768dfb997687c1fcd77b4b812f47014b898821ebfd2cb00d8f01bb3",
+      "scripts/vendor/sgsc_primitives.py": "90727f97b82411f825dcdffafda8e9defdcb2331a4c326c47162e56035cf6262",
+      "scripts/vendor/sgsc_reference.py": "c84f52b3076c91e83af50473537cfe8d28636ed7482f44384974db9153d89cc3",
+      "scripts/watchdog.py": "32936711746458bae2e96e832478411f80690597227fbf5bf3136c0d43455fd3"
+    },
+    "protocol_id": "61fefac1e5772ce453560490cbfa14c12c1114b25a0bb9ff5ddf63ffd46b0db3"
+  }
+}

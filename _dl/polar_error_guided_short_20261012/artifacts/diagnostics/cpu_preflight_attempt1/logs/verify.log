@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_error_guided_short_20261012/scripts/run_short.py", line 3, in <module>
+    import staged,short_verify,short_diagnostic
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_error_guided_short_20261012/scripts/staged.py", line 8, in <module>
+    import study
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_error_guided_short_20261012/scripts/study.py", line 11, in <module>
+    from enhancer import PolarEnhancer,JointEnhancer
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_error_guided_short_20261012/scripts/enhancer.py", line 13, in <module>
+    from vendor.pidsr_official import PIDSRNet
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_error_guided_short_20261012/scripts/vendor/pidsr_official.py", line 6, in <module>
+    from einops import rearrange
+ModuleNotFoundError: No module named 'einops'

@@ -1,0 +1,37 @@
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG19_Weights.IMAGENET1K_V1`. You can also use `weights=VGG19_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+{
+  "bypass_r2p": true,
+  "bypass_nan_probe": {
+    "task_loss_with_nan_r2p": 0.40625452995300293,
+    "task_loss_reference": 0.40625452995300293,
+    "identical": true,
+    "refined_polar_is_raw_input": true
+  },
+  "group": "G6_phase01",
+  "strict_pretrained_load": true,
+  "pretrain_epoch": 42,
+  "pretrained_sha256": "e979881e7d03e3b75d6b9a4e875a29eac2e1a15430582ec319289e6ae32f5541",
+  "output_shape": [
+    2,
+    12,
+    128,
+    128
+  ],
+  "output_min": 0.0,
+  "output_max": 1.0,
+  "task_loss": 0.40625452995300293,
+  "alignment_loss": null,
+  "lambda_feature_alignment": 0.0,
+  "r2p_grad_norm": 0.0,
+  "projection_grad_norm": 0.0,
+  "tasknet_grad_norm": 7.883618354797363,
+  "r2p_has_grad": false,
+  "projection_has_grad": false,
+  "tasknet_has_grad": true,
+  "frozen_prior_has_grad": false,
+  "cuda_peak_memory_bytes": 5614839296,
+  "preflight_problems": []
+}

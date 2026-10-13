@@ -1,0 +1,1016 @@
+ 
+ 
+ 
+ Reflection Removal UsingRecurrent Polarization-to-Polarization Network 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ Report GitHub Issue
+
+ × 
+ 
+
+ 
+ Title: 
+ 
+
+ Content selection saved. Describe the issue below:
+
+
+ Description: 
+ 
+ 
+
+
+ 
+ Submit without GitHub 
+ Submit in GitHub 
+ 
+ 
+ 
+ 
+ arXiv is now an independent nonprofit! 
+ Learn more 
+ × 
+ 
+
+
+ 
+ 
+ 
+ Back to arXiv 
+ 
+ 
+
+ 
+ 
+ Why HTML? 
+ 
+ 
+ 
+ 
+ Report Issue 
+ 
+ 
+ 
+ 
+ 
+ 
+ Back to Abstract 
+ 
+ 
+ 
+ 
+ 
+ 
+ Download PDF 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Abstract 
+
+ 1 Introduction 
+
+ 2 Proposed Method 
+ 
+ 2.1 Network Structure 
+
+ 2.2 Loss Functions 
+
+ 
+
+ 3 Experimental Results 
+ 
+ 3.1 Implementation Details of Our RP2PN 
+
+ 3.2 Comparison with Other Methods 
+
+ 3.3 Ablation Study 
+
+ 
+
+ 4 Conclusion 
+
+ References 
+
+ 
+ 
+ 
+ 
+ 
+ License: CC Zero
+ 
+ 
+arXiv:2402.18178v1 [cs.CV] 28 Feb 2024
+
+
+ 
+ 
+ Reflection Removal Using
+ Recurrent Polarization-to-Polarization Network
+
+ 
+ 
+ Wenjiao Bian
+ 
+    
+ Yusuke Monno
+ 
+    
+ Masatoshi Okutomi
+ 
+
+
+ Abstract
+
+ 
+ This paper addresses reflection removal, which is the task of separating reflection components from a captured image and deriving the image with only transmission components. Considering that the existence of the reflection changes the polarization state of a scene, some existing methods have exploited polarized images for reflection removal. While these methods apply polarized images as the inputs, they predict the reflection and the transmission directly as non-polarized intensity images. In contrast, we propose a polarization-to-polarization approach that applies polarized images as the inputs and predicts “polarized” reflection and transmission images using two sequential networks to facilitate the separation task by utilizing the interrelated polarization information between the reflection and the transmission. We further adopt a recurrent framework, where the predicted reflection and transmission images are used to iteratively refine each other. Experimental results on a public dataset demonstrate that our method outperforms other state-of-the-art methods.
+
+ 
+
+
+ 
+ Index Terms: 
+
+Reflection Removal, Polarization Imaging, Recurrent Neural Network
+
+
+ † † address: Tokyo Institute of Technology,
+Tokyo, Japan 
+ 
+ 1 Introduction
+
+
+ 
+ Reflections caused by semi-reflectors such as glass are commonly seen in daily life. When light passes through semi-reflectors, a camera inevitably captures the reflection and the transmission components at the same time. Nevertheless, most computer vision applications such as object detection, segmentation, and depth estimation assume that each pixel value is derived only from the scene corresponding to the transmission. Therefore, reflection removal is a crucial task to improve the robustness of real-world applications.
+
+
+
+ 
+ Figure 1: Different input-output models for the reflection removal. (a) Both the input and the output of standard single-image methods are intensity images. (b) Existing polarization-based methods apply polarized images only to the input. (c) Our proposed polarization-to-polarization approach predicts the output reflection and transmission as polarized images as well.
+ 
+ 
+ 
+ Most existing reflection removal methods are based on a single grayscale or color image, where both the input and the outputs (reflection and transmission) are an intensity domain, as illustrated by the intensity-to-intensity model of Fig.  1 (a). While recent deep-learning-based methods have shown great progress  [ 1 , 2 , 3 , 4 , 5 , 6 ] , the separation of the reflection and the transmission is still challenging due to an ill-posed problem that an infinite number of the transmission and the reflection image combinations is possible to reproduce the same mixed image.
+Other approaches attempt to solve this problem by using multi-view color images [ 7 , 8 , 9 ] . However, these methods typically necessitate image alignment as a pre-processing step, which imposes constraints on their practical application.
+
+
+
+ 
+ Meanwhile, as the price of one-shot polarization cameras has decreased, one-shot acquisition of polarized images has become much easier in recent years  [ 10 , 11 ] . Considering that the existence of reflection components changes the polarization state of a scene, some non-learning-based [ 12 , 13 , 14 , 15 ] or learning-based [ 16 , 17 , 18 ] methods solve the reflection removal by using a set of polarized images with different polarizer orientations (typically, four orientations of 0 ∘ 0^{\circ} , 45 ∘ {45}^{\circ} , 90 ∘ {90}^{\circ} , and 135 ∘ {135}^{\circ} ). While these polarization-based methods apply polarized images as the inputs, they predict the reflection and the transmission images directly as non-polarized intensity images, as illustrated by the polarization-to-intensity model of Fig.  1 (b).
+
+
+
+ 
+ Figure 2: The overall structure of our proposed RP2PN. 
+ 
+ 
+ In this paper, we propose a polarization-to-polarization approach for deep-learning-based reflection removal, as illustrated in Fig.  1 (c). To effectively learn the polarimetric relationships among the input image and the separated reflection and transmission images, our approach takes polarized images as the inputs and predicts the reflection and the transmission images also as the polarized images. Then, the final reflection and transmission outputs are derived as the intensity images by averaging the polarized images.
+
+
+
+ 
+ Regarding the network structure, inspired by  [ 5 , 6 , 18 ] , we propose a two-stage sequential approach within our polarization-to-polarization framework, which uses one recurrent network to predict the reflection and then feeds the reflection result to another network to predict the transmission, as better transmission estimation is also beneficial for reflection estimation and vice versa. We also utilize the difference images between different polarizer angles as the network inputs, because they exhibit an informative feature for the reflection removal.
+
+
+
+ 
+ Experimental results on a public dataset  [ 18 ] demonstrate that our method outperforms other state-of-the-art intensity-based and polarization-based methods. Additionally, we highlight the significance of our polarization-to-polarization framework and the effectiveness of the integrated recurrent unit from the ablation study.
+
+
+
+ 
+ 
+ 2 Proposed Method
+
+
+ 
+ 2.1 Network Structure
+
+
+ 
+ Figure  2 shows the overall structure of our proposed recurrent polarization-to-polarization network (RP2PN), which sequentially and iteratively predicts the polarized reflection and the polarized transmission images. For network training, we use Lei et al. real-world dataset  [ 18 ] , which was obtained using Lucid PHX050S-P one-shot monochrome polarization camera equipped with Sony IMX250MZR sensor  [ 10 ] . This dataset provides the triplets of aligned polarized images { I ϕ , R ϕ , T ϕ } \{I_{\phi},R_{\phi},T_{\phi}\} , where ϕ ∈ { 0 ∘ \phi\in\{0^{\circ} , 45 ∘ {45}^{\circ} , 90 ∘ {90}^{\circ} , 135 ∘ } {135}^{\circ}\} is the polarizer angle, I I represents the input image with mixed reflection and transmission, and R R and T T represent the corresponding ground-truth reflection and transmission images, respectively.
+
+
+
+ 
+ Our RP2PN consists of two sequential networks, namely R-LSTM-Net for the reflection estimation and T-Net for the transmission. As for the network inputs, from four input polarized images ( I 0 I_{0} , I 45 I_{45} , I 90 I_{90} , I 135 I_{135} ), the intensity image I I , the degree-of-polarization image ( D ​ o ​ P DoP ) are calculated by a standard polarimetric calculation.
+In addition, we introduce a polarized difference image I d ​ i ​ f ​ f I_{diff} , which serves as informative cues for the reflection removal.
+
+
+
+ 
+ For a mixed polarized image I ϕ = T ϕ + R ϕ I_{\phi}=T_{\phi}+R_{\phi} captured under a certain polarizer orientation ϕ \phi , the polarized components of T ϕ T_{\phi} and R ϕ R_{\phi} , denoted as T ϕ p T^{p}_{\phi} and R ϕ p R^{p}_{\phi} , will change with the variation of  ϕ \phi , while the unpolarized components of T ϕ T_{\phi} and R ϕ R_{\phi} remain invariant.
+Thus, for two mixed images with the polarizer orientations ϕ 1 \phi_{1} and ϕ 2 \phi_{2} , their difference is formed only by the polarized components as
+
+ 
+
+ 
+ 
+ I ϕ 1 − I ϕ 2 = T ϕ 1 p − T ϕ 2 p + ( R ϕ 1 p − R ϕ 2 p ) . I_{\phi_{1}}-I_{\phi_{2}}=T_{\phi_{1}}^{p}-T_{\phi_{2}}^{p}+(R_{\phi_{1}}^{p}-R_{\phi_{2}}^{p}). 
+ 
+ (1) 
+ 
+
+
+ 
+ We observed in Lei’s real-world dataset  [ 18 ] that there is a tendency for the strength of polarization (i.e., D ​ o ​ P DoP ) of the transmission image to be weaker than that of the reflection image. For an example depicted in the first row of Fig.  3 , the average D ​ o ​ P DoP values for the ground-truth transmission and reflection are approximately 0.1 and 0.5, respectively. This indicates that the polarized T T component is considerably weaker than the polarized R R component, resulting in the dominance of the R R component in the polarized difference image I d ​ i ​ f ​ f I_{diff} , as shown in the second row of Fig.  3 . Based on this observation, we employ all possible combinations of the four polarizer angles to compute the difference images, yielding a total of six polarized difference images ( I 0 , 45 I_{0,45} , I 0 , 90 I_{0,90} , I 0,135 I_{0,135} , I 45 , 90 I_{45,90} , I 45,135 I_{45,135} , I 90,135 I_{90,135} ), where I ϕ 1 , ϕ 2 = | I ϕ 1 − I ϕ 2 | 1 I_{\phi_{1},\phi_{2}}=|I_{\phi_{1}}-I_{\phi_{2}}|_{1} .
+
+
+
+ 
+ Figure 3: An example of I d ​ i ​ f ​ f I_{diff} image. I 0 , 45 I_{0,45} demonstrates closer features to the features of the ground-truth R R than either I 0 I_{0} or I 45 I_{45} . This is due to the polarized T T component being considerably weaker than the polarized R R component. The brightness of I 0 , 45 I_{0,45} is adjusted solely for the visualization purpose. 
+ 
+ 
+ An over-exposure binary mask ( M M ) is also derived at each pixel as
+
+ 
+
+ 
+ 
+ M = { 0 , if  ​ m ​ a ​ x ​ ( I 0 , I 45 , I 90 , I 135 ) > τ , 1 , otherwise . M=\left\{\begin{aligned} 0,\ \ &\text{if\ \ }max(I_{0},I_{45},I_{90},I_{135})>\tau,\\
+\ 1,\ \ &\text{otherwise}.\end{aligned}\right. 
+ 
+ (2) 
+ 
+ where τ \tau is a threshold and set to 0.98 for the pixel value range of [0,1]. In addition, the features of I 0 I_{0} , I 45 I_{45} , I 90 I_{90} , I 135 I_{135} , and  I I are respectively extracted from a pre-trained VGG-19 network [ 19 ] . All of the above and the original four polarized images are concatenated and fed to the networks as the inputs.
+
+
+
+ 
+ As for our recurrent structure, we first build R-LSTM-Net, which consists of a U-Net architecture  [ 20 ] using a 10-block convolutional encoder and an 8-block decoder with a long short-term memory (LSTM) unit added in the bottleneck [ 5 ] to predict four polarized reflection images R ^ 0 \hat{R}_{0} , R ^ 45 \hat{R}_{45} , R ^ 90 \hat{R}_{90} , and R ^ 135 \hat{R}_{135} . Then, they are concatenated as a part of the inputs for T-Net with similar U-Net architecture as R-LSTM-Net except for the LSTM unit to predict four polarized transmission images T ^ 0 \hat{T}_{0} , T ^ 45 \hat{T}_{45} , T ^ 90 \hat{T}_{90} , and T ^ 135 \hat{T}_{135} . At last, the predicted polarized transmission images are used as the inputs to further refine the reflection result on the next iteration.
+
+
+
+ 
+ 
+ 2.2 Loss Functions
+
+
+ 
+ We apply three loss functions to the last iteration’s result of our RP2PN. The total loss L t ​ o ​ t ​ a ​ l L_{total} is defined as
+
+ 
+
+ 
+ 
+ L t ​ o ​ t ​ a ​ l = λ 1 ​ L p ​ i ​ x ​ e ​ l + λ 2 ​ L p ​ e ​ r ​ c ​ e ​ p + λ 3 ​ L p ​ n ​ c ​ c , L_{total}=\lambda_{1}L_{pixel}+\lambda_{2}L_{percep}+\lambda_{3}L_{pncc}, 
+ 
+ (3) 
+ 
+ where λ 1 \lambda_{1} , λ 2 \lambda_{2} and λ 3 \lambda_{3} are the weighting parameters.
+
+
+
+ 
+ L p ​ i ​ x ​ e ​ l L_{pixel} is the pixel-wise L 1 L_{1} loss between the predicted ( R ^ , T ^ \hat{R},\hat{T} ) and the ground-truth ( R , T R,T ) images to ensure pixel-level similarity. Different from the existing polarization-based methods  [ 17 , 16 , 18 ] , which only consider intensity-domain losses, we evaluate the losses for four polarized images of the reflection and the transmission as
+
+ 
+
+ 
+ 
+ L p ​ i ​ x ​ e ​ l = ∑ ϕ ∈ A | R ϕ M − R ^ ϕ M | 1 + ∑ ϕ ∈ A | T ϕ M − T ^ ϕ M | 1 , L_{pixel}=\sum_{\phi\in A}|R^{M}_{\phi}-\hat{R}^{M}_{\phi}|_{1}+\sum_{\phi\in A}|T^{M}_{\phi}-\hat{T}^{M}_{\phi}|_{1}, 
+ 
+ (4) 
+ 
+ where A = { 0 , 45 , 90 , 135 } A=\{0,45,90,135\} . The superscript M M represents a masked image, e.g., R ϕ M = R ϕ ∘ M R_{\phi}^{M}=R_{\phi}\circ M , where ∘ \circ is the pixel-wise production.
+
+
+
+ 
+ L p ​ e ​ r ​ c ​ e ​ p L_{percep} is the perceptual loss [ 21 ] to help the networks to learn high-level contextual features. Similar to L p ​ i ​ x ​ e ​ l L_{pixel} , we here calculate the losses in the polarized-domain as
+
+ 
+ 
+ 
+ 
+ L p ​ e ​ r ​ c ​ e ​ p = ∑ ϕ ∈ A ∑ j N γ j ​ | w V j ​ ( R ϕ M ) − w V j ​ ( R ^ ϕ M ) | 1 \displaystyle L_{percep}=\sum_{\phi\in A}\sum_{j}^{N}\gamma_{j}|w_{V}^{j}(R_{\phi}^{M})-w_{V}^{j}(\hat{R}_{\phi}^{M})|_{1} 
+ 
+ (5) 
+ 
+ 
+ + ∑ ϕ ∈ A ∑ j N γ j | w V j ( T ϕ M ) − w V j ( T ^ ϕ M ) | 1 , \displaystyle\ +\sum_{\phi\in A}\sum_{j}^{N}\gamma_{j}|w_{V}^{j}(T_{\phi}^{M})-w_{V}^{j}(\hat{T}_{\phi}^{M})|_{1}, 
+ 
+ 
+ where w V j w^{j}_{V} expresses the j j -th layer’s feature map from the pre-trained VGG-19 network and γ j \gamma_{j} is the weighting parameter of the j j -th layer.
+
+
+
+ 
+ L p ​ n ​ c ​ c L_{pncc} is the perceptual normalized cross-correlation loss  [ 18 ] , which is applied to minimize the correlation between the predicted reflection and transmission images, assuming their independency. This loss is applied to the final intensity output domain as
+
+ 
+
+ 
+ 
+ L p ​ n ​ c ​ c = ∑ j N f n ​ c ​ c ​ ( w V j ​ ( R ^ M ) , w V j ​ ( T ^ M ) ) , L_{pncc}=\sum_{j}^{N}f_{ncc}(w_{V}^{j}(\hat{R}^{M}),w_{V}^{j}(\hat{T}^{M})), 
+ 
+ (6) 
+ 
+ where R ^ \hat{R} and T ^ \hat{T} are the intensity images, which are calculated by the average of four polarized images, and f n ​ c ​ c f_{ncc} is the operator to calculate the normalized cross-correlation.
+
+
+
+ 
+ 
+ 
+ 3 Experimental Results
+
+
+ 
+ 3.1 Implementation Details of Our RP2PN
+
+
+ 
+ We used Lei et al. dataset  [ 18 ] , which contains 600, 184, and 107 real-scene polarized image triplets { I ϕ , R ϕ , T ϕ } \{I_{\phi},R_{\phi},T_{\phi}\} for training, validation, and testing, respectively. The weighting parameters in Eq. ( 3 ) were experimentally set as { λ 1 , λ 2 , λ 3 } = { 0.1 , 0.1 , 6.0 } \{\lambda_{1},\lambda_{2},\lambda_{3}\}=\{0.1,0.1,6.0\} . For the VGG-19 features in Eqs. ( 5 ) and ( 6 ), we adopted the same six layers ( N = 6 N=6 ) and weights for each layer as  [ 18 ] . The number of iterations for RP2PN was experimentally set to three. To train RP2PN, the learning rate was set to 1 ​ e − 4 1e^{-4} at the first 300 epochs with batch size 1. Then, it was reduced to 1 ​ e − 5 1e^{-5} for additional 50 epochs. The training took 40 hours using one Nvidia Geforce RTX 3080 Ti GPU.
+
+
+
+ 
+ Table 1: Quantitative comparisons on Lei et al. dataset [ 18 ] . *  Non-learning-based methods (Implementation from [ 16 ] ). †  Learning-based methods using pre-trained models. 
+ 
+ 
+ 
+ Methods 
+ 
+ 
+ 
+ With 
+ 
+ Polar 
+ 
+ 
+ 
+ 
+ Train 
+ 
+ Data 
+ 
+ Transmission 
+ Reflection 
+ 
+ PSNR 
+ SSIM 
+ PSNR 
+ SSIM 
+ 
+ Farid* [ 12 ] 
+ Yes 
+ - 
+ 25.56 
+ 0.828 
+ 24.79 
+ 0.742 
+ 
+ Schechner* [ 13 ] 
+ Yes 
+ - 
+ 24.62 
+ 0.827 
+ 23.94 
+ 0.621 
+ 
+ BDN† [ 3 ] 
+ No 
+ [ 3 ] 
+ 24.09 
+ 0.756 
+ 23.62 
+ 0.692 
+ 
+ Dong† [ 6 ] 
+ No 
+ [ 6 ] 
+ 28.30 
+ 0.864 
+ 28.79 
+ 0.659 
+ 
+ ReflectNet† [ 16 ] 
+ Yes 
+ [ 16 ] 
+ 24.76 
+ 0.821 
+ 25.03 
+ 0.715 
+ 
+ Lyu† [ 17 ] 
+ Yes 
+ [ 17 ] 
+ 24.82 
+ 0.820 
+ 25.06 
+ 0.737 
+ 
+ Zhang [ 2 ] 
+ No 
+ [ 18 ] 
+ 32.15 
+ 0.919 
+ 32.20 
+ 0.883 
+ 
+ IBCLN [ 5 ] 
+ No 
+ [ 18 ] 
+ 32.84 
+ 0.928 
+ 32.80 
+ 0.897 
+ 
+ Lei [ 18 ] 
+ Yes 
+ [ 18 ] 
+ 35.00 
+ 0.950 
+ 34.58 
+ 0.921 
+ 
+ RP2PN (Ours) 
+ Yes 
+ [ 18 ] 
+ 35.87 
+ 0.954 
+ 35.63 
+ 0.933 
+ 
+ 
+
+ 
+ 
+ 
+ 3.2 Comparison with Other Methods
+
+
+ 
+ Table  1 summarizes the quantitative results for the real-world Lei et al. dataset [ 18 ] . We categorize the compared methods into three groups: (i) Non-learning-based methods [ 13 , 12 ] , (ii) learning-based methods using pre-trained models because of the lack of training codes  [ 3 , 6 , 17 , 16 ] , and (iii) learning-based methods re-trained using Lei et al. dataset and provided training codes  [ 2 , 5 , 18 ] . For the non-polarization-based methods of [ 3 , 6 , 2 , 5 ] , we used a single-channel intensity image (the average of four polarized images) as the input.
+
+
+
+ 
+ Although the direct outputs of our RP2PN are polarized reflection and transmission images, we evaluated the results in the averaged intensity domain to compare RP2PN with other existing methods. Because there are scale differences in the result images from different methods, we also re-scaled the result images of all the methods as T ^ i ′ = α i ​ T ^ i \hat{T}^{\prime}_{i}=\alpha_{i}\hat{T}_{i} and R ^ i ′ = α i ​ R ^ i \hat{R}^{\prime}_{i}=\alpha_{i}\hat{R}_{i} , where i i is the scene index in the testing dataset. The scaling factor α i \alpha_{i} was determined for each scene and each method as α i = I i ¯ / I i ′ ¯ \alpha_{i}=\overline{I_{i}}/\overline{I^{\prime}_{i}} , where I i ¯ \overline{I_{i}} is the mean pixel value of the input image and I i ′ ¯ \overline{I^{\prime}_{i}} is the mean pixel value of the derived mixed image of I i ′ = T ^ i + R ^ i I^{\prime}_{i}=\hat{T}_{i}+\hat{R}_{i} . With this re-scaling based on the same input image’s scale, all methods are more fairly compared.
+
+
+
+ 
+ Figure 4: Qualitative comparison with existing methods. 
+ 
+ 
+ Figure 5: Example of qualitative results on polarization outputs. 
+ 
+ 
+ The PSNR and SSIM results in Table  1 show that non-learning polarization-based methods of  [ 13 , 12 ] exhibit low performance, due to their idealized physical assumptions which are often broken in real-world scenarios. Learning-based polarization methods of  [ 17 , 16 ] do not achieve the expected performance because the provided pre-trained models were trained on synthetic datasets and showed limited generalizability to Lei et al. dataset. The results of Lei et al. method  [ 18 ] and our RP2PN demonstrate higher performance than the non-polarization-based methods of [ 2 , 5 ] using the same training data, which validates the effectiveness of using the polarization. Furthermore, our RP2PN achieves the best PSNR and SSIM results and significant improvement, especially for the reflection. Figure  4 shows the qualitative results (for selected competivie methods due to limited space), where details of each result are shown in green rectangles. Compared with other methods, our transmission result can recover building walls better, while the reflection result preserves the clear edges of the stairs. The results for other scenes can be seen in the supplementary material 1 1 
+ 1 
+ 
+ 
+ Link: https://github.com/wjbian/RP2PN/blob/main/supp.pdf .
+
+
+
+ 
+ Since our RP2PN provides the polarized outputs, we show one example of these outputs in Fig.  5 . From the results, we can confirm that the polarized reflection and transmission images, as well as the calculated intensity, AoP, and DoP images are reasonably close to the ground truths, which demonstrates that our RP2PN can successfully learn the polarization information of the reflection and the transmission.
+
+
+
+ 
+ 
+ 3.3 Ablation Study
+
+
+ 
+ Table  2 summarizes the ablation study results. In models 1 and 2, we replaced the inputs of four polarized images with the standard intensity image to investigate the influence of the polarization input. In models 1 to 3, we replaced the network outputs from four-channel polarized images to one-channel intensity image to investigate the effect of the polarization output. In models 1, 3, and 4, we removed the iteration to investigate the impact of the recurrent framework. Comparing models 1 and 3, utilizing polarized images as the inputs significantly improves the performance. Comparing models 3 and 4, incorporating the polarization output also enhances the separation. Comparing model 4 and ours, it becomes evident that the incorporation of LSTM iterations offers a substantial improvement in predictions, particularly for the reflection. From all of these results, we can confirm that both our polarization-to-polarization approach and recurrent framework are effective.
+
+
+
+ 
+ Table 2: Ablation study. 
+ 
+ 
+ 
+ Model 
+ 
+ 
+ 
+ Polar 
+ 
+ Input 
+ 
+ 
+ 
+ 
+ Polar 
+ 
+ Output 
+ 
+ 
+ 
+ 
+ With 
+ 
+ Iteration 
+ 
+ Transmission 
+ Reflection 
+ 
+ PSNR 
+ SSIM 
+ PSNR 
+ SSIM 
+ 
+ 1 
+ No 
+ No 
+ No 
+ 32.93 
+ 0.928 
+ 32.52 
+ 0.892 
+ 
+ 2 
+ No 
+ No 
+ Yes 
+ 32.97 
+ 0.928 
+ 32.87 
+ 0.897 
+ 
+ 3 
+ Yes 
+ No 
+ No 
+ 34.95 
+ 0.949 
+ 34.56 
+ 0.921 
+ 
+ 4 
+ Yes 
+ Yes 
+ No 
+ 35.14 
+ 0.950 
+ 34.78 
+ 0.923 
+ 
+ Ours 
+ Yes 
+ Yes 
+ Yes 
+ 35.87 
+ 0.954 
+ 35.63 
+ 0.933 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 4 Conclusion
+
+
+ 
+ In this paper, we have proposed a novel recurrent polarization-to-polarization network, named RP2PN, for reflection removal. Compared with existing polarization-to-intensity approaches, our RP2PN can better utilize the mutual polarimetric relationship between the reflection and the transmission by learning the polarized outputs and incorporating a recurrent framework. The quantitative and qualitative results have validated that our RP2PN is superior to other state-of-the-art methods.
+
+
+
+ 
+ 
+ References
+
+
+ 
+ 
+ [1] 
+ 
+Qingnan Fan, Jiaolong Yang, Gang Hua, Baoquan Chen, and David Wipf,
+
+ 
+ “A generic deep architecture for single image reflection removal and image smoothing,”
+
+ 
+ in Proceedings of IEEE International Conference on Computer Vision (ICCV) , 2017, pp. 3238–3247.
+
+ 
+
+ 
+ [2] 
+ 
+Xuaner Zhang, Ren Ng, and Qifeng Chen,
+
+ 
+ “Single image reflection separation with perceptual losses,”
+
+ 
+ in Proceedings of IEEE Conference on Computer Vision and Pattern Recognition (CVPR) , 2018, pp. 4786–4794.
+
+ 
+
+ 
+ [3] 
+ 
+Jie Yang, Dong Gong, Lingqiao Liu, and Qinfeng Shi,
+
+ 
+ “Seeing deeply and bidirectionally: A deep learning approach for single image reflection removal,”
+
+ 
+ in Proceedings of European Conference on Computer Vision (ECCV) , 2018, pp. 654–669.
+
+ 
+
+ 
+ [4] 
+ 
+Kaixuan Wei, Jiaolong Yang, Ying Fu, Wipf David, and Hua Huang,
+
+ 
+ “Single image reflection removal exploiting misaligned training data and network enhancements,”
+
+ 
+ in Proceedings of IEEE Conference on Computer Vision and Pattern Recognition (CVPR) , 2019, pp. 8170–8179.
+
+ 
+
+ 
+ [5] 
+ 
+Chao Li, Yixiao Yang, Kun He, Stephen Lin, and John E Hopcroft,
+
+ 
+ “Single image reflection removal through cascaded refinement,”
+
+ 
+ in Proceedings of IEEE Conference on Computer Vision and Pattern Recognition (CVPR) , 2020, pp. 3565–3574.
+
+ 
+
+ 
+ [6] 
+ 
+Zheng Dong, Ke Xu, Yin Yang, Hujun Bao, Weiwei Xu, and Rynson WH Lau,
+
+ 
+ “Location-aware single image reflection removal,”
+
+ 
+ in Proceedings of IEEE International Conference on Computer Vision (ICCV) , 2021, pp. 5017–5026.
+
+ 
+
+ 
+ [7] 
+ 
+Xiaojie Guo, Xiaochun Cao, and Yi Ma,
+
+ 
+ “Robust separation of reflection from multiple images,”
+
+ 
+ in Proceedings of IEEE Conference on Computer Vision and Pattern Recognition (CVPR) , 2014, pp. 2187–2194.
+
+ 
+
+ 
+ [8] 
+ 
+Byeong-Ju Han and Jae-Young Sim,
+
+ 
+ “Reflection removal using low-rank matrix completion,”
+
+ 
+ in Proceedings of IEEE Conference on Computer Vision and Pattern Recognition (CVPR) , 2017, pp. 5438–5446.
+
+ 
+
+ 
+ [9] 
+ 
+Chengxuan Zhu, Renjie Wan, and Boxin Shi,
+
+ 
+ “Neural transmitted radiance fields,”
+
+ 
+ in Proceedings of Advances in Neural Information Processing Systems (NeurIPS) , 2022, vol. 35, pp. 38994–39006.
+
+ 
+
+ 
+ [10] 
+ 
+Yasushi Maruyama, Takashi Terada, Tomohiro Yamazaki, Yusuke Uesaka, Motoaki Nakamura, Yoshihisa Matoba, Kenta Komori, Yoshiyuki Ohba, Shinichi Arakawa, Yasutaka Hirasawa, Yuhi Kondo, Jun Murayama, Kentaro Akiyama, Yusuke Oike, Shuzo Sato, and Takayuki Ezaki,
+
+ 
+ “3.2-MP back-illuminated polarization image sensor with four-directional air-gap wire grid and 2.5- μ \mu m pixels,”
+
+ 
+ IEEE Transactions on Electron Devices , vol. 65, no. 6, pp. 2544–2551, 2018.
+
+ 
+
+ 
+ [11] 
+ 
+Miki Morimatsu, Yusuke Monno, Masayuki Tanaka, and Masatoshi Okutomi,
+
+ 
+ “Monochrome and color polarization demosaicking based on intensity-guided residual interpolation,”
+
+ 
+ IEEE Sensors Journal , vol. 21, no. 23, pp. 26985–26996, 2021.
+
+ 
+
+ 
+ [12] 
+ 
+Hany Farid and Edward H Adelson,
+
+ 
+ “Separating reflections and lighting using independent components analysis,”
+
+ 
+ in Proceedings of IEEE Conference on Computer Vision and Pattern Recognition (CVPR) , 1999, vol. 1, pp. 262–267.
+
+ 
+
+ 
+ [13] 
+ 
+Yoav Y Schechner, Joseph Shamir, and Nahum Kiryati,
+
+ 
+ “Polarization and statistical analysis of scenes containing a semireflector,”
+
+ 
+ Journal of the Optical Society of America. A , vol. 17, no. 2, pp. 276–284, 2000.
+
+ 
+
+ 
+ [14] 
+ 
+Naejin Kong, Yu-Wing Tai, and Joseph S Shin,
+
+ 
+ “A physically-based approach to reflection separation: From physical modeling to constrained optimization,”
+
+ 
+ IEEE Transactions on Pattern Analysis and Machine Intelligence , vol. 36, no. 2, pp. 209–221, 2013.
+
+ 
+
+ 
+ [15] 
+ 
+Takuma Aizu and Ryo Matsuoka,
+
+ 
+ “Reflection removal using multiple polarized images with different exposure times,”
+
+ 
+ in Proceedings of European Signal Processing Conference (EUSIPCO) , 2022, pp. 498–502.
+
+ 
+
+ 
+ [16] 
+ 
+Patrick Wieschollek, Orazio Gallo, Jinwei Gu, and Jan Kautz,
+
+ 
+ “Separating reflection and transmission images in the wild,”
+
+ 
+ in Proceedings of the European Conference on Computer Vision (ECCV) , 2018, pp. 90–105.
+
+ 
+
+ 
+ [17] 
+ 
+Youwei Lyu, Zhaopeng Cui, Si Li, Marc Pollefeys, and Boxin Shi,
+
+ 
+ “Reflection separation using a pair of unpolarized and polarized images,”
+
+ 
+ in Proceedings of Advances in Neural Information Processing Systems (NeurIPS) , 2019, pp. 14559–14569.
+
+ 
+
+ 
+ [18] 
+ 
+Chenyang Lei, Xuhua Huang, Mengdi Zhang, Qiong Yan, Wenxiu Sun, and Qifeng Chen,
+
+ 
+ “Polarized reflection removal with perfect alignment in the wild,”
+
+ 
+ in Proceedings of IEEE Conference on Computer Vision and Pattern Recognition (CVPR) , 2020, pp. 1747–1755.
+
+ 
+
+ 
+ [19] 
+ 
+Karen Simonyan and Andrew Zisserman,
+
+ 
+ “Very deep convolutional networks for large-scale image recognition,”
+
+ 
+ arXiv preprint:1409.1556 , 2014.
+
+ 
+
+ 
+ [20] 
+ 
+Olaf Ronneberger, Philipp Fischer, and Thomas Brox,
+
+ 
+ “U-net: Convolutional networks for biomedical image segmentation,”
+
+ 
+ in Proceedings of Medical Image Computing and Computer-Assisted Intervention (MICCAI) , 2015, pp. 234–241.
+
+ 
+
+ 
+ [21] 
+ 
+Justin Johnson, Alexandre Alahi, and Li Fei-Fei,
+
+ 
+ “Perceptual losses for real-time style transfer and super-resolution,”
+
+ 
+ in Proceedings of the European Conference on Computer Vision (ECCV) , 2016, pp. 694–711.
+
+ 
+
+ 
+ 
+ 
+ 
+
+
+
+
+ 
+ 
+ Experimental support, please
+ view the build logs 
+ for errors. Generated by
+ 
+ 
+ L
+ A 
+ T
+ E 
+ 
+ xml 
+ 
+ .
+ 
+
+ 
+ Instructions for reporting errors
+
+ We are continuing to improve HTML versions of papers, and your feedback helps enhance accessibility and mobile
+ support. To report errors in the HTML that will help us improve conversion and rendering, choose any of the
+ methods listed below:
+
+ 
+ Click the "Report Issue" ( 
+ 
+ ) button, located in the page header.
+
+ 
+ Tip: You can select the relevant text first, to include it in your report.
+
+ Our team has already identified the following issues . We appreciate your time reviewing and reporting rendering errors we
+ may not have found yet. Your efforts will help us improve the HTML versions for all readers, because disability
+ should not be a barrier to accessing research. Thank you for your continued support in championing open access for
+ all.
+
+ Have a free development cycle? Help support accessibility at arXiv! Our collaborators at LaTeXML maintain a list of packages that need conversion , and welcome developer contributions .
+
+ 
+
+ 
+ 
+ 
+ 
+ We gratefully acknowledge support from
+ our major funders ,
+ member institutions , ,
+ and all contributors.
+ 
+
+ 
+ About 
+ · 
+ Help 
+ · 
+ Contact 
+ · 
+ Subscribe 
+ · 
+ Copyright 
+ · 
+ Privacy 
+ · 
+ Accessibility 
+ · 
+ Operational Status (opens in new tab) 
+ 
+ 
+
+
+ 
+ Major funding support from
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+

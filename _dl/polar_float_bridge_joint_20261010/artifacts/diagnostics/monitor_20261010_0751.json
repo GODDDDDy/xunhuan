@@ -1,0 +1,28 @@
+{
+  "time_unix": 1791589881.9511886,
+  "stage": "validation",
+  "training_step": 6000,
+  "deadline_unix": 1791605047.4916465,
+  "watchdog_alive": true,
+  "no_restart": true,
+  "processes": [
+    {
+      "pid": 101547,
+      "state": "S",
+      "pgid": 101547,
+      "cmd": "/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/bin/python /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_float_bridge_joint_20261010/scripts/controller.py "
+    },
+    {
+      "pid": 101548,
+      "state": "S",
+      "pgid": 101548,
+      "cmd": "/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/bin/python /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_float_bridge_joint_20261010/scripts/watchdog.py "
+    },
+    {
+      "pid": 170587,
+      "state": "R",
+      "pgid": 101547,
+      "cmd": "/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/bin/python /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_float_bridge_joint_20261010/scripts/run_stage.py validation "
+    }
+  ]
+}

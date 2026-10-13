@@ -1,0 +1,1025 @@
+=== PDF PAGE 1 ===
+PolarFree: Polarization-based Reflection-Free Imaging
+Mingde Yao1, Menglu Wang 3, King-Man Tam 1,4, Lingen Li 1, Tianfan Xue /enve♀e1,2, Jinwei Gu 1
+1The Chinese University of Hong Kong, 2Shanghai AI Laboratory
+3University of Science and Technology of China, 4Institute of Science Tokyo
+mingdeyao@foxmail.com, tfxue@ie.cuhk.edu.hk
+Abstract
+Reflection removal is challenging due to complex light
+interactions, where reflections obscure important details
+and hinder scene understanding. Polarization naturally
+provides a powerful cue to distinguish between reflected
+and transmitted light, enabling more accurate reflection re-
+moval. However, existing methods often rely on small-scale
+or synthetic datasets, which fail to capture the diversity
+and complexity of real-world scenarios. To this end, we
+construct a large-scale dataset,PolaRGB, for Polarization-
+based reflection removal of RGB images, which enables us
+to train models that generalize effectively across a wide
+range of real-world scenarios. The PolaRGB dataset con-
+tains 6,500 well-aligned mixed-transmission image pairs,
+8× larger than existing polarization datasets, and is the
+first to include both RGB and polarization images captured
+across diverse indoor and outdoor environments with vary-
+ing lighting conditions. Besides, to fully exploit the poten-
+tial of polarization cues for reflection removal, we intro-
+duce PolarFree, which leverages diffusion process to gener-
+ate reflection-free cues for accurate reflection removal. Ex-
+tensive experiments show that PolarFree significantly en-
+hances image clarity in challenging reflective scenarios,
+setting a new benchmark for polarized imaging and reflec-
+tion removal. Code and dataset are available at https:
+//github.com/mdyao/PolarFree.
+1. Introduction
+Reflection removal algorithms [1, 19, 30, 34, 38, 41] re-
+move unwanted reflections in captured images, playing a
+critical role in applications such as autonomous driving [12]
+and photography [11, 43]. This problem commonly arises
+when imaging through semi-reflectors, like windows or
+glass, and overlapping reflections may obscure important
+details of scenes we want to capture. This problem is often
+formulated [10, 11] as a linear combination of the transmis-
+sion layer T and the reflection layer R:
+M = αtT + αrR, (1)
+/enve♀eCorresponding author.
+Input Kim et al. [11] DSRNet [15]
+Ground truthOursRDRNet [46]
+Figure 1. Our PolarFree effectively leverages polarization in-
+formation to remove reflections, achieving superior performance
+in challenging scenes with complex backgrounds and highlights
+where previous methods [11, 15, 46] often fail.
+where M is the mixed captured image, andαt, αr are blend-
+ing coefficients resulting from light attenuation.
+Polarization image sensors are becoming mainstream,
+allowing users to easily capture polarization images from
+a single shot in real-time [32]. However, existing meth-
+ods [10, 11, 24, 46] typically rely on intensity-based cues,
+such as pixel brightness and color gradients, to distinguish
+transmitted and reflected layers. These methods face chal-
+lenges because reflection removal is a highly ill-posed in-
+verse problem [21] that recovers two unknown layers (re-
+flection and transmission) from a single observation. Po-
+larization provides valuable physics-based cues [27, 29] to
+alleviate ill-posed issues (Fig. 1), whereas transmitted light
+retains a distinct degree of polarization(Fig. 2b). This dif-
+ference provides crucial signals for separating the two lay-
+ers. Notably, at the Brewster angle (Fig.2c), reflected light
+is fully polarized, enabling effective reflection removal [2].
+Despite significant advances of polarization images, a
+key challenge in polarization-based reflection removal is the
+lack of large-scale, high-quality datasets. Existing polar-
+ized reflection removal datasets [18, 39] are limited in size
+and diversity, relying on small ( <1000) or synthetic sam-
+ples that fail to capture the complexity of real-world light-
+This CVPR paper is the Open Access version, provided by the Computer Vision Foundation.
+Except for this watermark, it is identical to the accepted version;
+the final published version of the proceedings is available on IEEE Xplore.
+10890
+
+
+=== PDF PAGE 2 ===
+(c)(b)(a)
+θ θ θ θ
+θ θ
+Polarizer
+Figure 2. (a) & (b) A semi-reflector transforms unpolarized light
+into polarized light upon reflection and refraction, which is unde-
+tectable by standard RGB cameras but can be leveraged by polar-
+ization cameras for reflection-suppression tasks. (c) At the Brew-
+ster angle [2], a polarizer minimizes reflections.
+ing conditions, materials, and scenes. Moreover, they typ-
+ically exclude color information, reducing their applicabil-
+ity in real-world reflection removal tasks. Thus, there is a
+pressing need for a large-scale, comprehensive dataset that
+includes both RGB and polarization images, captured in
+diverse real-world environments, to advance polarization-
+based reflection removal.
+To bridge this gap, we introduce PolaRGB, a novel
+dataset specifically collected for polarization-based reflec-
+tion removal. As shown in Table 1, PolaRGB contains 6,500
+high-quality, well-aligned RGB-polarization image pairs,
+8× larger than previous dataset [18]. Our dataset covers
+a diverse range of scenes, lighting conditions, and expo-
+sure settings, and is captured using off-the-shelf commer-
+cial cameras with polarized color patterns to ensure real-
+world applicability. PolaRGB provides both mixed images
+and ground-truth transmission layers, enabling accurate re-
+flection separation and significantly enhancing the effec-
+tiveness of reflection removal across real-world scenarios.
+Moreover, extracting reflection-free information from
+polarization data is challenging [18, 25, 39] due to the ran-
+domness of shooting angles, scene variations, and chang-
+ing lighting conditions. To address this issue, we lever-
+age the powerful generative capabilities of the diffusion
+model [3,6,8] to generate reflection-free cues. The diffusion
+model extracts and refines reflection-free priors from polar-
+ization images, effectively guiding the reflection removal
+and yielding precise and robust reflection-free results.
+Specifically, PolarFree consists of two steps: a prior-
+generation step and a reflection removal step. First, in the
+prior-generation step, we use a diffusion model to genarate
+reflection-free prior based on the polarization and RGB in-
+puts. This strategy not only guides accurate reflection iso-
+lation in RGB images but also recovers background details,
+which previous methods [11, 15, 46] may miss. Next, the
+reflection removal step leverages the prior to effectively re-
+move reflections, ensuring accurate transmission restora-
+tion. Additionally, we introduce a phase-based loss func-
+tion in the frequency domain to mitigate color discrepancies
+caused by semi-reflections, guiding the network to focus
+Table 1. Comparisons between PolaRGB and existing reflection
+removal datasets.
+Dataset Polarization RGB RA W Data size Resolution
+SIR2 [36] No Yes No 500 540 ×400
+RRW [46] No Yes No 14,952 2580 ×1460
+ReflectNet [39] Yes (Syn.) Yes No - 1500 ×1000
+Leiet al.[18] Yes (Real) No Yes 807 1224 ×1024
+PolaRGB (Ours) Yes (Real) Yes Yes 6,500 1224 ×1024
+on reflection removal rather than color adjustment. These
+components enable PolarFree to achieve robust reflection
+suppression while preserving the clarity and integrity of the
+transmission across diverse real-world scenes.
+Extensive experiments on the PolaRGB dataset demon-
+strate the effectiveness of PolarFree, which outperforms ex-
+isting methods [11, 15, 46]∼ 2dB in terms of PSNR. Addi-
+tionally, we performed real-world testing in environments
+commonly affected by reflections such as museums and
+galleries, demonstrating the method’s effectiveness in real-
+world scenarios. Our approach improves image clarity and
+preserves details better than previous methods, paving the
+way for more practical, reflection-robust applications.
+2. Related Work
+2.1. Reflection Removal
+Reflection removal [1, 30, 34] has a longstanding his-
+tory in computer vision, aiming to enhance the occluded
+objects caused by semi-reflectors like glass and windows.
+Early approaches [20, 24] typically relied on handcrafted
+priors, such as smoothness assumptions and gradient spar-
+sity, to differentiate the reflection layer from the underly-
+ing scene. Some methods incorporated ghosting [31], flash
+cues [17, 19] and edge consistency [7], while others im-
+proved accuracy by leveraging multi-image setups [22, 28],
+utilizing temporal variation [26] and parallax [28] to sep-
+arate reflections from background layers. However, these
+methods often require strict assumptions and fail in real-
+world scenes with complex textures or lighting [19, 38].
+With the rise of deep learning [5, 35, 42, 44, 46], reflec-
+tion removal methods advanced considerably. Techniques
+based on neural networks have shown promise by learning
+to separate reflection and transmission layers directly from
+data [10,15,35–37,44]. However, without essential physical
+insights, these methods act as Bayesian regressions toward
+a learned average, often lead to suboptimal separation in
+complex environments with varying lighting, textures, and
+reflection intensities [35, 44]. Recent methods [9, 45] uti-
+lize language to interactively remove the reflection, which
+require additional efforts, limiting their practicality.
+2.2. Polarization Reflection Removal
+Polarization is an effective way to remove reflections
+due to the physics principle: the polarization of light be-
+haves differently in the reflection and transmission lay-
+ers [4, 13, 23, 27, 30], allowing separation, espicially at the
+Brewster angle [4, 27]. However, capturing images exactly
+10891
+
+
+=== PDF PAGE 3 ===
+...
+Artwork
+Others
+Functional 
+Components of 
+Building
+Line Drawing
+Number:1226
+Proportion:18.86%
+Number:1159
+Proportion:17.83%
+Number:1730
+Proportion:26.62%
+Number:2385
+Proportion:36.69%
+(b) Diverse reflection conditions
+(d) Image types included in the dataset
+90° 135°45°0°
+Landscape
+(a) Hierarchical structure of PolarRR dataset 
+(c) Video-based capture method
+RGB AOLP DOLP GT
+object of interest
+camera
+Building
+glass
+I II
+III IV
+Figure 3. Overview of the PolaRGB dataset. (a) Hierarchical structure of scenes is shown in the ring, with legends indicating sample
+counts and subset types. (b) Typical scenes illustrating varied reflection conditions: I. smooth blending of reflection and refraction, II.
+abrupt reflection with mixed components, III. reflection dominant over transmission, and IV . minimal or no reflection. (c) Video-based
+capture method (details in Sec. 3). (d) We provide polarized images at angles φ = 0◦, 45◦, 90◦, and 135◦, along with derived AoLP, DoLP,
+and a well-aligned unpolarized image. The dataset also includes ground truth transmission and estimated reflections, all available in both
+raw and RGB formats.
+at the Brewster angle, as shown in Fig. 2c, is challenging.
+Therefore, in practice, methods typically rely on images
+taken at multiple polarization angles (e.g., 0◦, 45◦, 90◦, and
+135◦) to capture polarization information [4, 27, 30].
+Early polarized reflection removal methods [4, 27, 30]
+employ mathematical techniques like Pricinple Component
+Analysis (PCA) to separate reflection layers, which are ef-
+fective when the transmission and reflection layers have sig-
+nificant content differences. Subsequently, Kong et al. [16]
+propose a multiscale scheme that automatically identifies
+the optimal separation of the reflection and background
+layers. Another advancements [39] introduce a neural
+network-based approach for polarization-guided reflection
+removal with synthetic dataset. Lyu et al. [25] utilize a pair
+of unpolarized and polarized images but lack of realistic po-
+larization patterns. Lei et al. [18] further contribute by col-
+lecting a dataset of polarized images for reflection removal.
+However, this dataset only includes limited scene variations
+from pure polarization scenes, which limits its application
+scenario. In contrast, we present the first large-scale dataset
+captured for polarization-based RGB reflection removal,
+consisting of 6,500 well-aligned transmission-reflection
+pairs. We also propose a polarization-based reflection re-
+moval network based on diffusion models.
+3. PolaRGB Dataset
+3.1. Analysis
+Although a few polarization-based reflection removal
+datasets exist [18, 39], they face major limitations: (1) they
+are often synthetically generated [25, 39], which may not
+generalize well to real polarization, as perfectly simulat-
+ing polarization phenomena is very hard; (2) they are typi-
+cally limited in size and diversity ( <1,000 samples), with
+limited scene variations, which constrains model robust-
+ness and generalizability [18, 39]; and (3) they lack RGB
+data [18, 39], reducing the practical value of these datasets.
+Our polarized-based reflection removal dataset, Po-
+laRGB, addresses all these limitations with the following
+key features, as shown in Fig. 3. It has following advan-
+tages: (1) It contains real-captured images with perfect spa-
+tial alignment. We achieve pixel-level alignment through
+a three-step process: careful capture setup, manual filter-
+ing, and homography transformations, all in raw space to
+avoid demosaicing artifacts (see Fig. 4b and more details in
+supplementary). (2) It contains large-scale diverse scenes.
+The collected dataset covers a wide range of indoor and out-
+door settings with four distinct reflection types, including
+smooth, sharp, high-brightness, and subtle reflections (see
+Fig. 3b). (3) It has extensive data modalities. Our dataset
+offers paired mixed and transmission images with both po-
+larization and RGB captures, precisely aligned and avail-
+able in both raw and RGB formats (see Fig. 3d).
+3.2. Processing Pipeline
+We leverage an efficient video-based capture flow for
+dataset collection, as shown in Fig. 3c. First, we cap-
+ture a transmission-only image Traw as the ground truth.
+Then, we place a semi-reflective glass plate in front of the
+scene and rotate it continuously to capture mixed images
+10892
+
+
+=== PDF PAGE 4 ===
+Aligned images
+AOLP & DOLP
+Reflection
+(a) Data processing pipeline
+Raw measurements
+Captured w/o glass
+Captured w/ glass
+Split Polar degree
+Transmission
+Mixed 
+W/4H/4
+RAW domain RGB domain
+Estimated reflection
+Transmission
+Mixed
+Separate polarization 
+& unpolarizaed
+images
+Estimate 
+reflection
+Polarized color image 
+alignment
+Demosaic
+Calculate 
+AOLP & DOLP
+Demosaic
+...
+...
+...
+...
+...
+...
+...
+...
+45°
+0°135°
+90°
+45°
+0°135°
+90° 45°
+0°135°
+90°
+45°
+0°135°
+90°
+Split color Bayer pattern
+Alignment and recombine
+...
+...
+...
+...135°
+...
+...
+...
+...90°
+...
+...
+...
+...
+45°
+H
+W
+(b) Polarized color image alignment
+...
+...
+...
+...0°
+Figure 4. Data processing pipeline for obtaining aligned mixed
+and transmission images, and polarized images.
+Mraw. A division-of-focal-plane polarization camera with
+color Bayer pattern is used to simultaneously capture both
+polarized and RGB information, as shown in Fig. 4.
+After obtaining the raw mixed image Mraw and the
+transmission image Traw, we process the images sequen-
+tially in the raw and RGB domains as shown in Fig. 4a.
+In the raw domain, we first align Mraw and Traw to cor-
+rect spatial misalignment caused by light refraction. This is
+done by separating the images into different polarization an-
+gles and color channels, then applying affine transformation
+matrices to each of the channels to avoid aliasing from di-
+rect alignment, as shown in Fig. 4b. Next, we perform polar-
+ization separation on the aligned images to obtain four po-
+larization images (0◦, 45◦, 90◦, and 135◦), and use Malus’s
+law [27, 29] to sum them, producing the unpolarized image
+of the scene. Finally, we estimate the reflection image by
+searching for the optimal blending coefficient αr and αt in
+edge space, as illustrated in Eq. 1. For detailed steps and
+proof, please refer to the supplementary material.
+Next, we apply demosaicking to the processed raw im-
+ages to obtain the mixed, transmission, and reflection im-
+ages, each consisting of four polarization images and the
+unpolarized RGB image. Additionally, we compute the
+Stokes parameters (see Sec. 4.1) to estimate the Angle of
+Linear Polarization (AOLP) and Degree of Linear Polariza-
+tion (DOLP), which are then used in reflection removal.
+4. Method
+4.1. Problem Formulation
+Object. Given an RGB image and its corresponding po-
+larization images, we aim to recover the transmission layer
+of the RGB image by utilizing the distinct polarization char-
+acteristics. Our measurement consists of spatially-aligned
+RGB and polarization images, where the polarization im-
+ages captured at four distinct angles (0 ◦, 45 ◦, 90 ◦, and
+135◦). These four angles provide a comprehensive polar-
+ization measurement [30], which allows us to compute po-
+larization features crucial for separating layers.
+Polarization Prelimiary. For semi-reflective surfaces
+that produce mixed images, the observed intensity I φ
+M(x)
+can be decomposed into reflected intensityI φ
+R(x) and trans-
+mitted intensity I φ
+T (x) as
+I φ
+M(x) = αRI φ
+R(x) + αT I φ
+T (x). (2)
+If a linear polarizer is placed in front of the camera at an
+angle φ, the captured intensity I φ(x) can be represented as
+I φ
+M(x) = α(θ; φ; φ⊥)I φ
+R(x)+(1 − α(θ; φ; φ∥))I φ
+T (x), (3)
+where α(θ; φ; φ⊥) and (1 − α(θ; φ; φ∥)) are polarization-
+dependent mixing coefficients based on the angle of inci-
+dence θ, φ⊥ and φ∥ are the canonical polarization directions
+for the reflection and transmission, respectively. Directly
+solving for these parameters is challenging because α(·),
+I φ
+R(x), and I φ
+R(x) are all unknown [27, 39]. Additionally,
+relationship between the observed intensity and the under-
+lying reflected and transmitted components is highly non-
+linear and influenced by various factors [39]. To address
+this, we utilize Stokes parameters [18] that provide a effi-
+cient way to represent and analyze polarized light, enabling
+more robust separation of reflection and transmission.
+Stokes Parameters. To capture the polarization effects in
+the scene, we use Stokes parameters[S0, S1, S2], which can
+be derived from intensity measurements at specific polariza-
+tion angles (0◦, 45◦, 90◦, and 135◦):
+S0 = (I0◦ + I45◦ + I90◦ + I135◦)/2,
+S1 = I0◦ − I90◦ , S2 = I45◦ − I135◦ . (4)
+Here, S0 represents the total intensity of light, and S1 and
+S2 provide information about the linear polarization state of
+the light based on intensity differences at these key angles.
+Using the Stokes parameters, we compute the Degree of
+Linear Polarization (DOLP) and Angle of Linear Polariza-
+tion (AOLP) as follows [2]
+DOLP (x) =
+p
+S1(x)2 + S2(x)2/S0(x),
+AOLP (x) =1
+2atan2 (S2(x)/S1(x)) .
+(5)
+10893
+
+
+=== PDF PAGE 5 ===
+Random sample n 
+Output ෠Trgb
+(a) Inference
+Reflection Removal Backbone
+Fremove
+Encoder
+× T
+× T
+ConcatenateC
+...
+(b) Training
+Forward Diffusion
+Stage-1
+Stage-2
+Weight Trainable
+ Weight Frozen
+z0 z1 zT
+Step 1:Prior GenerationStep2: Reflection Removal
+ොz0
+ොz0
+RGB image Mrgb
+Input Mcond
+Input Mcond
+Output ෠Trgb
+Output ෠Trgb
+Input Mcond
+C
+Polarized mixture
+{Mpolar, Maolp, Mdolp}
+Transmission Tcond
+Polarized transmission 
+{Tpolar, Taolp, Tdolp}
+RGB image Trgb
+C
+Transmission Tcond Encoder
+Weights
+Fremove
+Fremove
+Reverse Diffusion
+Reverse Diffusion
+z0
+Figure 5. Pipeline of PolarFree. (a) During inference, PolarFree leverages polarized and RGB images as inputs, which are feeds into a
+conditional diffusion model to generate the prior ˆz0. The generated prior, along with the inputs, is then passed to the reflection removal
+backbone Fremove to remove reflections. (b) PolarFree is trained in two stages. (1) A prior encoder extracts a reflection-free prior z0 from
+clean transmission images and polarization cues, which serves as the supervision for the conditional diffusion model in stage two. (2)
+The conditional diffusion model is trained to progressively denoise noisy images, supervised by the prior from stage one, ensuring robust
+reflection separation.
+In this formulation, DOLP describes the proportion of po-
+larized light relative to total intensity, which helps indicate
+the degree of reflection in the scene. AOLP, on the other
+hand, reveals the orientation of the polarized light, allowing
+us to distinguish between reflection and transmission com-
+ponents more effectively, as shown in Fig. 3d. By leverag-
+ing intensity measurements at 0◦, 45◦, 90◦, and 135◦, these
+parameters provide valuable cues for separating mixed re-
+flection and transmission layers in semi-reflective scenes.
+4.2. PolarFree Network
+To achieve high-quality reflection removal with effective
+utilization of polarization information, we introduce Polar-
+Free, a dedicately designed two-step network, where each
+step addresses a distinct aspect of the reflection removal
+challenge. Inspired by [3], we leverage difusion model
+to generate the prior for reflection removal. As shown in
+Fig. 5, during inference, the first step utilizes a conditional
+diffusion model to extract reflection-free priors, effectively
+isolating essential details from polarization data. The sec-
+ond step integrates these priors with RGB inputs, guiding
+the network to accurately separate reflections and enhance
+clarity, even in complex, real-world environments.
+Prior Generation. As shown in Fig. 5a, in the first step,
+we start with a randomly initialized noise n, which is grad-
+ually denoised through a conditional diffusion model Fdiff
+ˆz0 = Fdiff(n|Mcond), (6)
+where ˆz0 is the generated prior, Mcond =
+{Mpolar, Maolp, Mdolp, Mrgb} represents the mixed im-
+ages, and n is the initial noise. Through an iterative
+denoising process, the diffusion model progressively
+refines a noise image, conditioned on the polarization and
+RGB data, to generate a reflection prior.
+The denoising process follows the denoising diffusion
+probabilistic model (DDPM) framework [8] and employs
+a U-Net architecture to predict noise. At each timestep t,
+the U-Net receives a noisy intermediate zt and outputs a
+noise estimate εθ(zt, t), predicting the noise added at that
+timestep. This process can be formulated as
+zt−1 = 1√αt
+
+zt − βt√1 −  ̄αt
+εθ(zt, Mcond, t)
+
++σtz, (7)
+where αt and βt control the noise schedule across the
+timesteps, σt is the standard deviation, and z is noise sam-
+pled from a standard Gaussian distribution.  ̄αt is the cumu-
+lative product of αt, indicating noise level to timestep t.
+In this way, the U-Net gradually removes the noise in
+each step, conditioning on the polarization-based measure-
+ment input Mcond. This process continues until noise is fully
+removed, yielding a sampleˆz0 that represents the reflection-
+free prior distribution extracted from the conditioned inputs.
+Reflection Removal. As shown in Fig. 5a, once the prior
+ˆz0 has been obtained, the second step of PolarFree is seper-
+ating the transmission and reflection layers. By leveraging
+the polarization cues provided by Mpolar, Maolp, and Mdolp,
+the model Fremove separates the transmission features from
+the reflection ones, which can be represented as
+ˆTrgb = Fremove(ˆz0, Mcond), (8)
+10894
+
+
+=== PDF PAGE 6 ===
+(a)
+Phase AmplitudeAmplitude
+(b) 
+iFFT
+iFFT
+Figure 6. (a) Phase information preserves shape and texture de-
+tails, while color primarily affects the amplitude. (b) We apply
+two types of random color perturbations to the image and com-
+pute the perturbation errors. Phase-based loss is less sensitive to
+color changes.
+where Fremove is a reflection removal neural network. This
+step ensures that the final output contains distinct trans-
+mission and reflection components, facilitating high-quality
+image reconstruction under challenging reflective scenarios.
+4.3. Training
+To train our PolarFree, particularly to address the chal-
+lenge of the diffusion model lacking a suitable ground truth,
+we adopt a two-stage training strategy, as illustrated in
+Fig. 5b. This strategy consists of two sequential objectives:
+learning to extract a reflection-free prior and learning to
+generate a reflection-free prior.
+First Stage. In the first stage, we train an encoder to ex-
+tract a prior z0 for reflection-free information, which will
+serve as the supervision signal for the diffusion model in
+the second stage. Specifically, we feed the ground truth
+transmission images Tcond = {Tpolar, Taolp, Tdolp, Trgb} into
+the encoder E, obtaining z = E(Mcond, Trgb). This z con-
+tains reflection-free information enriched with polarization-
+related cues. Subsequently, z0 conditions the reflection re-
+moval backbone Fremove to predict the clean transmission
+image ˆTrgb = Fremove(z, Mcond).
+Second Stage. In the second stage, we train the diffusion
+model Fdiff to generate a reflection-free prior z0 from noisy
+input images, and finetune the reflection removal backbone
+Fremove. The key challenge here is that the diffusion model
+lacks of direct supervision. Therefore, we leverage the prior
+z0 extracted in the first stage as the supervision signal to
+guide the model.
+We start with the extracted reflection-free prior z0 and
+add noise over multiple timesteps. This process transforms
+the “ground-truth” prior z0 into noisy versions zt at each
+timestep t, which can be expressed as
+q(zt|z0) = N (zt;
+p
+1 − βtz0, βtI), (9)
+where N represents a Gaussian distribution, βt is the noise
+schedule controlling the noise level added at each timestep,
+I represents the identity matrix.
+In the reverse diffusion process, the model is trained to
+progressively remove the noise step by step to recover the
+clean prior z0, which can be repersented as
+pθ(zt−1|zt) = N (zt−1; μθ(zt, t, Mcond), σ2
+t I)), (10)
+where μθ(zt, t, Mcond) is the mean function of the current
+state zt, timestep t, and a conditional input Mcond.
+Throughout the reverse process, the model conditions
+on the polarization measurements Mcond, which provide es-
+sential information about the scene’s physical properties.
+These measurements help the model accurately generate
+reflection-free components during the denoising process.
+After the reverse process completes, the model outputs a
+final reflection-free priorˆz0, which contains clean transmis-
+sion information. This prior is used as the guidance signal
+for the reflection removal backbone Fremove. The backbone
+takes this reflection-free prior and the polarization data to
+predict the clean transmission image ˆTrgb.
+4.4. Losses
+Basic Loss. To optimize PolarFree, we follow [46] to
+utilzie three basic losses: L1 loss, VGG perceptual
+loss [14], and total variation (TV) loss [33]. The L1 loss
+minimizes the pixel-wise difference between the predicted
+transmission image ˆTrgb and the ground truth transmission
+image Trgb as L1 = ∥ ˆTrgb − Trgb∥1. The VGG perceptual
+losscompares feature activations from a pre-trained VGG
+network [14] , weighted by λl: LVGG =P
+l λl∥φl( ˆTrgb) −
+φl(Trgb)∥1, where φl denotes the activations of thel-th VGG
+layer. We also use TV loss to constrain consistency via the
+gradient operator LTV = ∥∇ ˆTrgb − ∇Trgb∥1.
+Phase loss. While basic losses help the network match
+color and intensity values to the ground truth, they strug-
+gle with color discrepancies caused by semi-reflective sur-
+faces during dataset collection. These variations, due to re-
+flection and transmission properties of materials, affect the
+color and intensity, leading to mismatches between the pre-
+dicted and target images and hindering the model’s ability
+to learn the correct transmission map.
+To address this issue, we introduce a phase loss to focus
+on the structural information of the transmission, which is
+less sensitive to color variations. As shown in Fig. 6, phase
+information primarily captures the geometry and texture of
+the image, independent of color changes. The phase loss is
+formulated as
+Lphase = ∥∠(F F T( ˆT )) − ∠(F F T((Trgb))∥1, (11)
+where F F T is the Fourier transform, and ∠(·) represents
+the phase angle of the Fourier coefficients.
+Diffusion Loss. The diffusion loss follows the standard
+DDPM formulation [8], where the model predicts the noise
+at each step t and minimizes the difference between the pre-
+dicted noise and the true noise as
+Ldif f = Eq(zt|zt−1)
+
+∥εθ(zt, t) − εtrue(zt)∥2
+2
+
+. (12)
+Here, εtrue(zt) is the added noise obtained by Eq. 9, and
+εθ(zt, t) is the predicted noise, conditioned on the polariza-
+10895
+
+
+=== PDF PAGE 7 ===
+Input Ground TruthOursDSRNet [11]Kim et al. [15] RDRNet [46]
+Figure 7. Qualitative comparisons on the PolaRGB dataset.
+tion measurements and RGB input Mcond.
+Total Loss. The above losses are weighted summed to
+serve as the supervision for the first stage as
+Lstage1 = γ1L1 + γ2LVGG + γ3LTV + γ4Lphase. (13)
+In the second stage, we use a combined loss function con-
+sisting of the diffusion loss and the reconstruction loss as
+Lstage2 = γ5Ldiff + γ6Lrecon. (14)
+where Lrecon has the same format as Lstage1, and γ(·) are the
+coefficients. This combined loss helps refine the reflection-
+free image while ensuring it aligns with the ground truth.
+5. Experiments
+5.1. Implementation Details
+We train and evaluate PolarFree on the PolaRGB dataset.
+The whole dataset consists of 67 scenes, with a total of
+6,500 paired images. For each scene, we keep the back-
+ground (transmission) and camera fixed, and varying the
+glass position to capture images with reflections. The 67
+scenes are then randomly split into 56 training scenes and
+11 testing scenes, containing 6,312 and 188 paired images,
+respectively. This division ensures no data leakage between
+the training and testing sets, with each set containing only a
+subset of all categories.
+We also test PolarFree in real-world scenes like muse-
+ums and galleries, where ground truth is unavailable. We
+implement PolarFree using PyTorch on a single NVIDIA
+RTX 4090 GPU. Training is conducted with a batch size of
+2 and an AdamW optimizer with a learning rate of2×10−4,
+30k iterations on the PolaRGB dataset for both stages.
+We compare our method with recent advanced reflection
+removal methods, including Lei et al. [18], IBCLN [21],
+DSRNet [11], YTMT [10], and RDRNet [46]. For a
+fair comparison, we modify the input settings to align
+with ours and use only the transmission layer for supervi-
+sion. We have re-trained baseline methods on the PolaRGB
+dataset. The evaluation is conducted using both objective
+metrics (PSNR, SSIM), a perceptual metric (LPIPS), and a
+language-based non-reference metric (Q-Align [40]).
+5.2. Results
+Results on PolaRGB. We present the quantitative results
+in Tab. 2. It can be seen that, our method outperforms other
+methods across multiple metrics, demonstrating the effec-
+tiveness of PolarFree for high-quality reflection removal.
+Notably, for fairness, we modified the input layer of all
+baselines to accept polarization information. Visual results
+in Fig. 7 show that PolarFree provides cleaner reflection
+removal with sharper edges and better color preservation.
+In contrast, previous methods often suffer from color dis-
+tortions or imperfect reflection removal, especially in areas
+with complex reflections. Our method maintains high fi-
+delity to the ground truth, especially in challenging regions
+with low light and subtle reflections.
+Real-captured without Ground Truth. To demonstrate
+the generalization ability to unseen and more complex re-
+10896
+
+
+=== PDF PAGE 8 ===
+Input DSRNet [46] Kim et al. [15] Ours
+Figure 8. Visual comparison of reflection removal results in real-
+world museum scenes with glass display cases.
+Table 2. Quantitative comparison on the PolaRGB dataset, eval-
+uated using objective metrics (PSNR, SSIM), perceptual met-
+ric (LPIPS), and the Language-based non-reference metric (Q-
+align [40]). Best results are in bold, second-best results are
+underlined.
+Method PSNR ↑ SSIM ↑ LPIPS ↓ Q-align ↑
+Lei et al. [18] 18.73 0.7962 0.3804 3.2109
+Kim et al. [15] 20.67 0.8399 0.2714 3.7148
+IBCLN [21] 19.73 0.8173 0.2488 3.0938
+YTMT [10] 16.86 0.7544 0.4489 3.0938
+DSRNet [11] 16.84 0.7913 0.2828 3.6992
+RDRNet [46] 15.88 0.6964 0.5250 2.9531
+Ours 22.44 0.8681 0.1325 3.8867
+flection, We further evaluate our model on real-captured im-
+ages at museum with complex reflections from glass enclo-
+sures. Here, we only provide qualitative results to visually
+assess the model’s capability. As shown in Fig. 8, our ap-
+proach effectively reduces reflections while preserving fine
+details, despite the complex lighting and material variations
+often present in museum environments. This demonstrates
+the practical robustness of our method and its potential for
+real-world applications.
+5.3. Ablation Study
+We perform ablation studies to evaluate the effectiveness
+of key components in our method. More experimental re-
+sults and analyses can be found in the supplementary.
+Polarization Information. To assess the importance of
+polarization cues, we conduct an experiment where the po-
+larization information (AOLP, DOLP, and polarization im-
+ages) is removed, and the model is trained solely using RGB
+data. As shown in Table 3 and Fig. 9, the absence of polar-
+ization significantly impairs the model’s ability to differen-
+tiate between reflection and transmission layers, leading to
+noticeably poorer reflection removal performance. These
+results demonstrate the critical role of polarization in accu-
+rate reflection removal.
+Diffusion Prior. We also evaluate the effectiveness of dif-
+fusion prior by removing the conditional diffusion model.
+While without diffusion prior achieves reasonable results,
+as indicated by the comparison metrics in Table 3, it lacks
+fine-grained control and high-quality output offered by the
+Ours
+w/o polarizationw/o diffusion
+0° 45° 90° 135°
+Ground Truth
+Figure 9. Highly challenging reflection removal scenes with com-
+plex reflections and highlights. Top: Polarization images from
+different angles provide complementary information for effective
+reflection removal, note the third (90 ◦) image. Bottom: The dif-
+fusion module effectively handles highlights, while polarization
+better restores the color and details in such challenging scenarios.
+Table 3. Ablation study on PolarFree framework.
+Method PSNR ↑ SSIM↑ LPIPS↓ Q-align↑
+w/o Lphase 22.41 0.8622 0.1402 3.8524
+w/o polarization 21.56 0.8620 0.1483 3.7949
+w/o diffusion prior 20.21 0.8627 0.1552 3.7949
+Ours 22.44 0.8681 0.1325 3.8867
+diffusion model, especially in complex scenes (Fig. 9). The
+conditional diffusion process significantly improves separa-
+tion accuracy and preserves finer transmission details.
+Phase-based Loss. We explore the impact of our phase-
+based loss function. We remove this loss from the train-
+ing procedure and observe the model’s performance without
+it. The results show a noticeable increase in color discrep-
+ancies and less accurate reflection removal, particularly in
+scenarios involving semi-reflective surfaces (Table 3). The
+phase-based loss function ensures the model focuses on re-
+flection removal rather than compensating for color incon-
+sistencies, leading to improved overall results.
+6. Conclusion
+In this work, we propose PolaRGB, a large-scale,
+comprehensive dataset for polarization-based reflection re-
+moval. With 6,500 well-aligned RGB-polarization im-
+age pairs, PolaRGB is 8 × larger than existing polarization
+datasets and is the first to include both RGB and polariza-
+tion images, uniquely captured across diverse real-world
+scenes and lighting conditions. Additionally, we present
+PolarFree, a novel reflection removal model that leverages
+the generative capabilities of diffusion models. This ap-
+proach enables PolarFree to generate reflection-free cues,
+enhancing separation accuracy while preserving fine details
+in the transmission layer. A phase-based loss function is
+also introduced to further improve the model’s performance.
+Comprehensive experimetnal results on realistic scenarios
+demonstrate the effectiveness our method. We believe these
+contributions set a foundation for further advancements in
+polarization-based reflection removal, paving the way for
+more sophisticated applications in complex real-world en-
+vironments.
+10897
+
+
+=== PDF PAGE 9 ===
+Acknowledgments
+This work was supported in part by the National Key
+R&D Program of China (No.2022ZD0160201) and Shang-
+hai Artifcial Intelligence Laboratory, and the RGC Early
+Career Scheme (ECS) No. 24209224.
+References
+[1] Amit Agrawal, Ramesh Raskar, Shree K Nayar, and
+Yuanzhen Li. Removing photography artifacts using gradient
+projection and flash-exposure sampling. ACM Transactions
+on Graphics, 24(3):828–835, 2005. 1, 2
+[2] Max Born and Emil Wolf. Principles of optics: electromag-
+netic theory of propagation, interference and diffraction of
+light. Elsevier, 2013. 1, 2, 4
+[3] Zheng Chen, Yulun Zhang, Ding Liu, Jinjin Gu, Linghe
+Kong, Xin Yuan, et al. Hierarchical integration diffusion
+model for realistic image deblurring. Advances in neural
+information processing systems, 36, 2024. 2, 5
+[4] Hany Farid and Edward H Adelson. Separating reflections
+and lighting using independent components analysis. InPro-
+ceedings. 1999 IEEE Computer Society Conference on Com-
+puter Vision and Pattern Recognition (Cat. No PR00149) ,
+volume 1, pages 262–267. IEEE, 1999. 2, 3
+[5] Yuanbiao Gou, Boyun Li, Zitao Liu, Songfan Yang, and Xi
+Peng. Clearer: Multi-scale neural architecture search for im-
+age restoration. Advances in neural information processing
+systems, 33:17129–17140, 2020. 2
+[6] Yuanshen Guan, Ruikang Xu, Mingde Yao, Ruisheng Gao,
+Lizhi Wang, and Zhiwei Xiong. Diffusion-promoted hdr
+video reconstruction. arXiv preprint arXiv:2406.08204 ,
+2024. 2
+[7] Byeong-Ju Han and Jae-Young Sim. Reflection removal us-
+ing low-rank matrix completion. In Proceedings of the IEEE
+Conference on Computer Vision and Pattern Recognition ,
+pages 5438–5446, 2017. 2
+[8] Jonathan Ho, Ajay Jain, and Pieter Abbeel. Denoising dif-
+fusion probabilistic models. Advances in neural information
+processing systems, 33:6840–6851, 2020. 2, 5, 6
+[9] Yuchen Hong, Haofeng Zhong, Shuchen Weng, Jinxiu
+Liang, and Boxin Shi. L-differ: Single image reflection
+removal with language-based diffusion model. In Proceed-
+ings of the european conference on computer vision (ECCV),
+2024. 2
+[10] Qiming Hu and Xiaojie Guo. Trash or treasure? an interac-
+tive dual-stream strategy for single image reflection separa-
+tion. Advances in Neural Information Processing Systems ,
+34, 2021. 1, 2, 7, 8
+[11] Qiming Hu and Xiaojie Guo. Single image reflection sep-
+aration via component synergy. In Proceedings of the
+IEEE/CVF International Conference on Computer Vision ,
+pages 13138–13147, 2023. 1, 2, 7, 8
+[12] Zhiyong Huang, Biao Xiong, Cao Tian, Jing Zhan, Xiang
+Fei, and Nazaraf Shah. Dust and reflection removal from
+videos captured in moving car. In 2016 IEEE 13th Inter-
+national Conference on e-Business Engineering (ICEBE) ,
+pages 182–187. IEEE, 2016. 1
+[13] Yujin Jeon, Eunsue Choi, Youngchan Kim, Yunseong Moon,
+Khalid Omer, Felix Heide, and Seung-Hwan Baek. Spec-
+tral and polarization vision: Spectro-polarimetric real-world
+dataset. In Proceedings of the IEEE/CVF Conference on
+Computer Vision and Pattern Recognition , pages 22098–
+22108, 2024. 2
+[14] Justin Johnson, Alexandre Alahi, and Li Fei-Fei. Perceptual
+losses for real-time style transfer and super-resolution. In
+European conference on computer vision , pages 694–711.
+Springer, 2016. 6
+[15] Soomin Kim, Yuchi Huo, and Sung-Eui Yoon. Single image
+reflection removal with physically-based training images. In
+Proceedings of the IEEE/CVF Conference on Computer Vi-
+sion and Pattern Recognition, pages 5164–5173, 2020. 1, 2,
+8
+[16] Naejin Kong, Yu-Wing Tai, and Joseph S Shin. A physically-
+based approach to reflection separation: from physical mod-
+eling to constrained optimization. IEEE transactions on
+pattern analysis and machine intelligence , 36(2):209–221,
+2013. 3
+[17] Chenyang Lei and Qifeng Chen. Robust reflection re-
+moval with reflection-free flash-only cues. In Proceedings
+of the IEEE/CVF Conference on Computer Vision and Pat-
+tern Recognition, pages 14811–14820, 2021. 2
+[18] Chenyang Lei, Xuhua Huang, Mengdi Zhang, Qiong Yan,
+Wenxiu Sun, and Qifeng Chen. Polarized reflection re-
+moval with perfect alignment in the wild. In Proceedings
+of the IEEE/CVF conference on computer vision and pattern
+recognition, pages 1750–1758, 2020. 1, 2, 3, 4, 7, 8
+[19] Chenyang Lei, Xudong Jiang, and Qifeng Chen. Robust
+reflection removal with flash-only cues in the wild. IEEE
+Transactions on Pattern Analysis and Machine Intelligence,
+2023. 1, 2
+[20] Anat Levin and Yair Weiss. User assisted separation of re-
+flections from a single image using a sparsity prior. IEEE
+Transactions on Pattern Analysis and Machine Intelligence,
+29(9):1647–1654, 2007. 2
+[21] Chao Li, Yixiao Yang, Kun He, Stephen Lin, and John E
+Hopcroft. Single image reflection removal through cascaded
+refinement. In Proceedings of the IEEE/CVF Conference
+on Computer Vision and Pattern Recognition , pages 3565–
+3574, 2020. 1, 7, 8
+[22] Tingtian Li, Yuk-Hee Chan, and Daniel PK Lun. Im-
+proved multiple-image-based reflection removal algorithm
+using deep neural networks. IEEE Transactions on Image
+Processing, 30:68–79, 2020. 2
+[23] Xiaobo Li, Lei Yan, Pengfei Qi, Liping Zhang, Franc  ̧ois
+Goudail, Tiegen Liu, Jingsheng Zhai, and Haofeng Hu. Po-
+larimetric imaging via deep learning: A review. Remote
+Sensing, 15(6):1540, 2023. 2
+[24] Yu Li and Michael S Brown. Single image layer separation
+using relative smoothness. In Proceedings of the IEEE con-
+ference on computer vision and pattern recognition , pages
+2752–2759, 2014. 1, 2
+[25] Youwei Lyu, Zhaopeng Cui, Si Li, Marc Pollefeys, and
+Boxin Shi. Reflection separation using a pair of unpolar-
+ized and polarized images. Advances in neural information
+processing systems, 32, 2019. 2, 3
+10898
+
+
+=== PDF PAGE 10 ===
+[26] Ajay Nandoriya, Mohamed Elgharib, Changil Kim, Mo-
+hamed Hefeeda, and Wojciech Matusik. Video reflection re-
+moval through spatio-temporal optimization. In Proceedings
+of the IEEE International Conference on Computer Vision ,
+pages 2411–2419, 2017. 2
+[27] Shree K Nayar, Xi-Sheng Fang, and Terrance Boult. Separa-
+tion of reflection components using color and polarization.
+International Journal of Computer Vision , 21(3):163–186,
+1997. 1, 2, 3, 4
+[28] Simon Niklaus, Xuaner Cecilia Zhang, Jonathan T Barron,
+Neal Wadhwa, Rahul Garg, Feng Liu, and Tianfan Xue.
+Learned dual-view reflection removal. In Proceedings of the
+IEEE/CVF Winter Conference on Applications of Computer
+Vision, pages 3713–3722, 2021. 2
+[29] Yoav Y Schechner, Joseph Shamir, and Nahum Kiryati.
+Polarization-based decorrelation of transparent layers: The
+inclination angle of an invisible surface. In Proceedings of
+the seventh IEEE international conference on computer vi-
+sion, volume 2, pages 814–819. IEEE, 1999. 1, 4
+[30] Yoav Y Schechner, Joseph Shamir, and Nahum Kiryati.
+Polarization and statistical analysis of scenes containing a
+semireflector. JOSA A, 17(2):276–284, 2000. 1, 2, 3, 4
+[31] YiChang Shih, Dilip Krishnan, Fredo Durand, and William T
+Freeman. Reflection removal using ghosting cues. In Pro-
+ceedings of the IEEE conference on computer vision and pat-
+tern recognition, pages 3193–3201, 2015. 2
+[32] Sony Semiconductor Solutions. Polarsens: Polarization
+sensing technology, 2024. Accessed: 2024-11-15. 1
+[33] David Strong and Tony Chan. Edge-preserving and scale-
+dependent properties of total variation regularization.Inverse
+problems, 19(6):S165, 2003. 6
+[34] Robby T Tan and Katsushi Ikeuchi. Separating reflection
+components of textured surfaces using a single image. IEEE
+transactions on pattern analysis and machine intelligence ,
+27(2):178–193, 2005. 1, 2
+[35] Renjie Wan, Boxin Shi, Ling-Yu Duan, Ah-Hwee Tan, and
+Alex C Kot. Crrn: Multi-scale guided concurrent reflection
+removal network. In Proceedings of the IEEE Conference
+on Computer Vision and Pattern Recognition , pages 4777–
+4785, 2018. 2
+[36] Renjie Wan, Boxin Shi, Haoliang Li, Ling-Yu Duan, Ah-
+Hwee Tan, and Alex C Kot. Corrn: Cooperative reflection
+removal network. IEEE transactions on pattern analysis and
+machine intelligence, 42(12):2969–2982, 2019. 2
+[37] Mengyi Wang, Xinxin Zhang, Yongshun Gong, and Yilong
+Yin. Personalized single image reflection removal network
+through adaptive cascade refinement. In Proceedings of the
+31st ACM International Conference on Multimedia , pages
+8204–8213, 2023. 2
+[38] Kaixuan Wei, Jiaolong Yang, Ying Fu, David Wipf, and
+Hua Huang. Single image reflection removal exploiting mis-
+aligned training data and network enhancements. In Pro-
+ceedings of the IEEE/CVF Conference on Computer Vision
+and Pattern Recognition, pages 8178–8187, 2019. 1, 2
+[39] Patrick Wieschollek, Orazio Gallo, Jinwei Gu, and Jan
+Kautz. Separating reflection and transmission images in the
+wild. In Proceedings of the European Conference on Com-
+puter Vision (ECCV), pages 89–104, 2018. 1, 2, 3, 4
+[40] Haoning Wu, Zicheng Zhang, Weixia Zhang, Chaofeng
+Chen, Liang Liao, Chunyi Li, Yixuan Gao, Annan Wang,
+Erli Zhang, Wenxiu Sun, et al. Q-align: Teaching lmms for
+visual scoring via discrete text-defined levels.arXiv preprint
+arXiv:2312.17090, 2023. 7, 8
+[41] Tianfan Xue, Michael Rubinstein, Ce Liu, and William T
+Freeman. A computational approach for obstruction-free
+photography. ACM Transactions on Graphics (TOG) ,
+34(4):1–11, 2015. 1
+[42] Mingde Yao, Ruikang Xu, Yuanshen Guan, Jie Huang, and
+Zhiwei Xiong. Neural degradation representation learning
+for all-in-one image restoration. IEEE Transactions on Im-
+age Processing, 2024. 2
+[43] Jae-Seong Yun and Jae-Young Sim. Reflection removal for
+large-scale 3d point clouds. InProceedings of the IEEE Con-
+ference on Computer Vision and Pattern Recognition, pages
+4597–4605, 2018. 1
+[44] Xuaner Zhang, Ren Ng, and Qifeng Chen. Single image re-
+flection separation with perceptual losses. In Proceedings of
+the IEEE conference on computer vision and pattern recog-
+nition, pages 4786–4794, 2018. 2
+[45] Haofeng Zhong, Yuchen Hong, Shuchen Weng, Jinxiu
+Liang, and Boxin Shi. Language-guided image reflection
+separation. In Proceedings of the IEEE/CVF Conference
+on Computer Vision and Pattern Recognition, pages 24913–
+24922, 2024. 2
+[46] Yurui Zhu, Xueyang Fu, Peng-Tao Jiang, Hao Zhang, Qibin
+Sun, Jinwei Chen, Zheng-Jun Zha, and Bo Li. Revisiting sin-
+gle image reflection removal in the wild. In Proceedings of
+the IEEE/CVF Conference on Computer Vision and Pattern
+Recognition, pages 25468–25478, 2024. 1, 2, 6, 7, 8
+10899

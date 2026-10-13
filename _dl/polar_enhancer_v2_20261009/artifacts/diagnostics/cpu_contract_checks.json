@@ -1,0 +1,13 @@
+{
+  "zero_adapters_preserve_same_resolution_restorer": true,
+  "three_real_scales": true,
+  "padding_original_size": true,
+  "masked_polar_losses_and_pi_periodicity": true,
+  "polarization_geometry_and_stokes_signs": true,
+  "canonical_RGB_CPFA_bitdepth_and_no_guide": true,
+  "C0_removes_feedback_C1_allows_feedback_update_bounded": true,
+  "two_actual_rounds_and_GT_independent_inference": true,
+  "head_task_gradient_separation": true,
+  "strict_weight_reload_and_RNG_restore": true,
+  "actual_Adam_checkpoint_resume_bitwise_CPU": true
+}

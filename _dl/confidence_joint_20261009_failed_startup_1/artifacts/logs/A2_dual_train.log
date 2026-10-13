@@ -1,0 +1,38 @@
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG19_Weights.IMAGENET1K_V1`. You can also use `weights=VGG19_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+{"protocol_id": "73b5df7f6361d5af40c6ef0468d11bc6ec132697580212a88ce62190a3c0844d", "actual_forward_calls": {"r2p": 2, "tasknet": 2}, "confidence_mode": "dual", "new_parameters": 23353, "main_does_not_update_H": true, "confidence_does_not_update_restoration": true, "round2_to_T1_gradient": 0.001212859759107232, "raw_rgb_first_condition": true, "r2p_grad_norm": 0.03386029228568077, "alignment_grad_norm": 0.007106971461325884, "net_g_grad_norm": 0.8189693093299866, "H_grad_norm": 0.2562253475189209, "gradients_finite": true, "prior_frozen": true, "gamma0_equals_direct": true, "deterministic_GT_free_inference": true, "all_C1_endpoint_identity": true, "peak_vram_mb": 5774.4921875, "passed": true}
+Traceback (most recent call last):
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/confidence_joint_20261009/scripts/run_arm.py", line 208, in <module>
+    main()
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/confidence_joint_20261009/scripts/run_arm.py", line 192, in main
+    base.run_training(cfg, device, 200, False)
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/confidence_joint_20261009/scripts/reference/run_experiment_snapshot.py", line 852, in run_training
+    metrics = validate_with_optimizer_offload(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/confidence_joint_20261009/scripts/confidence.py", line 190, in offload
+    return base.validate(model, task, loader, device, seed)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/confidence_joint_20261009/scripts/confidence.py", line 196, in validate
+    from quality_metrics import QualityCollector
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/confidence_joint_20261009/scripts/quality_metrics.py", line 9, in <module>
+    from scipy.stats import spearmanr
+ModuleNotFoundError: No module named 'scipy'
+
+Traceback (most recent call last):
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/confidence_joint_20261009/scripts/run_arm.py", line 208, in <module>
+    main()
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/confidence_joint_20261009/scripts/run_arm.py", line 192, in main
+    base.run_training(cfg, device, 200, False)
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/confidence_joint_20261009/scripts/reference/run_experiment_snapshot.py", line 852, in run_training
+    metrics = validate_with_optimizer_offload(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/confidence_joint_20261009/scripts/confidence.py", line 190, in offload
+    return base.validate(model, task, loader, device, seed)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/confidence_joint_20261009/scripts/confidence.py", line 196, in validate
+    from quality_metrics import QualityCollector
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/confidence_joint_20261009/scripts/quality_metrics.py", line 9, in <module>
+    from scipy.stats import spearmanr
+ModuleNotFoundError: No module named 'scipy'

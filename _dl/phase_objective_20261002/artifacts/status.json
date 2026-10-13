@@ -1,0 +1,20 @@
+{
+  "stage": "evaluate",
+  "arm": "phase01",
+  "operation": "evaluate",
+  "command": [
+    "/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/bin/python",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/phase_objective_20261002/scripts/evaluate_detailed.py",
+    "--config",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/phase_objective_20261002/configs/phase01.yaml",
+    "evaluate",
+    "--checkpoint",
+    "step_3000",
+    "--split",
+    "validation"
+  ],
+  "start_unix": 1790934269.8004158,
+  "status": "completed",
+  "finish_unix": 1790936899.3534029,
+  "returncode": 0
+}

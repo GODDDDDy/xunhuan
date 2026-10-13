@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/phase_objective_20261002/scripts/evaluate_detailed.py", line 73, in <module>
+    result = base.run_evaluation(config, torch.device("cuda"), args.checkpoint, args.split)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/phase_objective_20261002/scripts/reference/run_experiment_snapshot.py", line 887, in run_evaluation
+    model, task, _, _ = build_components(config, device)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/phase_objective_20261002/scripts/evaluate_detailed.py", line 34, in build
+    result = old_build(cfg, device)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/phase_objective_20261002/scripts/run_phase_objective.py", line 59, in build
+    model, task, criterion, configuration = original_build(config, device)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/phase_objective_20261002/scripts/reference/run_experiment_snapshot.py", line 257, in build_components
+    from rgb_final_confirmation.losses import build_official_task_loss
+ModuleNotFoundError: No module named 'rgb_final_confirmation'

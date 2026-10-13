@@ -1,0 +1,1702 @@
+{
+  "purpose": "Review item #3: per-term training-gradient norms and pairwise angles on the shared R2P parameters, plus round1-vs-round2 task gradients. Frozen checkpoint; no optimizer.step; read-only.",
+  "read_only": true,
+  "no_weight_update": true,
+  "optimizer_step_called": false,
+  "checkpoint_step": 3000,
+  "seed": 2026,
+  "predetermined_steps": [
+    200,
+    600,
+    1200,
+    2000,
+    2800
+  ],
+  "step_selection_rationale": "Chosen before inspecting any gradient value: spread over the frozen schedule (early/mid/late), step 200 through 2800; the very first and very last steps are avoided. Not selected by observed result.",
+  "gradient_semantics": {
+    "unit": "gradient of the UNWEIGHTED term",
+    "weighted": "unit * the weight the term carries in the objective",
+    "angles_computed_on": "unit vectors (cosine is scale invariant)",
+    "clip_convention": "training clips the SUMMED gradient over model.parameters() to global norm grad_clip=1.0 after backward; a uniform rescale that cannot change any pairwise angle. NOT applied here.",
+    "ste_note": "quantization preprocessing in the diffusion stream uses a straight-through estimator, so all vectors are the implementation's SURROGATE gradients"
+  },
+  "objective": "total = round_weights[0]*L(T1) + round_weights[1]*L(T2) + lambda*alignment  with round_weights=[0.5, 1.0]",
+  "per_round_loss": "L = L1 + (1-SSIM) + phase + perceptual_weight*L1(VGG conv5_4)",
+  "decompositions": {
+    "real_path": "single forward; round 2 consumes the graph-attached P1, exactly as training builds it; round-2 gradients include the through-P1 path. The SUM of its parts reproduces training's actual update direction.",
+    "isolated": "round 2 consumes a DETACHED P1, so its gradient on the shared parameters is attributable to round 2 alone. This is the decomposition used to ask whether round 2 conflicts with round 1."
+  },
+  "groups": {
+    "no_feedback": {
+      "group": "no_feedback",
+      "feedback_enabled": false,
+      "lambda_feature_alignment": 0.030651881051471687,
+      "round_loss_weights": [
+        0.5,
+        1.0
+      ],
+      "perceptual_weight": 0.1,
+      "shared_param_count": 125004,
+      "netg_param_count": 18855655,
+      "shared_param_names": [
+        "rgb_encoder.net.0.weight",
+        "rgb_encoder.net.0.bias",
+        "rgb_encoder.net.2.weight",
+        "rgb_encoder.net.2.bias",
+        "polar_encoder.net.0.weight",
+        "polar_encoder.net.0.bias",
+        "polar_encoder.net.2.weight",
+        "polar_encoder.net.2.bias",
+        "gate.weight",
+        "gate.bias",
+        "film.weight",
+        "film.bias",
+        "body.0.weight",
+        "body.0.bias",
+        "body.2.weight",
+        "body.2.bias",
+        "body.4.weight",
+        "body.4.bias"
+      ],
+      "records": [
+        {
+          "step": 200,
+          "diffusion_seed": 1312149479,
+          "sample_ids": [
+            "train/hard/17/0051",
+            "train/easy/46/0158"
+          ],
+          "batch_size": 2,
+          "lambda_feature_alignment": 0.030651881051471687,
+          "round_weights": [
+            0.5,
+            1.0
+          ],
+          "perceptual_weight": 0.1,
+          "shared_param_count": 125004,
+          "real_path": {
+            "loss_values": {
+              "L1_total": 2.8858819007873535,
+              "L2_total": 2.9104936122894287,
+              "criterion_L1": 2.8858819007873535,
+              "criterion_L2": 2.9104936122894287,
+              "loss1_parts": {
+                "l1": 0.022818220779299736,
+                "ssim": 0.09995710849761963,
+                "phase": 2.708768129348755,
+                "perceptual": 0.05433843284845352
+              },
+              "loss2_parts": {
+                "l1": 0.023337706923484802,
+                "ssim": 0.10413157939910889,
+                "phase": 2.7267794609069824,
+                "perceptual": 0.0562448687851429
+              },
+              "alignment": 0.5147755146026611
+            },
+            "shared_grad_norms_unit": {
+              "L1.l1": 0.005442061809477898,
+              "L1.ssim": 0.04666099973649226,
+              "L1.phase": 0.06227994275975064,
+              "L1.perceptual": 0.012450859004087603,
+              "L2.l1": 0.032099401015847,
+              "L2.ssim": 0.23668679315322627,
+              "L2.phase": 0.7040315722439932,
+              "L2.perceptual": 0.10840522108225566,
+              "L1.total": 0.075031850067199,
+              "L2.total": 0.3479211488687741,
+              "align": 0.24303201407119981
+            },
+            "netg_grad_norms_unit": {
+              "L1.total": 8.133024976532951,
+              "L2.total": 8.975985856531455
+            },
+            "cosines_unit": {
+              "L1.total vs L2.total": 0.2395588327339322,
+              "L1.phase vs L2.phase": 0.4791996941827916,
+              "L1.phase vs L1.l1": -0.166044228824246,
+              "L1.phase vs L1.ssim": -0.24881543872161513,
+              "L1.l1 vs L1.ssim": 0.9446160552867092,
+              "L1.phase vs L1.perceptual": -0.4739301566567888,
+              "L1.l1 vs L1.perceptual": 0.8824905279423894,
+              "L2.phase vs L2.l1": -0.9633225868917774,
+              "L2.phase vs L2.ssim": -0.9718905320512613,
+              "L2.l1 vs L2.ssim": 0.9613347630446392,
+              "L2.phase vs L2.perceptual": -0.9714317435963302,
+              "L2.l1 vs L2.perceptual": 0.9429090097291339,
+              "align vs L1.total": 0.03459604684163259,
+              "align vs L2.total": -0.021442641829971815,
+              "L1 weighted vs TASKSUM": 0.33689034068074303,
+              "L2 weighted vs TASKSUM": 0.9948329308713296,
+              "align weighted vs TASKSUM": -0.017176966840056256
+            }
+          },
+          "isolated_round2_vs_round1": {
+            "L1_grad_norm_unit": 0.075031850067199,
+            "L2_grad_norm_unit": 0.17497039173019213,
+            "L1_weighted_norm": 0.0375159250335995,
+            "L2_weighted_norm": 0.17497039173019213,
+            "cosine_L1_vs_L2": 0.2409922172136337
+          },
+          "weighted_vectors_on_shared": {
+            "L1.total.weighted_norm": 0.0375159250335995,
+            "L2.total.weighted_norm": 0.3479211488687741,
+            "align.weighted_norm": 0.0074493883870099765,
+            "TASKSUM.weighted_norm": 0.35876216900676566,
+            "OBJECTIVE.weighted_norm": 0.35871154761482676
+          },
+          "netg_cosines_unit": {
+            "L1.total vs L2.total": 0.8985304363886926
+          },
+          "focused_cosines_unit_or_weighted": {
+            "L1.total vs L2.total": 0.2395588327339322,
+            "L1.phase vs L2.phase": 0.4791996941827916,
+            "L1.phase vs L1.l1": -0.166044228824246,
+            "L1.phase vs L1.ssim": -0.24881543872161513,
+            "L1.l1 vs L1.ssim": 0.9446160552867092,
+            "L1.phase vs L1.perceptual": -0.4739301566567888,
+            "L1.l1 vs L1.perceptual": 0.8824905279423894,
+            "L2.phase vs L2.l1": -0.9633225868917774,
+            "L2.phase vs L2.ssim": -0.9718905320512613,
+            "L2.l1 vs L2.ssim": 0.9613347630446392,
+            "L2.phase vs L2.perceptual": -0.9714317435963302,
+            "L2.l1 vs L2.perceptual": 0.9429090097291339,
+            "align vs L1.total": 0.03459604684163259,
+            "align vs L2.total": -0.021442641829971815,
+            "L1 weighted vs TASKSUM": 0.33689034068074303,
+            "L2 weighted vs TASKSUM": 0.9948329308713296,
+            "align weighted vs TASKSUM": -0.017176966840056256
+          },
+          "clip_bookkeeping": {
+            "grad_clip": 1.0,
+            "objective_grad_norm_on_shared_preclip": 0.35871154761482676,
+            "would_clip_shared_block_alone": false,
+            "note": "training clips the summed gradient over ALL model.parameters() (shared R2P + projections + feedback adapter) jointly to global norm 1.0; this number covers only the shared R2P block, so it is a LOWER BOUND"
+          }
+        },
+        {
+          "step": 600,
+          "diffusion_seed": 1261151063,
+          "sample_ids": [
+            "train/easy/42/0027",
+            "train/easy/42/0078"
+          ],
+          "batch_size": 2,
+          "lambda_feature_alignment": 0.030651881051471687,
+          "round_weights": [
+            0.5,
+            1.0
+          ],
+          "perceptual_weight": 0.1,
+          "shared_param_count": 125004,
+          "real_path": {
+            "loss_values": {
+              "L1_total": 3.0441808700561523,
+              "L2_total": 3.042203664779663,
+              "criterion_L1": 3.0441808700561523,
+              "criterion_L2": 3.042203664779663,
+              "loss1_parts": {
+                "l1": 0.014551414176821709,
+                "ssim": 0.04835093021392822,
+                "phase": 2.9531173706054688,
+                "perceptual": 0.028160948306322098
+              },
+              "loss2_parts": {
+                "l1": 0.014447915367782116,
+                "ssim": 0.04969865083694458,
+                "phase": 2.9496922492980957,
+                "perceptual": 0.02836482599377632
+              },
+              "alignment": 0.42623376846313477
+            },
+            "shared_grad_norms_unit": {
+              "L1.l1": 0.005981115621602805,
+              "L1.ssim": 0.04304450213194585,
+              "L1.phase": 0.060447157232996415,
+              "L1.perceptual": 0.007350246914017889,
+              "L2.l1": 0.010307389502521955,
+              "L2.ssim": 0.08751753256987217,
+              "L2.phase": 0.08207026975252886,
+              "L2.perceptual": 0.0121566144976597,
+              "L1.total": 0.09733733801953329,
+              "L2.total": 0.14975284250565274,
+              "align": 0.472054398853468
+            },
+            "netg_grad_norms_unit": {
+              "L1.total": 3.8258609129175616,
+              "L2.total": 3.9732138905196255
+            },
+            "cosines_unit": {
+              "L1.total vs L2.total": 0.9826149673106938,
+              "L1.phase vs L2.phase": 0.9610891669173282,
+              "L1.phase vs L1.l1": 0.16489973709597838,
+              "L1.phase vs L1.ssim": 0.40257173813987407,
+              "L1.l1 vs L1.ssim": 0.7834043982029322,
+              "L1.phase vs L1.perceptual": 0.9492285875654927,
+              "L1.l1 vs L1.perceptual": 0.2581254761480424,
+              "L2.phase vs L2.l1": -0.2066667126858925,
+              "L2.phase vs L2.ssim": 0.2862103747477493,
+              "L2.l1 vs L2.ssim": 0.5026563633933304,
+              "L2.phase vs L2.perceptual": 0.8772673959128474,
+              "L2.l1 vs L2.perceptual": -0.11251460983791695,
+              "align vs L1.total": -0.03154756942343967,
+              "align vs L2.total": -0.02700560058901489,
+              "L1 weighted vs TASKSUM": 0.9900706130236536,
+              "L2 weighted vs TASKSUM": 0.9989559134605789,
+              "align weighted vs TASKSUM": -0.028210586922308576
+            }
+          },
+          "isolated_round2_vs_round1": {
+            "L1_grad_norm_unit": 0.09733733801953329,
+            "L2_grad_norm_unit": 0.07433652906788524,
+            "L1_weighted_norm": 0.048668669009766644,
+            "L2_weighted_norm": 0.07433652906788524,
+            "cosine_L1_vs_L2": 0.9828488535347604
+          },
+          "weighted_vectors_on_shared": {
+            "L1.total.weighted_norm": 0.048668669009766644,
+            "L2.total.weighted_norm": 0.14975284250565274,
+            "align.weighted_norm": 0.014469355283480433,
+            "TASKSUM.weighted_norm": 0.1977819065400977,
+            "OBJECTIVE.weighted_norm": 0.1979029560105312
+          },
+          "netg_cosines_unit": {
+            "L1.total vs L2.total": 0.8860498435114497
+          },
+          "focused_cosines_unit_or_weighted": {
+            "L1.total vs L2.total": 0.9826149673106938,
+            "L1.phase vs L2.phase": 0.9610891669173282,
+            "L1.phase vs L1.l1": 0.16489973709597838,
+            "L1.phase vs L1.ssim": 0.40257173813987407,
+            "L1.l1 vs L1.ssim": 0.7834043982029322,
+            "L1.phase vs L1.perceptual": 0.9492285875654927,
+            "L1.l1 vs L1.perceptual": 0.2581254761480424,
+            "L2.phase vs L2.l1": -0.2066667126858925,
+            "L2.phase vs L2.ssim": 0.2862103747477493,
+            "L2.l1 vs L2.ssim": 0.5026563633933304,
+            "L2.phase vs L2.perceptual": 0.8772673959128474,
+            "L2.l1 vs L2.perceptual": -0.11251460983791695,
+            "align vs L1.total": -0.03154756942343967,
+            "align vs L2.total": -0.02700560058901489,
+            "L1 weighted vs TASKSUM": 0.9900706130236536,
+            "L2 weighted vs TASKSUM": 0.9989559134605789,
+            "align weighted vs TASKSUM": -0.028210586922308576
+          },
+          "clip_bookkeeping": {
+            "grad_clip": 1.0,
+            "objective_grad_norm_on_shared_preclip": 0.1979029560105312,
+            "would_clip_shared_block_alone": false,
+            "note": "training clips the summed gradient over ALL model.parameters() (shared R2P + projections + feedback adapter) jointly to global norm 1.0; this number covers only the shared R2P block, so it is a LOWER BOUND"
+          }
+        },
+        {
+          "step": 1200,
+          "diffusion_seed": 62166571,
+          "sample_ids": [
+            "train/hard/28/0036",
+            "train/easy/23/0083"
+          ],
+          "batch_size": 2,
+          "lambda_feature_alignment": 0.030651881051471687,
+          "round_weights": [
+            0.5,
+            1.0
+          ],
+          "perceptual_weight": 0.1,
+          "shared_param_count": 125004,
+          "real_path": {
+            "loss_values": {
+              "L1_total": 3.060147523880005,
+              "L2_total": 3.073704719543457,
+              "criterion_L1": 3.060147523880005,
+              "criterion_L2": 3.073704719543457,
+              "loss1_parts": {
+                "l1": 0.024993818253278732,
+                "ssim": 0.0522613525390625,
+                "phase": 2.931939125061035,
+                "perceptual": 0.0509532168507576
+              },
+              "loss2_parts": {
+                "l1": 0.028532058000564575,
+                "ssim": 0.054566025733947754,
+                "phase": 2.9389398097991943,
+                "perceptual": 0.05166678503155708
+              },
+              "alignment": 0.5553063750267029
+            },
+            "shared_grad_norms_unit": {
+              "L1.l1": 0.03018148068736665,
+              "L1.ssim": 0.006732688620424142,
+              "L1.phase": 0.12651027163098402,
+              "L1.perceptual": 0.022027892843871626,
+              "L2.l1": 0.0739950334158491,
+              "L2.ssim": 0.06814286563121472,
+              "L2.phase": 0.08854795590167065,
+              "L2.perceptual": 0.016998966433166673,
+              "L1.total": 0.08956173048549247,
+              "L2.total": 0.19772750565792785,
+              "align": 0.626698946971154
+            },
+            "netg_grad_norms_unit": {
+              "L1.total": 8.680479984703961,
+              "L2.total": 6.445460683142752
+            },
+            "cosines_unit": {
+              "L1.total vs L2.total": -0.022064753442348824,
+              "L1.phase vs L2.phase": -0.07962312954744304,
+              "L1.phase vs L1.l1": -0.5681689424196296,
+              "L1.phase vs L1.ssim": -0.7700460409600229,
+              "L1.l1 vs L1.ssim": 0.6639798000198486,
+              "L1.phase vs L1.perceptual": -0.9510970311764637,
+              "L1.l1 vs L1.perceptual": 0.734137424166839,
+              "L2.phase vs L2.l1": 0.8505449322720178,
+              "L2.phase vs L2.ssim": 0.618754929373549,
+              "L2.l1 vs L2.ssim": 0.7419521711583397,
+              "L2.phase vs L2.perceptual": -0.5485495360678219,
+              "L2.l1 vs L2.perceptual": -0.5149758864473032,
+              "align vs L1.total": -0.1016928735871544,
+              "align vs L2.total": 0.16274805911342266,
+              "L1 weighted vs TASKSUM": 0.20031841113522802,
+              "L2 weighted vs TASKSUM": 0.9750723498085334,
+              "align weighted vs TASKSUM": 0.13691828444449347
+            }
+          },
+          "isolated_round2_vs_round1": {
+            "L1_grad_norm_unit": 0.08956173048549247,
+            "L2_grad_norm_unit": 0.09858065554295514,
+            "L1_weighted_norm": 0.044780865242746236,
+            "L2_weighted_norm": 0.09858065554295514,
+            "cosine_L1_vs_L2": -0.021907596034733454
+          },
+          "weighted_vectors_on_shared": {
+            "L1.total.weighted_norm": 0.044780865242746236,
+            "L2.total.weighted_norm": 0.19772750565792785,
+            "align.weighted_norm": 0.019209501577642275,
+            "TASKSUM.weighted_norm": 0.2017690553383448,
+            "OBJECTIVE.weighted_norm": 0.20528301230623394
+          },
+          "netg_cosines_unit": {
+            "L1.total vs L2.total": 0.8103928759253736
+          },
+          "focused_cosines_unit_or_weighted": {
+            "L1.total vs L2.total": -0.022064753442348824,
+            "L1.phase vs L2.phase": -0.07962312954744304,
+            "L1.phase vs L1.l1": -0.5681689424196296,
+            "L1.phase vs L1.ssim": -0.7700460409600229,
+            "L1.l1 vs L1.ssim": 0.6639798000198486,
+            "L1.phase vs L1.perceptual": -0.9510970311764637,
+            "L1.l1 vs L1.perceptual": 0.734137424166839,
+            "L2.phase vs L2.l1": 0.8505449322720178,
+            "L2.phase vs L2.ssim": 0.618754929373549,
+            "L2.l1 vs L2.ssim": 0.7419521711583397,
+            "L2.phase vs L2.perceptual": -0.5485495360678219,
+            "L2.l1 vs L2.perceptual": -0.5149758864473032,
+            "align vs L1.total": -0.1016928735871544,
+            "align vs L2.total": 0.16274805911342266,
+            "L1 weighted vs TASKSUM": 0.20031841113522802,
+            "L2 weighted vs TASKSUM": 0.9750723498085334,
+            "align weighted vs TASKSUM": 0.13691828444449347
+          },
+          "clip_bookkeeping": {
+            "grad_clip": 1.0,
+            "objective_grad_norm_on_shared_preclip": 0.20528301230623394,
+            "would_clip_shared_block_alone": false,
+            "note": "training clips the summed gradient over ALL model.parameters() (shared R2P + projections + feedback adapter) jointly to global norm 1.0; this number covers only the shared R2P block, so it is a LOWER BOUND"
+          }
+        },
+        {
+          "step": 2000,
+          "diffusion_seed": 363524494,
+          "sample_ids": [
+            "train/easy/42/0020",
+            "train/easy/26/0031"
+          ],
+          "batch_size": 2,
+          "lambda_feature_alignment": 0.030651881051471687,
+          "round_weights": [
+            0.5,
+            1.0
+          ],
+          "perceptual_weight": 0.1,
+          "shared_param_count": 125004,
+          "real_path": {
+            "loss_values": {
+              "L1_total": 2.488424777984619,
+              "L2_total": 2.4952712059020996,
+              "criterion_L1": 2.488424777984619,
+              "criterion_L2": 2.4952712059020996,
+              "loss1_parts": {
+                "l1": 0.013691107742488384,
+                "ssim": 0.05089932680130005,
+                "phase": 2.3889245986938477,
+                "perceptual": 0.03490983322262764
+              },
+              "loss2_parts": {
+                "l1": 0.013376697897911072,
+                "ssim": 0.0506630539894104,
+                "phase": 2.3961801528930664,
+                "perceptual": 0.035051390528678894
+              },
+              "alignment": 0.4775361716747284
+            },
+            "shared_grad_norms_unit": {
+              "L1.l1": 0.006974747079494958,
+              "L1.ssim": 0.011757102911966289,
+              "L1.phase": 0.17848605691883684,
+              "L1.perceptual": 0.007060125963022931,
+              "L2.l1": 0.015569845851451648,
+              "L2.ssim": 0.01715301798829269,
+              "L2.phase": 0.30363695278385944,
+              "L2.perceptual": 0.010229339992373947,
+              "L1.total": 0.16802914572194605,
+              "L2.total": 0.2825022564843883,
+              "align": 0.46298503880575026
+            },
+            "netg_grad_norms_unit": {
+              "L1.total": 6.127836427604766,
+              "L2.total": 6.1785714553956534
+            },
+            "cosines_unit": {
+              "L1.total vs L2.total": 0.5813433727630126,
+              "L1.phase vs L2.phase": 0.5675644128678545,
+              "L1.phase vs L1.l1": -0.9703452609848662,
+              "L1.phase vs L1.ssim": -0.9002298443988409,
+              "L1.l1 vs L1.ssim": 0.9227545180780935,
+              "L1.phase vs L1.perceptual": 0.9459816664388283,
+              "L1.l1 vs L1.perceptual": -0.9053748299772794,
+              "L2.phase vs L2.l1": -0.9776574542166432,
+              "L2.phase vs L2.ssim": -0.938968657816828,
+              "L2.l1 vs L2.ssim": 0.986238613538343,
+              "L2.phase vs L2.perceptual": 0.9887490246281413,
+              "L2.l1 vs L2.perceptual": -0.9806170534266891,
+              "align vs L1.total": 0.037501801107409666,
+              "align vs L2.total": 0.053443633076493066,
+              "L1 weighted vs TASKSUM": 0.7337555537376312,
+              "L2 weighted vs TASKSUM": 0.9793744341819234,
+              "align weighted vs TASKSUM": 0.05393874409315896
+            }
+          },
+          "isolated_round2_vs_round1": {
+            "L1_grad_norm_unit": 0.16802914572194605,
+            "L2_grad_norm_unit": 0.13993606725783983,
+            "L1_weighted_norm": 0.08401457286097302,
+            "L2_weighted_norm": 0.13993606725783983,
+            "cosine_L1_vs_L2": 0.5788789956621148
+          },
+          "weighted_vectors_on_shared": {
+            "L1.total.weighted_norm": 0.08401457286097302,
+            "L2.total.weighted_norm": 0.2825022564843883,
+            "align.weighted_norm": 0.014191362338084804,
+            "TASKSUM.weighted_norm": 0.33832164703114964,
+            "OBJECTIVE.weighted_norm": 0.33938308424884717
+          },
+          "netg_cosines_unit": {
+            "L1.total vs L2.total": 0.9807987234095685
+          },
+          "focused_cosines_unit_or_weighted": {
+            "L1.total vs L2.total": 0.5813433727630126,
+            "L1.phase vs L2.phase": 0.5675644128678545,
+            "L1.phase vs L1.l1": -0.9703452609848662,
+            "L1.phase vs L1.ssim": -0.9002298443988409,
+            "L1.l1 vs L1.ssim": 0.9227545180780935,
+            "L1.phase vs L1.perceptual": 0.9459816664388283,
+            "L1.l1 vs L1.perceptual": -0.9053748299772794,
+            "L2.phase vs L2.l1": -0.9776574542166432,
+            "L2.phase vs L2.ssim": -0.938968657816828,
+            "L2.l1 vs L2.ssim": 0.986238613538343,
+            "L2.phase vs L2.perceptual": 0.9887490246281413,
+            "L2.l1 vs L2.perceptual": -0.9806170534266891,
+            "align vs L1.total": 0.037501801107409666,
+            "align vs L2.total": 0.053443633076493066,
+            "L1 weighted vs TASKSUM": 0.7337555537376312,
+            "L2 weighted vs TASKSUM": 0.9793744341819234,
+            "align weighted vs TASKSUM": 0.05393874409315896
+          },
+          "clip_bookkeeping": {
+            "grad_clip": 1.0,
+            "objective_grad_norm_on_shared_preclip": 0.33938308424884717,
+            "would_clip_shared_block_alone": false,
+            "note": "training clips the summed gradient over ALL model.parameters() (shared R2P + projections + feedback adapter) jointly to global norm 1.0; this number covers only the shared R2P block, so it is a LOWER BOUND"
+          }
+        },
+        {
+          "step": 2800,
+          "diffusion_seed": 330454723,
+          "sample_ids": [
+            "train/easy/23/0057",
+            "train/easy/29/0058"
+          ],
+          "batch_size": 2,
+          "lambda_feature_alignment": 0.030651881051471687,
+          "round_weights": [
+            0.5,
+            1.0
+          ],
+          "perceptual_weight": 0.1,
+          "shared_param_count": 125004,
+          "real_path": {
+            "loss_values": {
+              "L1_total": 2.748253107070923,
+              "L2_total": 2.7339696884155273,
+              "criterion_L1": 2.748253107070923,
+              "criterion_L2": 2.7339696884155273,
+              "loss1_parts": {
+                "l1": 0.023267846554517746,
+                "ssim": 0.04183340072631836,
+                "phase": 2.648982048034668,
+                "perceptual": 0.03416982293128967
+              },
+              "loss2_parts": {
+                "l1": 0.02192448079586029,
+                "ssim": 0.041419029235839844,
+                "phase": 2.6361217498779297,
+                "perceptual": 0.034504521638154984
+              },
+              "alignment": 0.5366659164428711
+            },
+            "shared_grad_norms_unit": {
+              "L1.l1": 0.03398470375985789,
+              "L1.ssim": 0.016481193341030473,
+              "L1.phase": 0.14797119423945485,
+              "L1.perceptual": 0.019986319848113943,
+              "L2.l1": 0.039241746215546505,
+              "L2.ssim": 0.016246263258474624,
+              "L2.phase": 0.20518661486381448,
+              "L2.perceptual": 0.01130719139749369,
+              "L1.total": 0.19101419235485662,
+              "L2.total": 0.2491772652168003,
+              "align": 0.24280848253769263
+            },
+            "netg_grad_norms_unit": {
+              "L1.total": 5.937001464911435,
+              "L2.total": 5.393855532331378
+            },
+            "cosines_unit": {
+              "L1.total vs L2.total": 0.317835472825795,
+              "L1.phase vs L2.phase": 0.3200217660530437,
+              "L1.phase vs L1.l1": 0.8429785891814515,
+              "L1.phase vs L1.ssim": 0.6737109583749343,
+              "L1.l1 vs L1.ssim": 0.9586491672576661,
+              "L1.phase vs L1.perceptual": -0.15833059446279002,
+              "L1.l1 vs L1.perceptual": 0.357742460719282,
+              "L2.phase vs L2.l1": 0.9076862549050926,
+              "L2.phase vs L2.ssim": 0.8067296106855351,
+              "L2.l1 vs L2.ssim": 0.8932346453233072,
+              "L2.phase vs L2.perceptual": -0.5788862877130201,
+              "L2.l1 vs L2.perceptual": -0.40985077627069977,
+              "align vs L1.total": 0.007543336630849662,
+              "align vs L2.total": -0.0915774433055133,
+              "L1 weighted vs TASKSUM": 0.5945675060602612,
+              "L2 weighted vs TASKSUM": 0.9513272591436652,
+              "align weighted vs TASKSUM": -0.0752075458701767
+            }
+          },
+          "isolated_round2_vs_round1": {
+            "L1_grad_norm_unit": 0.19101419235485662,
+            "L2_grad_norm_unit": 0.12634704669184468,
+            "L1_weighted_norm": 0.09550709617742831,
+            "L2_weighted_norm": 0.12634704669184468,
+            "cosine_L1_vs_L2": 0.32157787260125775
+          },
+          "weighted_vectors_on_shared": {
+            "L1.total.weighted_norm": 0.09550709617742831,
+            "L2.total.weighted_norm": 0.2491772652168003,
+            "align.weighted_norm": 0.007442536725033661,
+            "TASKSUM.weighted_norm": 0.2938345407448846,
+            "OBJECTIVE.weighted_norm": 0.29336869256975917
+          },
+          "netg_cosines_unit": {
+            "L1.total vs L2.total": 0.9680362384016544
+          },
+          "focused_cosines_unit_or_weighted": {
+            "L1.total vs L2.total": 0.317835472825795,
+            "L1.phase vs L2.phase": 0.3200217660530437,
+            "L1.phase vs L1.l1": 0.8429785891814515,
+            "L1.phase vs L1.ssim": 0.6737109583749343,
+            "L1.l1 vs L1.ssim": 0.9586491672576661,
+            "L1.phase vs L1.perceptual": -0.15833059446279002,
+            "L1.l1 vs L1.perceptual": 0.357742460719282,
+            "L2.phase vs L2.l1": 0.9076862549050926,
+            "L2.phase vs L2.ssim": 0.8067296106855351,
+            "L2.l1 vs L2.ssim": 0.8932346453233072,
+            "L2.phase vs L2.perceptual": -0.5788862877130201,
+            "L2.l1 vs L2.perceptual": -0.40985077627069977,
+            "align vs L1.total": 0.007543336630849662,
+            "align vs L2.total": -0.0915774433055133,
+            "L1 weighted vs TASKSUM": 0.5945675060602612,
+            "L2 weighted vs TASKSUM": 0.9513272591436652,
+            "align weighted vs TASKSUM": -0.0752075458701767
+          },
+          "clip_bookkeeping": {
+            "grad_clip": 1.0,
+            "objective_grad_norm_on_shared_preclip": 0.29336869256975917,
+            "would_clip_shared_block_alone": false,
+            "note": "training clips the summed gradient over ALL model.parameters() (shared R2P + projections + feedback adapter) jointly to global norm 1.0; this number covers only the shared R2P block, so it is a LOWER BOUND"
+          }
+        }
+      ],
+      "cosine_summary": {
+        "L1.total vs L2.total": {
+          "mean": 0.4198575784382169,
+          "std": 0.3408768210512899,
+          "min": -0.022064753442348824,
+          "max": 0.9826149673106938,
+          "n": 5
+        },
+        "L1.phase vs L2.phase": {
+          "mean": 0.449650382094715,
+          "std": 0.3386090782426777,
+          "min": -0.07962312954744304,
+          "max": 0.9610891669173282,
+          "n": 5
+        },
+        "L1.phase vs L1.l1": {
+          "mean": -0.13933602119026237,
+          "std": 0.621721601631932,
+          "min": -0.9703452609848662,
+          "max": 0.8429785891814515,
+          "n": 5
+        },
+        "L1.phase vs L1.ssim": {
+          "mean": -0.16856172551313411,
+          "std": 0.6227646399297896,
+          "min": -0.9002298443988409,
+          "max": 0.6737109583749343,
+          "n": 5
+        },
+        "L1.l1 vs L1.ssim": {
+          "mean": 0.8546807877690499,
+          "std": 0.11399912234157969,
+          "min": 0.6639798000198486,
+          "max": 0.9586491672576661,
+          "n": 5
+        },
+        "L2.phase vs L2.l1": {
+          "mean": -0.07788311332344056,
+          "std": 0.82988044401421,
+          "min": -0.9776574542166432,
+          "max": 0.9076862549050926,
+          "n": 5
+        },
+        "L2.phase vs L2.ssim": {
+          "mean": -0.03983285501225118,
+          "std": 0.7660139386401832,
+          "min": -0.9718905320512613,
+          "max": 0.8067296106855351,
+          "n": 5
+        },
+        "L2.l1 vs L2.ssim": {
+          "mean": 0.8170833112915918,
+          "std": 0.1787344494316637,
+          "min": 0.5026563633933304,
+          "max": 0.986238613538343,
+          "n": 5
+        },
+        "L1.phase vs L1.perceptual": {
+          "mean": 0.06237049434165569,
+          "std": 0.7656016934558338,
+          "min": -0.9510970311764637,
+          "max": 0.9492285875654927,
+          "n": 5
+        },
+        "L2.phase vs L2.perceptual": {
+          "mean": -0.04657022936723669,
+          "std": 0.8143800521141483,
+          "min": -0.9714317435963302,
+          "max": 0.9887490246281413,
+          "n": 5
+        },
+        "L1 weighted vs TASKSUM": {
+          "mean": 0.5711204849275034,
+          "std": 0.28102564887965864,
+          "min": 0.20031841113522802,
+          "max": 0.9900706130236536,
+          "n": 5
+        },
+        "L2 weighted vs TASKSUM": {
+          "mean": 0.9799125774932061,
+          "std": 0.016888477830176787,
+          "min": 0.9513272591436652,
+          "max": 0.9989559134605789,
+          "n": 5
+        },
+        "align weighted vs TASKSUM": {
+          "mean": 0.014052385781022182,
+          "std": 0.07404825097058997,
+          "min": -0.0752075458701767,
+          "max": 0.13691828444449347,
+          "n": 5
+        },
+        "align vs L1.total": {
+          "mean": -0.01071985168614043,
+          "std": 0.051811749719479536,
+          "min": -0.1016928735871544,
+          "max": 0.037501801107409666,
+          "n": 5
+        },
+        "align vs L2.total": {
+          "mean": 0.015233201293083146,
+          "std": 0.08690042350600986,
+          "min": -0.0915774433055133,
+          "max": 0.16274805911342266,
+          "n": 5
+        }
+      },
+      "isolated_summary": {
+        "cosine_L1_vs_L2": {
+          "mean": 0.42047806859540665,
+          "std": 0.34030963822174337,
+          "min": -0.021907596034733454,
+          "max": 0.9828488535347604,
+          "n": 5
+        },
+        "L1_grad_norm_unit": {
+          "mean": 0.1241948513298055,
+          "std": 0.04631209231648731,
+          "min": 0.075031850067199,
+          "max": 0.19101419235485662,
+          "n": 5
+        },
+        "L2_grad_norm_unit": {
+          "mean": 0.1228341380581434,
+          "std": 0.034534779420934164,
+          "min": 0.07433652906788524,
+          "max": 0.17497039173019213,
+          "n": 5
+        },
+        "L1_weighted_norm": {
+          "mean": 0.06209742566490275,
+          "std": 0.023156046158243654,
+          "min": 0.0375159250335995,
+          "max": 0.09550709617742831,
+          "n": 5
+        },
+        "L2_weighted_norm": {
+          "mean": 0.1228341380581434,
+          "std": 0.034534779420934164,
+          "min": 0.07433652906788524,
+          "max": 0.17497039173019213,
+          "n": 5
+        }
+      },
+      "netg_cosine_summary": {
+        "L1.total vs L2.total": null
+      },
+      "term_grad_norm_summary": {
+        "L1.l1": {
+          "mean": 0.01651282179156004,
+          "std": 0.012779298307561075,
+          "min": 0.005442061809477898,
+          "max": 0.03398470375985789,
+          "n": 5
+        },
+        "L1.ssim": {
+          "mean": 0.024935297348371802,
+          "std": 0.016591691232806946,
+          "min": 0.006732688620424142,
+          "max": 0.04666099973649226,
+          "n": 5
+        },
+        "L1.phase": {
+          "mean": 0.11513892455640455,
+          "std": 0.04691563921532224,
+          "min": 0.060447157232996415,
+          "max": 0.17848605691883684,
+          "n": 5
+        },
+        "L1.perceptual": {
+          "mean": 0.013775088914622799,
+          "std": 0.0062419719549807965,
+          "min": 0.007060125963022931,
+          "max": 0.022027892843871626,
+          "n": 5
+        },
+        "L1.total": {
+          "mean": 0.1241948513298055,
+          "std": 0.04631209231648731,
+          "min": 0.075031850067199,
+          "max": 0.19101419235485662,
+          "n": 5
+        },
+        "L2.l1": {
+          "mean": 0.03424268320024324,
+          "std": 0.022500696772623313,
+          "min": 0.010307389502521955,
+          "max": 0.0739950334158491,
+          "n": 5
+        },
+        "L2.ssim": {
+          "mean": 0.0851492945202161,
+          "std": 0.08078311953153132,
+          "min": 0.016246263258474624,
+          "max": 0.23668679315322627,
+          "n": 5
+        },
+        "L2.phase": {
+          "mean": 0.2766946731091733,
+          "std": 0.2287942131121955,
+          "min": 0.08207026975252886,
+          "max": 0.7040315722439932,
+          "n": 5
+        },
+        "L2.perceptual": {
+          "mean": 0.03181946668058993,
+          "std": 0.038362846006329186,
+          "min": 0.010229339992373947,
+          "max": 0.10840522108225566,
+          "n": 5
+        },
+        "L2.total": {
+          "mean": 0.2454162037467087,
+          "std": 0.06829710868676808,
+          "min": 0.14975284250565274,
+          "max": 0.3479211488687741,
+          "n": 5
+        },
+        "align": {
+          "mean": 0.40951577624785296,
+          "std": 0.14795048891164742,
+          "min": 0.24280848253769263,
+          "max": 0.626698946971154,
+          "n": 5
+        }
+      }
+    },
+    "feedback": {
+      "group": "feedback",
+      "feedback_enabled": true,
+      "lambda_feature_alignment": 0.030651881051471687,
+      "round_loss_weights": [
+        0.5,
+        1.0
+      ],
+      "perceptual_weight": 0.1,
+      "shared_param_count": 125004,
+      "netg_param_count": 18855655,
+      "shared_param_names": [
+        "rgb_encoder.net.0.weight",
+        "rgb_encoder.net.0.bias",
+        "rgb_encoder.net.2.weight",
+        "rgb_encoder.net.2.bias",
+        "polar_encoder.net.0.weight",
+        "polar_encoder.net.0.bias",
+        "polar_encoder.net.2.weight",
+        "polar_encoder.net.2.bias",
+        "gate.weight",
+        "gate.bias",
+        "film.weight",
+        "film.bias",
+        "body.0.weight",
+        "body.0.bias",
+        "body.2.weight",
+        "body.2.bias",
+        "body.4.weight",
+        "body.4.bias"
+      ],
+      "records": [
+        {
+          "step": 200,
+          "diffusion_seed": 1312149479,
+          "sample_ids": [
+            "train/hard/17/0051",
+            "train/easy/46/0158"
+          ],
+          "batch_size": 2,
+          "lambda_feature_alignment": 0.030651881051471687,
+          "round_weights": [
+            0.5,
+            1.0
+          ],
+          "perceptual_weight": 0.1,
+          "shared_param_count": 125004,
+          "real_path": {
+            "loss_values": {
+              "L1_total": 2.8887743949890137,
+              "L2_total": 2.9254157543182373,
+              "criterion_L1": 2.8887743949890137,
+              "criterion_L2": 2.9254157543182373,
+              "loss1_parts": {
+                "l1": 0.02264680713415146,
+                "ssim": 0.09970241785049438,
+                "phase": 2.7122693061828613,
+                "perceptual": 0.05415594205260277
+              },
+              "loss2_parts": {
+                "l1": 0.023588357493281364,
+                "ssim": 0.10468101501464844,
+                "phase": 2.741101026535034,
+                "perceptual": 0.056045275181531906
+              },
+              "alignment": 0.5170211791992188
+            },
+            "shared_grad_norms_unit": {
+              "L1.l1": 0.014349713083007577,
+              "L1.ssim": 0.09613311858132007,
+              "L1.phase": 0.1935510730919884,
+              "L1.perceptual": 0.024779759395982186,
+              "L2.l1": 0.04222808274079215,
+              "L2.ssim": 0.16423151902316244,
+              "L2.phase": 0.24583169898188845,
+              "L2.perceptual": 0.043339464486999775,
+              "L1.total": 0.3050246814289515,
+              "L2.total": 0.3172397861784586,
+              "align": 0.26054116324795773
+            },
+            "netg_grad_norms_unit": {
+              "L1.total": 7.561864080109567,
+              "L2.total": 8.25304929525203
+            },
+            "cosines_unit": {
+              "L1.total vs L2.total": 0.9361061454192663,
+              "L1.phase vs L2.phase": 0.8536770225650129,
+              "L1.phase vs L1.l1": 0.636798230363414,
+              "L1.phase vs L1.ssim": 0.7255034727785629,
+              "L1.l1 vs L1.ssim": 0.9909582408305726,
+              "L1.phase vs L1.perceptual": 0.719073583287124,
+              "L1.l1 vs L1.perceptual": 0.9790205003757667,
+              "L2.phase vs L2.l1": -0.23282229456415768,
+              "L2.phase vs L2.ssim": -0.1701522215418489,
+              "L2.l1 vs L2.ssim": 0.9967037610345558,
+              "L2.phase vs L2.perceptual": -0.15228749461127664,
+              "L2.l1 vs L2.perceptual": 0.9718743954040681,
+              "align vs L1.total": 0.027508687201447567,
+              "align vs L2.total": 0.04583450525659674,
+              "L1 weighted vs TASKSUM": 0.9705434413750518,
+              "L2 weighted vs TASKSUM": 0.9932696656537665,
+              "align weighted vs TASKSUM": 0.040455520241568045
+            }
+          },
+          "isolated_round2_vs_round1": {
+            "L1_grad_norm_unit": 0.3050246814289515,
+            "L2_grad_norm_unit": 0.1586282502676285,
+            "L1_weighted_norm": 0.15251234071447575,
+            "L2_weighted_norm": 0.1586282502676285,
+            "cosine_L1_vs_L2": 0.9371127440749439
+          },
+          "weighted_vectors_on_shared": {
+            "L1.total.weighted_norm": 0.15251234071447575,
+            "L2.total.weighted_norm": 0.3172397861784586,
+            "align.weighted_norm": 0.00798607674488843,
+            "TASKSUM.weighted_norm": 0.4631245083587435,
+            "OBJECTIVE.weighted_norm": 0.46351627913206367
+          },
+          "netg_cosines_unit": {
+            "L1.total vs L2.total": 0.9184745543264334
+          },
+          "focused_cosines_unit_or_weighted": {
+            "L1.total vs L2.total": 0.9361061454192663,
+            "L1.phase vs L2.phase": 0.8536770225650129,
+            "L1.phase vs L1.l1": 0.636798230363414,
+            "L1.phase vs L1.ssim": 0.7255034727785629,
+            "L1.l1 vs L1.ssim": 0.9909582408305726,
+            "L1.phase vs L1.perceptual": 0.719073583287124,
+            "L1.l1 vs L1.perceptual": 0.9790205003757667,
+            "L2.phase vs L2.l1": -0.23282229456415768,
+            "L2.phase vs L2.ssim": -0.1701522215418489,
+            "L2.l1 vs L2.ssim": 0.9967037610345558,
+            "L2.phase vs L2.perceptual": -0.15228749461127664,
+            "L2.l1 vs L2.perceptual": 0.9718743954040681,
+            "align vs L1.total": 0.027508687201447567,
+            "align vs L2.total": 0.04583450525659674,
+            "L1 weighted vs TASKSUM": 0.9705434413750518,
+            "L2 weighted vs TASKSUM": 0.9932696656537665,
+            "align weighted vs TASKSUM": 0.040455520241568045
+          },
+          "clip_bookkeeping": {
+            "grad_clip": 1.0,
+            "objective_grad_norm_on_shared_preclip": 0.46351627913206367,
+            "would_clip_shared_block_alone": false,
+            "note": "training clips the summed gradient over ALL model.parameters() (shared R2P + projections + feedback adapter) jointly to global norm 1.0; this number covers only the shared R2P block, so it is a LOWER BOUND"
+          }
+        },
+        {
+          "step": 600,
+          "diffusion_seed": 1261151063,
+          "sample_ids": [
+            "train/easy/42/0027",
+            "train/easy/42/0078"
+          ],
+          "batch_size": 2,
+          "lambda_feature_alignment": 0.030651881051471687,
+          "round_weights": [
+            0.5,
+            1.0
+          ],
+          "perceptual_weight": 0.1,
+          "shared_param_count": 125004,
+          "real_path": {
+            "loss_values": {
+              "L1_total": 3.045942783355713,
+              "L2_total": 3.046149969100952,
+              "criterion_L1": 3.045942783355713,
+              "criterion_L2": 3.046149969100952,
+              "loss1_parts": {
+                "l1": 0.014670933596789837,
+                "ssim": 0.04889470338821411,
+                "phase": 2.9541964530944824,
+                "perceptual": 0.028180664405226707
+              },
+              "loss2_parts": {
+                "l1": 0.014482501894235611,
+                "ssim": 0.04991638660430908,
+                "phase": 2.9532692432403564,
+                "perceptual": 0.02848167158663273
+              },
+              "alignment": 0.4248771071434021
+            },
+            "shared_grad_norms_unit": {
+              "L1.l1": 0.005920520046471489,
+              "L1.ssim": 0.03647467291713539,
+              "L1.phase": 0.01198083787500263,
+              "L1.perceptual": 0.005303846161277316,
+              "L2.l1": 0.010560382660011929,
+              "L2.ssim": 0.08999313882846402,
+              "L2.phase": 0.07526705163037338,
+              "L2.perceptual": 0.009139767916156121,
+              "L1.total": 0.04766663255834637,
+              "L2.total": 0.1452476660891189,
+              "align": 0.5211044207790598
+            },
+            "netg_grad_norms_unit": {
+              "L1.total": 4.201046491348042,
+              "L2.total": 3.909750586354055
+            },
+            "cosines_unit": {
+              "L1.total vs L2.total": 0.9132552143661767,
+              "L1.phase vs L2.phase": 0.945754461829902,
+              "L1.phase vs L1.l1": -0.3866821123494016,
+              "L1.phase vs L1.ssim": 0.3312176363125801,
+              "L1.l1 vs L1.ssim": 0.5618063618641116,
+              "L1.phase vs L1.perceptual": 0.9845720518036151,
+              "L1.l1 vs L1.perceptual": -0.3174729691891129,
+              "L2.phase vs L2.l1": -0.3419973864203205,
+              "L2.phase vs L2.ssim": 0.31176930342719783,
+              "L2.l1 vs L2.ssim": 0.5991320935699138,
+              "L2.phase vs L2.perceptual": 0.9282813015024477,
+              "L2.l1 vs L2.perceptual": -0.045201862976654385,
+              "align vs L1.total": 0.10938937239327252,
+              "align vs L2.total": 0.15302006818154718,
+              "L1 weighted vs TASKSUM": 0.9353595876715627,
+              "L2 weighted vs TASKSUM": 0.9983144074850178,
+              "align weighted vs TASKSUM": 0.14843740913443884
+            }
+          },
+          "isolated_round2_vs_round1": {
+            "L1_grad_norm_unit": 0.04766663255834637,
+            "L2_grad_norm_unit": 0.0715582394737851,
+            "L1_weighted_norm": 0.023833316279173185,
+            "L2_weighted_norm": 0.0715582394737851,
+            "cosine_L1_vs_L2": 0.9117040413058979
+          },
+          "weighted_vectors_on_shared": {
+            "L1.total.weighted_norm": 0.023833316279173185,
+            "L2.total.weighted_norm": 0.1452476660891189,
+            "align.weighted_norm": 0.015972830721115737,
+            "TASKSUM.weighted_norm": 0.16729555859807388,
+            "OBJECTIVE.weighted_norm": 0.17040023262825713
+          },
+          "netg_cosines_unit": {
+            "L1.total vs L2.total": 0.7870650973619399
+          },
+          "focused_cosines_unit_or_weighted": {
+            "L1.total vs L2.total": 0.9132552143661767,
+            "L1.phase vs L2.phase": 0.945754461829902,
+            "L1.phase vs L1.l1": -0.3866821123494016,
+            "L1.phase vs L1.ssim": 0.3312176363125801,
+            "L1.l1 vs L1.ssim": 0.5618063618641116,
+            "L1.phase vs L1.perceptual": 0.9845720518036151,
+            "L1.l1 vs L1.perceptual": -0.3174729691891129,
+            "L2.phase vs L2.l1": -0.3419973864203205,
+            "L2.phase vs L2.ssim": 0.31176930342719783,
+            "L2.l1 vs L2.ssim": 0.5991320935699138,
+            "L2.phase vs L2.perceptual": 0.9282813015024477,
+            "L2.l1 vs L2.perceptual": -0.045201862976654385,
+            "align vs L1.total": 0.10938937239327252,
+            "align vs L2.total": 0.15302006818154718,
+            "L1 weighted vs TASKSUM": 0.9353595876715627,
+            "L2 weighted vs TASKSUM": 0.9983144074850178,
+            "align weighted vs TASKSUM": 0.14843740913443884
+          },
+          "clip_bookkeeping": {
+            "grad_clip": 1.0,
+            "objective_grad_norm_on_shared_preclip": 0.17040023262825713,
+            "would_clip_shared_block_alone": false,
+            "note": "training clips the summed gradient over ALL model.parameters() (shared R2P + projections + feedback adapter) jointly to global norm 1.0; this number covers only the shared R2P block, so it is a LOWER BOUND"
+          }
+        },
+        {
+          "step": 1200,
+          "diffusion_seed": 62166571,
+          "sample_ids": [
+            "train/hard/28/0036",
+            "train/easy/23/0083"
+          ],
+          "batch_size": 2,
+          "lambda_feature_alignment": 0.030651881051471687,
+          "round_weights": [
+            0.5,
+            1.0
+          ],
+          "perceptual_weight": 0.1,
+          "shared_param_count": 125004,
+          "real_path": {
+            "loss_values": {
+              "L1_total": 3.071992874145508,
+              "L2_total": 3.060393810272217,
+              "criterion_L1": 3.071992874145508,
+              "criterion_L2": 3.060393810272217,
+              "loss1_parts": {
+                "l1": 0.023860817775130272,
+                "ssim": 0.051272690296173096,
+                "phase": 2.946425676345825,
+                "perceptual": 0.05043353512883186
+              },
+              "loss2_parts": {
+                "l1": 0.0250454880297184,
+                "ssim": 0.05164039134979248,
+                "phase": 2.933399200439453,
+                "perceptual": 0.050308771431446075
+              },
+              "alignment": 0.535676896572113
+            },
+            "shared_grad_norms_unit": {
+              "L1.l1": 0.025147195457107762,
+              "L1.ssim": 0.009446920090551371,
+              "L1.phase": 1.0306325046286469,
+              "L1.perceptual": 0.01591733424776117,
+              "L2.l1": 0.05488399845898756,
+              "L2.ssim": 0.025910663320963895,
+              "L2.phase": 0.20405339832404126,
+              "L2.perceptual": 0.02754558954326161,
+              "L1.total": 1.043699789041514,
+              "L2.total": 0.16906698721348687,
+              "align": 0.5098821337839976
+            },
+            "netg_grad_norms_unit": {
+              "L1.total": 32.37010768333691,
+              "L2.total": 7.667813215213761
+            },
+            "cosines_unit": {
+              "L1.total vs L2.total": 0.6016321711247343,
+              "L1.phase vs L2.phase": 0.6133275835681747,
+              "L1.phase vs L1.l1": 0.1546144759366995,
+              "L1.phase vs L1.ssim": -0.8639453910507209,
+              "L1.l1 vs L1.ssim": -0.38161076804414,
+              "L1.phase vs L1.perceptual": 0.8731493452846918,
+              "L1.l1 vs L1.perceptual": 0.5190373401571458,
+              "L2.phase vs L2.l1": -0.7628495342626167,
+              "L2.phase vs L2.ssim": -0.9705422770899436,
+              "L2.l1 vs L2.ssim": 0.844506230487931,
+              "L2.phase vs L2.perceptual": 0.9830588162293121,
+              "L2.l1 vs L2.perceptual": -0.754545062310828,
+              "align vs L1.total": -0.04054580588911062,
+              "align vs L2.total": -0.007253956397717173,
+              "L1 weighted vs TASKSUM": 0.9773425278007987,
+              "L2 weighted vs TASKSUM": 0.7570721278588429,
+              "align weighted vs TASKSUM": -0.03508535618207075
+            }
+          },
+          "isolated_round2_vs_round1": {
+            "L1_grad_norm_unit": 1.043699789041514,
+            "L2_grad_norm_unit": 0.0843193081034455,
+            "L1_weighted_norm": 0.521849894520757,
+            "L2_weighted_norm": 0.0843193081034455,
+            "cosine_L1_vs_L2": 0.595481182981031
+          },
+          "weighted_vectors_on_shared": {
+            "L1.total.weighted_norm": 0.521849894520757,
+            "L2.total.weighted_norm": 0.16906698721348687,
+            "align.weighted_norm": 0.015628846515017624,
+            "TASKSUM.weighted_norm": 0.6380219988039,
+            "OBJECTIVE.weighted_norm": 0.6376649756589449
+          },
+          "netg_cosines_unit": {
+            "L1.total vs L2.total": 0.25737227689796344
+          },
+          "focused_cosines_unit_or_weighted": {
+            "L1.total vs L2.total": 0.6016321711247343,
+            "L1.phase vs L2.phase": 0.6133275835681747,
+            "L1.phase vs L1.l1": 0.1546144759366995,
+            "L1.phase vs L1.ssim": -0.8639453910507209,
+            "L1.l1 vs L1.ssim": -0.38161076804414,
+            "L1.phase vs L1.perceptual": 0.8731493452846918,
+            "L1.l1 vs L1.perceptual": 0.5190373401571458,
+            "L2.phase vs L2.l1": -0.7628495342626167,
+            "L2.phase vs L2.ssim": -0.9705422770899436,
+            "L2.l1 vs L2.ssim": 0.844506230487931,
+            "L2.phase vs L2.perceptual": 0.9830588162293121,
+            "L2.l1 vs L2.perceptual": -0.754545062310828,
+            "align vs L1.total": -0.04054580588911062,
+            "align vs L2.total": -0.007253956397717173,
+            "L1 weighted vs TASKSUM": 0.9773425278007987,
+            "L2 weighted vs TASKSUM": 0.7570721278588429,
+            "align weighted vs TASKSUM": -0.03508535618207075
+          },
+          "clip_bookkeeping": {
+            "grad_clip": 1.0,
+            "objective_grad_norm_on_shared_preclip": 0.6376649756589449,
+            "would_clip_shared_block_alone": false,
+            "note": "training clips the summed gradient over ALL model.parameters() (shared R2P + projections + feedback adapter) jointly to global norm 1.0; this number covers only the shared R2P block, so it is a LOWER BOUND"
+          }
+        },
+        {
+          "step": 2000,
+          "diffusion_seed": 363524494,
+          "sample_ids": [
+            "train/easy/42/0020",
+            "train/easy/26/0031"
+          ],
+          "batch_size": 2,
+          "lambda_feature_alignment": 0.030651881051471687,
+          "round_weights": [
+            0.5,
+            1.0
+          ],
+          "perceptual_weight": 0.1,
+          "shared_param_count": 125004,
+          "real_path": {
+            "loss_values": {
+              "L1_total": 2.488245964050293,
+              "L2_total": 2.503933906555176,
+              "criterion_L1": 2.488245964050293,
+              "criterion_L2": 2.503933906555176,
+              "loss1_parts": {
+                "l1": 0.01441233605146408,
+                "ssim": 0.054439544677734375,
+                "phase": 2.3849573135375977,
+                "perceptual": 0.03443673998117447
+              },
+              "loss2_parts": {
+                "l1": 0.014211505651473999,
+                "ssim": 0.054461777210235596,
+                "phase": 2.4003663063049316,
+                "perceptual": 0.03489422798156738
+              },
+              "alignment": 0.473388135433197
+            },
+            "shared_grad_norms_unit": {
+              "L1.l1": 0.0046529943352617295,
+              "L1.ssim": 0.02984446706623223,
+              "L1.phase": 0.15501381093936872,
+              "L1.perceptual": 0.008782331415493548,
+              "L2.l1": 0.014538743892926111,
+              "L2.ssim": 0.024503054885595822,
+              "L2.phase": 0.3233304291355266,
+              "L2.perceptual": 0.013924559959749954,
+              "L1.total": 0.1737496227712028,
+              "L2.total": 0.3369919018283267,
+              "align": 0.5381263582166262
+            },
+            "netg_grad_norms_unit": {
+              "L1.total": 5.6445240944622395,
+              "L2.total": 5.6579824747090655
+            },
+            "cosines_unit": {
+              "L1.total vs L2.total": 0.4658303587789875,
+              "L1.phase vs L2.phase": 0.652975111613017,
+              "L1.phase vs L1.l1": -0.07071475828767389,
+              "L1.phase vs L1.ssim": 0.7027459558761561,
+              "L1.l1 vs L1.ssim": 0.6540525309819062,
+              "L1.phase vs L1.perceptual": -0.3157007265189097,
+              "L1.l1 vs L1.perceptual": -0.8927200223930295,
+              "L2.phase vs L2.l1": -0.47669261674238406,
+              "L2.phase vs L2.ssim": 0.2939396734158981,
+              "L2.l1 vs L2.ssim": 0.6871665040447276,
+              "L2.phase vs L2.perceptual": 0.7391254865261536,
+              "L2.l1 vs L2.perceptual": 0.2023057685338017,
+              "align vs L1.total": 0.03924569651690272,
+              "align vs L2.total": 0.1900515527101805,
+              "L1 weighted vs TASKSUM": 0.6330477869059149,
+              "L2 weighted vs TASKSUM": 0.9798851299546183,
+              "align weighted vs TASKSUM": 0.17511338271145144
+            }
+          },
+          "isolated_round2_vs_round1": {
+            "L1_grad_norm_unit": 0.1737496227712028,
+            "L2_grad_norm_unit": 0.16592798312849227,
+            "L1_weighted_norm": 0.0868748113856014,
+            "L2_weighted_norm": 0.16592798312849227,
+            "cosine_L1_vs_L2": 0.466577852194768
+          },
+          "weighted_vectors_on_shared": {
+            "L1.total.weighted_norm": 0.0868748113856014,
+            "L2.total.weighted_norm": 0.3369919018283267,
+            "align.weighted_norm": 0.016494585122717575,
+            "TASKSUM.weighted_norm": 0.3852092606022274,
+            "OBJECTIVE.weighted_norm": 0.38843730518332137
+          },
+          "netg_cosines_unit": {
+            "L1.total vs L2.total": 0.9797861619161873
+          },
+          "focused_cosines_unit_or_weighted": {
+            "L1.total vs L2.total": 0.4658303587789875,
+            "L1.phase vs L2.phase": 0.652975111613017,
+            "L1.phase vs L1.l1": -0.07071475828767389,
+            "L1.phase vs L1.ssim": 0.7027459558761561,
+            "L1.l1 vs L1.ssim": 0.6540525309819062,
+            "L1.phase vs L1.perceptual": -0.3157007265189097,
+            "L1.l1 vs L1.perceptual": -0.8927200223930295,
+            "L2.phase vs L2.l1": -0.47669261674238406,
+            "L2.phase vs L2.ssim": 0.2939396734158981,
+            "L2.l1 vs L2.ssim": 0.6871665040447276,
+            "L2.phase vs L2.perceptual": 0.7391254865261536,
+            "L2.l1 vs L2.perceptual": 0.2023057685338017,
+            "align vs L1.total": 0.03924569651690272,
+            "align vs L2.total": 0.1900515527101805,
+            "L1 weighted vs TASKSUM": 0.6330477869059149,
+            "L2 weighted vs TASKSUM": 0.9798851299546183,
+            "align weighted vs TASKSUM": 0.17511338271145144
+          },
+          "clip_bookkeeping": {
+            "grad_clip": 1.0,
+            "objective_grad_norm_on_shared_preclip": 0.38843730518332137,
+            "would_clip_shared_block_alone": false,
+            "note": "training clips the summed gradient over ALL model.parameters() (shared R2P + projections + feedback adapter) jointly to global norm 1.0; this number covers only the shared R2P block, so it is a LOWER BOUND"
+          }
+        },
+        {
+          "step": 2800,
+          "diffusion_seed": 330454723,
+          "sample_ids": [
+            "train/easy/23/0057",
+            "train/easy/29/0058"
+          ],
+          "batch_size": 2,
+          "lambda_feature_alignment": 0.030651881051471687,
+          "round_weights": [
+            0.5,
+            1.0
+          ],
+          "perceptual_weight": 0.1,
+          "shared_param_count": 125004,
+          "real_path": {
+            "loss_values": {
+              "L1_total": 2.7373626232147217,
+              "L2_total": 2.7400734424591064,
+              "criterion_L1": 2.7373626232147217,
+              "criterion_L2": 2.7400734424591064,
+              "loss1_parts": {
+                "l1": 0.026087041944265366,
+                "ssim": 0.04260522127151489,
+                "phase": 2.6361656188964844,
+                "perceptual": 0.03250471502542496
+              },
+              "loss2_parts": {
+                "l1": 0.02629256248474121,
+                "ssim": 0.04266655445098877,
+                "phase": 2.637887477874756,
+                "perceptual": 0.03322676941752434
+              },
+              "alignment": 0.5269749164581299
+            },
+            "shared_grad_norms_unit": {
+              "L1.l1": 0.041188703604217544,
+              "L1.ssim": 0.027439581222099774,
+              "L1.phase": 0.10501114608639761,
+              "L1.perceptual": 0.00954693822873078,
+              "L2.l1": 0.02473750634119822,
+              "L2.ssim": 0.009638860663673244,
+              "L2.phase": 0.21172604341547202,
+              "L2.perceptual": 0.025856593908358556,
+              "L1.total": 0.15631357338726087,
+              "L2.total": 0.19772591167741077,
+              "align": 0.2872876836907053
+            },
+            "netg_grad_norms_unit": {
+              "L1.total": 5.90914949375744,
+              "L2.total": 5.286412099832671
+            },
+            "cosines_unit": {
+              "L1.total vs L2.total": 0.8895933502941458,
+              "L1.phase vs L2.phase": 0.9041095928279165,
+              "L1.phase vs L1.l1": 0.7894753132864658,
+              "L1.phase vs L1.ssim": 0.8469623910300987,
+              "L1.l1 vs L1.ssim": 0.9706700572389952,
+              "L1.phase vs L1.perceptual": -0.9149418369275537,
+              "L1.l1 vs L1.perceptual": -0.8933234753675192,
+              "L2.phase vs L2.l1": 0.14533323716883567,
+              "L2.phase vs L2.ssim": 0.15965956032792677,
+              "L2.l1 vs L2.ssim": 0.9511742163922278,
+              "L2.phase vs L2.perceptual": -0.8783432938539963,
+              "L2.l1 vs L2.perceptual": -0.10569782275736808,
+              "align vs L1.total": -0.017941207790576487,
+              "align vs L2.total": -0.024794986643986352,
+              "L1 weighted vs TASKSUM": 0.9422354969167481,
+              "L2 weighted vs TASKSUM": 0.991196506962032,
+              "align weighted vs TASKSUM": -0.023383528846574405
+            }
+          },
+          "isolated_round2_vs_round1": {
+            "L1_grad_norm_unit": 0.15631357338726087,
+            "L2_grad_norm_unit": 0.09881496719938603,
+            "L1_weighted_norm": 0.07815678669363044,
+            "L2_weighted_norm": 0.09881496719938603,
+            "cosine_L1_vs_L2": 0.8904671859374185
+          },
+          "weighted_vectors_on_shared": {
+            "L1.total.weighted_norm": 0.07815678669363044,
+            "L2.total.weighted_norm": 0.19772591167741077,
+            "align.weighted_norm": 0.008805907908040284,
+            "TASKSUM.weighted_norm": 0.26962733173822356,
+            "OBJECTIVE.weighted_norm": 0.2695652098846052
+          },
+          "netg_cosines_unit": {
+            "L1.total vs L2.total": 0.859363548541434
+          },
+          "focused_cosines_unit_or_weighted": {
+            "L1.total vs L2.total": 0.8895933502941458,
+            "L1.phase vs L2.phase": 0.9041095928279165,
+            "L1.phase vs L1.l1": 0.7894753132864658,
+            "L1.phase vs L1.ssim": 0.8469623910300987,
+            "L1.l1 vs L1.ssim": 0.9706700572389952,
+            "L1.phase vs L1.perceptual": -0.9149418369275537,
+            "L1.l1 vs L1.perceptual": -0.8933234753675192,
+            "L2.phase vs L2.l1": 0.14533323716883567,
+            "L2.phase vs L2.ssim": 0.15965956032792677,
+            "L2.l1 vs L2.ssim": 0.9511742163922278,
+            "L2.phase vs L2.perceptual": -0.8783432938539963,
+            "L2.l1 vs L2.perceptual": -0.10569782275736808,
+            "align vs L1.total": -0.017941207790576487,
+            "align vs L2.total": -0.024794986643986352,
+            "L1 weighted vs TASKSUM": 0.9422354969167481,
+            "L2 weighted vs TASKSUM": 0.991196506962032,
+            "align weighted vs TASKSUM": -0.023383528846574405
+          },
+          "clip_bookkeeping": {
+            "grad_clip": 1.0,
+            "objective_grad_norm_on_shared_preclip": 0.2695652098846052,
+            "would_clip_shared_block_alone": false,
+            "note": "training clips the summed gradient over ALL model.parameters() (shared R2P + projections + feedback adapter) jointly to global norm 1.0; this number covers only the shared R2P block, so it is a LOWER BOUND"
+          }
+        }
+      ],
+      "cosine_summary": {
+        "L1.total vs L2.total": {
+          "mean": 0.7612834479966621,
+          "std": 0.19126049381421126,
+          "min": 0.4658303587789875,
+          "max": 0.9361061454192663,
+          "n": 5
+        },
+        "L1.phase vs L2.phase": {
+          "mean": 0.7939687544808047,
+          "std": 0.13508917237343734,
+          "min": 0.6133275835681747,
+          "max": 0.945754461829902,
+          "n": 5
+        },
+        "L1.phase vs L1.l1": {
+          "mean": 0.22469822978990078,
+          "std": 0.43698193403137925,
+          "min": -0.3866821123494016,
+          "max": 0.7894753132864658,
+          "n": 5
+        },
+        "L1.phase vs L1.ssim": {
+          "mean": 0.34849681298933544,
+          "std": 0.6303029553059585,
+          "min": -0.8639453910507209,
+          "max": 0.8469623910300987,
+          "n": 5
+        },
+        "L1.l1 vs L1.ssim": {
+          "mean": 0.559175284574289,
+          "std": 0.4999702952173771,
+          "min": -0.38161076804414,
+          "max": 0.9909582408305726,
+          "n": 5
+        },
+        "L2.phase vs L2.l1": {
+          "mean": -0.3338057189641287,
+          "std": 0.29810540273736097,
+          "min": -0.7628495342626167,
+          "max": 0.14533323716883567,
+          "n": 5
+        },
+        "L2.phase vs L2.ssim": {
+          "mean": -0.07506519229215394,
+          "std": 0.4799629110705745,
+          "min": -0.9705422770899436,
+          "max": 0.31176930342719783,
+          "n": 5
+        },
+        "L2.l1 vs L2.ssim": {
+          "mean": 0.8157365611058711,
+          "std": 0.15189992411129694,
+          "min": 0.5991320935699138,
+          "max": 0.9967037610345558,
+          "n": 5
+        },
+        "L1.phase vs L1.perceptual": {
+          "mean": 0.2692304833857935,
+          "std": 0.7514251752915182,
+          "min": -0.9149418369275537,
+          "max": 0.9845720518036151,
+          "n": 5
+        },
+        "L2.phase vs L2.perceptual": {
+          "mean": 0.32396696315852813,
+          "std": 0.7272307408931844,
+          "min": -0.8783432938539963,
+          "max": 0.9830588162293121,
+          "n": 5
+        },
+        "L1 weighted vs TASKSUM": {
+          "mean": 0.8917057681340153,
+          "std": 0.13031645639162884,
+          "min": 0.6330477869059149,
+          "max": 0.9773425278007987,
+          "n": 5
+        },
+        "L2 weighted vs TASKSUM": {
+          "mean": 0.9439475675828556,
+          "std": 0.09363207065187483,
+          "min": 0.7570721278588429,
+          "max": 0.9983144074850178,
+          "n": 5
+        },
+        "align weighted vs TASKSUM": {
+          "mean": 0.06110748541176263,
+          "std": 0.0865357245606754,
+          "min": -0.03508535618207075,
+          "max": 0.17511338271145144,
+          "n": 5
+        },
+        "align vs L1.total": {
+          "mean": 0.023531348486387143,
+          "std": 0.05188490120156552,
+          "min": -0.04054580588911062,
+          "max": 0.10938937239327252,
+          "n": 5
+        },
+        "align vs L2.total": {
+          "mean": 0.07137143662132418,
+          "std": 0.08582952550852165,
+          "min": -0.024794986643986352,
+          "max": 0.1900515527101805,
+          "n": 5
+        }
+      },
+      "isolated_summary": {
+        "cosine_L1_vs_L2": {
+          "mean": 0.7602686012988119,
+          "std": 0.19212879227819807,
+          "min": 0.466577852194768,
+          "max": 0.9371127440749439,
+          "n": 5
+        },
+        "L1_grad_norm_unit": {
+          "mean": 0.3452908598374551,
+          "std": 0.3586405969734523,
+          "min": 0.04766663255834637,
+          "max": 1.043699789041514,
+          "n": 5
+        },
+        "L2_grad_norm_unit": {
+          "mean": 0.11584974963454749,
+          "std": 0.03894591124718745,
+          "min": 0.0715582394737851,
+          "max": 0.16592798312849227,
+          "n": 5
+        },
+        "L1_weighted_norm": {
+          "mean": 0.17264542991872756,
+          "std": 0.17932029848672615,
+          "min": 0.023833316279173185,
+          "max": 0.521849894520757,
+          "n": 5
+        },
+        "L2_weighted_norm": {
+          "mean": 0.11584974963454749,
+          "std": 0.03894591124718745,
+          "min": 0.0715582394737851,
+          "max": 0.16592798312849227,
+          "n": 5
+        }
+      },
+      "netg_cosine_summary": {
+        "L1.total vs L2.total": null
+      },
+      "term_grad_norm_summary": {
+        "L1.l1": {
+          "mean": 0.018251825305213222,
+          "std": 0.01360780870355873,
+          "min": 0.0046529943352617295,
+          "max": 0.041188703604217544,
+          "n": 5
+        },
+        "L1.ssim": {
+          "mean": 0.03986775197546776,
+          "std": 0.02952171114960642,
+          "min": 0.009446920090551371,
+          "max": 0.09613311858132007,
+          "n": 5
+        },
+        "L1.phase": {
+          "mean": 0.29923787452428086,
+          "std": 0.3707152580090666,
+          "min": 0.01198083787500263,
+          "max": 1.0306325046286469,
+          "n": 5
+        },
+        "L1.perceptual": {
+          "mean": 0.012866041889849,
+          "std": 0.00687207384212705,
+          "min": 0.005303846161277316,
+          "max": 0.024779759395982186,
+          "n": 5
+        },
+        "L1.total": {
+          "mean": 0.3452908598374551,
+          "std": 0.3586405969734523,
+          "min": 0.04766663255834637,
+          "max": 1.043699789041514,
+          "n": 5
+        },
+        "L2.l1": {
+          "mean": 0.029389742818783194,
+          "std": 0.01680190655806087,
+          "min": 0.010560382660011929,
+          "max": 0.05488399845898756,
+          "n": 5
+        },
+        "L2.ssim": {
+          "mean": 0.06285544734437189,
+          "std": 0.05776052350853757,
+          "min": 0.009638860663673244,
+          "max": 0.16423151902316244,
+          "n": 5
+        },
+        "L2.phase": {
+          "mean": 0.21204172429746032,
+          "std": 0.08037183872871662,
+          "min": 0.07526705163037338,
+          "max": 0.3233304291355266,
+          "n": 5
+        },
+        "L2.perceptual": {
+          "mean": 0.0239611951629052,
+          "std": 0.011936217937916788,
+          "min": 0.009139767916156121,
+          "max": 0.043339464486999775,
+          "n": 5
+        },
+        "L2.total": {
+          "mean": 0.23325445059736039,
+          "std": 0.07866701600224751,
+          "min": 0.1452476660891189,
+          "max": 0.3369919018283267,
+          "n": 5
+        },
+        "align": {
+          "mean": 0.4233883519436693,
+          "std": 0.12266785500217917,
+          "min": 0.26054116324795773,
+          "max": 0.5381263582166262,
+          "n": 5
+        }
+      }
+    }
+  },
+  "elapsed_seconds": 82.54996035899967
+}

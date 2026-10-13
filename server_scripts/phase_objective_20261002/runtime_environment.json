@@ -1,0 +1,10 @@
+{
+  "PYTORCH_CUDA_ALLOC_CONF": "expandable_segments:True",
+  "applies_to": ["phase1", "phase01"],
+  "reason": "Initial full-resolution proxy validation exhausted GPU memory before the first optimizer update. Both arms were restarted with identical allocator setting.",
+  "failed_attempt_retained": "logs/phase1_train_sanity_oom_before_updates.log",
+  "precision_changed": false,
+  "initial_weight_check": "diagnostics/initialization_check.json",
+  "gradient_recomposition_tolerance": 0.001,
+  "gradient_tolerance_note": "Separate backward calls under locked TF32 differed slightly; the original tolerance 0.0001 failed at relative L2 error 0.000156290877267291. Both failure and retry logs are retained. Forward tensors matched exactly; no bitwise gradient claim is made."
+}

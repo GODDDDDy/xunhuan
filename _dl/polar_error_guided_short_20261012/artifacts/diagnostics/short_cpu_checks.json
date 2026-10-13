@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "source_sha256": "e79af90811baa46aadfb354a682d0c5dad93886e2dfe1eabeaceb407e6cae112",
+  "inherited_tensors_strict": 500,
+  "actual_rounds": {
+    "E": 2,
+    "D": 2
+  },
+  "zero_injection_source_candidate_exact": true,
+  "t1_frozen_after_real_update": true,
+  "gt_replacement_no_prediction_change": true,
+  "q_loss_and_injection_gradients_present": true,
+  "candidate_loss_cannot_manipulate_q": true,
+  "judgement_gradients_isolated": true,
+  "optimizer_rng_resume_exact": true,
+  "new_guidance_influences_candidate": true
+}

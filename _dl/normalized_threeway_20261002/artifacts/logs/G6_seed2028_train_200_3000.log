@@ -1,0 +1,37 @@
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG19_Weights.IMAGENET1K_V1`. You can also use `weights=VGG19_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+[G6_phase01] step 400/3000
+[G6_phase01] step 600/3000
+[G6_phase01] step 800/3000
+[G6_phase01] step 1000/3000
+[G6_phase01] step 1200/3000
+[G6_phase01] step 1400/3000
+[G6_phase01] step 1600/3000
+[G6_phase01] step 1800/3000
+[G6_phase01] step 2000/3000
+[G6_phase01] step 2200/3000
+[G6_phase01] step 2400/3000
+[G6_phase01] step 2600/3000
+[G6_phase01] step 2800/3000
+[G6_phase01] step 3000/3000
+{
+  "checkpoint": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/runs/G6/seed_2028/checkpoints/last.pt",
+  "validation": {
+    "frames": 28.0,
+    "scenes": 8.0,
+    "image_mean_psnr": 27.35567277035006,
+    "image_mean_ssim": 0.9129123368433544,
+    "scene_macro_psnr": 26.49124961000186,
+    "scene_macro_ssim": 0.904209578409791,
+    "step": 3000.0
+  },
+  "timing": {
+    "start_step": 200,
+    "end_step": 3000,
+    "wall_seconds": 1082.4864690271206,
+    "mean_step_seconds_excluding_first_20": 0.32191642249026503,
+    "cuda_peak_memory_bytes": 10140630016
+  }
+}

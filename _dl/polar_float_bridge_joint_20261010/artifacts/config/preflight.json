@@ -1,0 +1,101 @@
+{
+  "schema_version": 3,
+  "seed": 2026,
+  "paths": {
+    "base_config": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/protocol/base_server.yaml",
+    "source_root": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/deps/rgb_final_confirmation/src",
+    "manifest": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_float_bridge_joint_20261010/config/manifest.csv",
+    "schedule": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_float_bridge_joint_20261010/config/training_schedule_16000.json",
+    "validation_proxy": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_float_bridge_joint_20261010/config/validation_proxy.json",
+    "pretrained_r2p": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_float_bridge_joint_20261010/pretraining/checkpoints/selected.pt",
+    "reference_r2p": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/deps/r2p_film.py",
+    "output_root": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_float_bridge_joint_20261010/downstream",
+    "pidsr_data": "/media/li/data3/25thstudent/DY/929work/research_data/PIDSR-dataset",
+    "source_checkpoint": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/weights/polarfree/net_g_latest.pth"
+  },
+  "data": {
+    "condition": "raw_mixed_rgb",
+    "crop_size": 128,
+    "batch_size": 2,
+    "workers": 2
+  },
+  "source_sha256": "a230e77fb19827a1ada41e4dc86374dee092e476915d2252841f81dd8c257ca2",
+  "scope": "one latest arm: observation-anchored floating polar correction bridge plus confidence K2",
+  "pretrain": {
+    "kind": "reuse_verified_same_resolution_correction",
+    "checkpoint": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_float_bridge_joint_20261010/pretraining/checkpoints/selected.pt",
+    "sha256": "a4ecebacba5cfc25546320974a9c37f1cc220c685f1318b3cc290ae4a68e9554",
+    "source_protocol_id": "576f788b73218610533cddb66089d3e0c0910f9aa97604a376c9692d71634007",
+    "source_run": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009",
+    "selected_step": 18000,
+    "training_stopped_step": 19000,
+    "retrained_in_this_run": false,
+    "test_metrics_reused": true
+  },
+  "downstream": {
+    "steps": 6000,
+    "effective_batch": 2,
+    "microbatch": 1,
+    "minimum_steps": 3000,
+    "deadline_unix": 1791590647.4916465
+  },
+  "confidence": {
+    "training_crops": 256,
+    "calibration": "recompute using this new system on fixed training crops; no inherited temperature",
+    "warmup_steps": 500
+  },
+  "evaluation": {
+    "validation_frames": 872,
+    "test_frames": 188,
+    "original_size": true,
+    "tiles": false
+  },
+  "selection": "pretrain: best 10-scene validation mean angle PSNR; downstream: planned/time-only final",
+  "task_initialization": {
+    "kind": "official_polarfree",
+    "official_sha256": {
+      "net_g_latest.pth": "a230e77fb19827a1ada41e4dc86374dee092e476915d2252841f81dd8c257ca2",
+      "net_d_latest.pth": "f1d0e9acb244480e5d4ba4b5cee7ba35666fb97d41bccf4659f20911f46f1fb3",
+      "net_le_dm_latest.pth": "6b98bd2a715d3e669acd99582d9ea37594ff4a2ee7786df86764d8efdafd0546"
+    },
+    "overwrite_with_joint_weights": false,
+    "archived_source_dir": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_float_bridge_joint_20261010/weights/source_polarfree"
+  },
+  "optimization": {
+    "correction_lr": 2e-05,
+    "interfaces_lr": 0.0001,
+    "task_lr": 1e-06,
+    "task_freeze_steps": 500,
+    "task_unfreeze_warmup": 200,
+    "gradient_clip": 1.0
+  },
+  "retention_monitor": {
+    "validation_proxy_frames": 28,
+    "interval": 1000,
+    "after_freeze_step": 500,
+    "enhancer_bypassed": true,
+    "test_used": false,
+    "used_for_selection": false,
+    "paired_noise": true,
+    "purpose": "monitor net_g performance retention and relative parameter drift"
+  },
+  "bridge": {
+    "kind": "raw official gray plus floating enhanced-minus-observed luminance",
+    "original_rgb": true,
+    "zero_correction_matches_official": true,
+    "original_stokes_convention": true,
+    "both_rounds_anchor_raw": true,
+    "prior_requires_grad": false,
+    "prior_input_gradient": true
+  },
+  "experiment_rationale": {
+    "authorization": "User requested execution of proposed feedback diagnosis and correction, only latest arm",
+    "diagnosis": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_feedback_diagnostics_20261010/outputs/bridge_summary.json",
+    "decisions_use_test": false,
+    "historical_test_exploration": true,
+    "matched_control": false,
+    "planned_step_cap": 6000,
+    "minimum_steps": 3000,
+    "budget_different_from_previous_8000": true
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "stage": "failed",
+  "time_unix": 1791737384.1012304,
+  "error": "Traceback (most recent call last):\n  File \"/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_staged_acceptance_joint_20261012/scripts/staged_controller.py\", line 45, in <module>\n    try:run()\n        ^^^^^\n  File \"/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_staged_acceptance_joint_20261012/scripts/staged_controller.py\", line 34, in run\n    cfg['budget']=dict(**budget,evaluation_reserve_seconds=reserve,benchmark=measured)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: dict() got multiple values for keyword argument 'evaluation_reserve_seconds'\n"
+}

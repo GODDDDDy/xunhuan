@@ -1,0 +1,120 @@
+{
+  "review_date": "2026-10-09",
+  "purpose": "Primary evidence for the current two-round T1 quality confidence design",
+  "status": "Design only; no confidence training result",
+  "sources": [
+    {
+      "id": "LARR_ICCV2021",
+      "file": "LARR_ICCV2021.pdf",
+      "title": "Location-Aware Single Image Reflection Removal",
+      "authors": [
+        "Zheng Dong",
+        "Ke Xu",
+        "Yin Yang",
+        "Hujun Bao",
+        "Weiwei Xu",
+        "Rynson W. H. Lau"
+      ],
+      "venue": "ICCV 2021",
+      "pages": "5017-5026",
+      "url": "https://openaccess.thecvf.com/content/ICCV2021/papers/Dong_Location-Aware_Single_Image_Reflection_Removal_ICCV_2021_paper.pdf",
+      "inspected_pdf_pages": [
+        3,
+        4,
+        5
+      ],
+      "scope": "Recurrent reflection-dominance confidence controls feature flow; not a T1 reconstruction-quality map.",
+      "local_path": "F:/WORK/projects/pidsr_recurrent_joint_k2/analysis/sources/confidence_mechanism_20261009/papers/LARR_ICCV2021.pdf",
+      "sha256": "28185d6c50a88c50829d27b9bf72d2a6c799f37988ba0b268168330cb4ba8ab2",
+      "bytes": 9829018
+    },
+    {
+      "id": "UMRL_CVPR2019",
+      "file": "UMRL_CVPR2019.pdf",
+      "title": "Uncertainty Guided Multi-Scale Residual Learning-Using a Cycle Spinning CNN for Single Image De-Raining",
+      "authors": [
+        "Rajeev Yasarla",
+        "Vishal M. Patel"
+      ],
+      "venue": "CVPR 2019",
+      "pages": "8405-8414",
+      "url": "https://openaccess.thecvf.com/content_CVPR_2019/papers/Yasarla_Uncertainty_Guided_Multi-Scale_Residual_Learning-Using_a_Cycle_Spinning_CNN_for_CVPR_2019_paper.pdf",
+      "inspected_pdf_pages": [
+        3,
+        4
+      ],
+      "scope": "Confidence-guided residual propagation and loss; deraining evidence is not proof for polarization reflection removal.",
+      "local_path": "F:/WORK/projects/pidsr_recurrent_joint_k2/analysis/sources/confidence_mechanism_20261009/papers/UMRL_CVPR2019.pdf",
+      "sha256": "6a9767b8e17b066a2615a4dac55877ea79204294d3c9681c4df91b001f4a786c",
+      "bytes": 4421785
+    },
+    {
+      "id": "Confidence_TPAMI2020",
+      "file": "Confidence_TPAMI2020.pdf",
+      "title": "Confidence Propagation through CNNs for Guided Sparse Depth Regression",
+      "authors": [
+        "Abdelrahman Eldesokey",
+        "Michael Felsberg",
+        "Fahad Shahbaz Khan"
+      ],
+      "venue": "IEEE TPAMI 42(10), 2020; online 2019",
+      "pages": "2423-2436",
+      "doi": "10.1109/TPAMI.2019.2929170",
+      "url": "https://www.diva-portal.org/smash/get/diva2%3A1362784/FULLTEXT01.pdf",
+      "version": "Author institutional postprint; includes cover page",
+      "inspected_pdf_pages": [
+        14
+      ],
+      "scope": "Confidence propagation and auxiliary RGB guidance; sampling reliability is not automatically calibrated output quality.",
+      "local_path": "F:/WORK/projects/pidsr_recurrent_joint_k2/analysis/sources/confidence_mechanism_20261009/papers/Confidence_TPAMI2020.pdf",
+      "sha256": "b494667e6999cd0df274b81cc8b34d743c509b865b085a410e5205830971d9ad",
+      "bytes": 3912248
+    },
+    {
+      "id": "UNC_CVPR2020",
+      "file": "UNC_CVPR2020.pdf",
+      "title": "Uncertainty-Aware CNNs for Depth Completion: Uncertainty from Beginning to End",
+      "authors": [
+        "Abdelrahman Eldesokey",
+        "Michael Felsberg",
+        "Karl Holmquist",
+        "Michael Persson"
+      ],
+      "venue": "CVPR 2020",
+      "pages": "12014-12023",
+      "url": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Eldesokey_Uncertainty-Aware_CNNs_for_Depth_Completion_Uncertainty_from_Beginning_to_End_CVPR_2020_paper.pdf",
+      "inspected_pdf_pages": [
+        1
+      ],
+      "additional_text_review": "Section 4 probabilistic output uncertainty and associated objectives",
+      "scope": "Input confidence and output uncertainty differ; validate error association. Proposed Laplace-style loss is a project adaptation, not the paper Gaussian loss.",
+      "local_path": "F:/WORK/projects/pidsr_recurrent_joint_k2/analysis/sources/confidence_mechanism_20261009/papers/UNC_CVPR2020.pdf",
+      "sha256": "bfb1c421221fc8859595a5b6204bf8fe5d87046c785e7524baaa474f16e43c5a",
+      "bytes": 702641
+    },
+    {
+      "id": "PolarFree_CVPR2025",
+      "file": "PolarFree_CVPR2025.pdf",
+      "title": "PolarFree: Polarization-based Reflection-Free Imaging",
+      "authors": [
+        "Mingde Yao",
+        "Menglu Wang",
+        "King-Man Tam",
+        "Lingen Li",
+        "Tianfan Xue",
+        "Jinwei Gu"
+      ],
+      "venue": "CVPR 2025",
+      "pages": "10890-10899",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Yao_PolarFree_Polarization-based_Reflection-Free_Imaging_CVPR_2025_paper.pdf",
+      "inspected_pdf_pages": [
+        4,
+        5
+      ],
+      "scope": "Stokes and polarization input construction; DoLP is a cue, not T1 correctness probability.",
+      "local_path": "F:/WORK/projects/pidsr_recurrent_joint_k2/analysis/sources/confidence_mechanism_20261009/papers/PolarFree_CVPR2025.pdf",
+      "sha256": "445937dfbc83fe3b4f3dafef2fecd99c0e3b5d52472520c82f1ade47e5087944",
+      "bytes": 5447105
+    }
+  ]
+}

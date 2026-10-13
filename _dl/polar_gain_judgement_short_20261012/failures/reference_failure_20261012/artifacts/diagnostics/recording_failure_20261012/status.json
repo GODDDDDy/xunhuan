@@ -1,0 +1,5 @@
+{
+  "stage": "failed",
+  "time_unix": 1791810406.1023102,
+  "error": "Traceback (most recent call last):\n  File \"/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012/scripts/gain_controller.py\", line 44, in <module>\n    try:run()\n        ^^^^^\n  File \"/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012/scripts/gain_controller.py\", line 37, in run\n    status('plan_locked',protocol_id=cfg['protocol_id'],judgement_steps=3000,deadline_unix=budget['deadline_unix']);stage('diagnostic')\n                                                                                                                    ^^^^^^^^^^^^^^^^^^^\n  File \"/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012/scripts/gain_controller.py\", line 14, in stage\n    if p.returncode:raise RuntimeError(f'{action} failed with exit {p.returncode}')\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: diagnostic failed with exit 1\n"
+}

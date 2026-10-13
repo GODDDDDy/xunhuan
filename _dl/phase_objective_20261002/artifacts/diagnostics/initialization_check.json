@@ -1,0 +1,15 @@
+{
+  "paired_initial_weights_identical": true,
+  "arms": {
+    "phase1": {
+      "state_sha256": "10865dbbbccb0a2d1d45352f70585c458c45a223d1499eda2e53346f38e33c90",
+      "phase_weight": 1.0,
+      "initialization": "original pretrained R2P e42 and official net_g; no resume"
+    },
+    "phase01": {
+      "state_sha256": "10865dbbbccb0a2d1d45352f70585c458c45a223d1499eda2e53346f38e33c90",
+      "phase_weight": 0.1,
+      "initialization": "original pretrained R2P e42 and official net_g; no resume"
+    }
+  }
+}

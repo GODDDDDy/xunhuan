@@ -1,0 +1,63 @@
+{
+  "stage": "A1",
+  "created_at": "2026-10-13T12:30+08:00",
+  "run": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_objective_audit_20261013_120028",
+  "cpu_only": true,
+  "gpu_used": false,
+  "test_used": false,
+  "validation_used_for_any_rule": false,
+  "probe_only": true,
+  "restoration_method_score": false,
+  "artifacts": [
+    {
+      "path": "metrics/A1_probe_results.json",
+      "exists": true,
+      "description": "A1 probe machine-readable results",
+      "bytes": 57781,
+      "sha256": "4310262ae3e9506ce483a9e123440c8236aba04dd1e7aec800f2891ee9883461"
+    },
+    {
+      "path": "checkpoints/diagnostic_heads/a1_mlp_mixed.pt",
+      "exists": true,
+      "description": "mixed replica weights",
+      "bytes": 14010,
+      "sha256": "59a4f1bb43a6c3e8c123bcd94aea15ccf2156f81fd977efceff35dfac5466f1d"
+    },
+    {
+      "path": "checkpoints/diagnostic_heads/a1_mlp_pure.pt",
+      "exists": true,
+      "description": "pure replica weights",
+      "bytes": 14000,
+      "sha256": "fcc69f449ff7f58fb7676ff3b8fcad2b1df680eec60dbb0b98aec59fadd05bd2"
+    },
+    {
+      "path": "checkpoints/diagnostic_heads/a1_mlp_common_init.pt",
+      "exists": true,
+      "description": "shared initial weights",
+      "bytes": 13878,
+      "sha256": "631bf6f7a9a91b5fb55c4472da27878961342ecff6cc9b2d5f64d0d9616b668f"
+    },
+    {
+      "path": "figures/train_fit_and_cost_ranking.svg",
+      "exists": true,
+      "description": "training curves",
+      "bytes": 9100,
+      "sha256": "771ca7dd0d7faecb656da356b29708dbc31214af8c2143217557f222d0282741"
+    },
+    {
+      "path": "figures/risk_coverage.svg",
+      "exists": true,
+      "description": "safety risk-coverage",
+      "bytes": 4233,
+      "sha256": "1de7b4a0250754bf3bde3fb2f1265a1615c4427b23fc7d3ca9af0c9558480ab7"
+    },
+    {
+      "path": "docs/A1_findings.md",
+      "exists": true,
+      "description": "A1 findings report",
+      "bytes": 7072,
+      "sha256": "fa38a152e998290512162def136e0ad1c1dfc8191e914b9cdd8187b7ddc11602"
+    }
+  ],
+  "note": "A1 is a learnability probe on the existing scattered 50-d cache; it is not a native-head result and not a full R2P score."
+}

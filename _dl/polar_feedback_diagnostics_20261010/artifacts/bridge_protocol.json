@@ -1,0 +1,22 @@
+{
+  "purpose": "Fixed-weight validation diagnosis of observation-anchored float correction",
+  "training": false,
+  "test_used": false,
+  "frames": 28,
+  "original_size": true,
+  "tiling": false,
+  "model_changed": false,
+  "code_sha256": {
+    "watchdog.py": "b017bd662cde5fd06efcbe0c429c344214f914d8c4410c9042899efbef3280df",
+    "bridge.py": "32968b4c94b03832b363daf622cc827365388a98906c55c2825ea0b5d8808041",
+    "diagnose.py": "6c9d30f4648e6aef3f983c2fcfa6f0b5d6b72da8b73ec03d062a0585b456b17f",
+    "phase_watchdog.py": "ddd7dbc4b965730de1388ed636b29c7fba2fb44f6b59702ce8035556f0c13dcb",
+    "bridge_probe.py": "3cff6667c27f136051cffb124279355ac8c1b5a8c174fe51028badc040e6d167"
+  },
+  "zero_correction_rule": "exact official inputs",
+  "no_benefit_claim": true,
+  "deadline_unix": 1791605047.4916465,
+  "execution_revision": 2,
+  "deterministic_setup": "original common.seed",
+  "previous_preserved": "diagnostics/bridge_execution_v1"
+}

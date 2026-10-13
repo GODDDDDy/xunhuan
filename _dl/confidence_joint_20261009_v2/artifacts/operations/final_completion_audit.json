@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "cpu_only": true,
+  "common_step": 16000,
+  "source_sha256": "eb17a5537bcd26583b73670a34a258f948056935f851b42c7a44eb62e1dd15ea",
+  "manifest_sha256": "d4f04a73e2d1b99d11a3487591b1143be79bfef2bb1ca61cc989823e190a57bb",
+  "schedule_sha256": "97ff589d0323047d00dbe4c2ecc77f7076992eaca2f830c18d08e378d9ba954a",
+  "all_locked_code_config_calibration_unchanged": true,
+  "units": {
+    "A0_direct": {
+      "checkpoint_sha256": "c863715330af2a9becab35d54a20565ec3a4b30f49c99c509a0a43d7fb07a555",
+      "optimizer_groups": [
+        "r2p_and_alignment",
+        "tasknet_net_g",
+        "quality_head"
+      ],
+      "optimizer_state_count": 469,
+      "all_adam_steps": 16000,
+      "confidence_parameters_checkpointed": true,
+      "splits": {
+        "validation": {
+          "frames": 872,
+          "all_unique_manifest_ids_matched": true,
+          "actual_forward_calls": {
+            "r2p": 1744,
+            "tasknet": 1744
+          },
+          "quality_rows": 872
+        },
+        "test": {
+          "frames": 188,
+          "all_unique_manifest_ids_matched": true,
+          "actual_forward_calls": {
+            "r2p": 376,
+            "tasknet": 376
+          },
+          "quality_rows": 188
+        }
+      }
+    },
+    "A2_dual": {
+      "checkpoint_sha256": "70579d8ef3b5627fa618b1a2b391bbd13e57f71a8e5b9f4979ae2319faf005c2",
+      "optimizer_groups": [
+        "r2p_and_alignment",
+        "tasknet_net_g",
+        "quality_head"
+      ],
+      "optimizer_state_count": 469,
+      "all_adam_steps": 16000,
+      "confidence_parameters_checkpointed": true,
+      "splits": {
+        "validation": {
+          "frames": 872,
+          "all_unique_manifest_ids_matched": true,
+          "actual_forward_calls": {
+            "r2p": 1744,
+            "tasknet": 1744
+          },
+          "quality_rows": 872
+        },
+        "test": {
+          "frames": 188,
+          "all_unique_manifest_ids_matched": true,
+          "actual_forward_calls": {
+            "r2p": 376,
+            "tasknet": 376
+          },
+          "quality_rows": 188
+        }
+      }
+    }
+  }
+}

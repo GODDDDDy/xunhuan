@@ -1,0 +1,156 @@
+{
+  "step": 10000,
+  "frames": 28,
+  "per_image": [
+    {
+      "sample_id": "validation/easy/01/0000",
+      "psnr": 33.260463663565744,
+      "ssim": 0.9723842740058899
+    },
+    {
+      "sample_id": "validation/easy/01/0010",
+      "psnr": 31.08651061236865,
+      "ssim": 0.96430903673172
+    },
+    {
+      "sample_id": "validation/hard/01/0000",
+      "psnr": 30.818350653997783,
+      "ssim": 0.9686089754104614
+    },
+    {
+      "sample_id": "validation/hard/01/0021",
+      "psnr": 25.045528050272296,
+      "ssim": 0.929219663143158
+    },
+    {
+      "sample_id": "validation/easy/07/0000",
+      "psnr": 23.612538129021168,
+      "ssim": 0.9483466148376465
+    },
+    {
+      "sample_id": "validation/easy/07/0012",
+      "psnr": 23.964137325837033,
+      "ssim": 0.9504699110984802
+    },
+    {
+      "sample_id": "validation/hard/07/0000",
+      "psnr": 24.460812708878382,
+      "ssim": 0.9513582587242126
+    },
+    {
+      "sample_id": "validation/hard/07/0041",
+      "psnr": 26.555420154511747,
+      "ssim": 0.9430862665176392
+    },
+    {
+      "sample_id": "validation/easy/22/0000",
+      "psnr": 31.875497328977783,
+      "ssim": 0.9734938144683838
+    },
+    {
+      "sample_id": "validation/easy/22/0092",
+      "psnr": 27.24447525568792,
+      "ssim": 0.943000853061676
+    },
+    {
+      "sample_id": "validation/hard/22/0000",
+      "psnr": 29.467769334880867,
+      "ssim": 0.9528563022613525
+    },
+    {
+      "sample_id": "validation/hard/22/0025",
+      "psnr": 27.012939451962012,
+      "ssim": 0.9514903426170349
+    },
+    {
+      "sample_id": "validation/easy/30/0000",
+      "psnr": 28.327256885744593,
+      "ssim": 0.9474024176597595
+    },
+    {
+      "sample_id": "validation/easy/30/0047",
+      "psnr": 25.27704844080846,
+      "ssim": 0.9043241143226624
+    },
+    {
+      "sample_id": "validation/hard/30/0000",
+      "psnr": 25.96532193028652,
+      "ssim": 0.9155536890029907
+    },
+    {
+      "sample_id": "validation/hard/30/0111",
+      "psnr": 27.025316337268155,
+      "ssim": 0.9308911561965942
+    },
+    {
+      "sample_id": "validation/easy/36/0000",
+      "psnr": 32.20766482885287,
+      "ssim": 0.9602319598197937
+    },
+    {
+      "sample_id": "validation/easy/36/0054",
+      "psnr": 31.010187942988146,
+      "ssim": 0.9369521141052246
+    },
+    {
+      "sample_id": "validation/hard/36/0000",
+      "psnr": 33.77021405917874,
+      "ssim": 0.967475175857544
+    },
+    {
+      "sample_id": "validation/hard/36/0018",
+      "psnr": 30.39210581549279,
+      "ssim": 0.9341731071472168
+    },
+    {
+      "sample_id": "validation/easy/41/0000",
+      "psnr": 34.961316055819424,
+      "ssim": 0.9880368709564209
+    },
+    {
+      "sample_id": "validation/easy/41/0067",
+      "psnr": 23.26010993839845,
+      "ssim": 0.6888321042060852
+    },
+    {
+      "sample_id": "validation/hard/41/0000",
+      "psnr": 24.590113321039304,
+      "ssim": 0.7716301083564758
+    },
+    {
+      "sample_id": "validation/hard/41/0078",
+      "psnr": 25.501423327946572,
+      "ssim": 0.79109126329422
+    },
+    {
+      "sample_id": "validation/easy/55/0000",
+      "psnr": 21.499872583570404,
+      "ssim": 0.9182957410812378
+    },
+    {
+      "sample_id": "validation/easy/55/0219",
+      "psnr": 23.545434951425015,
+      "ssim": 0.9177315831184387
+    },
+    {
+      "sample_id": "validation/hard/56/0000",
+      "psnr": 23.926941949971592,
+      "ssim": 0.9342352151870728
+    },
+    {
+      "sample_id": "validation/hard/56/0063",
+      "psnr": 14.58448459237411,
+      "ssim": 0.6213656067848206
+    }
+  ],
+  "psnr": 27.15175912968309,
+  "ssim": 0.913458804999079,
+  "input": "raw P0 and original RGB, enhancer bypassed",
+  "original_size": true,
+  "paired_noise": true,
+  "test_used": false,
+  "used_for_weight_selection": false,
+  "psnr_change_from_official": 1.1781188860057341,
+  "ssim_change_from_official": 0.006063993488039321,
+  "net_g_relative_l2_drift": 0.004782078287556984
+}

@@ -1,0 +1,23 @@
+{
+  "lambda_alignment": 0.004036326842106771,
+  "pairs": [
+    {
+      "task_norm": 0.07798281068433903,
+      "alignment_norm": 11.139755042106772
+    },
+    {
+      "task_norm": 0.060365541937292676,
+      "alignment_norm": 10.820249434670995
+    },
+    {
+      "task_norm": 0.8710812960065855,
+      "alignment_norm": 7.603634688543036
+    },
+    {
+      "task_norm": 0.5645406321523725,
+      "alignment_norm": 9.43147551075067
+    }
+  ],
+  "training_crops": 8,
+  "rule": "0.1 ratio of train-only core gradient norms; clamp [1e-4,1]"
+}

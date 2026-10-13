@@ -1,0 +1,17 @@
+{
+  "source_model_keys": 500,
+  "final_model_keys": 526,
+  "new_error_guidance_keys": 26,
+  "frozen_model_tensor_keys": 420,
+  "all_frozen_model_tensors_equal_reused_source": true,
+  "all_net_g_tensors_equal_reused_source": true,
+  "candidate_and_q_frozen_during_judgement": true,
+  "gpu_used": false,
+  "protocol_id": "921ae3dc9fe004949efab2afdb434719a11a8268cb80bd44718bc59a9a99787d",
+  "weight_file_sha256": {
+    "weights/reused_final.pt": "e79af90811baa46aadfb354a682d0c5dad93886e2dfe1eabeaceb407e6cae112",
+    "downstream/checkpoints/final.pt": "cecdcfa47d290b0a2d6b662b96bb4407a7043ef5789e9e87d70768f2c683916d",
+    "downstream/checkpoints/candidate_final.pt": "cd94f170b52b30d21a63a617dbb841d0fc7e56d1e997563a2294bc4e43d5f709"
+  },
+  "matches_archived_weight_bytes": true
+}

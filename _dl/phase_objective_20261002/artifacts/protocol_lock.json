@@ -1,0 +1,33 @@
+{
+  "phase_weights": [
+    1.0,
+    0.1
+  ],
+  "fixed_lambda": 0.030651881051471687,
+  "steps": 3000,
+  "seed": 2026,
+  "feedback": false,
+  "same_config_except_phase_and_output": true,
+  "optimizer_start": "new Adam from original step0 initial weights",
+  "evaluation": "fixed step3000, full872 validation; no new test selection",
+  "historical_test_usage": "already viewed; not an independent confirmation set",
+  "environment": {
+    "python": "3.11.15",
+    "torch": "2.5.1+cu121",
+    "cuda": "12.1",
+    "cudnn": 90100,
+    "matmul_tf32": false,
+    "cudnn_tf32": true,
+    "gpu": "NVIDIA GeForce RTX 3080 Ti"
+  },
+  "file_sha256": {
+    "archived_trainer": "3aff6337b000c30418c7a19def03d248e2928ea96ff60882092cb77d413841c7",
+    "extension": "03158c9abde8dc896171f28fce76d5fd5c73638f9317786aac7e813849fcd512",
+    "original_config": "d267d4ad980aaaa166f473d2487746f2977860f5e58320bbfa37885a5c51bde6",
+    "manifest": "d4f04a73e2d1b99d11a3487591b1143be79bfef2bb1ca61cc989823e190a57bb",
+    "schedule": "f30c574a4f90e6218bafff5eb47bd2b475a7c827de969a3066802bbc35b43588",
+    "pretrained_r2p": "e979881e7d03e3b75d6b9a4e875a29eac2e1a15430582ec319289e6ae32f5541",
+    "reference_r2p": "6c9f4bed76046e06a4c44361ace0dd4b4d1e3d08015336f38230c2ddb62ed7e5",
+    "base_config": "9a55ac6bf92a7d41c2ce4a1d45a4f60f36b1bd688408a9e4233c7ac162fe215c"
+  }
+}

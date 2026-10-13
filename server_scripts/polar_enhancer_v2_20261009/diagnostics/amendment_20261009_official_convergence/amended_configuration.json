@@ -1,0 +1,138 @@
+{
+  "schema_version": 3,
+  "seed": 2026,
+  "paths": {
+    "base_config": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/protocol/base_server.yaml",
+    "source_root": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/deps/rgb_final_confirmation/src",
+    "manifest": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/config/manifest.csv",
+    "schedule": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/config/training_schedule_16000.json",
+    "validation_proxy": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/config/validation_proxy.json",
+    "pretrained_r2p": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/weights/r2p_pretrained_pidsr_e42.pt",
+    "reference_r2p": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/deps/r2p_film.py",
+    "output_root": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/downstream",
+    "pidsr_data": "/media/li/data3/25thstudent/DY/929work/research_data/PIDSR-dataset",
+    "source_checkpoint": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/weights/polarfree/net_g_latest.pth"
+  },
+  "data": {
+    "condition": "raw_mixed_rgb",
+    "crop_size": 128,
+    "batch_size": 2,
+    "workers": 2
+  },
+  "source_sha256": "a230e77fb19827a1ada41e4dc86374dee092e476915d2252841f81dd8c257ca2",
+  "scope": "one new enhancer plus confidence K2; same-resolution PIDSR correction pretraining",
+  "pretrain": {
+    "steps": 20000,
+    "effective_batch": 8,
+    "microbatch": 1,
+    "learning_rate": 0.0003,
+    "minimum_steps": 16000,
+    "deadline_unix": 1791557938.9210548,
+    "continuation": {
+      "start_step": 8000,
+      "start_lr": 8.172027685919274e-05,
+      "original_total_steps": 12000,
+      "parent_protocol_id": "61fefac1e5772ce453560490cbfa14c12c1114b25a0bb9ff5ddf63ffd46b0db3",
+      "checkpoint_sha256": "1d9d5e8db98f1e663d98d94ef49969cb9b0451431e830984eea50b70a10af010",
+      "immutable_resume_source": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/diagnostics/amendment_20261009_official_convergence/checkpoint_step_8000.pt"
+    },
+    "convergence": {
+      "minimum_steps": 16000,
+      "window": 4,
+      "psnr_span_db": 0.15,
+      "psnr_slope_db_per_1000": 0.025,
+      "recovery_loss_relative_span": 0.03,
+      "selection": "stability heuristic on validation only"
+    }
+  },
+  "downstream": {
+    "steps": 8000,
+    "effective_batch": 2,
+    "microbatch": 1,
+    "minimum_steps": 3000,
+    "deadline_unix": 1791590647.4916465
+  },
+  "confidence": {
+    "warmup_steps": 500,
+    "calibration_training_crops": 256
+  },
+  "evaluation": {
+    "validation_frames": 872,
+    "test_frames": 188,
+    "original_size": true,
+    "tiles": false
+  },
+  "selection": "pretrain: best 10-scene validation mean angle PSNR; downstream: planned/time-only final",
+  "budget": {
+    "start_unix": 1791518647.4916465,
+    "deadline_unix": 1791605047.4916465,
+    "process_group": 3791317,
+    "device": "server RTX3080Ti",
+    "hours": 24,
+    "starts_at": "first GPU preflight",
+    "evaluation_reserve_seconds": 14400,
+    "estimated_eval_seconds": 6723.7427382403985,
+    "preparation_reserve_seconds": 779.6602294258773,
+    "formal_feasible": true
+  },
+  "code_sha256": {
+    "scripts/archive.py": "558435a5578d3bf17e25a686dc66cf73ef8214f36eb122c0861b291f4f97451d",
+    "scripts/common.py": "13b317cd89258316a2b74854b48b6c94650cf33bbf3f328b6f4ddf0ecf43a895",
+    "scripts/controller.py": "9c23c0c3d3300a17ecb1b028ef88f80d4a1e674e2c44a71381e1039f9e941999",
+    "scripts/enhancer.py": "2bf2b4822d2f50598f7122ba08d75af02b01042e9d00365c33ffb0c36d29deab",
+    "scripts/pidsr_data.py": "f7b746ad4798f05318ad61cde376624aaa2696f91b1b23c7ab1584e650ade4ee",
+    "scripts/polar_loss.py": "8e73d77cbbb8d76fa96b2b514afc72d5859c9b87e632b0056039845e1c5f127f",
+    "scripts/prepare.py": "eb8e154e82d8b43be1d3ae2e1ec7ceca67d8e020492632f36eef18ae83164f7b",
+    "scripts/pretrain.py": "3f432bd3a38e7d210b42601f7b60b923e3b74629ec43d58f0d0719bd04a22ed9",
+    "scripts/quality_metrics.py": "a04d547d16fd21f94e51086d13e1cf1f6974db1b64e8bf313180ff79c41e6d9c",
+    "scripts/reference/run_experiment_snapshot.py": "507c86cab8ac6c81dee04b36634d1619504a05eca6bc1cfb73eaf1ea42ccb6e5",
+    "scripts/run_stage.py": "4cb46005d909faebd63c58ad25daed44f695d1403ccd827aaa474ec80056594e",
+    "scripts/study.py": "96af5bdf04bdf4fc48c0603b916eb6ed770fc2324a425cd5491c38f0ca3141c3",
+    "scripts/vendor/pidsr_data_official.py": "7fbfd48cfa9129226c3bc425045cab7fcac84cd4380bf7bf8d844e6797d98209",
+    "scripts/vendor/pidsr_official.py": "b3e8b3146536f240dab8517bd96918abc9b71ed306d3f483f6402dc08a1d7d4f",
+    "scripts/vendor/sgsc_networks.py": "f168ac4c8768dfb997687c1fcd77b4b812f47014b898821ebfd2cb00d8f01bb3",
+    "scripts/vendor/sgsc_primitives.py": "90727f97b82411f825dcdffafda8e9defdcb2331a4c326c47162e56035cf6262",
+    "scripts/vendor/sgsc_reference.py": "c84f52b3076c91e83af50473537cfe8d28636ed7482f44384974db9153d89cc3",
+    "scripts/watchdog.py": "32936711746458bae2e96e832478411f80690597227fbf5bf3136c0d43455fd3"
+  },
+  "task_initialization": {
+    "kind": "official_polarfree",
+    "official_sha256": {
+      "net_g_latest.pth": "a230e77fb19827a1ada41e4dc86374dee092e476915d2252841f81dd8c257ca2",
+      "net_d_latest.pth": "f1d0e9acb244480e5d4ba4b5cee7ba35666fb97d41bccf4659f20911f46f1fb3",
+      "net_le_dm_latest.pth": "6b98bd2a715d3e669acd99582d9ea37594ff4a2ee7786df86764d8efdafd0546"
+    },
+    "overwrite_with_joint_weights": false,
+    "archived_source_dir": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_enhancer_v2_20261009/weights/source_polarfree"
+  },
+  "optimization": {
+    "correction_lr": 2e-05,
+    "interfaces_lr": 0.0001,
+    "task_lr": 1e-06,
+    "task_freeze_steps": 500,
+    "task_unfreeze_warmup": 200,
+    "gradient_clip": 1.0
+  },
+  "retention_monitor": {
+    "validation_proxy_frames": 28,
+    "interval": 1000,
+    "after_freeze_step": 500,
+    "enhancer_bypassed": true,
+    "test_used": false,
+    "used_for_selection": false,
+    "paired_noise": true,
+    "purpose": "monitor net_g performance retention and relative parameter drift"
+  },
+  "amendment": {
+    "time_unix": 1791534431.6885927,
+    "authorization": "User requested sufficient correction pretraining and direct official PolarFree initialization with separate learning rates",
+    "parent_protocol_id": "61fefac1e5772ce453560490cbfa14c12c1114b25a0bb9ff5ddf63ffd46b0db3",
+    "test_seen_before_amendment": false,
+    "original_task_source": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/direct_t1_joint_20261008_memorysafe_v2/run/checkpoints/step_10000.pt",
+    "original_task_source_sha256": "eb17a5537bcd26583b73670a34a258f948056935f851b42c7a44eb62e1dd15ea",
+    "discarded_unsaved_updates": 256,
+    "hard_deadline_unchanged": 1791605047.4916465,
+    "scope": "one latest arm; no additional test-dependent runs or controls"
+  },
+  "protocol_id": "576f788b73218610533cddb66089d3e0c0910f9aa97604a376c9692d71634007"
+}

@@ -1,0 +1,294 @@
+{
+  "arms": {
+    "phase1": {
+      "round1": {
+        "image_mean_psnr": 25.565830030420905,
+        "scene_macro_psnr": 25.76689003785718,
+        "image_mean_ssim": 0.8966899172428551,
+        "scene_macro_ssim": 0.9015706680185704
+      },
+      "round2": {
+        "image_mean_psnr": 25.50458349813792,
+        "scene_macro_psnr": 25.75095946312971,
+        "image_mean_ssim": 0.8955802107486156,
+        "scene_macro_ssim": 0.9008547971140278
+      },
+      "iteration_gain": {
+        "image_mean_psnr": -0.061246532282986266,
+        "scene_macro_psnr": -0.01593057472747006,
+        "image_mean_ssim": -0.0011097064942394708,
+        "scene_macro_ssim": -0.0007158709045426148
+      },
+      "polar_update": {
+        "polar1": {
+          "mean_abs": 0.013370526025345155,
+          "relative_signal_change": 0.03298514025176901,
+          "ratio_gt_0_02": 0.21331493073696306,
+          "ratio_gt_0_05": 0.036481139498817254
+        },
+        "polar2": {
+          "mean_abs": 0.013471297228200481,
+          "relative_signal_change": 0.03279360093191317,
+          "ratio_gt_0_02": 0.21593830605099457,
+          "ratio_gt_0_05": 0.037987397962676764
+        }
+      },
+      "frozen_audits_passed": true,
+      "audited_steps": [
+        0,
+        200,
+        400,
+        600,
+        800,
+        1000,
+        1200,
+        1400,
+        1600,
+        1800,
+        2000,
+        2200,
+        2400,
+        2600,
+        2800,
+        3000
+      ],
+      "loss_parts": {
+        "round1": {
+          "image_mean": {
+            "l1": 0.04164570342074362,
+            "ssim_term": 0.1033100827571449,
+            "phase_raw": 3.525907165413603,
+            "phase_weighted": 3.525907165413603,
+            "perceptual_weighted": 0.04225658149983939,
+            "total_training_coefficient": 3.7131195330913305,
+            "total_common_phase1": 3.7131195330913305,
+            "total_common_phase01": 0.5398030842190883
+          },
+          "scene_macro": {
+            "l1": 0.04085640456876966,
+            "ssim_term": 0.09842933198142947,
+            "phase_raw": 3.492509649346638,
+            "phase_weighted": 3.492509649346638,
+            "perceptual_weighted": 0.040848438557508304,
+            "total_training_coefficient": 3.6726438244543456,
+            "total_common_phase1": 3.6726438244543456,
+            "total_common_phase01": 0.5293851400423712
+          }
+        },
+        "round2": {
+          "image_mean": {
+            "l1": 0.04210709210019559,
+            "ssim_term": 0.10441978925138438,
+            "phase_raw": 3.521829770519099,
+            "phase_weighted": 3.521829770519099,
+            "perceptual_weighted": 0.04254833312594084,
+            "total_training_coefficient": 3.71090498499662,
+            "total_common_phase1": 3.71090498499662,
+            "total_common_phase01": 0.5412581915294308
+          },
+          "scene_macro": {
+            "l1": 0.0411220947816994,
+            "ssim_term": 0.09914520288597214,
+            "phase_raw": 3.4871220497705173,
+            "phase_weighted": 3.4871220497705173,
+            "perceptual_weighted": 0.04100770997890245,
+            "total_training_coefficient": 3.668397057417091,
+            "total_common_phase1": 3.668397057417091,
+            "total_common_phase01": 0.5299872126236258
+          }
+        },
+        "iteration_delta": {
+          "image_mean": {
+            "l1": 0.000461388679451967,
+            "ssim_term": 0.0011097064942394846,
+            "phase_raw": -0.004077394894503872,
+            "phase_weighted": -0.004077394894503872,
+            "perceptual_weighted": 0.0002917516261014552,
+            "total_training_coefficient": -0.0022145480947104446,
+            "total_common_phase1": -0.0022145480947104446,
+            "total_common_phase01": 0.001455107310342485
+          },
+          "scene_macro": {
+            "l1": 0.0002656902129297353,
+            "ssim_term": 0.0007158709045426703,
+            "phase_raw": -0.005387599576120561,
+            "phase_weighted": -0.005387599576120561,
+            "perceptual_weighted": 0.0001592714213941443,
+            "total_training_coefficient": -0.004246767037254351,
+            "total_common_phase1": -0.004246767037254351,
+            "total_common_phase01": 0.0006020725812545535
+          }
+        },
+        "rng_unchanged_by_loss_arithmetic": true
+      }
+    },
+    "phase01": {
+      "round1": {
+        "image_mean_psnr": 25.898427414772147,
+        "scene_macro_psnr": 25.98410786922173,
+        "image_mean_ssim": 0.902881789371508,
+        "scene_macro_ssim": 0.9054694514970636
+      },
+      "round2": {
+        "image_mean_psnr": 25.899421937824275,
+        "scene_macro_psnr": 25.999221825760323,
+        "image_mean_ssim": 0.902826618847497,
+        "scene_macro_ssim": 0.905444215230117
+      },
+      "iteration_gain": {
+        "image_mean_psnr": 0.0009945230521282156,
+        "scene_macro_psnr": 0.015113956538591822,
+        "image_mean_ssim": -5.5170524010939026e-05,
+        "scene_macro_ssim": -2.5236266946615515e-05
+      },
+      "polar_update": {
+        "polar1": {
+          "mean_abs": 0.007657882858146785,
+          "relative_signal_change": 0.018632543761360056,
+          "ratio_gt_0_02": 0.06854928274672753,
+          "ratio_gt_0_05": 0.008692082699828494
+        },
+        "polar2": {
+          "mean_abs": 0.007741295402936868,
+          "relative_signal_change": 0.0189563028542154,
+          "ratio_gt_0_02": 0.07074430128514538,
+          "ratio_gt_0_05": 0.009311354036699087
+        }
+      },
+      "frozen_audits_passed": true,
+      "audited_steps": [
+        0,
+        200,
+        400,
+        600,
+        800,
+        1000,
+        1200,
+        1400,
+        1600,
+        1800,
+        2000,
+        2200,
+        2400,
+        2600,
+        2800,
+        3000
+      ],
+      "loss_parts": {
+        "round1": {
+          "image_mean": {
+            "l1": 0.03987700379359613,
+            "ssim_term": 0.09711821062849202,
+            "phase_raw": 3.546745256956564,
+            "phase_weighted": 0.35467452569565644,
+            "perceptual_weighted": 0.038682822683300616,
+            "total_training_coefficient": 0.5303525628010451,
+            "total_common_phase1": 3.722423294061953,
+            "total_common_phase01": 0.5303525628010451
+          },
+          "scene_macro": {
+            "l1": 0.03969377317489221,
+            "ssim_term": 0.09453054850293634,
+            "phase_raw": 3.5177759421698833,
+            "phase_weighted": 0.35177759421698834,
+            "perceptual_weighted": 0.037903762738056845,
+            "total_training_coefficient": 0.5239056786328737,
+            "total_common_phase1": 3.6899040265857685,
+            "total_common_phase01": 0.5239056786328737
+          }
+        },
+        "round2": {
+          "image_mean": {
+            "l1": 0.03990440638394121,
+            "ssim_term": 0.09717338115250299,
+            "phase_raw": 3.5460026275127308,
+            "phase_weighted": 0.35460026275127304,
+            "perceptual_weighted": 0.038676117871003654,
+            "total_training_coefficient": 0.5303541681587209,
+            "total_common_phase1": 3.7217565329201783,
+            "total_common_phase01": 0.5303541681587209
+          },
+          "scene_macro": {
+            "l1": 0.0396740799532512,
+            "ssim_term": 0.09455578476988312,
+            "phase_raw": 3.516860510706066,
+            "phase_weighted": 0.35168605107060663,
+            "perceptual_weighted": 0.037887622298564336,
+            "total_training_coefficient": 0.5238035380923053,
+            "total_common_phase1": 3.688977997727765,
+            "total_common_phase01": 0.5238035380923053
+          }
+        },
+        "iteration_delta": {
+          "image_mean": {
+            "l1": 2.7402590345081135e-05,
+            "ssim_term": 5.517052401096678e-05,
+            "phase_raw": -0.0007426294438332981,
+            "phase_weighted": -7.426294438339642e-05,
+            "perceptual_weighted": -6.7048122969620705e-06,
+            "total_training_coefficient": 1.6053576757935062e-06,
+            "total_common_phase1": -0.0006667611417747743,
+            "total_common_phase01": 1.6053576757935062e-06
+          },
+          "scene_macro": {
+            "l1": -1.9693221641012282e-05,
+            "ssim_term": 2.523626694678205e-05,
+            "phase_raw": -0.0009154314638171179,
+            "phase_weighted": -9.154314638171179e-05,
+            "perceptual_weighted": -1.614043949250965e-05,
+            "total_training_coefficient": -0.00010214054056845168,
+            "total_common_phase1": -0.0009260288580037468,
+            "total_common_phase01": -0.00010214054056845168
+          }
+        },
+        "rng_unchanged_by_loss_arithmetic": true
+      }
+    }
+  },
+  "comparison_image_deltas": {
+    "phase01_minus_phase1": {
+      "round1_minus_round1": {
+        "psnr": 0.3325973843512469,
+        "ssim": 0.00619187212865287
+      },
+      "round2_minus_round2": {
+        "psnr": 0.3948384396863566,
+        "ssim": 0.007246408098881398
+      }
+    },
+    "phase1_T2_minus_T1": {
+      "round2_minus_round1": {
+        "psnr": -0.06124653228298475,
+        "ssim": -0.0011097064942394922
+      }
+    },
+    "phase01_T2_minus_T1": {
+      "round2_minus_round1": {
+        "psnr": 0.0009945230521249337,
+        "ssim": -5.517052401096449e-05
+      }
+    },
+    "phase1_minus_historical_no_feedback": {
+      "round1_minus_round1": {
+        "psnr": 0.0,
+        "ssim": 0.0
+      },
+      "round2_minus_round2": {
+        "psnr": 0.0,
+        "ssim": 0.0
+      }
+    },
+    "phase1_T2_minus_G6": {
+      "round2_minus_g6": {
+        "psnr": -0.09214031664371478,
+        "ssim": -0.0005194032821086568
+      }
+    },
+    "phase01_T2_minus_G6": {
+      "round2_minus_g6": {
+        "psnr": 0.3026981230426419,
+        "ssim": 0.0067270048167727406
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG19_Weights.IMAGENET1K_V1`. You can also use `weights=VGG19_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Evaluated 50 images
+Evaluated 100 images
+Evaluated 150 images
+Evaluated 200 images
+Evaluated 250 images
+Evaluated 300 images
+Evaluated 350 images
+Evaluated 400 images
+Evaluated 450 images
+Evaluated 500 images
+Evaluated 550 images
+Evaluated 600 images
+Evaluated 650 images
+Evaluated 700 images
+Evaluated 750 images
+Evaluated 800 images
+Evaluated 850 images
+{
+  "checkpoint": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/k1_no_alignment_20261003/runs/K1/seed_2028/checkpoints/step_3000.pt",
+  "checkpoint_step": 3000,
+  "checkpoint_sha256": "d8f38f444725e51517cd85b1fd2b9dfb631e10f7cef192525f0c247aefc5ae1a",
+  "protocol_id": "fe443f6c4b7f71e6522204da68be378456253e6a213d5bf90dde4b39305469e3",
+  "frames": 872,
+  "scenes": 8,
+  "image_mean_psnr": 25.9979423001,
+  "scene_macro_psnr": 26.054688910873438,
+  "image_mean_ssim": 0.9032822771493448,
+  "scene_macro_ssim": 0.9062987285229798,
+  "r2p_relative_l2_drift_from_pidsr": 0.10260849385053869,
+  "arm": "K1",
+  "seed": 2028,
+  "phase_weight": 0.1,
+  "training_seed": 2028,
+  "evaluation_seed": 2026,
+  "effective_task_weights": [
+    1.0
+  ],
+  "actual_tasknet_forwards": 872,
+  "actual_rounds": 1,
+  "evaluation_seconds": 1354.6292293071747,
+  "scope": "full872 validation; exploratory; three paired seeds"
+}

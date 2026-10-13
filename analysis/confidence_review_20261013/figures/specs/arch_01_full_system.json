@@ -1,0 +1,406 @@
+{
+  "canvas": {
+    "width": 1700,
+    "height": 860
+  },
+  "style": {
+    "font_family": "Microsoft YaHei, Arial, sans-serif",
+    "font_size": 18
+  },
+  "nodes": [
+    {
+      "id": "p0",
+      "label": "四角度原始偏振 P0\n12×H×W",
+      "x": 160,
+      "y": 140,
+      "width": 270,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "e1",
+      "label": "共享偏振增强器 E，第1次\nP0主输入，原RGB条件",
+      "x": 450,
+      "y": 140,
+      "width": 270,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "b1",
+      "label": "原观测锚定浮点灰度桥\n4灰度 + AoLP / DoLP",
+      "x": 760,
+      "y": 140,
+      "width": 270,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "d1",
+      "label": "共享PolarFree，第1次\n条件编码 + 8步扩散 + net_g",
+      "x": 1090,
+      "y": 140,
+      "width": 270,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "t1",
+      "label": "第一轮输出 T1\nF1：96 / 96 / 192",
+      "x": 1440,
+      "y": 140,
+      "width": 270,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "rgb",
+      "label": "原始混合RGB I\n各任务轮次保持同一观测",
+      "x": 160,
+      "y": 295,
+      "width": 270,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "H",
+      "label": "质量头 H\nb=0.001+softplus\nC=exp(-b/τ)",
+      "x": 1440,
+      "y": 300,
+      "width": 290,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "Z",
+      "label": "跨轮纠错状态 Z1/Z2/Z3\n任务参考、偏振特征、I、T1、C",
+      "x": 1085,
+      "y": 300,
+      "width": 290,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "Q",
+      "label": "修复需求 Q + 三级残差注入\nQ由局部误差代理训练；detach",
+      "x": 750,
+      "y": 300,
+      "width": 290,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "e2",
+      "label": "共享增强器 E，第2次\nP0 + 当前P1 + T1/F1/C/Z",
+      "x": 435,
+      "y": 480,
+      "width": 300,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "b2",
+      "label": "同一个浮点灰度桥\n仍以原观测P0为锚",
+      "x": 755,
+      "y": 480,
+      "width": 280,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "d2",
+      "label": "共享PolarFree，第2次\n1/2、1/4解码特征残差适配",
+      "x": 1085,
+      "y": 480,
+      "width": 290,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "R",
+      "label": "专用RGB纠错头\nΔ=0.25 tanh；U=T1+Δ",
+      "x": 1440,
+      "y": 480,
+      "width": 290,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "AG",
+      "label": "当前动作成本判断器\n50通道；预测0.25/0.5/1成本",
+      "x": 1440,
+      "y": 660,
+      "width": 300,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#B94F43",
+      "fill": "#FCF0ED",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "final",
+      "label": "实际动作 M∈{0,.25,.5,1}\nT2=where(M=0,T1,T1+MΔ)",
+      "x": 1085,
+      "y": 660,
+      "width": 300,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "legacy",
+      "label": "旧局部判断头 update_gate\n仍计算，但最终选择被覆盖",
+      "x": 755,
+      "y": 660,
+      "width": 280,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#889099",
+      "fill": "#F2F3F4",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "align",
+      "label": "三级特征投影 / 对齐损失\n仅历史训练；当前推理不执行",
+      "x": 435,
+      "y": 660,
+      "width": 280,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#889099",
+      "fill": "#F2F3F4",
+      "text_color": "#173B4E",
+      "font_size": 18
+    }
+  ],
+  "edges": [
+    {
+      "from": "p0",
+      "to": "e1",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "e1",
+      "to": "b1",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "b1",
+      "to": "d1",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "d1",
+      "to": "t1",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "rgb",
+      "to": "e1",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "rgb",
+      "to": "b1",
+      "label": "",
+      "style": "dashed",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "t1",
+      "to": "H",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "t1",
+      "to": "Z",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "H",
+      "to": "Z",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "Z",
+      "to": "Q",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "Q",
+      "to": "e2",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "e2",
+      "to": "b2",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "b2",
+      "to": "d2",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "d2",
+      "to": "R",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "R",
+      "to": "AG",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "AG",
+      "to": "final",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "R",
+      "to": "legacy",
+      "label": "",
+      "style": "dotted",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "e1",
+      "to": "align",
+      "label": "",
+      "style": "dotted",
+      "color": "#64748B",
+      "thickness": 1.5
+    }
+  ],
+  "groups": [],
+  "labels": [
+    {
+      "x": 35,
+      "y": 34,
+      "text": "当前完整推理路径（第22项最终模型）",
+      "font_size": 26,
+      "anchor": "start",
+      "color": "#173B4E"
+    },
+    {
+      "x": 50,
+      "y": 775,
+      "text": "两个真实E/任务前向；E与PolarFree主干共享，第二轮输出头专用。原RGB、P0可访问；GT不进入部署forward。",
+      "font_size": 17,
+      "anchor": "start",
+      "color": "#586676"
+    },
+    {
+      "x": 50,
+      "y": 810,
+      "text": "第22项：仅红框动作判断器训练；其他全部冻结。灰框是遗留/训练支路；配对扩散噪声控制两轮随机差异。",
+      "font_size": 17,
+      "anchor": "start",
+      "color": "#586676"
+    }
+  ]
+}

@@ -1,0 +1,233 @@
+{
+  "alphas": [
+    "0.0",
+    "0.25",
+    "0.5",
+    "0.75",
+    "1.0"
+  ],
+  "groups": {
+    "no_feedback": {
+      "feedback_enabled": false,
+      "feedback_scale": 0.0,
+      "n_images": 24,
+      "T1_psnr_image_mean": 28.414890458509635,
+      "T1_psnr_scene_macro": 28.414890458509635,
+      "T2_delta_psnr_vs_T1_image_mean": -0.013103469240707414,
+      "T2_delta_psnr_vs_T1_scene_macro": -0.013103469240707405,
+      "per_alpha_delta_psnr_vs_T1_image_mean": {
+        "0.0": 0.0,
+        "0.25": -0.00703013179325677,
+        "0.5": -0.013170226039514787,
+        "0.75": -0.014782737475808569,
+        "1.0": -0.013103469240707414
+      },
+      "per_alpha_delta_psnr_vs_T1_scene_macro": {
+        "0.0": 0.0,
+        "0.25": -0.007030131793256775,
+        "0.5": -0.013170226039514801,
+        "0.75": -0.014782737475808563,
+        "1.0": -0.013103469240707405
+      },
+      "per_alpha_delta_ssim_vs_T1_image_mean": {
+        "0.0": 0.0,
+        "0.25": -0.00018024692932764688,
+        "0.5": -0.0003610054651896159,
+        "0.75": -0.000561480720837911,
+        "1.0": -0.0007927194237709045
+      },
+      "per_alpha_delta_ssim_vs_T1_scene_macro": {
+        "0.0": 0.0,
+        "0.25": -0.00018024692932764688,
+        "0.5": -0.00036100546518961585,
+        "0.75": -0.000561480720837911,
+        "1.0": -0.0007927194237709045
+      },
+      "per_alpha_delta_loss_vs_T1_image_mean": {
+        "0.0": 0.0,
+        "0.25": -0.0006987032247707248,
+        "0.5": -0.0016488276499633987,
+        "0.75": -0.0028393970181544623,
+        "1.0": -0.0033103572592760124
+      },
+      "per_alpha_image_counts_vs_T1": {
+        "0.0": {
+          "improved": 0,
+          "degraded": 0,
+          "unchanged": 24,
+          "total": 24,
+          "improved_fraction": 0.0,
+          "degraded_fraction": 0.0
+        },
+        "0.25": {
+          "improved": 9,
+          "degraded": 15,
+          "unchanged": 0,
+          "total": 24,
+          "improved_fraction": 0.375,
+          "degraded_fraction": 0.625
+        },
+        "0.5": {
+          "improved": 9,
+          "degraded": 15,
+          "unchanged": 0,
+          "total": 24,
+          "improved_fraction": 0.375,
+          "degraded_fraction": 0.625
+        },
+        "0.75": {
+          "improved": 9,
+          "degraded": 15,
+          "unchanged": 0,
+          "total": 24,
+          "improved_fraction": 0.375,
+          "degraded_fraction": 0.625
+        },
+        "1.0": {
+          "improved": 9,
+          "degraded": 15,
+          "unchanged": 0,
+          "total": 24,
+          "improved_fraction": 0.375,
+          "degraded_fraction": 0.625
+        }
+      },
+      "nonzero_alphas_above_T1_image_mean": [],
+      "nonzero_alphas_above_T1_scene_macro": [],
+      "endpoint_integrity": {
+        "0.0": {
+          "reference": "T1",
+          "input_all_exact": true,
+          "input_max_abs_diff_max_over_images": 0.0,
+          "output_max_abs_diff_max_over_images": 0.0,
+          "output_within_tolerance": true,
+          "tolerance": 0.0001
+        },
+        "1.0": {
+          "reference": "T2",
+          "input_all_exact": true,
+          "input_max_abs_diff_max_over_images": 0.0,
+          "output_max_abs_diff_max_over_images": 0.0,
+          "output_within_tolerance": true,
+          "tolerance": 0.0001
+        }
+      },
+      "verdict": "no_nonzero_alpha_above_T1"
+    },
+    "feedback": {
+      "feedback_enabled": true,
+      "feedback_scale": 0.020735127851366997,
+      "n_images": 24,
+      "T1_psnr_image_mean": 28.340488262439028,
+      "T1_psnr_scene_macro": 28.340488262439024,
+      "T2_delta_psnr_vs_T1_image_mean": 0.006093593460972269,
+      "T2_delta_psnr_vs_T1_scene_macro": 0.0060935934609722825,
+      "per_alpha_delta_psnr_vs_T1_image_mean": {
+        "0.0": 0.0,
+        "0.25": 0.003915200594388176,
+        "0.5": 0.005347244109184857,
+        "0.75": 0.004875513221779186,
+        "1.0": 0.006093593460972269
+      },
+      "per_alpha_delta_psnr_vs_T1_scene_macro": {
+        "0.0": 0.0,
+        "0.25": 0.003915200594388178,
+        "0.5": 0.005347244109184857,
+        "0.75": 0.004875513221779176,
+        "1.0": 0.0060935934609722825
+      },
+      "per_alpha_delta_ssim_vs_T1_image_mean": {
+        "0.0": 0.0,
+        "0.25": -0.00010965267817179362,
+        "0.5": -0.00023454676071802774,
+        "0.75": -0.0003810425599416097,
+        "1.0": -0.0005372713009516398
+      },
+      "per_alpha_delta_ssim_vs_T1_scene_macro": {
+        "0.0": 0.0,
+        "0.25": -0.00010965267817179361,
+        "0.5": -0.00023454676071802777,
+        "0.75": -0.00038104255994160974,
+        "1.0": -0.0005372713009516398
+      },
+      "per_alpha_delta_loss_vs_T1_image_mean": {
+        "0.0": 0.0,
+        "0.25": -0.001172548858448863,
+        "0.5": -0.002068031889696916,
+        "0.75": -0.0032839981916671,
+        "1.0": -0.004101115162484348
+      },
+      "per_alpha_image_counts_vs_T1": {
+        "0.0": {
+          "improved": 0,
+          "degraded": 0,
+          "unchanged": 24,
+          "total": 24,
+          "improved_fraction": 0.0,
+          "degraded_fraction": 0.0
+        },
+        "0.25": {
+          "improved": 7,
+          "degraded": 17,
+          "unchanged": 0,
+          "total": 24,
+          "improved_fraction": 0.2916666666666667,
+          "degraded_fraction": 0.7083333333333334
+        },
+        "0.5": {
+          "improved": 9,
+          "degraded": 15,
+          "unchanged": 0,
+          "total": 24,
+          "improved_fraction": 0.375,
+          "degraded_fraction": 0.625
+        },
+        "0.75": {
+          "improved": 9,
+          "degraded": 15,
+          "unchanged": 0,
+          "total": 24,
+          "improved_fraction": 0.375,
+          "degraded_fraction": 0.625
+        },
+        "1.0": {
+          "improved": 9,
+          "degraded": 15,
+          "unchanged": 0,
+          "total": 24,
+          "improved_fraction": 0.375,
+          "degraded_fraction": 0.625
+        }
+      },
+      "nonzero_alphas_above_T1_image_mean": [
+        "0.25",
+        "0.5",
+        "0.75"
+      ],
+      "nonzero_alphas_above_T1_scene_macro": [
+        "0.25",
+        "0.5",
+        "0.75"
+      ],
+      "endpoint_integrity": {
+        "0.0": {
+          "reference": "T1",
+          "input_all_exact": true,
+          "input_max_abs_diff_max_over_images": 0.0,
+          "output_max_abs_diff_max_over_images": 0.0,
+          "output_within_tolerance": true,
+          "tolerance": 0.0001
+        },
+        "1.0": {
+          "reference": "T2",
+          "input_all_exact": true,
+          "input_max_abs_diff_max_over_images": 0.0,
+          "output_max_abs_diff_max_over_images": 0.0,
+          "output_within_tolerance": true,
+          "tolerance": 0.0001
+        }
+      },
+      "verdict": "some_nonzero_alpha_above_T1"
+    }
+  }
+}

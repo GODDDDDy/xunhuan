@@ -1,0 +1,43 @@
+{
+  "checked_unix": 1791790661.422382,
+  "status": {
+    "stage": "training_candidate",
+    "time_unix": 1791790217.0318472,
+    "step": 1000,
+    "target_steps": 2000
+  },
+  "candidate_records": 1419,
+  "last_candidate_step": 1419,
+  "source_diagnostic_frames": 872,
+  "source_diagnostic_means": {
+    "t1": {
+      "psnr": 26.08008901248357,
+      "ssim": 0.9053678083310434
+    },
+    "candidate": {
+      "psnr": 26.055529607281297,
+      "ssim": 0.9031530302188812
+    },
+    "oracle_4": {
+      "psnr": 26.306018608984182,
+      "ssim": 0.9071930644162204
+    },
+    "oracle_16": {
+      "psnr": 26.259797750145204,
+      "ssim": 0.9060354559519969
+    },
+    "oracle_32": {
+      "psnr": 26.23850649436693,
+      "ssim": 0.9057799924267541
+    }
+  },
+  "verified_probes": [
+    "probe_initial.json",
+    "probe_candidate_1000.json"
+  ],
+  "frozen_code_files": 49,
+  "watchdog_live": true,
+  "controller_live": true,
+  "budget_unchanged": true,
+  "new_test_results_read": false
+}

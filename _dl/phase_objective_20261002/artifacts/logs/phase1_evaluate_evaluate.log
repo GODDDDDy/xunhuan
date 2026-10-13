@@ -1,0 +1,81 @@
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG19_Weights.IMAGENET1K_V1`. You can also use `weights=VGG19_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Evaluated 25 images
+Evaluated 50 images
+Evaluated 75 images
+Evaluated 100 images
+Evaluated 125 images
+Evaluated 150 images
+Evaluated 175 images
+Evaluated 200 images
+Evaluated 225 images
+Evaluated 250 images
+Evaluated 275 images
+Evaluated 300 images
+Evaluated 325 images
+Evaluated 350 images
+Evaluated 375 images
+Evaluated 400 images
+Evaluated 425 images
+Evaluated 450 images
+Evaluated 475 images
+Evaluated 500 images
+Evaluated 525 images
+Evaluated 550 images
+Evaluated 575 images
+Evaluated 600 images
+Evaluated 625 images
+Evaluated 650 images
+Evaluated 675 images
+Evaluated 700 images
+Evaluated 725 images
+Evaluated 750 images
+Evaluated 775 images
+Evaluated 800 images
+Evaluated 825 images
+Evaluated 850 images
+{
+  "frames": 872,
+  "round1": {
+    "image_mean_psnr": 25.565830030420905,
+    "scene_macro_psnr": 25.76689003785718,
+    "image_mean_ssim": 0.8966899172428551,
+    "scene_macro_ssim": 0.9015706680185704
+  },
+  "round2": {
+    "image_mean_psnr": 25.50458349813792,
+    "scene_macro_psnr": 25.75095946312971,
+    "image_mean_ssim": 0.8955802107486156,
+    "scene_macro_ssim": 0.9008547971140278
+  },
+  "iteration_gain": {
+    "image_mean_psnr": -0.061246532282986266,
+    "scene_macro_psnr": -0.01593057472747006,
+    "image_mean_ssim": -0.0011097064942394708,
+    "scene_macro_ssim": -0.0007158709045426148
+  },
+  "loss_iteration_delta": {
+    "image_mean": {
+      "l1": 0.000461388679451967,
+      "ssim_term": 0.0011097064942394846,
+      "phase_raw": -0.004077394894503872,
+      "phase_weighted": -0.004077394894503872,
+      "perceptual_weighted": 0.0002917516261014552,
+      "total_training_coefficient": -0.0022145480947104446,
+      "total_common_phase1": -0.0022145480947104446,
+      "total_common_phase01": 0.001455107310342485
+    },
+    "scene_macro": {
+      "l1": 0.0002656902129297353,
+      "ssim_term": 0.0007158709045426703,
+      "phase_raw": -0.005387599576120561,
+      "phase_weighted": -0.005387599576120561,
+      "perceptual_weighted": 0.0001592714213941443,
+      "total_training_coefficient": -0.004246767037254351,
+      "total_common_phase1": -0.004246767037254351,
+      "total_common_phase01": 0.0006020725812545535
+    }
+  }
+}

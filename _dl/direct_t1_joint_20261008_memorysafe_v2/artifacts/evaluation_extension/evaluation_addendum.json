@@ -1,0 +1,31 @@
+{
+  "added_time_unix": 1791458258.9342065,
+  "user_requirement": "Every experiment must evaluate the full test split",
+  "test_required_for_experiment_completion": true,
+  "test_frames": 188,
+  "test_split": "test",
+  "checkpoint": "run/checkpoints/step_10000.pt",
+  "checkpoint_selection": "fixed_additional_step10000, unchanged",
+  "evaluation_sequence": [
+    "training_10000",
+    "full_validation_872",
+    "full_test_188"
+  ],
+  "train_config_and_code_unchanged": true,
+  "training_lock_sha256": "ff473002368ada9e44ac5ea5bb9f462ce505d28ef7aaf2da34f21fe519741c87",
+  "manifest_sha256": "d4f04a73e2d1b99d11a3487591b1143be79bfef2bb1ca61cc989823e190a57bb",
+  "test_completion_sha256": "9e8c0a89932e131040761a40a2b8c787500945b45cabb897538356adc6383ba1",
+  "metrics": [
+    "PSNR",
+    "SSIM"
+  ],
+  "rounds": [
+    "T1",
+    "T2"
+  ],
+  "aggregation": [
+    "image_mean",
+    "scene_macro"
+  ],
+  "test_used_for_training_or_checkpoint_selection": false
+}

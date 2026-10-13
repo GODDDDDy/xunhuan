@@ -1,0 +1,77 @@
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG19_Weights.IMAGENET1K_V1`. You can also use `weights=VGG19_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+{
+  "protocol_id": "00792e27d21f5d7c0b978d95fdbd624aa960e677945440666c239ce13fa1cf04",
+  "strict_pidsr_load": true,
+  "pretrain_epoch": 42,
+  "r2p_shared": true,
+  "tasknet_shared": true,
+  "feedback_enabled": false,
+  "feedback_layers": [
+    "net_g.TaF1",
+    "net_g.TaF2",
+    "net_g.TaF3"
+  ],
+  "feedback_shapes": {
+    "T1": [
+      2,
+      96,
+      128,
+      128
+    ],
+    "T2": [
+      2,
+      96,
+      64,
+      64
+    ],
+    "T3": [
+      2,
+      192,
+      32,
+      32
+    ]
+  },
+  "feedback_adapter_params": 18433,
+  "round1_polar_shape": [
+    2,
+    12,
+    128,
+    128
+  ],
+  "round2_polar_shape": [
+    2,
+    12,
+    128,
+    128
+  ],
+  "round1_task_shape": [
+    2,
+    3,
+    128,
+    128
+  ],
+  "round2_task_shape": [
+    2,
+    3,
+    128,
+    128
+  ],
+  "polar_round_difference": 0.0022790152579545975,
+  "task_round_difference": 0.0001342878967989236,
+  "grad_norm_r2p": 0.03244166821241379,
+  "grad_norm_net_g": 11.380223274230957,
+  "initial_adapter_grad_norm": 0.0,
+  "initial_scale_grad": null,
+  "diffusion_prior_frozen": true,
+  "grad_present_diffusion_prior": false,
+  "forward_finite": true,
+  "backward_finite": true,
+  "lambda_feature_alignment": 0.030651881051471687,
+  "deterministic_forward": true,
+  "adapter_grad_norm_after_gate_update": 0.0,
+  "peak_vram_mb": 5689.44970703125,
+  "passed": true
+}

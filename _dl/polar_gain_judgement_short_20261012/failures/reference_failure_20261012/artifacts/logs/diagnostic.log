@@ -1,0 +1,20 @@
+{"stage": "diagnostic", "time_unix": 1791810702.8841228}
+Traceback (most recent call last):
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012/recovery/run_gain_recovery.py", line 24, in <module>
+    runpy.run_path(str(ROOT/'scripts/run_gain.py'),run_name='__main__')
+  File "<frozen runpy>", line 291, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012/scripts/run_gain.py", line 9, in <module>
+    elif action=='diagnostic':gain22.diagnostic(cfg,device)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012/scripts/gain22.py", line 210, in diagnostic
+    hashes={r['sample_id']:r['t1_tensor_sha256'] for r in json.loads((ROOT/'diagnostics/source_oracle_validation872.json').read_text())['per_image']}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_judgement_short_20261012/scripts/gain22.py", line 210, in <dictcomp>
+    hashes={r['sample_id']:r['t1_tensor_sha256'] for r in json.loads((ROOT/'diagnostics/source_oracle_validation872.json').read_text())['per_image']}
+                           ~^^^^^^^^^^^^^^^^^^^^
+KeyError: 't1_tensor_sha256'

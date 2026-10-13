@@ -1,0 +1,390 @@
+{
+  "canvas": {
+    "width": 1800,
+    "height": 910
+  },
+  "style": {
+    "font_family": "Microsoft YaHei, Arial, sans-serif",
+    "font_size": 18
+  },
+  "nodes": [
+    {
+      "id": "input",
+      "label": "P0：四角度RGB\n边缘反射补齐到4的倍数",
+      "x": 145,
+      "y": 145,
+      "width": 230,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "img",
+      "label": "图像特征提取\nConv3×3：12→48",
+      "x": 430,
+      "y": 145,
+      "width": 230,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "enc1",
+      "label": "编码器1：P-Transformer ×4\n48通道，1头，全尺度",
+      "x": 735,
+      "y": 145,
+      "width": 280,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "enc2",
+      "label": "下采样 + 编码器2 ×6\n96通道，2头，1/2尺度",
+      "x": 1080,
+      "y": 145,
+      "width": 280,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "enc3",
+      "label": "下采样 + 瓶颈 ×6\n192通道，4头，1/4尺度",
+      "x": 1440,
+      "y": 145,
+      "width": 290,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "pol",
+      "label": "偏振差描述 S1/S2\n6→48偏振特征提取",
+      "x": 155,
+      "y": 335,
+      "width": 250,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "pol2",
+      "label": "共享Downsample\n偏振特征48→96→192",
+      "x": 465,
+      "y": 335,
+      "width": 275,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "sgsc1",
+      "label": "SGSC 全尺度跳接\nConcat(x1,p1)→1×1\nResBlock→SE",
+      "x": 815,
+      "y": 335,
+      "width": 320,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "sgsc2",
+      "label": "SGSC 半尺度跳接\nConcat(x2,p2)→1×1\nResBlock→SE",
+      "x": 1190,
+      "y": 335,
+      "width": 320,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "a3",
+      "label": "跨轮TaskAdapter level3\n+ Z3残差适配",
+      "x": 1530,
+      "y": 335,
+      "width": 300,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "a2",
+      "label": "跨轮TaskAdapter level2\n+ Z2残差适配",
+      "x": 1090,
+      "y": 520,
+      "width": 290,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "dec2",
+      "label": "上采样/跳接/1×1\nP-Transformer ×6，96通道",
+      "x": 1430,
+      "y": 520,
+      "width": 300,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "dec1",
+      "label": "上采样/跳接/1×1\nP-Transformer ×4，48通道",
+      "x": 750,
+      "y": 520,
+      "width": 290,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "refine",
+      "label": "普通Transformer精炼 ×2\nConv3×3：48→12",
+      "x": 430,
+      "y": 520,
+      "width": 270,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "out",
+      "label": "残差加P0，clamp[0,1]\n恢复原尺寸\n输出P及P1/P2/P3",
+      "x": 125,
+      "y": 520,
+      "width": 230,
+      "height": 78,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "tb",
+      "label": "P-Transformer基本块\nLN→共享MDTA(x,p)→残差\nLN→GELU(Wx)×Wp→1×1→残差",
+      "x": 350,
+      "y": 735,
+      "width": 570,
+      "height": 110,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "adapt",
+      "label": "TaskAdapter内部\nI投影 + 当前P−P0投影 + C·(Tprev/I−Tprev/Fprev)\nConcat本层/C/可用标志→1×1→DW3×3→1×1→0.1tanh",
+      "x": 1110,
+      "y": 735,
+      "width": 810,
+      "height": 110,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    }
+  ],
+  "edges": [
+    {
+      "from": "input",
+      "to": "img",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "img",
+      "to": "enc1",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "enc1",
+      "to": "enc2",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "enc2",
+      "to": "enc3",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "input",
+      "to": "pol",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "pol",
+      "to": "pol2",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "enc1",
+      "to": "sgsc1",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "enc2",
+      "to": "sgsc2",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "enc3",
+      "to": "a3",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "a3",
+      "to": "dec2",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "sgsc2",
+      "to": "dec2",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "dec2",
+      "to": "a2",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "a2",
+      "to": "dec1",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "sgsc1",
+      "to": "dec1",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "dec1",
+      "to": "refine",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "refine",
+      "to": "out",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    }
+  ],
+  "groups": [],
+  "labels": [
+    {
+      "x": 35,
+      "y": 34,
+      "text": "偏振增强器 E：同尺度PIDSR恢复分支 + SGSC + 跨轮适配",
+      "font_size": 26,
+      "anchor": "start",
+      "color": "#173B4E"
+    },
+    {
+      "x": 40,
+      "y": 850,
+      "text": "Down：Conv3×3 + PixelUnshuffle2；Up：Conv3×3 + PixelShuffle2。MDTA：QKV1×1→DW3×3→通道注意力→投影。",
+      "font_size": 17,
+      "anchor": "start",
+      "color": "#586676"
+    },
+    {
+      "x": 40,
+      "y": 882,
+      "text": "p1/p2/p3送同尺度编码/瓶颈/解码和SGSC。SR已删；de_reduce_chan2、P-FFN.dwconv登记未用。两轮共享E，第二轮才有反馈。",
+      "font_size": 17,
+      "anchor": "start",
+      "color": "#586676"
+    }
+  ]
+}

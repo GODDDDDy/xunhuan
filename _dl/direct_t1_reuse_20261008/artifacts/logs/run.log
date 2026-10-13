@@ -1,0 +1,205 @@
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/lib/python3.11/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG19_Weights.IMAGENET1K_V1`. You can also use `weights=VGG19_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+1/188 elapsed=20.1s first_pass_history_max=0
+10/188 elapsed=76.6s first_pass_history_max=0
+20/188 elapsed=139.3s first_pass_history_max=0
+30/188 elapsed=203.3s first_pass_history_max=0
+40/188 elapsed=267.1s first_pass_history_max=0
+50/188 elapsed=330.8s first_pass_history_max=0
+60/188 elapsed=395.2s first_pass_history_max=0
+70/188 elapsed=458.2s first_pass_history_max=0
+80/188 elapsed=520.2s first_pass_history_max=0
+90/188 elapsed=585.2s first_pass_history_max=0
+100/188 elapsed=648.8s first_pass_history_max=0
+110/188 elapsed=711.0s first_pass_history_max=0
+120/188 elapsed=773.3s first_pass_history_max=0
+130/188 elapsed=835.7s first_pass_history_max=0
+140/188 elapsed=898.3s first_pass_history_max=0
+150/188 elapsed=960.9s first_pass_history_max=0
+160/188 elapsed=1025.0s first_pass_history_max=0
+170/188 elapsed=1089.3s first_pass_history_max=0
+180/188 elapsed=1153.0s first_pass_history_max=0
+{
+  "frames": 188,
+  "scenes": 8,
+  "aggregates": {
+    "K1_T1": {
+      "image_mean_psnr": 23.28481172348264,
+      "scene_macro_psnr": 25.02950705195312,
+      "image_mean_ssim": 0.876771903735526,
+      "scene_macro_ssim": 0.897497144062247
+    },
+    "repeat_RGB_T2": {
+      "image_mean_psnr": 23.261343496861894,
+      "scene_macro_psnr": 25.02879976095376,
+      "image_mean_ssim": 0.8767764219578277,
+      "scene_macro_ssim": 0.8974581808938883
+    },
+    "direct_T1_image_T2": {
+      "image_mean_psnr": 23.261412034032965,
+      "scene_macro_psnr": 25.02624840586992,
+      "image_mean_ssim": 0.8767540645092091,
+      "scene_macro_ssim": 0.8974424017358618
+    }
+  },
+  "comparisons": {
+    "repeat_RGB_T2_minus_K1_T1": {
+      "aggregate_delta": {
+        "image_mean_psnr": -0.023468226620746435,
+        "scene_macro_psnr": -0.0007072909993617316,
+        "image_mean_ssim": 4.518222301630459e-06,
+        "scene_macro_ssim": -3.8963168358718825e-05
+      },
+      "improved_images": {
+        "psnr": 70,
+        "ssim": 100
+      },
+      "per_scene": {
+        "00": {
+          "psnr": 0.0924786501980975,
+          "ssim": 0.00013961394627888998
+        },
+        "01": {
+          "psnr": -0.0028365626069282073,
+          "ssim": 8.663923844047214e-05
+        },
+        "02": {
+          "psnr": 0.06760063058918853,
+          "ssim": 7.326900959014893e-05
+        },
+        "03": {
+          "psnr": 0.0002306057161449715,
+          "ssim": -2.4616718292236328e-05
+        },
+        "04": {
+          "psnr": -0.10720099854181292,
+          "ssim": -0.000622950792312622
+        },
+        "05": {
+          "psnr": -0.015385011876455832,
+          "ssim": -0.0007019809314182826
+        },
+        "06": {
+          "psnr": -0.008307450123811304,
+          "ssim": 0.0005609493989210862
+        },
+        "07": {
+          "psnr": -0.03223819134932171,
+          "ssim": 0.00017737150192260743
+        }
+      }
+    },
+    "direct_T1_image_T2_minus_K1_T1": {
+      "aggregate_delta": {
+        "image_mean_psnr": -0.02339968944967552,
+        "scene_macro_psnr": -0.003258646083200034,
+        "image_mean_ssim": -1.7839226316929135e-05,
+        "scene_macro_ssim": -5.4742326385248674e-05
+      },
+      "improved_images": {
+        "psnr": 72,
+        "ssim": 97
+      },
+      "per_scene": {
+        "00": {
+          "psnr": 0.08904789593023116,
+          "ssim": 0.00013804038365681967
+        },
+        "01": {
+          "psnr": -0.006232204123962319,
+          "ssim": 8.075651915177055e-05
+        },
+        "02": {
+          "psnr": 0.06415888922370305,
+          "ssim": 7.203221321105957e-05
+        },
+        "03": {
+          "psnr": -0.005124443292076286,
+          "ssim": -3.943592309951782e-05
+        },
+        "04": {
+          "psnr": -0.10695976232012462,
+          "ssim": -0.0005983316898345947
+        },
+        "05": {
+          "psnr": -0.01649885459390608,
+          "ssim": -0.0007258015019553048
+        },
+        "06": {
+          "psnr": -0.004375323338777657,
+          "ssim": 0.000489354133605957
+        },
+        "07": {
+          "psnr": -0.04008536615067868,
+          "ssim": 0.0001454472541809082
+        }
+      }
+    },
+    "direct_T1_image_T2_minus_repeat_RGB_T2": {
+      "aggregate_delta": {
+        "image_mean_psnr": 6.853717107091484e-05,
+        "scene_macro_psnr": -0.0025513550838383026,
+        "image_mean_ssim": -2.2357448618559594e-05,
+        "scene_macro_ssim": -1.577915802652985e-05
+      },
+      "improved_images": {
+        "psnr": 85,
+        "ssim": 78
+      },
+      "per_scene": {
+        "00": {
+          "psnr": -0.0034307542678663574,
+          "ssim": -1.5735626220703124e-06
+        },
+        "01": {
+          "psnr": -0.0033956415170341113,
+          "ssim": -5.882719288701597e-06
+        },
+        "02": {
+          "psnr": -0.0034417413654854734,
+          "ssim": -1.2367963790893555e-06
+        },
+        "03": {
+          "psnr": -0.005355049008221258,
+          "ssim": -1.4819204807281494e-05
+        },
+        "04": {
+          "psnr": 0.00024123622168829685,
+          "ssim": 2.4619102478027345e-05
+        },
+        "05": {
+          "psnr": -0.00111384271745025,
+          "ssim": -2.3820570537022183e-05
+        },
+        "06": {
+          "psnr": 0.003932126785033647,
+          "ssim": -7.159526531512921e-05
+        },
+        "07": {
+          "psnr": -0.00784717480135697,
+          "ssim": -3.192424774169922e-05
+        }
+      }
+    }
+  },
+  "endpoint": {
+    "sample_id": "test/official/00/0000",
+    "same_P1_task_output_max_abs": 0.0,
+    "tolerance": 0.0001,
+    "passed": true
+  },
+  "actual_calls": {
+    "r2p": 564,
+    "tasknet": 565
+  },
+  "frozen_tensor_audit_passed": true,
+  "K1_historical_max_abs": {
+    "psnr": 0.0,
+    "ssim": 0.0
+  },
+  "T1_condition_clamp_ratio_image_mean": 0.002951397579965216,
+  "elapsed_seconds": 1204.5179858207703,
+  "peak_vram_mb": 9414.2509765625
+}

@@ -1,0 +1,222 @@
+{
+  "seeds": [
+    2026,
+    2027,
+    2028
+  ],
+  "new_run_order": [
+    [
+      2026,
+      "K1"
+    ],
+    [
+      2027,
+      "K1"
+    ],
+    [
+      2028,
+      "K1"
+    ]
+  ],
+  "steps": 3000,
+  "phase_weight": 0.1,
+  "evaluation_seed": 2026,
+  "task_weight_sum": 1.0,
+  "K1_K2_alignment_lambda": 0.0,
+  "control_alignment_lambda": 0.030651881051471687,
+  "config_differences": {
+    "2026": {
+      "study.scope": {
+        "old": "three_paired_seeds_exploratory_validation",
+        "new": "one_factor_alignment_ablation_three_paired_training_seeds"
+      },
+      "study.fixed_lambda": {
+        "old": 0.030651881051471687,
+        "new": 0.0
+      },
+      "study.aligned_initial_audit": {
+        "old": null,
+        "new": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/runs/K1/seed_2026/diagnostics/initial_pair_audit.json"
+      },
+      "paths.output_root": {
+        "old": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/runs/K1/seed_2026",
+        "new": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/k1_no_alignment_20261003/runs/K1/seed_2026"
+      }
+    },
+    "2027": {
+      "study.scope": {
+        "old": "three_paired_seeds_exploratory_validation",
+        "new": "one_factor_alignment_ablation_three_paired_training_seeds"
+      },
+      "study.fixed_lambda": {
+        "old": 0.030651881051471687,
+        "new": 0.0
+      },
+      "study.aligned_initial_audit": {
+        "old": null,
+        "new": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/runs/K1/seed_2027/diagnostics/initial_pair_audit.json"
+      },
+      "paths.output_root": {
+        "old": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/runs/K1/seed_2027",
+        "new": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/k1_no_alignment_20261003/runs/K1/seed_2027"
+      }
+    },
+    "2028": {
+      "study.scope": {
+        "old": "three_paired_seeds_exploratory_validation",
+        "new": "one_factor_alignment_ablation_three_paired_training_seeds"
+      },
+      "study.fixed_lambda": {
+        "old": 0.030651881051471687,
+        "new": 0.0
+      },
+      "study.aligned_initial_audit": {
+        "old": null,
+        "new": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/runs/K1/seed_2028/diagnostics/initial_pair_audit.json"
+      },
+      "paths.output_root": {
+        "old": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/runs/K1/seed_2028",
+        "new": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/k1_no_alignment_20261003/runs/K1/seed_2028"
+      }
+    }
+  },
+  "references": {
+    "K1_seed2026": {
+      "metrics": {
+        "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/runs/K1/seed_2026/metrics/step_3000_validation.json",
+        "sha256": "78463ca2dce15cb0af53916df8026d8dd02ad0270c5d12e25d2beab39fdb7fa9"
+      },
+      "checkpoint": {
+        "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/runs/K1/seed_2026/checkpoints/step_3000.pt",
+        "sha256": "f87e8b75d1335c7ae979ee563cac14270258c130ac2953a5903b7eb7de647b64"
+      },
+      "training_log": {
+        "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/runs/K1/seed_2026/logs/train.csv",
+        "sha256": "6d86d613a5ede12ef53f3fb2adec0c3b72a53e11be522143efa9320c5ee261ad"
+      },
+      "initial_audit": {
+        "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/runs/K1/seed_2026/diagnostics/initial_pair_audit.json",
+        "sha256": "adb4958a86362dc4baf669ed75a9badd97946bb0944fec90394b337af4f19d19"
+      },
+      "config": {
+        "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/configs/K1_seed2026.yaml",
+        "sha256": "63905c60401711b380aef0a7d9f3b7fe0172ecc3f9bb6d00f28d47f11b011e74"
+      }
+    },
+    "G6_seed2026": {
+      "metrics": {
+        "path": "/media/li/data3/25thstudent/DY/929work/k1_ablation_20260930/phase_objective_g6_20261002/runs/G6_phase01/seed_2026/metrics/step_3000_validation.json",
+        "sha256": "8c8c58a45236d6e4b5de5d0e5459a5e0b88df6c5b642a3e14038fd5df2ea2cd5"
+      },
+      "checkpoint": {
+        "path": "/media/li/data3/25thstudent/DY/929work/k1_ablation_20260930/phase_objective_g6_20261002/runs/G6_phase01/seed_2026/checkpoints/step_3000.pt",
+        "sha256": "cf13b14dba520ff0f1bdb801a09427bf819974671c38c553c6c3cd536ec6d752"
+      },
+      "training_log": {
+        "path": "/media/li/data3/25thstudent/DY/929work/k1_ablation_20260930/phase_objective_g6_20261002/runs/G6_phase01/seed_2026/logs/train.csv",
+        "sha256": "5226832933aac7c03a1cafb27aefa02f6935988f0d9be80b2d9248461f9a22c2"
+      }
+    },
+    "K1_seed2027": {
+      "metrics": {
+        "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/runs/K1/seed_2027/metrics/step_3000_validation.json",
+        "sha256": "4ece2d48bc1ae990fb14836b98e33132abf58d8de50d7160d7e4b0e0e0369d48"
+      },
+      "checkpoint": {
+        "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/runs/K1/seed_2027/checkpoints/step_3000.pt",
+        "sha256": "cdcb9b939db0753c8271b512a4d50d39b3d3084ac4bceaab487658f9e068514c"
+      },
+      "training_log": {
+        "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/runs/K1/seed_2027/logs/train.csv",
+        "sha256": "e36290b6d97116baa6725d6eac8a4990d482c47a3c3e52b67ec1a5014cb9ffb6"
+      },
+      "initial_audit": {
+        "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/runs/K1/seed_2027/diagnostics/initial_pair_audit.json",
+        "sha256": "e644c182eb543dedac79a5d349492bca35b8d32474064956aa4bbb6cdff50114"
+      },
+      "config": {
+        "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/configs/K1_seed2027.yaml",
+        "sha256": "4a04e5f7b9c77eb757f58bf221a1a935d3d4d2def6334d6df935183eaae263b1"
+      }
+    },
+    "G6_seed2027": {
+      "metrics": {
+        "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/runs/G6/seed_2027/metrics/step_3000_validation.json",
+        "sha256": "5651ae208cb8e1ad7ed1f55782128d8850fcd1b28023f88e396bdcddde8ff907"
+      },
+      "checkpoint": {
+        "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/runs/G6/seed_2027/checkpoints/step_3000.pt",
+        "sha256": "6d4946a5f9963ddb1d142b5f4a97f18d0eedf724769aab4b414997a15a33322f"
+      },
+      "training_log": {
+        "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/runs/G6/seed_2027/logs/train.csv",
+        "sha256": "eb66ff69157a4fab9bdf79af05caf7a40f60136b711f15cedeceb13a3b1e9047"
+      }
+    },
+    "K1_seed2028": {
+      "metrics": {
+        "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/runs/K1/seed_2028/metrics/step_3000_validation.json",
+        "sha256": "69aaecf5b1d67591b27c6febf1c17653449c7b82a3d8445fc43b88a560a3731f"
+      },
+      "checkpoint": {
+        "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/runs/K1/seed_2028/checkpoints/step_3000.pt",
+        "sha256": "59d0466bd144e9a25451b07e2b092967f7aa3f60c77a6bb4a43cbd3d3ecdb6cd"
+      },
+      "training_log": {
+        "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/runs/K1/seed_2028/logs/train.csv",
+        "sha256": "b0f17d4875eadd7aa459d0c7a487237ff1dbce3e4b517270f4f0d7fd53b56f1b"
+      },
+      "initial_audit": {
+        "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/runs/K1/seed_2028/diagnostics/initial_pair_audit.json",
+        "sha256": "225792bc794052bff2cee3ee619b7c01cd061435973b69776a2d2efadda44263"
+      },
+      "config": {
+        "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/configs/K1_seed2028.yaml",
+        "sha256": "fcbbd9da74028e116eff64b5518da72976da5b9c817b641eee166e4c9f94ca18"
+      }
+    },
+    "G6_seed2028": {
+      "metrics": {
+        "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/runs/G6/seed_2028/metrics/step_3000_validation.json",
+        "sha256": "46c70261728fb85ef276911e179a2ed23f4bb9e299b521464aba72db9e4751ca"
+      },
+      "checkpoint": {
+        "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/runs/G6/seed_2028/checkpoints/step_3000.pt",
+        "sha256": "9ee38efc47a85c4bb6c09a7b72314821586bf9ebf969c3b2d5b5d40b51ed212b"
+      },
+      "training_log": {
+        "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/runs/G6/seed_2028/logs/train.csv",
+        "sha256": "2e1755890a97a3c0980734c02cd593aed05b8780a79aadd8995a3b318f208798"
+      }
+    }
+  },
+  "locked_file_sha256": {
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/deps/r2p_film.py": "6c9f4bed76046e06a4c44361ace0dd4b4d1e3d08015336f38230c2ddb62ed7e5",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/k1_no_alignment_20261003/configs/K1_seed2026.yaml": "7ce987c04377b0223e52b13792c021727807c17f8b9f07490fb0660a048b1b3e",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/k1_no_alignment_20261003/configs/K1_seed2027.yaml": "1f7a8bd6ba6cd1a9eb14bbd52a8c9eb6f7437cd91b277b2484e1163d063d263c",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/k1_no_alignment_20261003/configs/K1_seed2028.yaml": "9ea499edcbb23ee29b5e594044c4e39fb35cd8ee2f20921fe3d83b6351cf498b",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/k1_no_alignment_20261003/scripts/evaluate_matched.py": "7b5222ee49da6ffca1c16899a8c1e3f69dfd945b7192eaae417356e9bd089998",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/k1_no_alignment_20261003/scripts/prepare_protocol.py": "c37b1c4742adf07c09718aa2d08d251eecd4d3e1202f00239daaaf34af97f050",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/k1_no_alignment_20261003/scripts/reference/run_experiment_snapshot.py": "3aff6337b000c30418c7a19def03d248e2928ea96ff60882092cb77d413841c7",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/k1_no_alignment_20261003/scripts/run_matched.py": "19b14a1bbc1f02cbd17d824b96b5461f79ba33dc26d8424c30276e7378da297b",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/k1_no_alignment_20261003/scripts/run_no_alignment.py": "8170b10d59765341cf20546e79584c998cc75b74a890f625ad4474b1f044b66e",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/k1_no_alignment_20261003/scripts/run_phase_objective.py": "03158c9abde8dc896171f28fce76d5fd5c73638f9317786aac7e813849fcd512",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/k1_no_alignment_20261003/scripts/run_queue.py": "e94f182586b05ef1fa80f252ced4e383f2dd015678e18d715882599fe67676fa",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/k1_no_alignment_20261003/scripts/status_compact.py": "2bf1a6a30cff5b490a87c0725c3404058dc981998f8e76cb38c626acad10bb86",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/scripts/schedules/verified_server_schedule_2027.json": "0082f169c2c68f0b44acb8007a3503c50e16bf48a377f14720ab513e63db4bea",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/scripts/schedules/verified_server_schedule_2028.json": "bc8d82d579aa8ce6c410c94909634c61aab7a83628667ab1810ad2406eb95e98",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/phase_objective_20261002/runs/phase01/seed_2026/config/tasknet_initial.pt": "cedb5c3f39fbb658d5e351192049b2135d7e209e047fc13596373c9ce1348088",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/protocol/base_server.yaml": "9a55ac6bf92a7d41c2ce4a1d45a4f60f36b1bd688408a9e4233c7ac162fe215c",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/protocol/manifest.csv": "d4f04a73e2d1b99d11a3487591b1143be79bfef2bb1ca61cc989823e190a57bb",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/protocol/training_schedule.json": "f30c574a4f90e6218bafff5eb47bd2b475a7c827de969a3066802bbc35b43588",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/protocol/validation_proxy.json": "a32602bb240f18a9d91bbb3c588694f6e5314ffd1cef2cd3eb8e44401ab103aa",
+    "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/weights/r2p_pretrained_pidsr_e42.pt": "e979881e7d03e3b75d6b9a4e875a29eac2e1a15430582ec319289e6ae32f5541"
+  },
+  "limits": [
+    "Three training seeds; same previously explored validation; no independent confirmation.",
+    "Lambda=0 disables alignment supervision, retaining model, optimizer groups and diagnostic alignment graph.",
+    "Projection zero gradients and unchanged tensors are explicitly audited; Adam state remains present.",
+    "No claim that removing alignment isolates R2P architecture from all other factors.",
+    "No additional test, feedback, second-round structure or freeze-G6 adaptation launched."
+  ]
+}

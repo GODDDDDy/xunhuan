@@ -1,0 +1,156 @@
+{
+  "step": 5000,
+  "frames": 28,
+  "per_image": [
+    {
+      "sample_id": "validation/easy/01/0000",
+      "psnr": 33.204998133458474,
+      "ssim": 0.9724619388580322
+    },
+    {
+      "sample_id": "validation/easy/01/0010",
+      "psnr": 31.016500006852695,
+      "ssim": 0.9642728567123413
+    },
+    {
+      "sample_id": "validation/hard/01/0000",
+      "psnr": 30.77021928749013,
+      "ssim": 0.9684509038925171
+    },
+    {
+      "sample_id": "validation/hard/01/0021",
+      "psnr": 25.01538919662002,
+      "ssim": 0.9288937449455261
+    },
+    {
+      "sample_id": "validation/easy/07/0000",
+      "psnr": 21.283231693442985,
+      "ssim": 0.9416707754135132
+    },
+    {
+      "sample_id": "validation/easy/07/0012",
+      "psnr": 21.34259141647911,
+      "ssim": 0.9441444873809814
+    },
+    {
+      "sample_id": "validation/hard/07/0000",
+      "psnr": 21.57752322709191,
+      "ssim": 0.944601833820343
+    },
+    {
+      "sample_id": "validation/hard/07/0041",
+      "psnr": 23.558520594044463,
+      "ssim": 0.9376260638237
+    },
+    {
+      "sample_id": "validation/easy/22/0000",
+      "psnr": 31.857652654001335,
+      "ssim": 0.9732254147529602
+    },
+    {
+      "sample_id": "validation/easy/22/0092",
+      "psnr": 27.353432976026923,
+      "ssim": 0.943111777305603
+    },
+    {
+      "sample_id": "validation/hard/22/0000",
+      "psnr": 29.501834854091634,
+      "ssim": 0.9528725147247314
+    },
+    {
+      "sample_id": "validation/hard/22/0025",
+      "psnr": 27.189699434413228,
+      "ssim": 0.9515842199325562
+    },
+    {
+      "sample_id": "validation/easy/30/0000",
+      "psnr": 28.485264874085505,
+      "ssim": 0.9476406574249268
+    },
+    {
+      "sample_id": "validation/easy/30/0047",
+      "psnr": 25.324433694547494,
+      "ssim": 0.9039096832275391
+    },
+    {
+      "sample_id": "validation/hard/30/0000",
+      "psnr": 25.986697085934335,
+      "ssim": 0.9156502485275269
+    },
+    {
+      "sample_id": "validation/hard/30/0111",
+      "psnr": 27.08788852092152,
+      "ssim": 0.9305469989776611
+    },
+    {
+      "sample_id": "validation/easy/36/0000",
+      "psnr": 32.22059693551795,
+      "ssim": 0.9603906869888306
+    },
+    {
+      "sample_id": "validation/easy/36/0054",
+      "psnr": 30.984890216168917,
+      "ssim": 0.9369161128997803
+    },
+    {
+      "sample_id": "validation/hard/36/0000",
+      "psnr": 33.7998204918732,
+      "ssim": 0.9679696559906006
+    },
+    {
+      "sample_id": "validation/hard/36/0018",
+      "psnr": 30.45652545571798,
+      "ssim": 0.9349232316017151
+    },
+    {
+      "sample_id": "validation/easy/41/0000",
+      "psnr": 35.09021818967772,
+      "ssim": 0.9879516959190369
+    },
+    {
+      "sample_id": "validation/easy/41/0067",
+      "psnr": 23.26176908110662,
+      "ssim": 0.6882663369178772
+    },
+    {
+      "sample_id": "validation/hard/41/0000",
+      "psnr": 24.53289028817281,
+      "ssim": 0.7718214392662048
+    },
+    {
+      "sample_id": "validation/hard/41/0078",
+      "psnr": 25.47961432701017,
+      "ssim": 0.7907052040100098
+    },
+    {
+      "sample_id": "validation/easy/55/0000",
+      "psnr": 21.399515064130753,
+      "ssim": 0.9197532534599304
+    },
+    {
+      "sample_id": "validation/easy/55/0219",
+      "psnr": 23.171898409764644,
+      "ssim": 0.9169086813926697
+    },
+    {
+      "sample_id": "validation/hard/56/0000",
+      "psnr": 23.975154534027148,
+      "ssim": 0.9353312849998474
+    },
+    {
+      "sample_id": "validation/hard/56/0063",
+      "psnr": 14.706673233194373,
+      "ssim": 0.6201433539390564
+    }
+  ],
+  "psnr": 26.772694424138,
+  "ssim": 0.9125623234680721,
+  "input": "raw P0 and original RGB, enhancer bypassed",
+  "original_size": true,
+  "paired_noise": true,
+  "test_used": false,
+  "used_for_weight_selection": false,
+  "psnr_change_from_official": 0.7990541804606437,
+  "ssim_change_from_official": 0.005167511957032356,
+  "net_g_relative_l2_drift": 0.0033213774036113925
+}

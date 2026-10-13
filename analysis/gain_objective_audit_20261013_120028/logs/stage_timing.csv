@@ -1,0 +1,5 @@
+stage,upstream_forward_seconds,head_train_seconds,data_load_seconds,metrics_seconds,calibration_seconds,cache_read_write_seconds,checkpoint_archive_seconds,wall_clock_seconds,note
+A0,,,,,,,,1.9,cpu-only source/cache/numeric audit (torch import + npz load + sha)
+A1,0,1.52,,,0,,,9.1,mlp 50-32-32-3 1000 steps x2 replicas on cpu; no upstream forward
+A2,,,,,,,,,not started
+A3,,,,,,,,,not started

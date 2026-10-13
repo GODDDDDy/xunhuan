@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/scripts/run_matched.py", line 153, in <module>
+    configure(config).main()
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/scripts/reference/run_experiment_snapshot.py", line 934, in main
+    result = run_training(config, device, args.steps, args.resume)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/normalized_threeway_20261002/scripts/reference/run_experiment_snapshot.py", line 679, in run_training
+    raise ValueError("Calibration belongs to a different protocol")
+ValueError: Calibration belongs to a different protocol

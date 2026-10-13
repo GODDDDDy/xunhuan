@@ -1,0 +1,28 @@
+{
+  "stage": "completed",
+  "time_unix": 1791464070.9002895,
+  "additional_step": 10000,
+  "validation_frames": 872,
+  "test_frames": 188,
+  "test_required": true,
+  "test_completed": true,
+  "test_round1": {
+    "image_mean_psnr": 23.37858335977175,
+    "scene_macro_psnr": 25.16254138251322,
+    "image_mean_ssim": 0.881294384281686,
+    "scene_macro_ssim": 0.8979242635121518
+  },
+  "test_round2": {
+    "image_mean_psnr": 23.36154629659922,
+    "scene_macro_psnr": 25.151975234432403,
+    "image_mean_ssim": 0.8811258416860661,
+    "scene_macro_ssim": 0.8979044911090351
+  },
+  "test_iteration_gain": {
+    "image_mean_psnr": -0.01703706317253051,
+    "scene_macro_psnr": -0.010566148080815907,
+    "image_mean_ssim": -0.000168542595619936,
+    "scene_macro_ssim": -1.977240311668016e-05
+  },
+  "checkpoint_sha256": "eb17a5537bcd26583b73670a34a258f948056935f851b42c7a44eb62e1dd15ea"
+}

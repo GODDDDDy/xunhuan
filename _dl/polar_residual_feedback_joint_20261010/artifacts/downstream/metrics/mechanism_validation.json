@@ -1,0 +1,877 @@
+{
+  "frames": 28,
+  "checkpoint_step": 12000,
+  "per_image": [
+    {
+      "sample_id": "validation/easy/01/0000",
+      "conditions": {
+        "normal": {
+          "psnr": 33.09095589931141,
+          "ssim": 0.9712598919868469,
+          "increment_mae": 0.003045086981728673
+        },
+        "no_feedback": {
+          "psnr": 33.07176335588888,
+          "ssim": 0.9712090492248535,
+          "increment_mae": 0.0034954126458615065
+        },
+        "no_polar_correction": {
+          "psnr": 33.0322332358258,
+          "ssim": 0.971836507320404,
+          "increment_mae": 0.0032008180860430002
+        },
+        "confidence_zero": {
+          "psnr": 33.031796761078496,
+          "ssim": 0.9709076285362244,
+          "increment_mae": 0.0038918014615774155
+        },
+        "confidence_one": {
+          "psnr": 33.1715476795312,
+          "ssim": 0.9712226390838623,
+          "increment_mae": 0.002024993533268571
+        }
+      }
+    },
+    {
+      "sample_id": "validation/easy/01/0010",
+      "conditions": {
+        "normal": {
+          "psnr": 30.97726268093436,
+          "ssim": 0.9637359380722046,
+          "increment_mae": 0.0027588207740336657
+        },
+        "no_feedback": {
+          "psnr": 31.26052548698917,
+          "ssim": 0.9642223119735718,
+          "increment_mae": 0.0036822452675551176
+        },
+        "no_polar_correction": {
+          "psnr": 31.002867131080176,
+          "ssim": 0.964142382144928,
+          "increment_mae": 0.0031113431323319674
+        },
+        "confidence_zero": {
+          "psnr": 31.252237405090856,
+          "ssim": 0.9640288352966309,
+          "increment_mae": 0.0042180949822068214
+        },
+        "confidence_one": {
+          "psnr": 31.033629245266084,
+          "ssim": 0.9634997844696045,
+          "increment_mae": 0.00198342720977962
+        }
+      }
+    },
+    {
+      "sample_id": "validation/hard/01/0000",
+      "conditions": {
+        "normal": {
+          "psnr": 30.569434894807866,
+          "ssim": 0.9677772521972656,
+          "increment_mae": 0.0035049624275416136
+        },
+        "no_feedback": {
+          "psnr": 30.68457930969789,
+          "ssim": 0.967625617980957,
+          "increment_mae": 0.003954652696847916
+        },
+        "no_polar_correction": {
+          "psnr": 30.613051740829405,
+          "ssim": 0.968018114566803,
+          "increment_mae": 0.003562323283404112
+        },
+        "confidence_zero": {
+          "psnr": 30.63635295439233,
+          "ssim": 0.9673482179641724,
+          "increment_mae": 0.004229338839650154
+        },
+        "confidence_one": {
+          "psnr": 30.731629901924332,
+          "ssim": 0.9679864645004272,
+          "increment_mae": 0.0020715692080557346
+        }
+      }
+    },
+    {
+      "sample_id": "validation/hard/01/0021",
+      "conditions": {
+        "normal": {
+          "psnr": 25.058495532114264,
+          "ssim": 0.929003119468689,
+          "increment_mae": 0.003629932878538966
+        },
+        "no_feedback": {
+          "psnr": 25.062858113454144,
+          "ssim": 0.9291627407073975,
+          "increment_mae": 0.004071876406669617
+        },
+        "no_polar_correction": {
+          "psnr": 24.862944705528793,
+          "ssim": 0.9285908341407776,
+          "increment_mae": 0.004469098523259163
+        },
+        "confidence_zero": {
+          "psnr": 25.08155516143237,
+          "ssim": 0.9289883375167847,
+          "increment_mae": 0.004173698835074902
+        },
+        "confidence_one": {
+          "psnr": 25.05775795169063,
+          "ssim": 0.9290187954902649,
+          "increment_mae": 0.002056124620139599
+        }
+      }
+    },
+    {
+      "sample_id": "validation/easy/07/0000",
+      "conditions": {
+        "normal": {
+          "psnr": 24.658990132299813,
+          "ssim": 0.9498112797737122,
+          "increment_mae": 0.002276455517858267
+        },
+        "no_feedback": {
+          "psnr": 24.650138751345054,
+          "ssim": 0.947279691696167,
+          "increment_mae": 0.0038282517343759537
+        },
+        "no_polar_correction": {
+          "psnr": 24.880593238023568,
+          "ssim": 0.9488834142684937,
+          "increment_mae": 0.003403003327548504
+        },
+        "confidence_zero": {
+          "psnr": 24.597691624710613,
+          "ssim": 0.9465318322181702,
+          "increment_mae": 0.004012949299067259
+        },
+        "confidence_one": {
+          "psnr": 24.72816016813016,
+          "ssim": 0.9502513408660889,
+          "increment_mae": 0.0014745229855179787
+        }
+      }
+    },
+    {
+      "sample_id": "validation/easy/07/0012",
+      "conditions": {
+        "normal": {
+          "psnr": 24.45336162786377,
+          "ssim": 0.9511814713478088,
+          "increment_mae": 0.0022346184123307467
+        },
+        "no_feedback": {
+          "psnr": 24.447972821374332,
+          "ssim": 0.9485931396484375,
+          "increment_mae": 0.003907428123056889
+        },
+        "no_polar_correction": {
+          "psnr": 24.691624245175262,
+          "ssim": 0.9502311944961548,
+          "increment_mae": 0.0032593230716884136
+        },
+        "confidence_zero": {
+          "psnr": 24.38996520855133,
+          "ssim": 0.9477671980857849,
+          "increment_mae": 0.004153933376073837
+        },
+        "confidence_one": {
+          "psnr": 24.5320070951091,
+          "ssim": 0.9516423344612122,
+          "increment_mae": 0.001468320144340396
+        }
+      }
+    },
+    {
+      "sample_id": "validation/hard/07/0000",
+      "conditions": {
+        "normal": {
+          "psnr": 24.553864839232805,
+          "ssim": 0.9514944553375244,
+          "increment_mae": 0.002222885377705097
+        },
+        "no_feedback": {
+          "psnr": 24.480639060255356,
+          "ssim": 0.9484151005744934,
+          "increment_mae": 0.0038759384769946337
+        },
+        "no_polar_correction": {
+          "psnr": 24.762896452474426,
+          "ssim": 0.9503526091575623,
+          "increment_mae": 0.0032202457077801228
+        },
+        "confidence_zero": {
+          "psnr": 24.422868857027904,
+          "ssim": 0.9477466940879822,
+          "increment_mae": 0.004110475070774555
+        },
+        "confidence_one": {
+          "psnr": 24.63837196376275,
+          "ssim": 0.9518901705741882,
+          "increment_mae": 0.001451305579394102
+        }
+      }
+    },
+    {
+      "sample_id": "validation/hard/07/0041",
+      "conditions": {
+        "normal": {
+          "psnr": 28.339892400302148,
+          "ssim": 0.9448030591011047,
+          "increment_mae": 0.0018873445224016905
+        },
+        "no_feedback": {
+          "psnr": 28.240674188268017,
+          "ssim": 0.9416546821594238,
+          "increment_mae": 0.0033844150602817535
+        },
+        "no_polar_correction": {
+          "psnr": 28.50187025516656,
+          "ssim": 0.9443686008453369,
+          "increment_mae": 0.0024325447157025337
+        },
+        "confidence_zero": {
+          "psnr": 28.14695853034982,
+          "ssim": 0.9402205348014832,
+          "increment_mae": 0.00397878885269165
+        },
+        "confidence_one": {
+          "psnr": 28.416287589962263,
+          "ssim": 0.9450247287750244,
+          "increment_mae": 0.0014337419997900724
+        }
+      }
+    },
+    {
+      "sample_id": "validation/easy/22/0000",
+      "conditions": {
+        "normal": {
+          "psnr": 31.88942053351935,
+          "ssim": 0.9733414649963379,
+          "increment_mae": 0.0022111129947006702
+        },
+        "no_feedback": {
+          "psnr": 31.336317008735506,
+          "ssim": 0.9717609286308289,
+          "increment_mae": 0.004349334631115198
+        },
+        "no_polar_correction": {
+          "psnr": 31.836655169505406,
+          "ssim": 0.973398745059967,
+          "increment_mae": 0.002645553555339575
+        },
+        "confidence_zero": {
+          "psnr": 31.17296463006504,
+          "ssim": 0.9707651138305664,
+          "increment_mae": 0.00541009521111846
+        },
+        "confidence_one": {
+          "psnr": 31.81380916116977,
+          "ssim": 0.9731711149215698,
+          "increment_mae": 0.0016424392815679312
+        }
+      }
+    },
+    {
+      "sample_id": "validation/easy/22/0092",
+      "conditions": {
+        "normal": {
+          "psnr": 27.181520302477843,
+          "ssim": 0.9441059827804565,
+          "increment_mae": 0.00232302094809711
+        },
+        "no_feedback": {
+          "psnr": 27.10736181208319,
+          "ssim": 0.9451244473457336,
+          "increment_mae": 0.004031716380268335
+        },
+        "no_polar_correction": {
+          "psnr": 27.223854777985885,
+          "ssim": 0.945075511932373,
+          "increment_mae": 0.0031319812405854464
+        },
+        "confidence_zero": {
+          "psnr": 27.00765839822514,
+          "ssim": 0.9447467923164368,
+          "increment_mae": 0.004659238737076521
+        },
+        "confidence_one": {
+          "psnr": 27.065538188067695,
+          "ssim": 0.9425219297409058,
+          "increment_mae": 0.0016569506842643023
+        }
+      }
+    },
+    {
+      "sample_id": "validation/hard/22/0000",
+      "conditions": {
+        "normal": {
+          "psnr": 29.572590856302206,
+          "ssim": 0.9541898369789124,
+          "increment_mae": 0.0023234214168041945
+        },
+        "no_feedback": {
+          "psnr": 29.31052516587345,
+          "ssim": 0.95354825258255,
+          "increment_mae": 0.004372679628431797
+        },
+        "no_polar_correction": {
+          "psnr": 29.546016179839008,
+          "ssim": 0.9543799757957458,
+          "increment_mae": 0.0027453661896288395
+        },
+        "confidence_zero": {
+          "psnr": 29.189065701309993,
+          "ssim": 0.9528477191925049,
+          "increment_mae": 0.005302400793880224
+        },
+        "confidence_one": {
+          "psnr": 29.5222808761781,
+          "ssim": 0.9533387422561646,
+          "increment_mae": 0.00168051035143435
+        }
+      }
+    },
+    {
+      "sample_id": "validation/hard/22/0025",
+      "conditions": {
+        "normal": {
+          "psnr": 27.057293573888867,
+          "ssim": 0.9523374438285828,
+          "increment_mae": 0.0023095274809747934
+        },
+        "no_feedback": {
+          "psnr": 26.948125981887898,
+          "ssim": 0.9529683589935303,
+          "increment_mae": 0.004338567610830069
+        },
+        "no_polar_correction": {
+          "psnr": 26.964475764723375,
+          "ssim": 0.9529329538345337,
+          "increment_mae": 0.003297333139926195
+        },
+        "confidence_zero": {
+          "psnr": 26.94384351825714,
+          "ssim": 0.952605664730072,
+          "increment_mae": 0.004883435554802418
+        },
+        "confidence_one": {
+          "psnr": 26.908852545934092,
+          "ssim": 0.9510063529014587,
+          "increment_mae": 0.001601880881935358
+        }
+      }
+    },
+    {
+      "sample_id": "validation/easy/30/0000",
+      "conditions": {
+        "normal": {
+          "psnr": 27.9981431177719,
+          "ssim": 0.9444284439086914,
+          "increment_mae": 0.00273288250900805
+        },
+        "no_feedback": {
+          "psnr": 27.475176709391715,
+          "ssim": 0.941914975643158,
+          "increment_mae": 0.006038527470082045
+        },
+        "no_polar_correction": {
+          "psnr": 27.474001156249418,
+          "ssim": 0.9435805082321167,
+          "increment_mae": 0.005344182252883911
+        },
+        "confidence_zero": {
+          "psnr": 27.565341057477223,
+          "ssim": 0.941658079624176,
+          "increment_mae": 0.005853025708347559
+        },
+        "confidence_one": {
+          "psnr": 28.221708483665186,
+          "ssim": 0.9463177919387817,
+          "increment_mae": 0.0016079287743195891
+        }
+      }
+    },
+    {
+      "sample_id": "validation/easy/30/0047",
+      "conditions": {
+        "normal": {
+          "psnr": 25.351112237365243,
+          "ssim": 0.9065974354743958,
+          "increment_mae": 0.0034899679012596607
+        },
+        "no_feedback": {
+          "psnr": 25.29000437727895,
+          "ssim": 0.9060571193695068,
+          "increment_mae": 0.006805364042520523
+        },
+        "no_polar_correction": {
+          "psnr": 25.108132133938202,
+          "ssim": 0.9039650559425354,
+          "increment_mae": 0.00661119120195508
+        },
+        "confidence_zero": {
+          "psnr": 25.29585414808117,
+          "ssim": 0.9060596823692322,
+          "increment_mae": 0.006525257136672735
+        },
+        "confidence_one": {
+          "psnr": 25.291362384334043,
+          "ssim": 0.9054464101791382,
+          "increment_mae": 0.0016500528436154127
+        }
+      }
+    },
+    {
+      "sample_id": "validation/hard/30/0000",
+      "conditions": {
+        "normal": {
+          "psnr": 25.66930326489,
+          "ssim": 0.9129921793937683,
+          "increment_mae": 0.004612314980477095
+        },
+        "no_feedback": {
+          "psnr": 25.354207855113717,
+          "ssim": 0.9106106162071228,
+          "increment_mae": 0.007484959438443184
+        },
+        "no_polar_correction": {
+          "psnr": 24.89558742021178,
+          "ssim": 0.9063894748687744,
+          "increment_mae": 0.009045075625181198
+        },
+        "confidence_zero": {
+          "psnr": 25.52528201258676,
+          "ssim": 0.9115608334541321,
+          "increment_mae": 0.006534729152917862
+        },
+        "confidence_one": {
+          "psnr": 25.860895240027972,
+          "ssim": 0.9146643877029419,
+          "increment_mae": 0.001892681117169559
+        }
+      }
+    },
+    {
+      "sample_id": "validation/hard/30/0111",
+      "conditions": {
+        "normal": {
+          "psnr": 26.625037276660773,
+          "ssim": 0.9296218156814575,
+          "increment_mae": 0.003065647790208459
+        },
+        "no_feedback": {
+          "psnr": 26.219612273496317,
+          "ssim": 0.9282212853431702,
+          "increment_mae": 0.00621807062998414
+        },
+        "no_polar_correction": {
+          "psnr": 26.12683207964331,
+          "ssim": 0.9277275204658508,
+          "increment_mae": 0.00594967370852828
+        },
+        "confidence_zero": {
+          "psnr": 26.33023794100708,
+          "ssim": 0.9284617304801941,
+          "increment_mae": 0.005880555137991905
+        },
+        "confidence_one": {
+          "psnr": 26.76120858072038,
+          "ssim": 0.9301425218582153,
+          "increment_mae": 0.001532166264951229
+        }
+      }
+    },
+    {
+      "sample_id": "validation/easy/36/0000",
+      "conditions": {
+        "normal": {
+          "psnr": 31.088159498473388,
+          "ssim": 0.9539363980293274,
+          "increment_mae": 0.0015502654714509845
+        },
+        "no_feedback": {
+          "psnr": 31.182000931559408,
+          "ssim": 0.9552198648452759,
+          "increment_mae": 0.002375128911808133
+        },
+        "no_polar_correction": {
+          "psnr": 30.950851296913413,
+          "ssim": 0.9548830389976501,
+          "increment_mae": 0.0025762778241187334
+        },
+        "confidence_zero": {
+          "psnr": 31.384615520146397,
+          "ssim": 0.9570170044898987,
+          "increment_mae": 0.002337389625608921
+        },
+        "confidence_one": {
+          "psnr": 31.183620082374787,
+          "ssim": 0.9542853236198425,
+          "increment_mae": 0.0014026639983057976
+        }
+      }
+    },
+    {
+      "sample_id": "validation/easy/36/0054",
+      "conditions": {
+        "normal": {
+          "psnr": 31.130524290246896,
+          "ssim": 0.9374707341194153,
+          "increment_mae": 0.0017807838739827275
+        },
+        "no_feedback": {
+          "psnr": 31.12981137027548,
+          "ssim": 0.9367470741271973,
+          "increment_mae": 0.0027630284894257784
+        },
+        "no_polar_correction": {
+          "psnr": 30.83931388790626,
+          "ssim": 0.9356981515884399,
+          "increment_mae": 0.0026346025988459587
+        },
+        "confidence_zero": {
+          "psnr": 31.14809795391629,
+          "ssim": 0.9363510012626648,
+          "increment_mae": 0.0028939121402800083
+        },
+        "confidence_one": {
+          "psnr": 31.13241045244731,
+          "ssim": 0.9373369216918945,
+          "increment_mae": 0.0014909477904438972
+        }
+      }
+    },
+    {
+      "sample_id": "validation/hard/36/0000",
+      "conditions": {
+        "normal": {
+          "psnr": 33.49588517740782,
+          "ssim": 0.9649325609207153,
+          "increment_mae": 0.0015469756908714771
+        },
+        "no_feedback": {
+          "psnr": 33.593207028903315,
+          "ssim": 0.9660106301307678,
+          "increment_mae": 0.0024330506566911936
+        },
+        "no_polar_correction": {
+          "psnr": 33.317218612027524,
+          "ssim": 0.9656273722648621,
+          "increment_mae": 0.0024624154902994633
+        },
+        "confidence_zero": {
+          "psnr": 33.83406322847447,
+          "ssim": 0.9676538705825806,
+          "increment_mae": 0.002451931359246373
+        },
+        "confidence_one": {
+          "psnr": 33.61848227106983,
+          "ssim": 0.9652989506721497,
+          "increment_mae": 0.0013881952036172152
+        }
+      }
+    },
+    {
+      "sample_id": "validation/hard/36/0018",
+      "conditions": {
+        "normal": {
+          "psnr": 30.299015979396092,
+          "ssim": 0.930726945400238,
+          "increment_mae": 0.0018204058287665248
+        },
+        "no_feedback": {
+          "psnr": 30.3890014884178,
+          "ssim": 0.931248128414154,
+          "increment_mae": 0.0026305040810257196
+        },
+        "no_polar_correction": {
+          "psnr": 30.101710118897795,
+          "ssim": 0.9313679933547974,
+          "increment_mae": 0.002449002116918564
+        },
+        "confidence_zero": {
+          "psnr": 30.594993708037578,
+          "ssim": 0.9324538707733154,
+          "increment_mae": 0.0027542482130229473
+        },
+        "confidence_one": {
+          "psnr": 30.285016793106934,
+          "ssim": 0.9312811493873596,
+          "increment_mae": 0.0014974740333855152
+        }
+      }
+    },
+    {
+      "sample_id": "validation/easy/41/0000",
+      "conditions": {
+        "normal": {
+          "psnr": 35.91995068173381,
+          "ssim": 0.9847500920295715,
+          "increment_mae": 0.0032403520308434963
+        },
+        "no_feedback": {
+          "psnr": 35.67215683493513,
+          "ssim": 0.9837445616722107,
+          "increment_mae": 0.0036066588945686817
+        },
+        "no_polar_correction": {
+          "psnr": 35.855323359997946,
+          "ssim": 0.9851277470588684,
+          "increment_mae": 0.003072981722652912
+        },
+        "confidence_zero": {
+          "psnr": 35.57196354039423,
+          "ssim": 0.9829500317573547,
+          "increment_mae": 0.004135558381676674
+        },
+        "confidence_one": {
+          "psnr": 35.847094633036164,
+          "ssim": 0.9857778549194336,
+          "increment_mae": 0.002610543742775917
+        }
+      }
+    },
+    {
+      "sample_id": "validation/easy/41/0067",
+      "conditions": {
+        "normal": {
+          "psnr": 23.293828721290847,
+          "ssim": 0.687446117401123,
+          "increment_mae": 0.003442193614318967
+        },
+        "no_feedback": {
+          "psnr": 23.30877759743743,
+          "ssim": 0.6856333017349243,
+          "increment_mae": 0.0042413766495883465
+        },
+        "no_polar_correction": {
+          "psnr": 23.3478721760946,
+          "ssim": 0.6861845850944519,
+          "increment_mae": 0.0037337460089474916
+        },
+        "confidence_zero": {
+          "psnr": 23.34046206073853,
+          "ssim": 0.6868038177490234,
+          "increment_mae": 0.004648515954613686
+        },
+        "confidence_one": {
+          "psnr": 23.200133506649575,
+          "ssim": 0.6871380805969238,
+          "increment_mae": 0.002293018391355872
+        }
+      }
+    },
+    {
+      "sample_id": "validation/hard/41/0000",
+      "conditions": {
+        "normal": {
+          "psnr": 24.47693215221665,
+          "ssim": 0.7715408802032471,
+          "increment_mae": 0.0034006554633378983
+        },
+        "no_feedback": {
+          "psnr": 24.597593983414097,
+          "ssim": 0.7711746096611023,
+          "increment_mae": 0.0037898430600762367
+        },
+        "no_polar_correction": {
+          "psnr": 24.563455345549468,
+          "ssim": 0.7659711241722107,
+          "increment_mae": 0.003466414287686348
+        },
+        "confidence_zero": {
+          "psnr": 24.56661811446331,
+          "ssim": 0.7704315781593323,
+          "increment_mae": 0.004130261950194836
+        },
+        "confidence_one": {
+          "psnr": 24.467118789053718,
+          "ssim": 0.7721157073974609,
+          "increment_mae": 0.002392083639279008
+        }
+      }
+    },
+    {
+      "sample_id": "validation/hard/41/0078",
+      "conditions": {
+        "normal": {
+          "psnr": 25.56916372811606,
+          "ssim": 0.7900115847587585,
+          "increment_mae": 0.003364426549524069
+        },
+        "no_feedback": {
+          "psnr": 25.602043289263637,
+          "ssim": 0.7885506749153137,
+          "increment_mae": 0.0038312585093080997
+        },
+        "no_polar_correction": {
+          "psnr": 25.615845072826303,
+          "ssim": 0.7880550026893616,
+          "increment_mae": 0.0032817937899380922
+        },
+        "confidence_zero": {
+          "psnr": 25.61691894403118,
+          "ssim": 0.7888089418411255,
+          "increment_mae": 0.004366341512650251
+        },
+        "confidence_one": {
+          "psnr": 25.515738071731707,
+          "ssim": 0.7901108264923096,
+          "increment_mae": 0.0023723915219306946
+        }
+      }
+    },
+    {
+      "sample_id": "validation/easy/55/0000",
+      "conditions": {
+        "normal": {
+          "psnr": 22.118371161812483,
+          "ssim": 0.922316312789917,
+          "increment_mae": 0.0036081704311072826
+        },
+        "no_feedback": {
+          "psnr": 22.561407886516264,
+          "ssim": 0.9264383912086487,
+          "increment_mae": 0.006903024856001139
+        },
+        "no_polar_correction": {
+          "psnr": 22.945573191340237,
+          "ssim": 0.9239655137062073,
+          "increment_mae": 0.009328093379735947
+        },
+        "confidence_zero": {
+          "psnr": 22.32224886713375,
+          "ssim": 0.9249493479728699,
+          "increment_mae": 0.00595201225951314
+        },
+        "confidence_one": {
+          "psnr": 21.962060217870395,
+          "ssim": 0.9221983551979065,
+          "increment_mae": 0.0017984590958803892
+        }
+      }
+    },
+    {
+      "sample_id": "validation/easy/55/0219",
+      "conditions": {
+        "normal": {
+          "psnr": 24.717920100530787,
+          "ssim": 0.9238381385803223,
+          "increment_mae": 0.003879889380186796
+        },
+        "no_feedback": {
+          "psnr": 25.185573350181304,
+          "ssim": 0.9261768460273743,
+          "increment_mae": 0.007906890474259853
+        },
+        "no_polar_correction": {
+          "psnr": 25.272903962548497,
+          "ssim": 0.9221205711364746,
+          "increment_mae": 0.009158053435385227
+        },
+        "confidence_zero": {
+          "psnr": 24.98665331471394,
+          "ssim": 0.9257233738899231,
+          "increment_mae": 0.0068069337867200375
+        },
+        "confidence_one": {
+          "psnr": 24.60516667703803,
+          "ssim": 0.9228984713554382,
+          "increment_mae": 0.0018386146984994411
+        }
+      }
+    },
+    {
+      "sample_id": "validation/hard/56/0000",
+      "conditions": {
+        "normal": {
+          "psnr": 23.851714424688165,
+          "ssim": 0.9307997822761536,
+          "increment_mae": 0.003898630617186427
+        },
+        "no_feedback": {
+          "psnr": 23.847655780671943,
+          "ssim": 0.930245578289032,
+          "increment_mae": 0.003904950339347124
+        },
+        "no_polar_correction": {
+          "psnr": 23.808198037091085,
+          "ssim": 0.9309328198432922,
+          "increment_mae": 0.003660043701529503
+        },
+        "confidence_zero": {
+          "psnr": 23.840821437527744,
+          "ssim": 0.9294682145118713,
+          "increment_mae": 0.0043032062239944935
+        },
+        "confidence_one": {
+          "psnr": 23.858412041602165,
+          "ssim": 0.9317991137504578,
+          "increment_mae": 0.0028162645176053047
+        }
+      }
+    },
+    {
+      "sample_id": "validation/hard/56/0063",
+      "conditions": {
+        "normal": {
+          "psnr": 14.672738540276294,
+          "ssim": 0.6209978461265564,
+          "increment_mae": 0.005389723461121321
+        },
+        "no_feedback": {
+          "psnr": 14.730326295717443,
+          "ssim": 0.6207504868507385,
+          "increment_mae": 0.009534631855785847
+        },
+        "no_polar_correction": {
+          "psnr": 14.764647911228408,
+          "ssim": 0.6196413040161133,
+          "increment_mae": 0.014743072912096977
+        },
+        "confidence_zero": {
+          "psnr": 14.675725947226859,
+          "ssim": 0.6207488775253296,
+          "increment_mae": 0.00627991184592247
+        },
+        "confidence_one": {
+          "psnr": 14.604081144248244,
+          "ssim": 0.6215733885765076,
+          "increment_mae": 0.0017909876769408584
+        }
+      }
+    }
+  ],
+  "means": {
+    "normal": {
+      "psnr": 27.27431727235471,
+      "ssim": 0.9130517308201108,
+      "increment_mae": 0.0029125169759416686
+    },
+    "no_feedback": {
+      "psnr": 27.240715646729534,
+      "ssim": 0.9125110166413444,
+      "increment_mae": 0.004562849536471601
+    },
+    "no_polar_correction": {
+      "psnr": 27.246662452093638,
+      "ssim": 0.9122660223926816,
+      "increment_mae": 0.004499841215355056
+    },
+    "confidence_zero": {
+      "psnr": 27.231173448087418,
+      "ssim": 0.9123430294649941,
+      "increment_mae": 0.004602787192977432
+    },
+    "confidence_one": {
+      "psnr": 27.286942204846518,
+      "ssim": 0.913177130477769,
+      "increment_mae": 0.0018185807067701326
+    }
+  },
+  "test_used": false,
+  "tuned_from_results": false,
+  "matched_training_ablation": false,
+  "polar_intervention": "remove second-round correction/features; original P0/T1 still carry polarization"
+}

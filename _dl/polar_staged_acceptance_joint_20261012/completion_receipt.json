@@ -1,0 +1,75 @@
+{
+  "recorded_at": "2026-10-12T04:10:19.019917+00:00",
+  "implementation_and_experiment_completed": true,
+  "method_iteration_improvement_observed": false,
+  "reason": "All updates rejected: zero coverage and T2 exactly T1 on all1060 frames.",
+  "protocol_id": "081f080ec86179ba1148e64ac470613d182ba4cec377af280b7edc7e38af0dd6",
+  "raw_archive_sha256": "7cce8a04b74fdcefd437fcaa0f1f41f8842bf0a31fefa3fea6970e41b240f57a",
+  "raw_files_verified": 243,
+  "original_archive_unchanged": true,
+  "source_and_final_weights_verified": true,
+  "source_checkpoint_sha256": "e8a635e052ec86f9abddeaa6731a3cb85533420aa78d3b0ff52fbac5bd38e299",
+  "final_checkpoint_sha256": "e79af90811baa46aadfb354a682d0c5dad93886e2dfe1eabeaceb407e6cae112",
+  "candidate_steps": 3000,
+  "judgement_steps": 3000,
+  "training_images_across_roles": 5440,
+  "validation_frames": 872,
+  "test_frames": 188,
+  "original_size": true,
+  "tiling": false,
+  "first_round_exactly_unchanged": true,
+  "candidate_frozen_during_judgement": true,
+  "saved_action_example_scenes": 16,
+  "saved_confidence_example_scenes": 16,
+  "evaluation_completed_unix": 1791750417.1929877,
+  "deadline_unix": 1791823163.9073396,
+  "local_postprocessing_gpu_used": false,
+  "post_deadline_gpu_training_or_evaluation": false,
+  "supplemental_files": [
+    {
+      "path": "operations/finalize_delivery.py",
+      "bytes": 4513,
+      "sha256": "d782b51a56401001ad5c6530d0724fbc665aac1e793628e38e3e13def6624cb7"
+    },
+    {
+      "path": "operations/summarize_results.py",
+      "bytes": 9681,
+      "sha256": "8c61ae95876832f9fbf69a917bad894bc8c47aa1ddc84342c1ffe6b2c8cfa94f"
+    },
+    {
+      "path": "operations/verify_archive.py",
+      "bytes": 1711,
+      "sha256": "a02f176846836eb96a6a35c3a11c06fe01ec2facdfc61517944af924d4e614d6"
+    },
+    {
+      "path": "interpretation/documents/POLAR_STAGED_ACCEPTANCE_PROTOCOL_ZH_20261012.md",
+      "bytes": 7214,
+      "sha256": "b4ae9d51b1990d659ed33ad22e65227c7ba548eb346abd5eeeddf3c95aac5f6a"
+    },
+    {
+      "path": "interpretation/documents/POLAR_STAGED_ACCEPTANCE_RESULTS_ZH_20261012.md",
+      "bytes": 8076,
+      "sha256": "4ef64494f7bebbe5de3e8a5545d79f90863ee4b922c58e4d68a343f39787afac"
+    },
+    {
+      "path": "interpretation/documents/实验记录_20261012第20组完成快照.md",
+      "bytes": 35013,
+      "sha256": "03059d104cb1e065376a79bbd66055e5d00c1da678f89de0518866b324d8f674"
+    },
+    {
+      "path": "interpretation/result_summary.json",
+      "bytes": 49809,
+      "sha256": "53dea3c80296e45273dcd0ccc29ab82be0b05f9a4237ffe04f9b81f5c4a725b2"
+    },
+    {
+      "path": "interpretation/test_per_image.csv",
+      "bytes": 28396,
+      "sha256": "e6052b45b67f3cdf88bd6d4f38311fd261f6c78077d4ce9ffc2cfb189ccb9ba2"
+    },
+    {
+      "path": "interpretation/validation_per_image.csv",
+      "bytes": 132974,
+      "sha256": "8d6bde2018b7cceebd794daa866c63971f174526d228cea4261614150c4daf8b"
+    }
+  ]
+}

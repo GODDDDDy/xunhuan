@@ -1,0 +1,1333 @@
+{
+  "purpose": "alpha=0 / alpha=1 endpoint check of the K=2 two-round forward",
+  "definition": "P2(alpha) = P1 + alpha*(P2-P1); the interpolated image is fed DIRECTLY to the TaskNet and must NOT pass through R2P again. P2 is the second-round R2P output under the group's original configuration. Feedback-off is NOT alpha=0.",
+  "scope": "alpha=0 and alpha=1 only; no 0.25/0.5 sweep; model frozen; no training",
+  "seed": 2026,
+  "checkpoint_step": 3000,
+  "subset": {
+    "per_scene": 3,
+    "selection": "first PER_SCENE images per scene, loader order",
+    "n_images": 24,
+    "scenes": [
+      "01",
+      "07",
+      "22",
+      "30",
+      "36",
+      "41",
+      "55",
+      "56"
+    ],
+    "difficulty_composition": "21 easy + 3 hard",
+    "honesty_note": "this subset is NOT stratified simultaneously by scene and difficulty; it is scene-stratified and happens to contain 21 easy + 3 hard"
+  },
+  "tolerances": {
+    "endpoint_input_abs_diff": 0.0,
+    "output_abs_diff": 0.0001,
+    "note": "endpoint input must be EXACTLY identical to the reference tensor"
+  },
+  "rng_discipline": "before each comparison TaskNet call, the CPU and all CUDA RNG states saved immediately before the FIRST TaskNet call are restored; the reference T1/T2 call and the endpoint call see the identical diffusion noise stream",
+  "groups": {
+    "no_feedback": {
+      "checkpoint": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/runs/no_feedback/seed_2026/checkpoints/step_3000.pt",
+      "feedback_enabled": false,
+      "feedback_scale": 0.0,
+      "n_images": 24,
+      "alpha0": {
+        "endpoint_input": "P1 (round1 R2P output)",
+        "input_max_abs_diff_max_over_images": 0.0,
+        "input_all_exact": true,
+        "output_max_abs_diff_max_over_images": 0.0,
+        "output_mean_abs_diff_over_images": 0.0,
+        "n_passed": 24,
+        "all_passed": true
+      },
+      "alpha1": {
+        "endpoint_input": "P2 (round2 R2P output, original config)",
+        "input_max_abs_diff_max_over_images": 0.0,
+        "input_all_exact": true,
+        "output_max_abs_diff_max_over_images": 0.0,
+        "output_mean_abs_diff_over_images": 0.0,
+        "n_passed": 24,
+        "all_passed": true
+      },
+      "per_image": [
+        {
+          "index": 0,
+          "sample_id": "validation/easy/01/0000",
+          "scene": "01",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 32.309824540079525,
+            "t2": 31.973813192915234
+          }
+        },
+        {
+          "index": 1,
+          "sample_id": "validation/easy/01/0001",
+          "scene": "01",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 31.79084368487402,
+            "t2": 31.517563396842974
+          }
+        },
+        {
+          "index": 2,
+          "sample_id": "validation/easy/01/0002",
+          "scene": "01",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 31.85732580967052,
+            "t2": 31.66983718315382
+          }
+        },
+        {
+          "index": 11,
+          "sample_id": "validation/easy/07/0000",
+          "scene": "07",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 28.014542730598528,
+            "t2": 28.691832616772484
+          }
+        },
+        {
+          "index": 12,
+          "sample_id": "validation/easy/07/0001",
+          "scene": "07",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 27.781283981240115,
+            "t2": 28.817598846103436
+          }
+        },
+        {
+          "index": 13,
+          "sample_id": "validation/easy/07/0002",
+          "scene": "07",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 28.991767741533153,
+            "t2": 29.548501570703294
+          }
+        },
+        {
+          "index": 24,
+          "sample_id": "validation/easy/22/0000",
+          "scene": "22",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 31.382311810235322,
+            "t2": 31.559243881591268
+          }
+        },
+        {
+          "index": 25,
+          "sample_id": "validation/easy/22/0001",
+          "scene": "22",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 31.137436233814242,
+            "t2": 31.350701565286656
+          }
+        },
+        {
+          "index": 26,
+          "sample_id": "validation/easy/22/0002",
+          "scene": "22",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 31.388673535060384,
+            "t2": 31.664170085364564
+          }
+        },
+        {
+          "index": 117,
+          "sample_id": "validation/easy/30/0000",
+          "scene": "30",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 26.5475778995576,
+            "t2": 26.466973558619507
+          }
+        },
+        {
+          "index": 118,
+          "sample_id": "validation/easy/30/0001",
+          "scene": "30",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 26.89886340118989,
+            "t2": 26.810388659681234
+          }
+        },
+        {
+          "index": 119,
+          "sample_id": "validation/easy/30/0002",
+          "scene": "30",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 25.442372154027385,
+            "t2": 25.37715517645215
+          }
+        },
+        {
+          "index": 165,
+          "sample_id": "validation/easy/36/0000",
+          "scene": "36",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 32.37260633090206,
+            "t2": 31.92691718249908
+          }
+        },
+        {
+          "index": 166,
+          "sample_id": "validation/easy/36/0001",
+          "scene": "36",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 31.9066345175952,
+            "t2": 31.49114667092475
+          }
+        },
+        {
+          "index": 167,
+          "sample_id": "validation/easy/36/0002",
+          "scene": "36",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 30.86482871268072,
+            "t2": 30.56671735536499
+          }
+        },
+        {
+          "index": 220,
+          "sample_id": "validation/easy/41/0000",
+          "scene": "41",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 33.297335555134225,
+            "t2": 33.200109527572515
+          }
+        },
+        {
+          "index": 221,
+          "sample_id": "validation/easy/41/0001",
+          "scene": "41",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 31.742674456041144,
+            "t2": 31.664575056765134
+          }
+        },
+        {
+          "index": 222,
+          "sample_id": "validation/easy/41/0002",
+          "scene": "41",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 32.681922885642535,
+            "t2": 32.583916381976856
+          }
+        },
+        {
+          "index": 288,
+          "sample_id": "validation/easy/55/0000",
+          "scene": "55",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 21.97173797797673,
+            "t2": 21.808038035584513
+          }
+        },
+        {
+          "index": 289,
+          "sample_id": "validation/easy/55/0001",
+          "scene": "55",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 24.891760100233622,
+            "t2": 24.46839768372896
+          }
+        },
+        {
+          "index": 290,
+          "sample_id": "validation/easy/55/0002",
+          "scene": "55",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 25.343319156599556,
+            "t2": 24.948848246355052
+          }
+        },
+        {
+          "index": 808,
+          "sample_id": "validation/hard/56/0000",
+          "scene": "56",
+          "difficulty": "hard",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 21.718586239570833,
+            "t2": 21.756125209703892
+          }
+        },
+        {
+          "index": 809,
+          "sample_id": "validation/hard/56/0001",
+          "scene": "56",
+          "difficulty": "hard",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 21.687784234165836,
+            "t2": 21.776281329810185
+          }
+        },
+        {
+          "index": 810,
+          "sample_id": "validation/hard/56/0002",
+          "scene": "56",
+          "difficulty": "hard",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 19.935357315808062,
+            "t2": 20.00403532868168
+          }
+        }
+      ]
+    },
+    "feedback": {
+      "checkpoint": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/runs/feedback/seed_2026/checkpoints/step_3000.pt",
+      "feedback_enabled": true,
+      "feedback_scale": 0.020735127851366997,
+      "n_images": 24,
+      "alpha0": {
+        "endpoint_input": "P1 (round1 R2P output)",
+        "input_max_abs_diff_max_over_images": 0.0,
+        "input_all_exact": true,
+        "output_max_abs_diff_max_over_images": 0.0,
+        "output_mean_abs_diff_over_images": 0.0,
+        "n_passed": 24,
+        "all_passed": true
+      },
+      "alpha1": {
+        "endpoint_input": "P2 (round2 R2P output, original config)",
+        "input_max_abs_diff_max_over_images": 0.0,
+        "input_all_exact": true,
+        "output_max_abs_diff_max_over_images": 0.0,
+        "output_mean_abs_diff_over_images": 0.0,
+        "n_passed": 24,
+        "all_passed": true
+      },
+      "per_image": [
+        {
+          "index": 0,
+          "sample_id": "validation/easy/01/0000",
+          "scene": "01",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 32.4506710529502,
+            "t2": 32.227574574453655
+          }
+        },
+        {
+          "index": 1,
+          "sample_id": "validation/easy/01/0001",
+          "scene": "01",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 31.896832582832424,
+            "t2": 31.72571373316394
+          }
+        },
+        {
+          "index": 2,
+          "sample_id": "validation/easy/01/0002",
+          "scene": "01",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 31.928083865626693,
+            "t2": 31.826133556021325
+          }
+        },
+        {
+          "index": 11,
+          "sample_id": "validation/easy/07/0000",
+          "scene": "07",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 27.145836166204486,
+            "t2": 27.81933708047912
+          }
+        },
+        {
+          "index": 12,
+          "sample_id": "validation/easy/07/0001",
+          "scene": "07",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 26.907849719263083,
+            "t2": 27.92947319629952
+          }
+        },
+        {
+          "index": 13,
+          "sample_id": "validation/easy/07/0002",
+          "scene": "07",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 28.28354851705822,
+            "t2": 28.932521471854212
+          }
+        },
+        {
+          "index": 24,
+          "sample_id": "validation/easy/22/0000",
+          "scene": "22",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 31.35921514847395,
+            "t2": 31.46228668522118
+          }
+        },
+        {
+          "index": 25,
+          "sample_id": "validation/easy/22/0001",
+          "scene": "22",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 31.15390155745815,
+            "t2": 31.32509997666011
+          }
+        },
+        {
+          "index": 26,
+          "sample_id": "validation/easy/22/0002",
+          "scene": "22",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 31.49459075227138,
+            "t2": 31.699882996407304
+          }
+        },
+        {
+          "index": 117,
+          "sample_id": "validation/easy/30/0000",
+          "scene": "30",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 26.664532397202283,
+            "t2": 26.60829303263074
+          }
+        },
+        {
+          "index": 118,
+          "sample_id": "validation/easy/30/0001",
+          "scene": "30",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 27.007927984818153,
+            "t2": 26.93495273270987
+          }
+        },
+        {
+          "index": 119,
+          "sample_id": "validation/easy/30/0002",
+          "scene": "30",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 25.48900182581889,
+            "t2": 25.46943721945299
+          }
+        },
+        {
+          "index": 165,
+          "sample_id": "validation/easy/36/0000",
+          "scene": "36",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 32.443408005031465,
+            "t2": 32.12916271959348
+          }
+        },
+        {
+          "index": 166,
+          "sample_id": "validation/easy/36/0001",
+          "scene": "36",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 31.865537711658835,
+            "t2": 31.620637069787783
+          }
+        },
+        {
+          "index": 167,
+          "sample_id": "validation/easy/36/0002",
+          "scene": "36",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 30.656856119418123,
+            "t2": 30.454522037259196
+          }
+        },
+        {
+          "index": 220,
+          "sample_id": "validation/easy/41/0000",
+          "scene": "41",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 33.282436010254074,
+            "t2": 33.0621366303161
+          }
+        },
+        {
+          "index": 221,
+          "sample_id": "validation/easy/41/0001",
+          "scene": "41",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 31.74089707932469,
+            "t2": 31.58227814534506
+          }
+        },
+        {
+          "index": 222,
+          "sample_id": "validation/easy/41/0002",
+          "scene": "41",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 32.666977161457645,
+            "t2": 32.43223453125005
+          }
+        },
+        {
+          "index": 288,
+          "sample_id": "validation/easy/55/0000",
+          "scene": "55",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 22.36263017501392,
+            "t2": 22.25726623241199
+          }
+        },
+        {
+          "index": 289,
+          "sample_id": "validation/easy/55/0001",
+          "scene": "55",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 25.04503885903345,
+            "t2": 24.72937769329247
+          }
+        },
+        {
+          "index": 290,
+          "sample_id": "validation/easy/55/0002",
+          "scene": "55",
+          "difficulty": "easy",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 25.410181015452945,
+            "t2": 25.099914539772357
+          }
+        },
+        {
+          "index": 808,
+          "sample_id": "validation/hard/56/0000",
+          "scene": "56",
+          "difficulty": "hard",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 21.559330613718295,
+            "t2": 21.576727067001578
+          }
+        },
+        {
+          "index": 809,
+          "sample_id": "validation/hard/56/0001",
+          "scene": "56",
+          "difficulty": "hard",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 21.536795165860347,
+            "t2": 21.564816065031152
+          }
+        },
+        {
+          "index": 810,
+          "sample_id": "validation/hard/56/0002",
+          "scene": "56",
+          "difficulty": "hard",
+          "alpha0": {
+            "endpoint_input": "P1",
+            "input_max_abs_diff_vs_P1": 0.0,
+            "output_max_abs_diff_vs_T1": 0.0,
+            "output_mean_abs_diff_vs_T1": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "alpha1": {
+            "endpoint_input": "P2",
+            "input_max_abs_diff_vs_P2": 0.0,
+            "output_max_abs_diff_vs_T2": 0.0,
+            "output_mean_abs_diff_vs_T2": 0.0,
+            "tolerance": 0.0001,
+            "passed": true
+          },
+          "psnr": {
+            "t1": 19.819638812334905,
+            "t2": 19.84818555518476
+          }
+        }
+      ]
+    }
+  },
+  "elapsed_seconds": 293.3455862929113
+}

@@ -1,0 +1,34 @@
+{
+  "official_exact_reproduction": true,
+  "all_zero_correction_inputs_exact": true,
+  "frames": 28,
+  "training": false,
+  "test_used": false,
+  "source_checkpoint_sha256": "3be8b40c1f06cc0b9828f6cfc23deaaba6db9a3be1a7a28b6bb4a5cca8fb8d76",
+  "official_quantized": {
+    "gray": 4.9669775762595236e-05,
+    "condition": 0.00019267906463937834,
+    "prior": 8.889931567474767e-05,
+    "task_output": 3.903334605378664e-05,
+    "polar": 4.560356751426298e-05,
+    "gray_changed_fraction": 0.012665792285198612,
+    "psnr_round1": 26.901890456396433,
+    "psnr_round2": 26.90170530042841,
+    "delta_psnr": -0.00018515596802456562,
+    "delta_ssim": -7.897615432739258e-07
+  },
+  "anchored_float": {
+    "gray": 4.661198983870106e-05,
+    "condition": 7.255718017924144e-05,
+    "prior": 2.8949247377698028e-05,
+    "task_output": 1.5194778581774568e-05,
+    "polar": 4.557773338222303e-05,
+    "gray_changed_fraction": 0.9987114497593471,
+    "psnr_round1": 26.89661709632912,
+    "psnr_round2": 26.89686344121658,
+    "delta_psnr": 0.0002463448874601783,
+    "delta_ssim": 2.5544847760881695e-08
+  },
+  "candidate_round2_vs_official": -0.004841859211828733,
+  "interpretation": "Numerical preservation verified; this untrained interface is not evidence of restoration gains or of quantization as the only cause."
+}

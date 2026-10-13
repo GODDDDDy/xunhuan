@@ -1,0 +1,51 @@
+{
+  "created_at": "2026-10-13T11:45:13.7334540+08:00",
+  "document": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\analysis\\agent_handoffs\\GAIN_JUDGEMENT_DIAGNOSIS_AND_INTERACTION_HANDOFF_ZH_20261013.md",
+  "document_sha256": "beb758c72bc2824908021cf309606fefd4fb251ae430739c00cdb0c9885cc84a",
+  "document_lines": 714,
+  "document_chars": 23835,
+  "source_checks": [
+    {
+      "path": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\polar_gain_judgement_short_20261012\\artifacts\\downstream\\checkpoints\\final.pt",
+      "bytes": 99787162,
+      "sha256": "279d0a329d0efebee9678c2156bf3e7b60c0646e75a5f37f8015c7b100f9e9a2",
+      "match": true
+    },
+    {
+      "path": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\polar_gain_judgement_short_20261012\\artifacts\\diagnostics\\feature_cache\\judgement.npz",
+      "bytes": 23095877,
+      "sha256": "ccd747f96b6318c881f02c167b8a17a8acf31167450147c367da438926ec7c8d",
+      "match": true
+    },
+    {
+      "path": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\polar_gain_judgement_short_20261012\\artifacts\\diagnostics\\feature_cache\\bias.npz",
+      "bytes": 11546391,
+      "sha256": "9c37ffea74006667de50228941f8976c2c826d3dc0187ffdf4c720df634c6cdc",
+      "match": true
+    },
+    {
+      "path": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\polar_gain_judgement_short_20261012\\artifacts\\diagnostics\\feature_cache\\safety.npz",
+      "bytes": 23087905,
+      "sha256": "766a741d911a079fdf7d969df0ff56ff1cde4c8c7698260344a5333ce3a91d8f",
+      "match": true
+    }
+  ],
+  "local_links_verified": [
+    "F:/WORK/projects/pidsr_recurrent_joint_k2/AGENTS.md",
+    "F:/WORK/projects/pidsr_recurrent_joint_k2/analysis/confidence_review_20261013/output/当前网络技术审查.md"
+  ],
+  "execution_started": false,
+  "new_gpu_work": false,
+  "default_execution": "diagnostic_only_A0_to_A3_after_user_delegation",
+  "formal_training_and_factorial_require_separate_scope_authorization": true,
+  "historical_timing_minutes": {
+    "train_loop": 16.963722712158535,
+    "training_stage": 18.589643903573354,
+    "diagnostic_entry_to_training": 106.99633160034816,
+    "mechanism_to_validation": 24.79062908887863,
+    "validation_to_test": 99.10242374340693,
+    "test_to_complete": 21.417465857664745,
+    "gpu_start_to_complete": 284.0917704065641
+  },
+  "timing_note": "Stage entry intervals include inter-stage overhead; loop timings are not isolated GPU kernel durations."
+}

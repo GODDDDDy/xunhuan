@@ -1,0 +1,18 @@
+{
+  "reason": "Enhancer AMP outputs BF16; new feedback projections expect FP32",
+  "fix": "Cast enhancer features to FP32 at feedback boundary",
+  "formal_training_started": false,
+  "architecture_changed": false,
+  "budget_preserved": {
+    "start_unix": 1791609870.5695198,
+    "deadline_unix": 1791696270.5695198,
+    "process_group": 338290,
+    "device": "server RTX3080Ti",
+    "hours": 24,
+    "new_experiment_budget": true,
+    "old_budget_reused": false,
+    "authorization": "User explicitly requested launch of new researched residual-feedback experiment",
+    "starts_at": "immediately before first GPU preflight; immutable thereafter",
+    "previous_run_deadline_unix": 1791605047.4916465
+  }
+}
