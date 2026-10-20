@@ -1,52 +1,89 @@
 {
-  "schema_version": 1,
-  "as_of": "2026-10-13",
+  "schema_version": 2,
+  "as_of": "2026-10-20T10:04:11+08:00",
   "repository": "GODDDDDy/xunhuan",
   "purpose": "research_materials_and_ai_handoff",
+  "priorities": [
+    "polarization_enhancement_required",
+    "recurrent_feedback_desired",
+    "confidence_optional"
+  ],
+  "strong_baseline": {
+    "name": "G6",
+    "selection": "strongest_full_validation_seed2027_step3000",
+    "checkpoint_sha256": "6d4946a5f9963ddb1d142b5f4a97f18d0eedf724769aab4b414997a15a33322f",
+    "not_selected_by_test": true
+  },
   "latest_experiment": {
-    "number": 22,
-    "run": "polar_gain_judgement_short_20261012",
-    "status": "completed",
-    "checkpoint_sha256": "279d0a329d0efebee9678c2156bf3e7b60c0646e75a5f37f8015c7b100f9e9a2",
-    "protocol_id": "8d4f7dd5e12ce21b92c4d3a3413b68da8786c7cb414e55a9ce31600de8fc6ad2",
-    "formal_judgement_steps": 3000,
-    "candidate_training_steps_in_run": 0,
-    "method_effective": false,
-    "all_final_images_equal_T1": true,
-    "modification_coverage": 0,
-    "validation_frames": 872,
-    "test_frames": 188,
-    "validation": {
-      "T1_PSNR": 26.080089,
-      "T2_PSNR": 26.080089,
-      "T1_SSIM": 0.90536781,
-      "T2_SSIM": 0.90536781
+    "number": 43,
+    "run": "polarapp_collaboration_extension_20261020",
+    "status": "training_in_progress",
+    "last_observed_additional_step": 1490,
+    "last_complete_checkpoint_observed": 1400,
+    "target_additional_steps_each": 9000,
+    "target_cumulative_steps_each": 15000,
+    "arms": {
+      "A": "continue_native_TaskNet_only",
+      "B": "continue_post_enhancer_and_TaskNet",
+      "C": "fork_B6000_add_task_only_bilevel_feature_collaboration"
     },
-    "test": {
-      "T1_PSNR": 23.377752,
-      "T2_PSNR": 23.377752,
-      "T1_SSIM": 0.87906789,
-      "T2_SSIM": 0.87906789
-    },
-    "completed_before_immutable_deadline": true,
-    "gpu_work_active_in_latest_run": false
+    "baseline_lineage": "native_PolarAPP_PIDNet_TaskNet_not_G6",
+    "protocol_id": "ca7f2ae7897bc6f51464a65dc6e00273b1ff1b90f538a68e16f1d70d7e1cf0af",
+    "scientific_id": "16736ccb264df16a14c0e929e8294996799c06695744aea50d1f7ace5fc5a07b",
+    "effective_deadline": "2026-10-20T17:30:00+08:00",
+    "effective_deadline_unix": 1792488600,
+    "completed_online_probe_additional_steps": [
+      0,
+      1000
+    ],
+    "online_probe_validation_frames_each": 16,
+    "online_probe_training_ROIs_each": 16,
+    "endpoint64_complete": false,
+    "full_validation872_complete": false,
+    "test188_complete": false,
+    "confidence_map_used": false,
+    "recurrent_execution_used": false,
+    "documented_initial_main_Adam_counter_offset": 4,
+    "implementation_incidents": [
+      "kernel_storage_stall_recovered_after_human_authorized_reboot",
+      "preflight_CPU_Adam_step_aliasing_offset_preserved",
+      "probe1000_OOM_fixed_unused_feature_lifetimes"
+    ],
+    "probe1000_weights_Adam_RNG_unchanged_verified": true,
+    "result": "no_endpoint_conclusion_yet",
+    "gpu_work_active_in_latest_run": true,
+    "protocol": "analysis/polarapp_collaboration_extension_20261020/PROTOCOL_ZH.md",
+    "effective_budget_override": "analysis/polarapp_collaboration_extension_20261020/BUDGET_EXTENSION_ZH.md",
+    "handoff": "analysis/polarapp_collaboration_extension_20261020/RUN_HANDOFF_ZH.md",
+    "results": "analysis/polarapp_collaboration_extension_20261020/RESULTS_ZH.md"
   },
-  "next_step": {
-    "status": "plan_only",
-    "document": "analysis/agent_handoffs/GAIN_JUDGEMENT_DIAGNOSIS_AND_INTERACTION_HANDOFF_ZH_20261013.md",
-    "default_scope_after_explicit_user_delegation": "stage_A_diagnostic_only",
-    "formal_B_and_factorial_C_not_started": true
+  "latest_completed_screening": {
+    "number": 42,
+    "steps_each": 6000,
+    "validation_frames": 64,
+    "test_frames": 0,
+    "B_minus_A_scene_equal_PSNR_dB": -0.00226765,
+    "B_minus_A_scene_equal_SSIM": 9.2239e-05,
+    "positive_PSNR_scenes": 2,
+    "promoted_to_full_confirmation": false,
+    "convergence_proven": false
   },
-  "authoritative_source": "_dl/polar_gain_judgement_short_20261012/artifacts",
+  "confidence_evidence": {
+    "quality_ranking_supported_on_corresponding_T1": true,
+    "reliable_recovery_gain_established": false,
+    "unique_failure_cause_identified": false,
+    "do_not_generalize_to_all_recurrent_models": true
+  },
   "external_weights_and_data_in_git": false,
-  "original_local_root": "F:/WORK/projects/pidsr_recurrent_joint_k2",
-  "original_server_parent": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929",
+  "code_snapshot_is_not_standalone_training_package": true,
+  "snapshot_does_not_authorize_execution": true,
   "limitations": [
-    "single_seed_recent_experiments",
-    "no_matched_continuation_control_in_prior_runs",
-    "historically_explored_test_set",
-    "official_pretraining_validation_exposure_not_fully_verified",
-    "short_training_not_proven_converged",
-    "inference_interventions_not_training_causal_ablations"
+    "single_seed_recent_screenings",
+    "historically_explored_validation_and_test_sets",
+    "official_pretraining_exposure_not_fully_verified",
+    "training_budget_not_convergence_proof",
+    "inference_interventions_not_matched_retraining_ablations",
+    "experiment43_Adam_counter_deviation_disclosed",
+    "live_progress_is_a_timestamped_snapshot"
   ]
 }

@@ -1,0 +1,92 @@
+[
+  {
+    "slide": 1,
+    "notes": "主线12页，结构/文献附录5页，建议15–20分钟。依据2026-10-09至13探索，第18—22项并非逐次实验汇报。最新正式结果完全归档，未新训练。",
+    "native_chart_numeric_precision": "10 significant digits for Excel interoperability; raw scientific data unchanged"
+  },
+  {
+    "slide": 2,
+    "notes": "样本固定为验证场景30第一张。来源config/manifest.csv;原RGB/四角度图片来自对应服务器数据路径，GT来自已归档固定例图。展示图8位，指标/浮点误差不由PNG计算。任务依据PolarFree CVPR2025 https://github.com/mdyao/PolarFree 和原文链接。",
+    "native_chart_numeric_precision": "10 significant digits for Excel interoperability; raw scientific data unchanged"
+  },
+  {
+    "slide": 3,
+    "notes": "代码主路径study.recurrent_forward/staged.forward/gain22.FloatActionCostGate。E第2次主分支仍用P0，当前P1通过适配条件进入。PolarFree先验每次8步扩散，配对初始随机流。最终不是直接第二次完整重建，而是专用头T1+Δ再动作门控。旧update_gate仍计算但staged.gate覆盖其选择，对齐投影当前不执行。",
+    "native_chart_numeric_precision": "10 significant digits for Excel interoperability; raw scientific data unchanged"
+  },
+  {
+    "slide": 4,
+    "notes": "浮点NPZ：downstream/metrics/confidence_examples/validation/scene_30.npz。sample_id固定；同图全网格rho=-0.45587885528673194. C范围[0,1]，MAE上界色标为98%分位，4x4池化。总体-0.4594是逐图相关后平均，不是将所有区域当独立样本。H监督e/b+logb，C=exp(-b/tau)经验单调变换。Kendall&Gal NeurIPS2017提供误差/不确定性语义背景，不等同复现其模型。",
+    "native_chart_numeric_precision": "10 significant digits for Excel interoperability; raw scientific data unchanged"
+  },
+  {
+    "slide": 5,
+    "notes": "图由冻结浮点归档重绘。同图C-error rho=-0.4558788553，C-full-action gain rho=+0.308786425。低置信区域不自动意味着候选可修，存在较难反射和不可辨错误。散点固定步长约8000点，rho全网格。没有因果/显著性结论，亦未根据样本改阈值。数学依据DeltaE(a)=2a mean(e delta)+a^2mean(delta^2)。",
+    "native_chart_numeric_precision": "10 significant digits for Excel interoperability; raw scientific data unchanged"
+  },
+  {
+    "slide": 6,
+    "notes": "固定validation/easy/30/0000，GT亮度std>.035的128x128网格中事后取最大/最小平均原始MSE收益。位置和未量化成本见evidence_summary.json。蓝框/红框对应两处裁剪。PNG仅显示，完整指标依据浮点，极值示例不代表总体或部署策略。",
+    "native_chart_numeric_precision": "10 significant digits for Excel interoperability; raw scientific data unchanged"
+  },
+  {
+    "slide": 7,
+    "notes": "同图validation/easy/30/0000；热图为其原始浮点4x4 action_costs，蓝正红负，色标截断于绝对收益98%分位。GToracle是每区域选0/.25/.5/1动作，只用于核验，不能作为部署效果或可学性证明。底行数字是全部872验证的逐图PSNR平均增量，非本图指标；候选冻结来源21，actual全零mask。",
+    "native_chart_numeric_precision": "10 significant digits for Excel interoperability; raw scientific data unchanged"
+  },
+  {
+    "slide": 8,
+    "notes": "实际尝试围绕质量反馈、局部need/better/worse比较、动作成本、Q需求引导及浮点输入；此页以问题归类而非逐次实验。现有动作成本SmoothL1+.1expected cost，所有gate输入detach，GT替换不改变输出。原C/Q不同语义，最终M来自action_gate而非C直接阈值。M0严格where复制，属于已通过的实现合同。",
+    "native_chart_numeric_precision": "10 significant digits for Excel interoperability; raw scientific data unchanged"
+  },
+  {
+    "slide": 9,
+    "notes": "最终全部动作预测均记录，未用全零部署输出掩盖排序。validation -0.0341/-0.0455/-0.0551;test 0.0228/.0184/.0029。逐图约4096采样后rho平均，仅描述，单seed无显著性或因果推断。训练监测为固定32裁剪bias角色，与128训练、原尺寸评价不同，不选权重。",
+    "native_chart_numeric_precision": "10 significant digits for Excel interoperability; raw scientific data unchanged"
+  },
+  {
+    "slide": 10,
+    "notes": "training-only action_calibration.json，237bias/423safety角色来源已见过。每个非零cover网格gain<0;harm31.84至82.61%，不能依据test放宽。1.6 empty acceptance，空集harm不展示成0%准确率。学习risk-coverage动机SelectiveNet ICML2019 https://proceedings.mlr.press/v97/geifman19a.html;本方法不是该论文复现。",
+    "native_chart_numeric_precision": "10 significant digits for Excel interoperability; raw scientific data unchanged"
+  },
+  {
+    "slide": 11,
+    "notes": "安全固定样本65536区域，std中位数RGB .2263958/projected_task .3613594/delta_energy .00035524；不是全部训练总体。新增weights初始0。ridge fit_ridge标准化；gain22 inputs无标准化。这是训练条件事实而非已证实根因。抵消ratio中位.721，新增float补充后正式依旧0覆盖。旧legacy top10 netgain3.4527e-6/harm24.45%优于float2.1030e-6/harm35.11%，保留反证。",
+    "native_chart_numeric_precision": "10 significant digits for Excel interoperability; raw scientific data unchanged"
+  },
+  {
+    "slide": 12,
+    "notes": "Read-onlyCPU exactcostloss test:pred=[.1,.3,-.2],target=[0,.1,.3,-.2],gradient=[-.00192569,-.00540806,.00687603]，pureSmoothL1应0。期望目标有策略解释，并非实现算错；不能未经对照宣称应删。二次结构代数精确，B可观测，A含GT，仅训练标签；建议结构化估A是待验证方案，不保证可预测。Current technical review file links to exact lines.",
+    "native_chart_numeric_precision": "10 significant digits for Excel interoperability; raw scientific data unchanged"
+  },
+  {
+    "slide": 13,
+    "notes": "仅研究建议，本次未启动任何新训练。配对等预算控制，一个变量一个结论。候选/第一轮复用固定即可，重训主干不是当前第一步。旧188test反复探索，不再用于新路线筛选，正式确认需要新增未参与选择场景。GToracle潜力不证明部署可学性，零coverage不算成功。下一步失败可能返回候选纠错方向，不换课题。",
+    "native_chart_numeric_precision": "10 significant digits for Excel interoperability; raw scientific data unchanged"
+  },
+  {
+    "slide": 14,
+    "notes": "代码核对后的完整结构，原FigureSpec文件 F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\analysis\\confidence_review_20261013\\figures\\specs\\arch_02_enhancer.json；节点文字/箭头为原生可编辑对象。字小为结构附录，单独SVG可缩放。图中所有重复基本块用×次数列出。全部实际登记组件、教师/遗留头/未用层及参数在data/module_inventory.csv；没有把未用组件画成活跃收益路径。",
+    "native_chart_numeric_precision": "10 significant digits for Excel interoperability; raw scientific data unchanged"
+  },
+  {
+    "slide": 15,
+    "notes": "代码核对后的完整结构，原FigureSpec文件 F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\analysis\\confidence_review_20261013\\figures\\specs\\arch_03_polarfree.json；节点文字/箭头为原生可编辑对象。字小为结构附录，单独SVG可缩放。图中所有重复基本块用×次数列出。全部实际登记组件、教师/遗留头/未用层及参数在data/module_inventory.csv；没有把未用组件画成活跃收益路径。",
+    "native_chart_numeric_precision": "10 significant digits for Excel interoperability; raw scientific data unchanged"
+  },
+  {
+    "slide": 16,
+    "notes": "代码核对后的完整结构，原FigureSpec文件 F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\analysis\\confidence_review_20261013\\figures\\specs\\arch_04_feedback_and_Q.json；节点文字/箭头为原生可编辑对象。字小为结构附录，单独SVG可缩放。图中所有重复基本块用×次数列出。全部实际登记组件、教师/遗留头/未用层及参数在data/module_inventory.csv；没有把未用组件画成活跃收益路径。",
+    "native_chart_numeric_precision": "10 significant digits for Excel interoperability; raw scientific data unchanged"
+  },
+  {
+    "slide": 17,
+    "notes": "代码核对后的完整结构，原FigureSpec文件 F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\analysis\\confidence_review_20261013\\figures\\specs\\arch_05_judgement.json；节点文字/箭头为原生可编辑对象。字小为结构附录，单独SVG可缩放。图中所有重复基本块用×次数列出。全部实际登记组件、教师/遗留头/未用层及参数在data/module_inventory.csv；没有把未用组件画成活跃收益路径。",
+    "native_chart_numeric_precision": "10 significant digits for Excel interoperability; raw scientific data unchanged"
+  },
+  {
+    "slide": 18,
+    "notes": "完整引用：Zhou etal PIDSR CVPR2025 pp16081-16090 https://openaccess.thecvf.com/content/CVPR2025/papers/Zhou_PIDSR_Complementary_Polarized_Image_Demosaicing_and_Super-Resolution_CVPR_2025_paper.pdf ;Yao etal PolarFree CVPR2025 pp10890-10899 https://github.com/mdyao/PolarFree ;Zamir etal MPRNet CVPR2021 https://arxiv.org/abs/2102.02808 ;Kendall&Gal NeurIPS2017 https://papers.nips.cc/paper_files/paper/2017/hash/2650d6089a6d640c5e85b2b88265dc2b-Abstract.html ;Geifman&El-Yaniv SelectiveNet ICML2019 PMLR97:2151–2159 https://proceedings.mlr.press/v97/geifman19a.html . 无匹配继续训练对照、多项历史改变、单seed、训练角色已被来源见过、历史test探索，不能单独归因某模块。",
+    "native_chart_numeric_precision": "10 significant digits for Excel interoperability; raw scientific data unchanged"
+  }
+]

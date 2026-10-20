@@ -1,0 +1,79 @@
+{
+  "scope": "training_data_CPU_numerical_probe_not_method_comparison",
+  "passed": true,
+  "positions": [
+    {
+      "position": 0.0,
+      "inner_id": "train/easy/00/0000",
+      "outer_id": "train/easy/03/0000",
+      "inner_loss": 1.334277629852295,
+      "outer_loss": 0.0013320036232471466,
+      "upstream_inner_gradient_norm": 0.016525864949522667,
+      "downstream_inner_gradient_norm": 0.008122519545083178,
+      "alignment_hypergradient_norm": 3.6362386455343673e-09,
+      "gradient_max_abs": 5.59580125292225e-11
+    },
+    {
+      "position": 0.33,
+      "inner_id": "train/easy/00/0000",
+      "outer_id": "train/easy/03/0000",
+      "inner_loss": 1.3496443033218384,
+      "outer_loss": 0.0026501344982534647,
+      "upstream_inner_gradient_norm": 0.012376091230475911,
+      "downstream_inner_gradient_norm": 0.0036514665219478295,
+      "alignment_hypergradient_norm": 1.5212379145415671e-09,
+      "gradient_max_abs": 1.8683450619949582e-11
+    },
+    {
+      "position": 0.67,
+      "inner_id": "train/easy/00/0000",
+      "outer_id": "train/easy/03/0000",
+      "inner_loss": 1.3522526025772095,
+      "outer_loss": 0.0007443160866387188,
+      "upstream_inner_gradient_norm": 0.016097393601695188,
+      "downstream_inner_gradient_norm": 0.005990101495329903,
+      "alignment_hypergradient_norm": 3.3914631343938025e-09,
+      "gradient_max_abs": 5.514989853683261e-11
+    },
+    {
+      "position": 1.0,
+      "inner_id": "train/easy/00/0000",
+      "outer_id": "train/easy/03/0000",
+      "inner_loss": 1.3352266550064087,
+      "outer_loss": 0.0003401225549168885,
+      "upstream_inner_gradient_norm": 0.015765572546493356,
+      "downstream_inner_gradient_norm": 0.0038643481361091323,
+      "alignment_hypergradient_norm": 1.68292360149289e-09,
+      "gradient_max_abs": 2.4271298512679174e-11
+    }
+  ],
+  "optimizer_numerical_trials": [
+    {
+      "outer_loss_scale": 1.0,
+      "Adam_epsilon": 1e-08,
+      "changed_trainable_tensors": 19,
+      "changed_trainable_element_fraction": 0.4699131811204912,
+      "relative_L2_update": 2.360199871061004e-08
+    },
+    {
+      "outer_loss_scale": 1.0,
+      "Adam_epsilon": 1e-12,
+      "changed_trainable_tensors": 31,
+      "changed_trainable_element_fraction": 0.9991161222499361,
+      "relative_L2_update": 8.088401507448007e-05
+    },
+    {
+      "outer_loss_scale": 1000.0,
+      "Adam_epsilon": 1e-08,
+      "changed_trainable_tensors": 31,
+      "changed_trainable_element_fraction": 0.992908992069583,
+      "relative_L2_update": 1.7731179758973176e-05
+    }
+  ],
+  "source_weights_and_initialization_restored": true,
+  "updates_saved": false,
+  "validation_images_read": 0,
+  "test_images_read": 0,
+  "cuda_initialized": false,
+  "formal_optimizer_policy_locked": false
+}

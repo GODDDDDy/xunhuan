@@ -1,0 +1,63 @@
+{
+  "time_unix": 1791970041.8585112,
+  "protocol_id": "770627c56c8f7f61f830152f6a2de032f72a7fbe19f02e1600c628eae84a8748",
+  "budget_sha256": "9c9111f81437681b411238feb010a7a4a3b21fa4339ea3085b9d394b2b72cbeb",
+  "deadline_unix": 1792049037.82669,
+  "code_source_schedule_unchanged": true,
+  "watchdog_current_GPU_acknowledged": true,
+  "arms": {
+    "frozen": {
+      "steps_written": 3000,
+      "last_step": 9000,
+      "new_unique_images": 5440,
+      "initial16_parent_hash_equal": true,
+      "learning_rates_correct": true,
+      "finite_losses": true,
+      "checkpoint_hashes_passed": true,
+      "probes": [
+        {
+          "step": 6000,
+          "PSNR": 26.43675271576816,
+          "SSIM": 0.9130249209702015
+        },
+        {
+          "step": 7000,
+          "PSNR": 26.441800211327422,
+          "SSIM": 0.9129752740263939
+        },
+        {
+          "step": 8000,
+          "PSNR": 26.45409498309893,
+          "SSIM": 0.9129116758704185
+        },
+        {
+          "step": 9000,
+          "PSNR": 26.45238094666848,
+          "SSIM": 0.912852268666029
+        }
+      ]
+    },
+    "partial": {
+      "steps_written": 1525,
+      "last_step": 7525,
+      "new_unique_images": 3050,
+      "initial16_parent_hash_equal": true,
+      "learning_rates_correct": true,
+      "finite_losses": true,
+      "checkpoint_hashes_passed": true,
+      "probes": [
+        {
+          "step": 6000,
+          "PSNR": 26.43675271576816,
+          "SSIM": 0.9130249209702015
+        },
+        {
+          "step": 7000,
+          "PSNR": 26.443119387673576,
+          "SSIM": 0.9129962958395481
+        }
+      ]
+    }
+  },
+  "no_weight_or_parameter_selection": true
+}

@@ -1,0 +1,34 @@
+{
+  "identity": {
+    "pid": 2603363,
+    "pgid": 2603363,
+    "session": 2603363,
+    "start_ticks": 330204545,
+    "cmdline": "/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/bin/python -u /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polarapp_single_collaboration_20261013/scripts/watchdog.py --root /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polarapp_single_collaboration_20261013 "
+  },
+  "pid": 2603363,
+  "run_id": "fa60d9c2-b823-4905-8161-0691c4931821",
+  "budget_sha256": "7e45a4f63aa7155c04c92c11c602f7aaf74747962fde19893e940ce78ad48753",
+  "deadline_unix": 1791970742.5910625,
+  "started_unix": 1791894546.8635206,
+  "independent": true,
+  "heartbeat_unix": 1791901470.7540019,
+  "state": "monitoring",
+  "controller_identity": {
+    "pid": 2603362,
+    "pgid": 2603360,
+    "session": 2603360,
+    "start_ticks": 330204532,
+    "cmdline": "/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/bin/python -u recovery/resume_evaluation.py --root /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polarapp_single_collaboration_20261013 --python /media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/bin/python --resume "
+  },
+  "registered_controller_pid": 2603362,
+  "registered_controller_pgid": 2603360,
+  "active_gpu": {
+    "pid": 2603368,
+    "pgid": 2603368,
+    "session": 2603368,
+    "start_ticks": 330204576,
+    "cmdline": "/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/bin/python -u -c import os,sys; token=sys.stdin.buffer.read(1); assert token==b'G', 'dispatch registration failed'; os.execv(sys.executable,[sys.executable]+sys.argv[1:]) -u /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polarapp_single_collaboration_20261013/recovery/evaluate_existing_final.py --root /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polarapp_single_collaboration_20261013 --device cuda:0 "
+  },
+  "active_stage": "evaluation"
+}

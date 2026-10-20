@@ -1,0 +1,280 @@
+{
+  "kind": "matched candidate continuation, real vs fixed explicit H quality",
+  "arms": [
+    "real_quality",
+    "fixed_quality"
+  ],
+  "seed": 2026,
+  "steps_per_arm": 2000,
+  "crop": 128,
+  "effective_batch": 2,
+  "microbatch": 1,
+  "source_initial_sha256": "af2367fd9f96871cad3b94230638cf5c75acd3b8f8c186cdf210a37b730e82d8",
+  "source_initial_protocol": "921ae3dc9fe004949efab2afdb434719a11a8268cb80bd44718bc59a9a99787d",
+  "trainable": [
+    "feedback",
+    "error_guidance"
+  ],
+  "lr": {
+    "feedback": 1e-05,
+    "error_guidance": 0.0001
+  },
+  "frozen": [
+    "first round",
+    "H",
+    "enhancer core and old adapters",
+    "net_g",
+    "prior",
+    "projections",
+    "both M heads"
+  ],
+  "loss": "original staged candidate_loss: MSE + .02 edge MAE + .1 positive local MSE change penalty + .1 Q BCE",
+  "conditions": "all candidate b/C paths; Q recomputed; fixed b0 from common first16 judgement training H predictions; C0=exp(-b0/tau)",
+  "fixed_calibration": {
+    "batches": 8,
+    "phase": "quality_constant_calibration"
+  },
+  "candidate_schedule_sha256": "2a5f1d42877483035527d1fc6c177aeb41e9b704c2d4f713401898abecd1121b",
+  "candidate_training_images": 3640,
+  "all5440_seen_in_inherited_history": true,
+  "checkpoint_interval": 500,
+  "monitor_interval": 500,
+  "monitor_fixed_training_crops": 4,
+  "evaluation": {
+    "validation": 872,
+    "test": 188,
+    "outputs": [
+      "common frozen T1",
+      "real U",
+      "fixed U"
+    ],
+    "original_size": true,
+    "tiling": false,
+    "shared_first": true,
+    "seed_phase": "matched_eval"
+  },
+  "endpoint": "fixed2000 per arm or recorded immutable stage cutoff; incomplete if either below2000",
+  "budget_seconds": 43200,
+  "evaluation_reserve_seconds": 14400,
+  "resource_rule": "1.5*(4000*median_train_step + 1060*paired_full_frame_seconds) plus1800s must fit12h; preflight discarded",
+  "success_interpretation": "real-control AND real-T1 PSNR/SSIM, scene directions; one seed short continuation not stability or convergence proof",
+  "source_quality_training_history": true,
+  "matched_from_scratch": false,
+  "test_used_for_selection": false,
+  "validation_used_for_selection": false,
+  "execution_config_sha256": "d47be744d39026dd7631e543b6fc653a543c61ac61a4246e0a4a09afa3df3655",
+  "code_manifest": [
+    {
+      "path": "scripts/acceptance.py",
+      "sha256": "582bbe4e5f540334cf1264758a53621974bc046233f3b097ef04f228e81f57d7"
+    },
+    {
+      "path": "scripts/action_gate.py",
+      "sha256": "994531037834c0013a610108c39612b074831ec6a1e7233149e34f2770b8d3ab"
+    },
+    {
+      "path": "scripts/archive.py",
+      "sha256": "40dd3f352ec14c477d7e4d5c03115e12a2af9fbfe89510eb68efadb3ccebd4f0"
+    },
+    {
+      "path": "scripts/bridge.py",
+      "sha256": "32968b4c94b03832b363daf622cc827365388a98906c55c2825ea0b5d8808041"
+    },
+    {
+      "path": "scripts/candidate_diagnostic.py",
+      "sha256": "d51feb10953f9fd083b875eed5716596561172d1cef831743317490281e079e9"
+    },
+    {
+      "path": "scripts/common.py",
+      "sha256": "13b317cd89258316a2b74854b48b6c94650cf33bbf3f328b6f4ddf0ecf43a895"
+    },
+    {
+      "path": "scripts/controller.py",
+      "sha256": "cdca35ed01beb23a19364bb36a3899646452906c2dafeda001e84c22f2160f51"
+    },
+    {
+      "path": "scripts/diagnostic_controller.py",
+      "sha256": "a2fc79bc65d893ad22cb2cdc3b458681a213693060e3bcccf2015a6edd136667"
+    },
+    {
+      "path": "scripts/enhancer.py",
+      "sha256": "f15747c721890c8e2173d8fb1ed4723210bd75d0f7f80d7238c0185941fae927"
+    },
+    {
+      "path": "scripts/error_guidance.py",
+      "sha256": "eea2e2ad53faad2e3228a59f0f6f2354678efb42640e4d2f763f4be150a518ec"
+    },
+    {
+      "path": "scripts/feedback.py",
+      "sha256": "5293b5de24c99877f637f99133153f559a8b5c8b6b7182cc4e933544d257945d"
+    },
+    {
+      "path": "scripts/gain22.py",
+      "sha256": "17aa845a3eb6d0599570705107636a0e818501bb1599c52c18c48548089ac353"
+    },
+    {
+      "path": "scripts/gain_controller.py",
+      "sha256": "8ddf58e9b501ff88b53e859b9228657da606a233bf5056c22e1337a49d576175"
+    },
+    {
+      "path": "scripts/launch.py",
+      "sha256": "f395cf41d3148a721e09d6a018d5b1bb7f84f65086ffcbb7372ce96af4751a1e"
+    },
+    {
+      "path": "scripts/matched_run.py",
+      "sha256": "e7b9714093837b7ac8bc259b8cd6855e7b00bcce679f0b9eb308e5628ac64428"
+    },
+    {
+      "path": "scripts/pidsr_data.py",
+      "sha256": "f7b746ad4798f05318ad61cde376624aaa2696f91b1b23c7ab1584e650ade4ee"
+    },
+    {
+      "path": "scripts/polar_loss.py",
+      "sha256": "8e73d77cbbb8d76fa96b2b514afc72d5859c9b87e632b0056039845e1c5f127f"
+    },
+    {
+      "path": "scripts/prepare.py",
+      "sha256": "eb8e154e82d8b43be1d3ae2e1ec7ceca67d8e020492632f36eef18ae83164f7b"
+    },
+    {
+      "path": "scripts/prepare_run.py",
+      "sha256": "a53b1c835dfe8b3c1a4f26c3b5c9428aa0dadcfbdeee1b193116939850e18556"
+    },
+    {
+      "path": "scripts/prepare_staged.py",
+      "sha256": "cdfb95087fe84ea05b88d329fc7c51a9856f3cbeb894ecd0fd82b5a9b4ed0bbb"
+    },
+    {
+      "path": "scripts/pretrain.py",
+      "sha256": "3f432bd3a38e7d210b42601f7b60b923e3b74629ec43d58f0d0719bd04a22ed9"
+    },
+    {
+      "path": "scripts/quality_forward.py",
+      "sha256": "2a852a47bb4d1585dad7d2e6717e115b6c7417ea2cf7460450b4a48059e54a48"
+    },
+    {
+      "path": "scripts/quality_metrics.py",
+      "sha256": "a04d547d16fd21f94e51086d13e1cf1f6974db1b64e8bf313180ff79c41e6d9c"
+    },
+    {
+      "path": "scripts/reference/run_experiment_snapshot.py",
+      "sha256": "507c86cab8ac6c81dee04b36634d1619504a05eca6bc1cfb73eaf1ea42ccb6e5"
+    },
+    {
+      "path": "scripts/repair_controller_copy.py",
+      "sha256": "a4607ff3d5f1243415f98b1d88b84a8a8fe2690067014c9ce4429296823caaf9"
+    },
+    {
+      "path": "scripts/repair_preflight.py",
+      "sha256": "882264d9c032a06b0fc1cb413571bdc22540d1d8e365f85149e09f628bad9d3c"
+    },
+    {
+      "path": "scripts/run_gain.py",
+      "sha256": "4536a91eee3a4af85d4df9f798dee62137869345b401938c8d051181e9f9e5e5"
+    },
+    {
+      "path": "scripts/run_short.py",
+      "sha256": "4834eeab23b4a1b5c3425fba4e9d07c3655888fb7e88eda05a49c006208d41d8"
+    },
+    {
+      "path": "scripts/run_stage.py",
+      "sha256": "ac7a0d75aadef020cc825e16b60d13e3f6a07eb2c8b18221e062099d3bbe3a47"
+    },
+    {
+      "path": "scripts/run_staged.py",
+      "sha256": "17207af63acbcf7c9ce317ba6fb61b971da3eaf115693025177d515bb7040410"
+    },
+    {
+      "path": "scripts/setup_run.py",
+      "sha256": "fd908aac814961ab0df5383f41817b3468085280ef6b4965d738e8c2c32bca88"
+    },
+    {
+      "path": "scripts/short_controller.py",
+      "sha256": "e4bb75e92c864c0921a95b33c1b81d3a694445f6451f64ce4bad113f54a91168"
+    },
+    {
+      "path": "scripts/short_diagnostic.py",
+      "sha256": "77b3e4ba50b692f4876caad5d18265c410ffadc827d1ed0fa369a55911cf7c02"
+    },
+    {
+      "path": "scripts/short_verify.py",
+      "sha256": "568df3dc295c42f4a2d1ef2ead7feeb39f0cb6c7da8ecfbaa08070a9c71fd7f5"
+    },
+    {
+      "path": "scripts/staged.py",
+      "sha256": "963eebefb42a436def3b1eed902a1971403a3152aae180cef6845dd1b2d675e8"
+    },
+    {
+      "path": "scripts/staged_controller.py",
+      "sha256": "749e72e1404fe6dd679ee94ce6a856e96ed5b0660e198a28d4a3cfab679e5914"
+    },
+    {
+      "path": "scripts/study.py",
+      "sha256": "d3a3fedf7706ab30bad6d49f612289713a485b93c7d87f363370345fb1ad2d0d"
+    },
+    {
+      "path": "scripts/summarize.py",
+      "sha256": "1e980888d8c0752338e5c8d7bfb4df1db023f677d6cae0db7d0b9c8f881a8d8b"
+    },
+    {
+      "path": "scripts/vendor/pidsr_data_official.py",
+      "sha256": "7fbfd48cfa9129226c3bc425045cab7fcac84cd4380bf7bf8d844e6797d98209"
+    },
+    {
+      "path": "scripts/vendor/pidsr_official.py",
+      "sha256": "b3e8b3146536f240dab8517bd96918abc9b71ed306d3f483f6402dc08a1d7d4f"
+    },
+    {
+      "path": "scripts/vendor/sgsc_networks.py",
+      "sha256": "f168ac4c8768dfb997687c1fcd77b4b812f47014b898821ebfd2cb00d8f01bb3"
+    },
+    {
+      "path": "scripts/vendor/sgsc_primitives.py",
+      "sha256": "90727f97b82411f825dcdffafda8e9defdcb2331a4c326c47162e56035cf6262"
+    },
+    {
+      "path": "scripts/vendor/sgsc_reference.py",
+      "sha256": "c84f52b3076c91e83af50473537cfe8d28636ed7482f44384974db9153d89cc3"
+    },
+    {
+      "path": "scripts/verify.py",
+      "sha256": "3c2c134028c924806318cb043f6c3ce4dc9e894ce35498ae491a90235d0d2d61"
+    },
+    {
+      "path": "scripts/verify_input_gradient.py",
+      "sha256": "a046437bc647bcb72827fa27fea93b5671175feebdc2bf02192bbc35abef948b"
+    },
+    {
+      "path": "scripts/watchdog.py",
+      "sha256": "5f620a72526c8e1e469eb6b5e69090b3d34d6257f1089997c6fc69fb683feb04"
+    }
+  ],
+  "preflight_observer_repair": {
+    "previous_protocol": "93cf0e5c401016086ba553612d64c993ce2e92eef847b08b271d18fd8c849b19",
+    "algorithm_changed": false,
+    "reason": "Read-only path audit must not create autograd saved tensors inside checkpoint; backward numerical checks run without observation hooks, no_grad path checks retained"
+  },
+  "controller_copy_repair": {
+    "previous_protocol": "cd71519d9e87c52c578e9c34eb2b0c14b6aa6dbde0747bacc47ae2c6dab3a566",
+    "algorithm_changed": false,
+    "reason": "Old source copy overwrote generic controller/archive names; old entry failed reading absent preflight config before CUDA allocation; owned entry restored"
+  },
+  "protocol_id": "e2eb5a1132f5377a18a3df8fbdf56682e4044751a21e8bcbc6f192ac6bcfaf65",
+  "benchmark": {
+    "step_seconds": 0.5361745357513428,
+    "paired_full_frame_seconds": 9.069727897644043,
+    "full_frame_shape": [
+      1,
+      12,
+      1024,
+      1224
+    ],
+    "peak_vram_mib": 10327.2255859375,
+    "estimated_total_seconds": 19437.914571762085,
+    "resource_rule_passed": true,
+    "diagnostic_updates_discarded": true,
+    "original_size": true,
+    "tiling": false
+  },
+  "fixed_calibration_sha256": "95efe3bbf0498c4490322b87b7f1792eb82dca4fadba288b65c76471ce953064"
+}

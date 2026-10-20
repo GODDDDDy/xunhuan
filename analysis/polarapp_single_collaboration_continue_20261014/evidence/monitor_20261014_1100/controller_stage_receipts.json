@@ -1,0 +1,30 @@
+{
+  "run_id": "189659b4-8d1d-430d-8b44-a4bd85fddb3e",
+  "stages": {
+    "preflight": {
+      "returncode": 0,
+      "gpu": false,
+      "reused_parent_preflight": true,
+      "CPU_setup_receipt_sha256": "1ca632210a3bc8999ae1a4ca1f9b9ef523fc9593dd8de407e8ea934cb1cf5073",
+      "parent_preflight_record": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polarapp_single_collaboration_20261013/diagnostics/gpu_preflight.json",
+      "budget_sha256": "427c3c7534db519fe19cd13a6a8dddfd1e67b33ceabc65eb86fac1763f075f69"
+    },
+    "train": {
+      "started_unix": 1791939583.1294584,
+      "finished_unix": 1791944236.0396147,
+      "returncode": 0,
+      "command": [
+        "-u",
+        "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polarapp_single_collaboration_continue_20261014/scripts/run_training.py",
+        "--root",
+        "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polarapp_single_collaboration_continue_20261014",
+        "--stage",
+        "train",
+        "--arm",
+        "meta"
+      ],
+      "gpu": true,
+      "budget_sha256": "427c3c7534db519fe19cd13a6a8dddfd1e67b33ceabc65eb86fac1763f075f69"
+    }
+  }
+}

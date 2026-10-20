@@ -1,0 +1,37 @@
+{
+  "current_manifest": {
+    "train": {
+      "frames": 5440,
+      "scene_ids": 51,
+      "difficulty_scene_keys": 89,
+      "dataset_directory": [
+        "train"
+      ]
+    },
+    "validation": {
+      "frames": 872,
+      "scene_ids": 8,
+      "difficulty_scene_keys": 14,
+      "dataset_directory": [
+        "train"
+      ]
+    },
+    "test": {
+      "frames": 188,
+      "scene_ids": 8,
+      "difficulty_scene_keys": 8,
+      "dataset_directory": [
+        "test"
+      ]
+    }
+  },
+  "train_validation_scene_disjoint": true,
+  "author_paper_v1_training_images": 6312,
+  "author_paper_v1_training_scenes": 56,
+  "author_paper_v1_testing_images": 188,
+  "author_paper_v1_testing_scenes": 11,
+  "author_source": "https://arxiv.org/html/2503.18055v1#S5.SS1",
+  "official_checkpoint_exact_training_manifest_available": false,
+  "validation_directory_is_original_training_pool": true,
+  "interpretation": "No current train/validation scene overlap. Official pretraining exposure to validation must be audited; paper and released scene mappings differ. No proven runtime GT leak."
+}

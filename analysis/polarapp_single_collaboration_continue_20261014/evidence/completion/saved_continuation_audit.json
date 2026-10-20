@@ -1,0 +1,296 @@
+{
+  "CPU_only": true,
+  "no_images_or_inference": true,
+  "posthoc_not_selection": true,
+  "all_inputs_match_initial_verified_archive": true,
+  "windows": [
+    {
+      "start_step": 3001,
+      "end_step": 3500,
+      "task_loss": 0.004337012830808817,
+      "task_loss_SD": 0.008425589588026557,
+      "joint_loss": 0.006192005104734563,
+      "joint_loss_SD": 0.008426856039299825,
+      "alignment_loss": 1.3287283109426498,
+      "alignment_loss_SD": 0.008254232080473404,
+      "retention_loss": 6.045758778512323e-07,
+      "retention_loss_SD": 3.869505725948359e-07,
+      "adapter_gradient_norm": 0.0013080369438393973,
+      "adapter_gradient_norm_SD": 0.003100673861343925,
+      "meta_outer_raw_loss": 0.006751001898050308,
+      "meta_outer_raw_loss_SD": 0.011135187812611821,
+      "meta_hypergradient_raw_norm": 4.89254122693566e-09,
+      "meta_hypergradient_raw_norm_SD": 6.2429067617955675e-09
+    },
+    {
+      "start_step": 3501,
+      "end_step": 4000,
+      "task_loss": 0.004920956025089253,
+      "task_loss_SD": 0.011024658841077199,
+      "joint_loss": 0.00677654567186255,
+      "joint_loss_SD": 0.011025052909352927,
+      "alignment_loss": 1.3291761527061463,
+      "alignment_loss_SD": 0.00980282041869579,
+      "retention_loss": 3.261104844582974e-07,
+      "retention_loss_SD": 1.7410573716117442e-07,
+      "adapter_gradient_norm": 0.002189349860003858,
+      "adapter_gradient_norm_SD": 0.013171479184745217,
+      "meta_outer_raw_loss": 0.007444971503615379,
+      "meta_outer_raw_loss_SD": 0.015436250885119686,
+      "meta_hypergradient_raw_norm": 9.849688534985846e-09,
+      "meta_hypergradient_raw_norm_SD": 2.4112693236794155e-08
+    },
+    {
+      "start_step": 4001,
+      "end_step": 4500,
+      "task_loss": 0.006294974413802265,
+      "task_loss_SD": 0.017887499953803506,
+      "joint_loss": 0.008147015971480868,
+      "joint_loss_SD": 0.01788881343834355,
+      "alignment_loss": 1.326568040728569,
+      "alignment_loss_SD": 0.010190654485230079,
+      "retention_loss": 1.2550604637340257e-06,
+      "retention_loss_SD": 3.190627264521462e-07,
+      "adapter_gradient_norm": 0.0023510627558134727,
+      "adapter_gradient_norm_SD": 0.009978036530079396,
+      "meta_outer_raw_loss": 0.006676162716150283,
+      "meta_outer_raw_loss_SD": 0.014606592023630047,
+      "meta_hypergradient_raw_norm": 8.262245222449632e-09,
+      "meta_hypergradient_raw_norm_SD": 2.574211029291806e-08
+    },
+    {
+      "start_step": 4501,
+      "end_step": 5000,
+      "task_loss": 0.004718795756700274,
+      "task_loss_SD": 0.010658269814936758,
+      "joint_loss": 0.00656450655288063,
+      "joint_loss_SD": 0.010658823424078895,
+      "alignment_loss": 1.3219955171346665,
+      "alignment_loss_SD": 0.008792137485003992,
+      "retention_loss": 1.780918757162908e-06,
+      "retention_loss_SD": 6.605625124790739e-07,
+      "adapter_gradient_norm": 0.0028194492688053286,
+      "adapter_gradient_norm_SD": 0.026625159722939214,
+      "meta_outer_raw_loss": 0.002759866390824318,
+      "meta_outer_raw_loss_SD": 0.0031813354381499477,
+      "meta_hypergradient_raw_norm": 1.6138527258516757e-09,
+      "meta_hypergradient_raw_norm_SD": 1.3896493598932655e-09
+    },
+    {
+      "start_step": 5001,
+      "end_step": 5500,
+      "task_loss": 0.004947252295271028,
+      "task_loss_SD": 0.011872072826424192,
+      "joint_loss": 0.006789824911742471,
+      "joint_loss_SD": 0.011873992749031686,
+      "alignment_loss": 1.3197120262384414,
+      "alignment_loss_SD": 0.009929894573548707,
+      "retention_loss": 2.277040377521189e-06,
+      "retention_loss_SD": 5.97139264343532e-07,
+      "adapter_gradient_norm": 0.0015937771228491328,
+      "adapter_gradient_norm_SD": 0.00394976060258508,
+      "meta_outer_raw_loss": 0.0035996285891532896,
+      "meta_outer_raw_loss_SD": 0.004667232684154025,
+      "meta_hypergradient_raw_norm": 3.423033950833459e-09,
+      "meta_hypergradient_raw_norm_SD": 4.622102433072139e-09
+    },
+    {
+      "start_step": 5501,
+      "end_step": 6000,
+      "task_loss": 0.004356728098675376,
+      "task_loss_SD": 0.011108742252224241,
+      "joint_loss": 0.006196260361350141,
+      "joint_loss_SD": 0.011110888597117955,
+      "alignment_loss": 1.3175219863653183,
+      "alignment_loss_SD": 0.00906960859903181,
+      "retention_loss": 2.447176782538918e-06,
+      "retention_loss_SD": 6.48264793757899e-07,
+      "adapter_gradient_norm": 0.0014001438489067367,
+      "adapter_gradient_norm_SD": 0.00272808391640821,
+      "meta_outer_raw_loss": 0.004212007237672806,
+      "meta_outer_raw_loss_SD": 0.004933970749645658,
+      "meta_hypergradient_raw_norm": 3.5615447601409323e-09,
+      "meta_hypergradient_raw_norm_SD": 6.117249437785998e-09
+    }
+  ],
+  "training_probes": [
+    {
+      "step": 3000,
+      "MSE": 0.001425965338057722
+    },
+    {
+      "step": 3500,
+      "MSE": 0.0014241206354199676
+    },
+    {
+      "step": 4000,
+      "MSE": 0.0014008722209837288
+    },
+    {
+      "step": 4500,
+      "MSE": 0.0014197689197317231
+    },
+    {
+      "step": 5000,
+      "MSE": 0.0013964575991849415
+    },
+    {
+      "step": 5500,
+      "MSE": 0.0014076089646550827
+    },
+    {
+      "step": 6000,
+      "MSE": 0.001410762888554018
+    }
+  ],
+  "validation_probes": [
+    {
+      "step": 3000,
+      "PSNR": 26.431844893211533,
+      "SSIM": 0.9131881855428219
+    },
+    {
+      "step": 4000,
+      "PSNR": 26.438641129217288,
+      "SSIM": 0.9131262563169003
+    },
+    {
+      "step": 5000,
+      "PSNR": 26.439137311685435,
+      "SSIM": 0.9130551852285862
+    },
+    {
+      "step": 6000,
+      "PSNR": 26.43675271576816,
+      "SSIM": 0.9130249209702015
+    }
+  ],
+  "parameter_trajectory": [
+    {
+      "step": 3500,
+      "previous_step": 3000,
+      "upstream_adapters": {
+        "relative_L2_from_previous": 0.07969897932622938,
+        "relative_L2_from_3000": 0.07969897932622938,
+        "changed_tensors_from_3000": 12
+      },
+      "downstream_adapters": {
+        "relative_L2_from_previous": 0.06508222487538859,
+        "relative_L2_from_3000": 0.06508222487538859,
+        "changed_tensors_from_3000": 12
+      },
+      "alignment_state": {
+        "relative_L2_from_previous": 0.00039534682589653034,
+        "relative_L2_from_3000": 0.00039534682589653034,
+        "changed_tensors_from_3000": 37
+      }
+    },
+    {
+      "step": 4000,
+      "previous_step": 3500,
+      "upstream_adapters": {
+        "relative_L2_from_previous": 0.13497432884255478,
+        "relative_L2_from_3000": 0.20368112753959805,
+        "changed_tensors_from_3000": 12
+      },
+      "downstream_adapters": {
+        "relative_L2_from_previous": 0.08386479311719297,
+        "relative_L2_from_3000": 0.12384228228570149,
+        "changed_tensors_from_3000": 12
+      },
+      "alignment_state": {
+        "relative_L2_from_previous": 0.0011193505598147148,
+        "relative_L2_from_3000": 0.001129763836126502,
+        "changed_tensors_from_3000": 37
+      }
+    },
+    {
+      "step": 4500,
+      "previous_step": 4000,
+      "upstream_adapters": {
+        "relative_L2_from_previous": 0.0769901520227118,
+        "relative_L2_from_3000": 0.26767319436274273,
+        "changed_tensors_from_3000": 12
+      },
+      "downstream_adapters": {
+        "relative_L2_from_previous": 0.07991492518225796,
+        "relative_L2_from_3000": 0.18520420627263018,
+        "changed_tensors_from_3000": 12
+      },
+      "alignment_state": {
+        "relative_L2_from_previous": 0.0008889248970237109,
+        "relative_L2_from_3000": 0.0014386324038737875,
+        "changed_tensors_from_3000": 37
+      }
+    },
+    {
+      "step": 5000,
+      "previous_step": 4500,
+      "upstream_adapters": {
+        "relative_L2_from_previous": 0.055292206088936764,
+        "relative_L2_from_3000": 0.31903317672227444,
+        "changed_tensors_from_3000": 12
+      },
+      "downstream_adapters": {
+        "relative_L2_from_previous": 0.05128844487025181,
+        "relative_L2_from_3000": 0.20566180596568856,
+        "changed_tensors_from_3000": 12
+      },
+      "alignment_state": {
+        "relative_L2_from_previous": 0.000458248322664524,
+        "relative_L2_from_3000": 0.0015462760129157295,
+        "changed_tensors_from_3000": 37
+      }
+    },
+    {
+      "step": 5500,
+      "previous_step": 5000,
+      "upstream_adapters": {
+        "relative_L2_from_previous": 0.029899359889939837,
+        "relative_L2_from_3000": 0.335608414247991,
+        "changed_tensors_from_3000": 12
+      },
+      "downstream_adapters": {
+        "relative_L2_from_previous": 0.04941308966941926,
+        "relative_L2_from_3000": 0.22931200585207728,
+        "changed_tensors_from_3000": 12
+      },
+      "alignment_state": {
+        "relative_L2_from_previous": 0.000256334906395934,
+        "relative_L2_from_3000": 0.001558619960058752,
+        "changed_tensors_from_3000": 37
+      }
+    },
+    {
+      "step": 6000,
+      "previous_step": 5500,
+      "upstream_adapters": {
+        "relative_L2_from_previous": 0.03916737885620659,
+        "relative_L2_from_3000": 0.37056195278680687,
+        "changed_tensors_from_3000": 12
+      },
+      "downstream_adapters": {
+        "relative_L2_from_previous": 0.06180200544769625,
+        "relative_L2_from_3000": 0.2566135945894094,
+        "changed_tensors_from_3000": 12
+      },
+      "alignment_state": {
+        "relative_L2_from_previous": 0.0002422100301652145,
+        "relative_L2_from_3000": 0.0015973417915725084,
+        "changed_tensors_from_3000": 37
+      }
+    }
+  ],
+  "last500_vs_previous500_percent": {
+    "task_loss": -11.936407552129936,
+    "joint_loss": -8.741971377874657,
+    "alignment_loss": -0.16594831520672093,
+    "retention_loss": 7.471822050118471,
+    "adapter_gradient_norm": -12.149331996700107,
+    "meta_outer_raw_loss": 17.01227316520344,
+    "meta_hypergradient_raw_norm": 4.046433990926324
+  },
+  "fixed_train_6000_vs_5500_MSE_percent": 0.22406250444051423,
+  "fixed_train_6000_vs_3000_MSE_percent": -1.066116342239487,
+  "convergence": "Small fixed-validation changes with SSIM regression; no global task convergence claim"
+}

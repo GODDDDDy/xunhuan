@@ -1,0 +1,37 @@
+{
+  "run_id": "fa60d9c2-b823-4905-8161-0691c4931821",
+  "stages": {
+    "preflight": {
+      "started_unix": 1791886500.146138,
+      "finished_unix": 1791886529.0749292,
+      "returncode": 0,
+      "command": [
+        "-u",
+        "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polarapp_single_collaboration_20261013/scripts/run_training.py",
+        "--root",
+        "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polarapp_single_collaboration_20261013",
+        "--stage",
+        "preflight"
+      ],
+      "gpu": true,
+      "budget_sha256": "7e45a4f63aa7155c04c92c11c602f7aaf74747962fde19893e940ce78ad48753"
+    },
+    "train": {
+      "started_unix": 1791888311.7135131,
+      "finished_unix": 1791893743.1030385,
+      "returncode": 0,
+      "command": [
+        "-u",
+        "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polarapp_single_collaboration_20261013/scripts/run_training.py",
+        "--root",
+        "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polarapp_single_collaboration_20261013",
+        "--stage",
+        "train",
+        "--arm",
+        "meta"
+      ],
+      "gpu": true,
+      "budget_sha256": "7e45a4f63aa7155c04c92c11c602f7aaf74747962fde19893e940ce78ad48753"
+    }
+  }
+}

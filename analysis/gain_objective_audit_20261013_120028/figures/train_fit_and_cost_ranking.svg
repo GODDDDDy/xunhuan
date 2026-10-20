@@ -1,115 +1,192 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="560" viewBox="0 0 1180 560" font-family="DejaVu Sans, Arial, sans-serif">
-<rect width="1180" height="560" fill="#ffffff"/>
-<text x="78" y="34" font-size="19" font-weight="bold" fill="#111">A1 · 散点表示上的轻量学习性诊断（MLP 50-32-32-3，CPU，2048训练区域）</text>
-<text x="78" y="54" font-size="12" fill="#555">两副本共享同一初始权重（SHA c84ea6f5…）与相同批次顺序，仅损失不同：mixed=L_fit+0.1·L_policy，pure=L_fit</text>
-<rect x="78" y="74" width="499.0" height="412" fill="#fbfbfb" stroke="#dddddd"/>
-<line x1="78" y1="486.00" x2="577.0" y2="486.00" stroke="#eeeeee"/>
-<text x="70" y="490.00" text-anchor="end" font-size="11" fill="#666">0.02545</text>
-<line x1="78" y1="403.60" x2="577.0" y2="403.60" stroke="#eeeeee"/>
-<text x="70" y="407.60" text-anchor="end" font-size="11" fill="#666">0.04054</text>
-<line x1="78" y1="321.20" x2="577.0" y2="321.20" stroke="#eeeeee"/>
-<text x="70" y="325.20" text-anchor="end" font-size="11" fill="#666">0.05563</text>
-<line x1="78" y1="238.80" x2="577.0" y2="238.80" stroke="#eeeeee"/>
-<text x="70" y="242.80" text-anchor="end" font-size="11" fill="#666">0.07072</text>
-<line x1="78" y1="156.40" x2="577.0" y2="156.40" stroke="#eeeeee"/>
-<text x="70" y="160.40" text-anchor="end" font-size="11" fill="#666">0.08581</text>
-<line x1="78" y1="74.00" x2="577.0" y2="74.00" stroke="#eeeeee"/>
-<text x="70" y="78.00" text-anchor="end" font-size="11" fill="#666">0.1009</text>
-<line x1="78" y1="486" x2="577.0" y2="486" stroke="#333"/>
-<line x1="78" y1="74" x2="78" y2="486" stroke="#333"/>
-<text x="78.0" y="506" text-anchor="middle" font-size="11" fill="#555">0</text>
-<text x="127.9" y="506" text-anchor="middle" font-size="11" fill="#555">100</text>
-<text x="177.8" y="506" text-anchor="middle" font-size="11" fill="#555">200</text>
-<text x="227.7" y="506" text-anchor="middle" font-size="11" fill="#555">300</text>
-<text x="277.6" y="506" text-anchor="middle" font-size="11" fill="#555">400</text>
-<text x="327.5" y="506" text-anchor="middle" font-size="11" fill="#555">500</text>
-<text x="377.4" y="506" text-anchor="middle" font-size="11" fill="#555">600</text>
-<text x="427.3" y="506" text-anchor="middle" font-size="11" fill="#555">700</text>
-<text x="477.2" y="506" text-anchor="middle" font-size="11" fill="#555">800</text>
-<text x="527.1" y="506" text-anchor="middle" font-size="11" fill="#555">900</text>
-<text x="577.0" y="506" text-anchor="middle" font-size="11" fill="#555">1000</text>
-<text x="328" y="44" text-anchor="middle" font-size="15" fill="#222">纯拟合损失 L_fit（越小越好）</text>
-<text x="328" y="532" text-anchor="middle" font-size="12" fill="#444">训练步 step</text>
-<text x="20" y="280" text-anchor="middle" font-size="12" fill="#444" transform="rotate(-90 20 280)">L_fit</text>
-<polyline points="78.00,84.80 127.90,196.33 177.80,248.54 227.70,304.98 277.60,355.61 327.50,385.30 377.40,417.79 427.30,435.45 477.20,451.68 527.10,466.34 577.00,478.69" fill="none" stroke="#4c78a8" stroke-width="2.2"/>
-<circle cx="78.00" cy="84.80" r="3" fill="#4c78a8"/>
-<circle cx="127.90" cy="196.33" r="3" fill="#4c78a8"/>
-<circle cx="177.80" cy="248.54" r="3" fill="#4c78a8"/>
-<circle cx="227.70" cy="304.98" r="3" fill="#4c78a8"/>
-<circle cx="277.60" cy="355.61" r="3" fill="#4c78a8"/>
-<circle cx="327.50" cy="385.30" r="3" fill="#4c78a8"/>
-<circle cx="377.40" cy="417.79" r="3" fill="#4c78a8"/>
-<circle cx="427.30" cy="435.45" r="3" fill="#4c78a8"/>
-<circle cx="477.20" cy="451.68" r="3" fill="#4c78a8"/>
-<circle cx="527.10" cy="466.34" r="3" fill="#4c78a8"/>
-<circle cx="577.00" cy="478.69" r="3" fill="#4c78a8"/>
-<polyline points="78.00,84.80 127.90,195.41 177.80,245.61 227.70,304.37 277.60,352.45 327.50,383.85 377.40,415.98 427.30,438.95 477.20,453.36 527.10,465.34 577.00,478.33" fill="none" stroke="#e45756" stroke-width="2.2" stroke-dasharray="6 4"/>
-<circle cx="78.00" cy="84.80" r="3" fill="#e45756"/>
-<circle cx="127.90" cy="195.41" r="3" fill="#e45756"/>
-<circle cx="177.80" cy="245.61" r="3" fill="#e45756"/>
-<circle cx="227.70" cy="304.37" r="3" fill="#e45756"/>
-<circle cx="277.60" cy="352.45" r="3" fill="#e45756"/>
-<circle cx="327.50" cy="383.85" r="3" fill="#e45756"/>
-<circle cx="377.40" cy="415.98" r="3" fill="#e45756"/>
-<circle cx="427.30" cy="438.95" r="3" fill="#e45756"/>
-<circle cx="477.20" cy="453.36" r="3" fill="#e45756"/>
-<circle cx="527.10" cy="465.34" r="3" fill="#e45756"/>
-<circle cx="577.00" cy="478.33" r="3" fill="#e45756"/>
-<rect x="647.0" y="74" width="499.0" height="412" fill="#fbfbfb" stroke="#dddddd"/>
-<line x1="647.0" y1="486.00" x2="1146.0" y2="486.00" stroke="#eeeeee"/>
-<text x="639.0" y="490.00" text-anchor="end" font-size="11" fill="#666">-0.02337</text>
-<line x1="647.0" y1="403.60" x2="1146.0" y2="403.60" stroke="#eeeeee"/>
-<text x="639.0" y="407.60" text-anchor="end" font-size="11" fill="#666">0.06972</text>
-<line x1="647.0" y1="321.20" x2="1146.0" y2="321.20" stroke="#eeeeee"/>
-<text x="639.0" y="325.20" text-anchor="end" font-size="11" fill="#666">0.1628</text>
-<line x1="647.0" y1="238.80" x2="1146.0" y2="238.80" stroke="#eeeeee"/>
-<text x="639.0" y="242.80" text-anchor="end" font-size="11" fill="#666">0.2559</text>
-<line x1="647.0" y1="156.40" x2="1146.0" y2="156.40" stroke="#eeeeee"/>
-<text x="639.0" y="160.40" text-anchor="end" font-size="11" fill="#666">0.349</text>
-<line x1="647.0" y1="74.00" x2="1146.0" y2="74.00" stroke="#eeeeee"/>
-<text x="639.0" y="78.00" text-anchor="end" font-size="11" fill="#666">0.4421</text>
-<line x1="647.0" y1="486" x2="1146.0" y2="486" stroke="#333"/>
-<line x1="647.0" y1="74" x2="647.0" y2="486" stroke="#333"/>
-<text x="647.0" y="506" text-anchor="middle" font-size="11" fill="#555">0</text>
-<text x="696.9" y="506" text-anchor="middle" font-size="11" fill="#555">100</text>
-<text x="746.8" y="506" text-anchor="middle" font-size="11" fill="#555">200</text>
-<text x="796.7" y="506" text-anchor="middle" font-size="11" fill="#555">300</text>
-<text x="846.6" y="506" text-anchor="middle" font-size="11" fill="#555">400</text>
-<text x="896.5" y="506" text-anchor="middle" font-size="11" fill="#555">500</text>
-<text x="946.4" y="506" text-anchor="middle" font-size="11" fill="#555">600</text>
-<text x="996.3" y="506" text-anchor="middle" font-size="11" fill="#555">700</text>
-<text x="1046.2" y="506" text-anchor="middle" font-size="11" fill="#555">800</text>
-<text x="1096.1" y="506" text-anchor="middle" font-size="11" fill="#555">900</text>
-<text x="1146.0" y="506" text-anchor="middle" font-size="11" fill="#555">1000</text>
-<text x="896" y="44" text-anchor="middle" font-size="15" fill="#222">三动作平均 Spearman（训练内样本）</text>
-<text x="896" y="532" text-anchor="middle" font-size="12" fill="#444">训练步 step</text>
-<text x="589.0" y="280" text-anchor="middle" font-size="12" fill="#444" transform="rotate(-90 589.0 280)">Spearman</text>
-<polyline points="647.00,468.30 696.90,346.45 746.80,238.05 796.70,223.78 846.60,188.45 896.50,175.58 946.40,147.80 996.30,135.26 1046.20,123.48 1096.10,118.38 1146.00,91.70" fill="none" stroke="#4c78a8" stroke-width="2.2"/>
-<circle cx="647.00" cy="468.30" r="3" fill="#4c78a8"/>
-<circle cx="696.90" cy="346.45" r="3" fill="#4c78a8"/>
-<circle cx="746.80" cy="238.05" r="3" fill="#4c78a8"/>
-<circle cx="796.70" cy="223.78" r="3" fill="#4c78a8"/>
-<circle cx="846.60" cy="188.45" r="3" fill="#4c78a8"/>
-<circle cx="896.50" cy="175.58" r="3" fill="#4c78a8"/>
-<circle cx="946.40" cy="147.80" r="3" fill="#4c78a8"/>
-<circle cx="996.30" cy="135.26" r="3" fill="#4c78a8"/>
-<circle cx="1046.20" cy="123.48" r="3" fill="#4c78a8"/>
-<circle cx="1096.10" cy="118.38" r="3" fill="#4c78a8"/>
-<circle cx="1146.00" cy="91.70" r="3" fill="#4c78a8"/>
-<polyline points="647.00,468.30 696.90,344.14 746.80,238.11 796.70,215.52 846.60,181.06 896.50,157.69 946.40,143.11 996.30,129.63 1046.20,119.93 1096.10,123.66 1146.00,104.40" fill="none" stroke="#e45756" stroke-width="2.2" stroke-dasharray="6 4"/>
-<circle cx="647.00" cy="468.30" r="3" fill="#e45756"/>
-<circle cx="696.90" cy="344.14" r="3" fill="#e45756"/>
-<circle cx="746.80" cy="238.11" r="3" fill="#e45756"/>
-<circle cx="796.70" cy="215.52" r="3" fill="#e45756"/>
-<circle cx="846.60" cy="181.06" r="3" fill="#e45756"/>
-<circle cx="896.50" cy="157.69" r="3" fill="#e45756"/>
-<circle cx="946.40" cy="143.11" r="3" fill="#e45756"/>
-<circle cx="996.30" cy="129.63" r="3" fill="#e45756"/>
-<circle cx="1046.20" cy="119.93" r="3" fill="#e45756"/>
-<circle cx="1096.10" cy="123.66" r="3" fill="#e45756"/>
-<circle cx="1146.00" cy="104.40" r="3" fill="#e45756"/>
-<line x1="78" y1="530" x2="108" y2="530" stroke="#4c78a8" stroke-width="2.6"/>
-<text x="116" y="534" font-size="12.5" fill="#333">mixed（含期望项）</text>
-<line x1="308" y1="530" x2="338" y2="530" stroke="#e45756" stroke-width="2.6" stroke-dasharray="6 4"/>
-<text x="346" y="534" font-size="12.5" fill="#333">pure（仅 L_fit）</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="720" viewBox="0 0 1180 720" font-family="DejaVu Sans, Arial, sans-serif">
+<rect width="1180" height="720" fill="#ffffff"/>
+<text x="78" y="34" font-size="18" font-weight="bold" fill="#111">A1 线性/MLP 探针 与 A2 原生 50 通道判断头：纯拟合与三动作排序（两条曲线仅损失不同）</text>
+<text x="78" y="54" font-size="11.5" fill="#555">mixed = L_fit + 0.1·L_policy（含期望项），pure = L_fit；两副本共享同一初值与相同样本顺序</text>
+<text x="78" y="70" font-size="11.5" fill="#a33">注意纵轴分列：A1 使用自己的标准化尺度（1000 步、2048 训练区域），A2 使用第 22 项来源尺度（500 步、24 裁剪），两者数值不可直接比较</text>
+<rect x="78.0" y="112.0" width="485.0" height="208.0" fill="#fbfbfb" stroke="#dddddd"/>
+<line x1="78.0" y1="320.00" x2="563.0" y2="320.00" stroke="#eeeeee"/>
+<text x="70.0" y="324.00" text-anchor="end" font-size="10.5" fill="#666">0.02572</text>
+<line x1="78.0" y1="278.40" x2="563.0" y2="278.40" stroke="#eeeeee"/>
+<text x="70.0" y="282.40" text-anchor="end" font-size="10.5" fill="#666">0.04075</text>
+<line x1="78.0" y1="236.80" x2="563.0" y2="236.80" stroke="#eeeeee"/>
+<text x="70.0" y="240.80" text-anchor="end" font-size="10.5" fill="#666">0.05579</text>
+<line x1="78.0" y1="195.20" x2="563.0" y2="195.20" stroke="#eeeeee"/>
+<text x="70.0" y="199.20" text-anchor="end" font-size="10.5" fill="#666">0.07082</text>
+<line x1="78.0" y1="153.60" x2="563.0" y2="153.60" stroke="#eeeeee"/>
+<text x="70.0" y="157.60" text-anchor="end" font-size="10.5" fill="#666">0.08586</text>
+<line x1="78.0" y1="112.00" x2="563.0" y2="112.00" stroke="#eeeeee"/>
+<text x="70.0" y="116.00" text-anchor="end" font-size="10.5" fill="#666">0.1009</text>
+<line x1="78.0" y1="320.0" x2="563.0" y2="320.0" stroke="#333"/>
+<line x1="78.0" y1="112.0" x2="78.0" y2="320.0" stroke="#333"/>
+<text x="78.0" y="338.0" text-anchor="middle" font-size="10.5" fill="#555">0</text>
+<text x="126.5" y="338.0" text-anchor="middle" font-size="10.5" fill="#555">100</text>
+<text x="175.0" y="338.0" text-anchor="middle" font-size="10.5" fill="#555">200</text>
+<text x="223.5" y="338.0" text-anchor="middle" font-size="10.5" fill="#555">300</text>
+<text x="272.0" y="338.0" text-anchor="middle" font-size="10.5" fill="#555">400</text>
+<text x="320.5" y="338.0" text-anchor="middle" font-size="10.5" fill="#555">500</text>
+<text x="369.0" y="338.0" text-anchor="middle" font-size="10.5" fill="#555">600</text>
+<text x="417.5" y="338.0" text-anchor="middle" font-size="10.5" fill="#555">700</text>
+<text x="466.0" y="338.0" text-anchor="middle" font-size="10.5" fill="#555">800</text>
+<text x="514.5" y="338.0" text-anchor="middle" font-size="10.5" fill="#555">900</text>
+<text x="563.0" y="338.0" text-anchor="middle" font-size="10.5" fill="#555">1000</text>
+<text x="320" y="88" text-anchor="middle" font-size="13.5" fill="#222">A1 · MLP 探针：纯拟合损失 L_fit（越小越好）</text>
+<text x="320" y="358" text-anchor="middle" font-size="11.5" fill="#444">训练步 step</text>
+<text x="20" y="216" text-anchor="middle" font-size="11.5" fill="#444" transform="rotate(-90 20 216)">L_fit</text>
+<polyline points="78.00,117.47 126.50,173.98 175.00,200.43 223.50,229.03 272.00,254.68 320.50,269.72 369.00,286.18 417.50,295.13 466.00,303.35 514.50,310.78 563.00,317.04" fill="none" stroke="#4c78a8" stroke-width="2.2"/>
+<circle cx="78.00" cy="117.47" r="2.6" fill="#4c78a8"/>
+<circle cx="126.50" cy="173.98" r="2.6" fill="#4c78a8"/>
+<circle cx="175.00" cy="200.43" r="2.6" fill="#4c78a8"/>
+<circle cx="223.50" cy="229.03" r="2.6" fill="#4c78a8"/>
+<circle cx="272.00" cy="254.68" r="2.6" fill="#4c78a8"/>
+<circle cx="320.50" cy="269.72" r="2.6" fill="#4c78a8"/>
+<circle cx="369.00" cy="286.18" r="2.6" fill="#4c78a8"/>
+<circle cx="417.50" cy="295.13" r="2.6" fill="#4c78a8"/>
+<circle cx="466.00" cy="303.35" r="2.6" fill="#4c78a8"/>
+<circle cx="514.50" cy="310.78" r="2.6" fill="#4c78a8"/>
+<circle cx="563.00" cy="317.04" r="2.6" fill="#4c78a8"/>
+<polyline points="78.00,117.47 126.50,173.51 175.00,198.94 223.50,228.72 272.00,253.08 320.50,268.99 369.00,285.26 417.50,296.90 466.00,304.21 514.50,310.28 563.00,316.86" fill="none" stroke="#e45756" stroke-width="2.2" stroke-dasharray="6 4"/>
+<circle cx="78.00" cy="117.47" r="2.6" fill="#e45756"/>
+<circle cx="126.50" cy="173.51" r="2.6" fill="#e45756"/>
+<circle cx="175.00" cy="198.94" r="2.6" fill="#e45756"/>
+<circle cx="223.50" cy="228.72" r="2.6" fill="#e45756"/>
+<circle cx="272.00" cy="253.08" r="2.6" fill="#e45756"/>
+<circle cx="320.50" cy="268.99" r="2.6" fill="#e45756"/>
+<circle cx="369.00" cy="285.26" r="2.6" fill="#e45756"/>
+<circle cx="417.50" cy="296.90" r="2.6" fill="#e45756"/>
+<circle cx="466.00" cy="304.21" r="2.6" fill="#e45756"/>
+<circle cx="514.50" cy="310.28" r="2.6" fill="#e45756"/>
+<circle cx="563.00" cy="316.86" r="2.6" fill="#e45756"/>
+<rect x="651.0" y="112.0" width="485.0" height="208.0" fill="#fbfbfb" stroke="#dddddd"/>
+<line x1="651.0" y1="320.00" x2="1136.0" y2="320.00" stroke="#eeeeee"/>
+<text x="643.0" y="324.00" text-anchor="end" font-size="10.5" fill="#666">0.1256</text>
+<line x1="651.0" y1="278.40" x2="1136.0" y2="278.40" stroke="#eeeeee"/>
+<text x="643.0" y="282.40" text-anchor="end" font-size="10.5" fill="#666">0.1285</text>
+<line x1="651.0" y1="236.80" x2="1136.0" y2="236.80" stroke="#eeeeee"/>
+<text x="643.0" y="240.80" text-anchor="end" font-size="10.5" fill="#666">0.1314</text>
+<line x1="651.0" y1="195.20" x2="1136.0" y2="195.20" stroke="#eeeeee"/>
+<text x="643.0" y="199.20" text-anchor="end" font-size="10.5" fill="#666">0.1344</text>
+<line x1="651.0" y1="153.60" x2="1136.0" y2="153.60" stroke="#eeeeee"/>
+<text x="643.0" y="157.60" text-anchor="end" font-size="10.5" fill="#666">0.1373</text>
+<line x1="651.0" y1="112.00" x2="1136.0" y2="112.00" stroke="#eeeeee"/>
+<text x="643.0" y="116.00" text-anchor="end" font-size="10.5" fill="#666">0.1402</text>
+<line x1="651.0" y1="320.0" x2="1136.0" y2="320.0" stroke="#333"/>
+<line x1="651.0" y1="112.0" x2="651.0" y2="320.0" stroke="#333"/>
+<text x="651.0" y="338.0" text-anchor="middle" font-size="10.5" fill="#555">0</text>
+<text x="748.0" y="338.0" text-anchor="middle" font-size="10.5" fill="#555">100</text>
+<text x="845.0" y="338.0" text-anchor="middle" font-size="10.5" fill="#555">200</text>
+<text x="942.0" y="338.0" text-anchor="middle" font-size="10.5" fill="#555">300</text>
+<text x="1039.0" y="338.0" text-anchor="middle" font-size="10.5" fill="#555">400</text>
+<text x="1136.0" y="338.0" text-anchor="middle" font-size="10.5" fill="#555">500</text>
+<text x="894" y="88" text-anchor="middle" font-size="13.5" fill="#222">A2 · 原生 50 通道头：纯拟合损失 L_fit（越小越好）</text>
+<text x="894" y="358" text-anchor="middle" font-size="11.5" fill="#444">训练步 step</text>
+<text x="593" y="216" text-anchor="middle" font-size="11.5" fill="#444" transform="rotate(-90 593 216)">L_fit</text>
+<polyline points="651.00,121.99 748.00,172.51 845.00,200.46 942.00,228.03 1039.00,258.41 1136.00,290.60" fill="none" stroke="#4c78a8" stroke-width="2.2"/>
+<circle cx="651.00" cy="121.99" r="2.6" fill="#4c78a8"/>
+<circle cx="748.00" cy="172.51" r="2.6" fill="#4c78a8"/>
+<circle cx="845.00" cy="200.46" r="2.6" fill="#4c78a8"/>
+<circle cx="942.00" cy="228.03" r="2.6" fill="#4c78a8"/>
+<circle cx="1039.00" cy="258.41" r="2.6" fill="#4c78a8"/>
+<circle cx="1136.00" cy="290.60" r="2.6" fill="#4c78a8"/>
+<polyline points="651.00,121.99 748.00,173.20 845.00,201.49 942.00,229.39 1039.00,260.14 1136.00,292.59" fill="none" stroke="#e45756" stroke-width="2.2" stroke-dasharray="6 4"/>
+<circle cx="651.00" cy="121.99" r="2.6" fill="#e45756"/>
+<circle cx="748.00" cy="173.20" r="2.6" fill="#e45756"/>
+<circle cx="845.00" cy="201.49" r="2.6" fill="#e45756"/>
+<circle cx="942.00" cy="229.39" r="2.6" fill="#e45756"/>
+<circle cx="1039.00" cy="260.14" r="2.6" fill="#e45756"/>
+<circle cx="1136.00" cy="292.59" r="2.6" fill="#e45756"/>
+<rect x="78.0" y="408.0" width="485.0" height="208.0" fill="#fbfbfb" stroke="#dddddd"/>
+<line x1="78.0" y1="616.00" x2="563.0" y2="616.00" stroke="#eeeeee"/>
+<text x="70.0" y="620.00" text-anchor="end" font-size="10.5" fill="#666">-0.03337</text>
+<line x1="78.0" y1="574.40" x2="563.0" y2="574.40" stroke="#eeeeee"/>
+<text x="70.0" y="578.40" text-anchor="end" font-size="10.5" fill="#666">0.06372</text>
+<line x1="78.0" y1="532.80" x2="563.0" y2="532.80" stroke="#eeeeee"/>
+<text x="70.0" y="536.80" text-anchor="end" font-size="10.5" fill="#666">0.1608</text>
+<line x1="78.0" y1="491.20" x2="563.0" y2="491.20" stroke="#eeeeee"/>
+<text x="70.0" y="495.20" text-anchor="end" font-size="10.5" fill="#666">0.2579</text>
+<line x1="78.0" y1="449.60" x2="563.0" y2="449.60" stroke="#eeeeee"/>
+<text x="70.0" y="453.60" text-anchor="end" font-size="10.5" fill="#666">0.355</text>
+<line x1="78.0" y1="408.00" x2="563.0" y2="408.00" stroke="#eeeeee"/>
+<text x="70.0" y="412.00" text-anchor="end" font-size="10.5" fill="#666">0.4521</text>
+<line x1="78.0" y1="616.0" x2="563.0" y2="616.0" stroke="#333"/>
+<line x1="78.0" y1="408.0" x2="78.0" y2="616.0" stroke="#333"/>
+<text x="78.0" y="634.0" text-anchor="middle" font-size="10.5" fill="#555">0</text>
+<text x="126.5" y="634.0" text-anchor="middle" font-size="10.5" fill="#555">100</text>
+<text x="175.0" y="634.0" text-anchor="middle" font-size="10.5" fill="#555">200</text>
+<text x="223.5" y="634.0" text-anchor="middle" font-size="10.5" fill="#555">300</text>
+<text x="272.0" y="634.0" text-anchor="middle" font-size="10.5" fill="#555">400</text>
+<text x="320.5" y="634.0" text-anchor="middle" font-size="10.5" fill="#555">500</text>
+<text x="369.0" y="634.0" text-anchor="middle" font-size="10.5" fill="#555">600</text>
+<text x="417.5" y="634.0" text-anchor="middle" font-size="10.5" fill="#555">700</text>
+<text x="466.0" y="634.0" text-anchor="middle" font-size="10.5" fill="#555">800</text>
+<text x="514.5" y="634.0" text-anchor="middle" font-size="10.5" fill="#555">900</text>
+<text x="563.0" y="634.0" text-anchor="middle" font-size="10.5" fill="#555">1000</text>
+<text x="320" y="384" text-anchor="middle" font-size="13.5" fill="#222">A1 · MLP 探针：三动作平均 Spearman（训练内）</text>
+<text x="320" y="654" text-anchor="middle" font-size="11.5" fill="#444">训练步 step</text>
+<text x="20" y="512" text-anchor="middle" font-size="11.5" fill="#444" transform="rotate(-90 20 512)">Spearman</text>
+<polyline points="78.00,603.15 126.50,544.16 175.00,491.69 223.50,484.79 272.00,467.68 320.50,461.45 369.00,448.01 417.50,441.94 466.00,436.24 514.50,433.77 563.00,420.85" fill="none" stroke="#4c78a8" stroke-width="2.2"/>
+<circle cx="78.00" cy="603.15" r="2.6" fill="#4c78a8"/>
+<circle cx="126.50" cy="544.16" r="2.6" fill="#4c78a8"/>
+<circle cx="175.00" cy="491.69" r="2.6" fill="#4c78a8"/>
+<circle cx="223.50" cy="484.79" r="2.6" fill="#4c78a8"/>
+<circle cx="272.00" cy="467.68" r="2.6" fill="#4c78a8"/>
+<circle cx="320.50" cy="461.45" r="2.6" fill="#4c78a8"/>
+<circle cx="369.00" cy="448.01" r="2.6" fill="#4c78a8"/>
+<circle cx="417.50" cy="441.94" r="2.6" fill="#4c78a8"/>
+<circle cx="466.00" cy="436.24" r="2.6" fill="#4c78a8"/>
+<circle cx="514.50" cy="433.77" r="2.6" fill="#4c78a8"/>
+<circle cx="563.00" cy="420.85" r="2.6" fill="#4c78a8"/>
+<polyline points="78.00,603.15 126.50,543.05 175.00,491.72 223.50,480.79 272.00,464.11 320.50,452.79 369.00,445.74 417.50,439.21 466.00,434.52 514.50,436.32 563.00,427.00" fill="none" stroke="#e45756" stroke-width="2.2" stroke-dasharray="6 4"/>
+<circle cx="78.00" cy="603.15" r="2.6" fill="#e45756"/>
+<circle cx="126.50" cy="543.05" r="2.6" fill="#e45756"/>
+<circle cx="175.00" cy="491.72" r="2.6" fill="#e45756"/>
+<circle cx="223.50" cy="480.79" r="2.6" fill="#e45756"/>
+<circle cx="272.00" cy="464.11" r="2.6" fill="#e45756"/>
+<circle cx="320.50" cy="452.79" r="2.6" fill="#e45756"/>
+<circle cx="369.00" cy="445.74" r="2.6" fill="#e45756"/>
+<circle cx="417.50" cy="439.21" r="2.6" fill="#e45756"/>
+<circle cx="466.00" cy="434.52" r="2.6" fill="#e45756"/>
+<circle cx="514.50" cy="436.32" r="2.6" fill="#e45756"/>
+<circle cx="563.00" cy="427.00" r="2.6" fill="#e45756"/>
+<rect x="651.0" y="408.0" width="485.0" height="208.0" fill="#fbfbfb" stroke="#dddddd"/>
+<line x1="651.0" y1="616.00" x2="1136.0" y2="616.00" stroke="#eeeeee"/>
+<text x="643.0" y="620.00" text-anchor="end" font-size="10.5" fill="#666">0.0684</text>
+<line x1="651.0" y1="574.40" x2="1136.0" y2="574.40" stroke="#eeeeee"/>
+<text x="643.0" y="578.40" text-anchor="end" font-size="10.5" fill="#666">0.1096</text>
+<line x1="651.0" y1="532.80" x2="1136.0" y2="532.80" stroke="#eeeeee"/>
+<text x="643.0" y="536.80" text-anchor="end" font-size="10.5" fill="#666">0.1507</text>
+<line x1="651.0" y1="491.20" x2="1136.0" y2="491.20" stroke="#eeeeee"/>
+<text x="643.0" y="495.20" text-anchor="end" font-size="10.5" fill="#666">0.1919</text>
+<line x1="651.0" y1="449.60" x2="1136.0" y2="449.60" stroke="#eeeeee"/>
+<text x="643.0" y="453.60" text-anchor="end" font-size="10.5" fill="#666">0.2331</text>
+<line x1="651.0" y1="408.00" x2="1136.0" y2="408.00" stroke="#eeeeee"/>
+<text x="643.0" y="412.00" text-anchor="end" font-size="10.5" fill="#666">0.2742</text>
+<line x1="651.0" y1="616.0" x2="1136.0" y2="616.0" stroke="#333"/>
+<line x1="651.0" y1="408.0" x2="651.0" y2="616.0" stroke="#333"/>
+<text x="651.0" y="634.0" text-anchor="middle" font-size="10.5" fill="#555">0</text>
+<text x="748.0" y="634.0" text-anchor="middle" font-size="10.5" fill="#555">100</text>
+<text x="845.0" y="634.0" text-anchor="middle" font-size="10.5" fill="#555">200</text>
+<text x="942.0" y="634.0" text-anchor="middle" font-size="10.5" fill="#555">300</text>
+<text x="1039.0" y="634.0" text-anchor="middle" font-size="10.5" fill="#555">400</text>
+<text x="1136.0" y="634.0" text-anchor="middle" font-size="10.5" fill="#555">500</text>
+<text x="894" y="384" text-anchor="middle" font-size="13.5" fill="#222">A2 · 原生 50 通道头：三动作平均 Spearman（训练内）</text>
+<text x="894" y="654" text-anchor="middle" font-size="11.5" fill="#444">训练步 step</text>
+<text x="593" y="512" text-anchor="middle" font-size="11.5" fill="#444" transform="rotate(-90 593 512)">Spearman</text>
+<polyline points="651.00,595.79 748.00,509.35 845.00,461.41 942.00,447.86 1039.00,439.36 1136.00,428.21" fill="none" stroke="#4c78a8" stroke-width="2.2"/>
+<circle cx="651.00" cy="595.79" r="2.6" fill="#4c78a8"/>
+<circle cx="748.00" cy="509.35" r="2.6" fill="#4c78a8"/>
+<circle cx="845.00" cy="461.41" r="2.6" fill="#4c78a8"/>
+<circle cx="942.00" cy="447.86" r="2.6" fill="#4c78a8"/>
+<circle cx="1039.00" cy="439.36" r="2.6" fill="#4c78a8"/>
+<circle cx="1136.00" cy="428.21" r="2.6" fill="#4c78a8"/>
+<polyline points="651.00,595.79 748.00,509.80 845.00,462.04 942.00,448.97 1039.00,441.08 1136.00,430.37" fill="none" stroke="#e45756" stroke-width="2.2" stroke-dasharray="6 4"/>
+<circle cx="651.00" cy="595.79" r="2.6" fill="#e45756"/>
+<circle cx="748.00" cy="509.80" r="2.6" fill="#e45756"/>
+<circle cx="845.00" cy="462.04" r="2.6" fill="#e45756"/>
+<circle cx="942.00" cy="448.97" r="2.6" fill="#e45756"/>
+<circle cx="1039.00" cy="441.08" r="2.6" fill="#e45756"/>
+<circle cx="1136.00" cy="430.37" r="2.6" fill="#e45756"/>
+<line x1="78" y1="692" x2="106" y2="692" stroke="#4c78a8" stroke-width="2.6"/>
+<text x="114" y="696" font-size="12" fill="#333">mixed（L_fit + 0.1·L_policy）</text>
+<line x1="378" y1="692" x2="406" y2="692" stroke="#e45756" stroke-width="2.6" stroke-dasharray="6 4"/>
+<text x="414" y="696" font-size="12" fill="#333">pure（仅 L_fit）</text>
 </svg>

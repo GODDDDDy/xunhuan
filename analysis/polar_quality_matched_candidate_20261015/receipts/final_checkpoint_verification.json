@@ -1,0 +1,43 @@
+{
+  "cpu_only": true,
+  "checked_unix": 1792009746.3253856,
+  "arms": {
+    "real_quality": {
+      "step": 2000,
+      "sha256": "aa7a723094ccb693e7a7b0d5f27ed9003d93bfcfd38cd44ac3d80dbfa5428efc",
+      "unique_training_images": 3640,
+      "frozen_model_tensors_exact": 428,
+      "net_g_tensors_exact": 436,
+      "updated_feedback_Q_tensors": 98,
+      "all_monitor_T1_hashes_exact": true
+    },
+    "fixed_quality": {
+      "step": 2000,
+      "sha256": "f5706ad0fd84f80884c2bc4acf9b8c86c046b1f594745e0ab9d21ce32218406c",
+      "unique_training_images": 3640,
+      "frozen_model_tensors_exact": 428,
+      "net_g_tensors_exact": 436,
+      "updated_feedback_Q_tensors": 98,
+      "all_monitor_T1_hashes_exact": true
+    }
+  },
+  "splits": {
+    "validation": {
+      "unique_frames": 872,
+      "original_size": true,
+      "tiling": false,
+      "all_arms_T1_equal": true,
+      "scenes": 8,
+      "float_examples": 8
+    },
+    "test": {
+      "unique_frames": 188,
+      "original_size": true,
+      "tiling": false,
+      "all_arms_T1_equal": true,
+      "scenes": 8,
+      "float_examples": 8
+    }
+  },
+  "paired_training_sample_ids_exact": true
+}

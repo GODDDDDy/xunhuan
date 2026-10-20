@@ -1,0 +1,38 @@
+{
+  "planned_arm": "G6_phase01",
+  "seed": 2026,
+  "steps": 3000,
+  "phase_weight": 0.1,
+  "matched_shared_fields": {
+    "seed": true,
+    "data": true,
+    "optimization": true,
+    "model": true,
+    "path_manifest": true,
+    "path_schedule": true,
+    "path_base_config": true,
+    "path_source_root": true,
+    "path_reference_r2p": true,
+    "path_pretrained_r2p": true
+  },
+  "sha256": {
+    "/media/li/data3/25thstudent/DY/929work/k1_ablation_20260930/phase_objective_g6_20261002/scripts/prepare_protocol.py": "199a558f811ee6ba65419916e9e7e5f96d1b30f91cb14961b52dab9338223f96",
+    "/media/li/data3/25thstudent/DY/929work/k1_ablation_20260930/phase_objective_g6_20261002/scripts/run_g6_phase.py": "1522c53492d7b67d1436be715e2bb71e52283979920f746b4b89c429a06086a5",
+    "/media/li/data3/25thstudent/DY/929work/k1_ablation_20260930/phase_objective_g6_20261002/scripts/run_study.py": "6748c16efe1e1e5011d708fcfe02b7d93584d8a808ac44b15f8a3fe244e8b5c1",
+    "/media/li/data3/25thstudent/DY/929work/k1_ablation_20260930/phase_objective_g6_20261002/scripts/evaluate_detailed.py": "c5d0ae4253f181c9e20a381ddfae838397bfa729c0069843e4fb71eaeb8ed323",
+    "/media/li/data3/25thstudent/DY/929work/k1_ablation_20260930/phase_objective_g6_20261002/scripts/reference/G6_original.yaml": "45a7f93cef396b33117f1baa433f1c746bec4d1dacea01dc9fb95bc76bb2b4c9",
+    "/media/li/data3/25thstudent/DY/929work/k1_ablation_20260930/phase_objective_g6_20261002/scripts/reference/k1_ablation_snapshot.py": "1915a0bf1b71c4b7a3788685a6a196a5b25ac7b75c89b17c9478c0f01d88b075",
+    "/media/li/data3/25thstudent/DY/929work/k1_ablation_20260930/phase_objective_g6_20261002/configs/G6_phase01.yaml": "1b0716db28067b2e81aa995181c7f6c094bd2a2bd8df1b3e30a577bdd458a4e3"
+  },
+  "k2_reference_config_sha256": "b6498da7034049b11c69acd1a86a681b4ffef254b23ea62e4e050f98586a5db1",
+  "comparison": [
+    "new G6 phase0.1 vs historical G6 phase1 (objective change)",
+    "K2 phase0.1 round1 and round2 vs new G6 phase0.1 (whole scheme)"
+  ],
+  "limits": [
+    "one seed; validation used for exploration",
+    "equal optimizer steps do not mean equal compute",
+    "K2 also changes alignment, trainable modules and round supervision",
+    "no additive module or isolated recurrence contribution from G6 vs K2"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "cpu_only": true,
+  "selection": false,
+  "splits": {
+    "validation": {
+      "frames": 872,
+      "unique_ids": 872,
+      "float_examples_verified": 8,
+      "three_output_hashes_per_example_exact": true,
+      "means_and_paired_CSV_exact": true,
+      "real_vs_T1_PSNR_positive_scenes": 4,
+      "real_vs_fixed_PSNR_positive_scenes": 5
+    },
+    "test": {
+      "frames": 188,
+      "unique_ids": 188,
+      "float_examples_verified": 8,
+      "three_output_hashes_per_example_exact": true,
+      "means_and_paired_CSV_exact": true,
+      "real_vs_T1_PSNR_positive_scenes": 5,
+      "real_vs_fixed_PSNR_positive_scenes": 4
+    }
+  },
+  "runtime_source_files": 11,
+  "three_source_and_two_final_weight_hashes_exact": true,
+  "locked_config_receipt_exact": true,
+  "locked_code_manifest_exact": 46
+}

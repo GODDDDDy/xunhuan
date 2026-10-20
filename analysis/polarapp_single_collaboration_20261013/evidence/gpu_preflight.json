@@ -1,0 +1,58 @@
+{
+  "source": {
+    "source_run": "polar_gain_judgement_short_20261012",
+    "source_sha256": "279d0a329d0efebee9678c2156bf3e7b60c0646e75a5f37f8015c7b100f9e9a2",
+    "source_protocol_id": "8d4f7dd5e12ce21b92c4d3a3413b68da8786c7cb414e55a9ce31600de8fc6ad2",
+    "core_tensors_strict_equal": 396,
+    "generator_tensors_strict_equal": 436,
+    "optimizer_reused": false,
+    "rng_reused": false,
+    "official_polarfree_is_ancestry_not_actual_net_g_start": true,
+    "inactive_source_modules_not_constructed": [
+      "H",
+      "Q",
+      "cross_round_feedback",
+      "RGB_correction_head",
+      "local_acceptance",
+      "action_cost_gate"
+    ],
+    "core_legacy_observation_adapters": "retained frozen; previous-task inputs absent"
+  },
+  "crop_size": 64,
+  "batch_size": 2,
+  "microbatch": 1,
+  "joint_step_seconds": {
+    "control": 0.38030784111469984,
+    "meta": 0.3947366802021861
+  },
+  "joint_peak_GiB": {
+    "control": 0.986666202545166,
+    "meta": 1.0635113716125488
+  },
+  "meta_step_seconds": 12.881992880254984,
+  "meta_peak_GiB": 6.179469108581543,
+  "meta_gradient_check": {
+    "meta_inner_loss": 1.3530791997909546,
+    "meta_outer_raw_loss": 0.004576032638549805,
+    "meta_outer_scaled_loss": 4.576032638549805,
+    "meta_hypergradient_raw_norm": 8.288565306655177e-09,
+    "meta_hypergradient_scaled_norm": 8.288565306655176e-06,
+    "meta_outer_scale": 1000.0
+  },
+  "full_image_seconds": 5.246241493150592,
+  "full_image_shape": [
+    1,
+    3,
+    1024,
+    1224
+  ],
+  "full_peak_GiB": 8.603652477264404,
+  "full_forward": true,
+  "tiling": false,
+  "resource_image_split": "train",
+  "expected_training_seconds": 6189.731428027153,
+  "expected_three_output_evaluation_seconds": 16683.047948218882,
+  "evaluation_reserve_seconds": 21819.65753786266,
+  "operational_training_deadline_unix": 1791948922.9335246,
+  "preflight_updates_discarded": true
+}

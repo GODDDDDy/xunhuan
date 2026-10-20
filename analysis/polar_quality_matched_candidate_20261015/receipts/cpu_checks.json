@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "strict_source_tensors": 526,
+  "net_g_tensors": 436,
+  "source_initial_sha256": "af2367fd9f96871cad3b94230638cf5c75acd3b8f8c186cdf210a37b730e82d8",
+  "real_forward_exact": true,
+  "GT_invariance": true,
+  "optimizer_and_rng_resume_exact": true,
+  "gradients_only_feedback_Q": true,
+  "Q_prediction_supervision_gradient": true,
+  "first_round_and_core_frozen": true,
+  "all_condition_paths_match": true,
+  "diagnostic_updates_discarded": true
+}

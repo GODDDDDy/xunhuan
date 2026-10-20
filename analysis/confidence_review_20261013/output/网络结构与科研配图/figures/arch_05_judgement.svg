@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1830 940" width="1830" height="940" font-family="Microsoft YaHei, Arial, sans-serif">
+  <rect width="1830" height="940" fill="#FFFFFF"/>
+  <defs>
+    <marker id="arrow-default" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#555555"/>
+    </marker>
+    <marker id="arrow-c0" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#2563EB"/>
+    </marker>
+    <marker id="arrow-c1" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#10B981"/>
+    </marker>
+    <marker id="arrow-c2" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#7C3AED"/>
+    </marker>
+    <marker id="arrow-c3" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#EA580C"/>
+    </marker>
+    <marker id="arrow-c4" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#C62828"/>
+    </marker>
+    <marker id="arrow-c5" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#0D47A1"/>
+    </marker>
+    <marker id="arrow-c6" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#1B5E20"/>
+    </marker>
+    <marker id="arrow-c7" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#4A148C"/>
+    </marker>
+    <marker id="arrow-c8" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#BF360C"/>
+    </marker>
+    <marker id="arrow-c9" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#37474F"/>
+    </marker>
+  </defs>
+  <path d="M 470.0,150.0 L 550.0,150.0" stroke="#64748B" stroke-width="1.5" fill="none" marker-end="url(#arrow-default)"/>
+  <path d="M 970.0,150.0 L 1090.0,150.0" stroke="#64748B" stroke-width="1.5" fill="none" marker-end="url(#arrow-default)" stroke-dasharray="3,3"/>
+  <path d="M 580.0,385.0 L 690.0,385.0" stroke="#64748B" stroke-width="1.5" fill="none" marker-end="url(#arrow-default)"/>
+  <path d="M 1200.0,385.0 L 1310.0,385.0" stroke="#64748B" stroke-width="1.5" fill="none" marker-end="url(#arrow-default)"/>
+  <path d="M 580.0,635.0 L 690.0,635.0" stroke="#64748B" stroke-width="1.5" fill="none" marker-end="url(#arrow-default)"/>
+  <path d="M 945.0,457.5 L 945.0,575.0" stroke="#64748B" stroke-width="1.5" fill="none" marker-end="url(#arrow-default)" stroke-dasharray="3,3"/>
+  <path d="M 1530.0,457.5 L 1530.0,575.0" stroke="#64748B" stroke-width="1.5" fill="none" marker-end="url(#arrow-default)"/>
+  <rect x="50.0" y="90.0" width="420.0" height="120.0" fill="#EAF3F6" stroke="#26748B" stroke-width="2" rx="8"/>
+  <text x="260.0" y="136.3" font-size="18" fill="#173B4E" text-anchor="middle" font-weight="bold">H输入：I / clamp(T1) / |I−T1|</text>
+  <text x="260.0" y="156.3" font-size="18" fill="#173B4E" text-anchor="middle" font-weight="bold">原偏振摘要5 + 三尺度F各投影8</text>
+  <text x="260.0" y="176.3" font-size="18" fill="#173B4E" text-anchor="middle" font-weight="bold">4×4池化/对齐，共38通道</text>
+  <rect x="550.0" y="90.0" width="420.0" height="120.0" fill="#EAF3F6" stroke="#26748B" stroke-width="2" rx="8"/>
+  <text x="760.0" y="136.3" font-size="18" fill="#173B4E" text-anchor="middle" font-weight="bold">H：Conv38→32→32→1</text>
+  <text x="760.0" y="156.3" font-size="18" fill="#173B4E" text-anchor="middle" font-weight="bold">GELU；b=0.001+softplus</text>
+  <text x="760.0" y="176.3" font-size="18" fill="#173B4E" text-anchor="middle" font-weight="bold">C=exp(-b/τ)，C停止梯度</text>
+  <rect x="1090.0" y="90.0" width="420.0" height="120.0" fill="#EAF3F6" stroke="#26748B" stroke-width="2" rx="8"/>
+  <text x="1300.0" y="136.3" font-size="18" fill="#173B4E" text-anchor="middle" font-weight="bold">历史H监督</text>
+  <text x="1300.0" y="156.3" font-size="18" fill="#173B4E" text-anchor="middle" font-weight="bold">局部clamp(T1)误差 e</text>
+  <text x="1300.0" y="176.3" font-size="18" fill="#173B4E" text-anchor="middle" font-weight="bold">L_H=mean(e/b+log b)</text>
+  <rect x="60.0" y="312.5" width="520.0" height="145.0" fill="#EAF3F6" stroke="#26748B" stroke-width="2" rx="8"/>
+  <text x="320.0" y="361.3" font-size="18" fill="#173B4E" text-anchor="middle" font-weight="bold">正式判断50通道</text>
+  <text x="320.0" y="381.3" font-size="18" fill="#173B4E" text-anchor="middle" font-weight="bold">池化I/T1/U/Δ(12)+偏振(5)+b/C(2)</text>
+  <text x="320.0" y="401.3" font-size="18" fill="#173B4E" text-anchor="middle" font-weight="bold">任务投影8+状态16+增量平方3</text>
+  <text x="320.0" y="421.3" font-size="18" fill="#173B4E" text-anchor="middle" font-weight="bold">绝对增量3+抵消比例1；输入detach</text>
+  <rect x="690.0" y="312.5" width="510.0" height="145.0" fill="#EAF3F6" stroke="#26748B" stroke-width="2" rx="8"/>
+  <text x="945.0" y="361.3" font-size="18" fill="#173B4E" text-anchor="middle" font-weight="bold">动作判断器，15,627参数</text>
+  <text x="945.0" y="381.3" font-size="18" fill="#173B4E" text-anchor="middle" font-weight="bold">Conv50→32，3×3 + GELU</text>
+  <text x="945.0" y="401.3" font-size="18" fill="#173B4E" text-anchor="middle" font-weight="bold">DW3×3，32 + GELU</text>
+  <text x="945.0" y="421.3" font-size="18" fill="#173B4E" text-anchor="middle" font-weight="bold">Conv1×1，32→3</text>
+  <rect x="1310.0" y="312.5" width="440.0" height="145.0" fill="#EAF3F6" stroke="#26748B" stroke-width="2" rx="8"/>
+  <text x="1530.0" y="371.3" font-size="18" fill="#173B4E" text-anchor="middle" font-weight="bold">三非零动作预测成本</text>
+  <text x="1530.0" y="391.3" font-size="18" fill="#173B4E" text-anchor="middle" font-weight="bold">0.25 / 0.5 / 1（零动作固定0）</text>
+  <text x="1530.0" y="411.3" font-size="18" fill="#173B4E" text-anchor="middle" font-weight="bold">加训练偏差和安全门槛</text>
+  <rect x="60.0" y="575.0" width="520.0" height="120.0" fill="#EAF3F6" stroke="#26748B" stroke-width="2" rx="8"/>
+  <text x="320.0" y="621.3" font-size="18" fill="#173B4E" text-anchor="middle" font-weight="bold">GT仅训练/核验标签</text>
+  <text x="320.0" y="641.3" font-size="18" fill="#173B4E" text-anchor="middle" font-weight="bold">ΔE(a)=pool[(T1+aΔ−GT)²−(T1−GT)²]</text>
+  <text x="320.0" y="661.3" font-size="18" fill="#173B4E" text-anchor="middle" font-weight="bold">95%训练分位归一成本</text>
+  <rect x="690.0" y="575.0" width="510.0" height="120.0" fill="#EAF3F6" stroke="#26748B" stroke-width="2" rx="8"/>
+  <text x="945.0" y="621.3" font-size="18" fill="#173B4E" text-anchor="middle" font-weight="bold">本次唯一训练目标</text>
+  <text x="945.0" y="641.3" font-size="18" fill="#173B4E" text-anchor="middle" font-weight="bold">SmoothL1(预测,实际成本)</text>
+  <text x="945.0" y="661.3" font-size="18" fill="#173B4E" text-anchor="middle" font-weight="bold">+ 0.1软动作期望实际成本</text>
+  <rect x="1310.0" y="575.0" width="440.0" height="120.0" fill="#EAF3F6" stroke="#26748B" stroke-width="2" rx="8"/>
+  <text x="1530.0" y="621.3" font-size="18" fill="#173B4E" text-anchor="middle" font-weight="bold">argmin → 4×4动作网格</text>
+  <text x="1530.0" y="641.3" font-size="18" fill="#173B4E" text-anchor="middle" font-weight="bold">最近邻到原图，M停止梯度</text>
+  <text x="1530.0" y="661.3" font-size="18" fill="#173B4E" text-anchor="middle" font-weight="bold">T2=where(M=0,T1,T1+MΔ)</text>
+  <text x="35.0" y="34.0" font-size="26" fill="#173B4E" text-anchor="start">质量头、动作判断、训练校准与最终区域保护</text>
+  <text x="40.0" y="795.0" font-size="17" fill="#586676" text-anchor="start">偏差/安全只用训练内部237/423图角色；候选和Q固定，判断1140图3000步。四角色为来源见过的场景，不是未见确认数据。</text>
+  <text x="40.0" y="840.0" font-size="17" fill="#586676" text-anchor="start">安全校准要求平均MSE不增、有害接受≤20%，选最大覆盖；本次最终门槛1.6：全部1060图M=0。GT理想选择不能部署。</text>
+  <text x="40.0" y="885.0" font-size="17" fill="#586676" text-anchor="start">重要语义：C是质量分数，Q是修复需求代理，动作成本才判断给定修正的收益。三种量互不等价。</text>
+</svg>

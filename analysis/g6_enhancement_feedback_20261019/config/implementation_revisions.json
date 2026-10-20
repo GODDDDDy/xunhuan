@@ -1,0 +1,28 @@
+[
+  {
+    "protocol_id": "be9b88b68f94c45e19b82594f355153dd1d7fdbcfc03c404f8326e2279e7b337",
+    "scientific_id": "884b88dcb7e0331073703e22d484b033d3b472c011915060a84de9c6edf8a628",
+    "reason": "INACTIVE_B expectation omitted the documented dead parameter blocks.enhancer.de_reduce_chan2.weight (experiment-32 protocol: not used in forward; re-confirmed by this run's Adam state: no gradient in any arm). Added KNOWN_DEAD handling for all arms. See IMPLEMENTATION_COMPLETION_LOG_ZH.md section 7.",
+    "replacements": [
+      {
+        "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/g6_enhancement_feedback_20261019/scripts/audit_g6_feedback.py",
+        "original_sha256": "e116ae9ee5f3c5d67c76a35d15fd54436b6c2a3329599686775e2872748149ee",
+        "preserved_original_path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/g6_enhancement_feedback_20261019/config/preserved/audit_g6_feedback.original.py",
+        "repaired_sha256": "be430fa6360fc5a07a7ef63bd3b1fee2ae684f3926097da031c258d8cf57be3f"
+      }
+    ]
+  },
+  {
+    "protocol_id": "be9b88b68f94c45e19b82594f355153dd1d7fdbcfc03c404f8326e2279e7b337",
+    "scientific_id": "884b88dcb7e0331073703e22d484b033d3b472c011915060a84de9c6edf8a628",
+    "reason": "finish() artifact-manifest builder did not skip the offline-VGG symlink (experiments/pretrained_models -> environment cache); resolving it placed an archive member outside ROOT. Symlinks are environment plumbing, not experiment evidence. See IMPLEMENTATION_COMPLETION_LOG_ZH.md section 7.",
+    "replacements": [
+      {
+        "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/g6_enhancement_feedback_20261019/scripts/run_g6_feedback.py",
+        "original_sha256": "5c2a674175df1ce1aba01314ab9dee418550dced4d23f74bbec8a6f01e83bad3",
+        "preserved_original_path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/g6_enhancement_feedback_20261019/config/preserved/run_g6_feedback.py.original.py",
+        "repaired_sha256": "9cc1bbbcb7c4445a76f2db47fda64b2e877b4ca9329533c7c89caddd17dff9bd"
+      }
+    ]
+  }
+]

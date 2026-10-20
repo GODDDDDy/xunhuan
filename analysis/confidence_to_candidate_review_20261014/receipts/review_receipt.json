@@ -1,0 +1,70 @@
+{
+  "review_date": "2026-10-14",
+  "timezone": "Asia/Shanghai",
+  "scope": "analysis_only",
+  "source_attachment": "G:/chrome-download/R2P_置信度引导候选生成_背景与验证任务交接_Codex.md",
+  "attachment_copy_sha256": "20da7a11f85e781d75c181e031b8d8bd3e14124b391940efc014d621d8a40044",
+  "report": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\analysis\\confidence_to_candidate_review_20261014\\REVIEW_BEFORE_EXECUTION.md",
+  "report_sha256": "f87f4d03b1c12710269ecb20d610c3960c45e8c2dc19cb01834908b3beca946b",
+  "report_lines": 250,
+  "local_references_verified": [
+    "F:/WORK/projects/pidsr_recurrent_joint_k2/analysis/POLARAPP_FREEZE_VS_PARTIAL_RESULTS_ZH_20261014.md",
+    "F:/WORK/projects/pidsr_recurrent_joint_k2/analysis/POLARAPP_SINGLE_COLLABORATION_PROTOCOL_ZH_20261013.md",
+    "F:/WORK/projects/pidsr_recurrent_joint_k2/analysis/CONFIDENCE_OVERNIGHT_RESULTS_ZH_20261009.md",
+    "F:/WORK/projects/pidsr_recurrent_joint_k2/analysis/POLAR_RESIDUAL_FEEDBACK_RESULTS_ZH_20261010.md",
+    "F:/WORK/projects/pidsr_recurrent_joint_k2/analysis/POLAR_GAIN_JUDGEMENT_SHORT_RESULTS_ZH_20261012.md",
+    "F:/WORK/projects/pidsr_recurrent_joint_k2/_dl/polar_gain_judgement_short_20261012/artifacts/scripts/staged.py:323",
+    "F:/WORK/projects/pidsr_recurrent_joint_k2/analysis/gain_objective_audit_20261013_120028/docs/A2_findings.md",
+    "F:/WORK/projects/pidsr_recurrent_joint_k2/_dl/polar_gain_judgement_short_20261012/artifacts/scripts/study.py:125",
+    "F:/WORK/projects/pidsr_recurrent_joint_k2/_dl/polar_gain_judgement_short_20261012/artifacts/scripts/study.py:126",
+    "F:/WORK/projects/pidsr_recurrent_joint_k2/_dl/polar_gain_judgement_short_20261012/artifacts/scripts/feedback.py:56",
+    "F:/WORK/projects/pidsr_recurrent_joint_k2/_dl/polar_gain_judgement_short_20261012/artifacts/scripts/enhancer.py:36",
+    "F:/WORK/projects/pidsr_recurrent_joint_k2/_dl/polar_gain_judgement_short_20261012/artifacts/scripts/enhancer.py:97",
+    "F:/WORK/projects/pidsr_recurrent_joint_k2/_dl/polar_gain_judgement_short_20261012/artifacts/scripts/feedback.py:72",
+    "F:/WORK/projects/pidsr_recurrent_joint_k2/_dl/polar_gain_judgement_short_20261012/artifacts/scripts/feedback.py:80",
+    "F:/WORK/projects/pidsr_recurrent_joint_k2/_dl/polar_gain_judgement_short_20261012/artifacts/scripts/study.py:135",
+    "F:/WORK/projects/pidsr_recurrent_joint_k2/_dl/polar_gain_judgement_short_20261012/artifacts/scripts/error_guidance.py:24",
+    "F:/WORK/projects/pidsr_recurrent_joint_k2/_dl/polar_gain_judgement_short_20261012/artifacts/scripts/study.py:164",
+    "F:/WORK/projects/pidsr_recurrent_joint_k2/_dl/polar_gain_judgement_short_20261012/artifacts/scripts/staged.py:39",
+    "F:/WORK/projects/pidsr_recurrent_joint_k2/analysis/gain_objective_audit_20261013_120028/scripts/a0_audit.py:214",
+    "F:/WORK/projects/pidsr_recurrent_joint_k2/analysis/gain_objective_audit_20261013_120028/scripts/a2_train.py:165"
+  ],
+  "code_copies": [
+    {
+      "file": "study.py",
+      "sha256": "d3a3fedf7706ab30bad6d49f612289713a485b93c7d87f363370345fb1ad2d0d",
+      "review_copy_equal": true
+    },
+    {
+      "file": "enhancer.py",
+      "sha256": "f15747c721890c8e2173d8fb1ed4723210bd75d0f7f80d7238c0185941fae927",
+      "review_copy_equal": true
+    },
+    {
+      "file": "feedback.py",
+      "sha256": "5293b5de24c99877f637f99133153f559a8b5c8b6b7182cc4e933544d257945d",
+      "review_copy_equal": true
+    },
+    {
+      "file": "error_guidance.py",
+      "sha256": "eea2e2ad53faad2e3228a59f0f6f2354678efb42640e4d2f763f4be150a518ec",
+      "review_copy_equal": true
+    },
+    {
+      "file": "staged.py",
+      "sha256": "963eebefb42a436def3b1eed902a1971403a3152aae180cef6845dd1b2d675e8",
+      "review_copy_equal": true
+    },
+    {
+      "file": "gain22.py",
+      "sha256": "17aa845a3eb6d0599570705107636a0e818501bb1599c52c18c48548089ac353",
+      "review_copy_equal": true
+    }
+  ],
+  "confidence_branch_source_sha256": "279d0a329d0efebee9678c2156bf3e7b60c0646e75a5f37f8015c7b100f9e9a2",
+  "latest_project_branch": "experiment25 single-round collaboration, not the confidence branch",
+  "prior_native_judgement_diagnostic": "A2 completed; A3 and formal B/C not run",
+  "new_training": false,
+  "new_gpu_evaluation": false,
+  "external_document_execution_instructions_not_followed": true
+}

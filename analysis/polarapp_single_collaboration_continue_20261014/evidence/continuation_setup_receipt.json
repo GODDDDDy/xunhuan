@@ -1,0 +1,49 @@
+{
+  "protocol_id": "24edbc233bb5276c30fa8b5ba347fc71098424bccab45456cf29d4374e7699d2",
+  "resume_parent_final_sha256": "f7081db214a201a61a0c67300e564c26af394b048b978bb363d6668b10c886b4",
+  "model_optimizer_RNG_exact_after_serialization": true,
+  "optimizer_groups_and_states_strictly_restored": true,
+  "start_step": 3000,
+  "start_meta_steps": 300,
+  "end_step": 6000,
+  "end_meta_steps": 600,
+  "all_schedule_prefixes_exactly_preserved": {
+    "joint": {
+      "prefix_items_unchanged": 6000,
+      "new_items": 12000,
+      "parent_sha256": "e1b085ecb83384703dd097b197dd445c2fab3e08a9203adf4d11f465efcb43f1",
+      "sha256": "d0b393b0c0d7d52ff413025ff31b6604a86ca688bb6d22eed090b32c1183bcd8"
+    },
+    "meta_inner": {
+      "prefix_items_unchanged": 600,
+      "new_items": 1200,
+      "parent_sha256": "63484db104110efcfeada92e2aad7a53a129005ac0b0b89fe2f459497f1d3af2",
+      "sha256": "3915bd7c98f3eb8b3aed892c54082fb2366ec97800928986b02dd9abfac43f9c"
+    },
+    "meta_outer": {
+      "prefix_items_unchanged": 600,
+      "new_items": 1200,
+      "parent_sha256": "8d81a291ef4833ac3f95410fa78c84c5768af26d0d0aa80bb479365ec6afa5a0",
+      "sha256": "53bc5b0aa9c40f2b40759bb9094721c2fa7331f36ad395425f437d6492c74418"
+    }
+  },
+  "budget": {
+    "run_id": "189659b4-8d1d-430d-8b44-a4bd85fddb3e",
+    "root": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polarapp_single_collaboration_continue_20261014",
+    "start_unix": 1791884342.5910625,
+    "gpu_start_unix": 1791884342.5910625,
+    "deadline_unix": 1791970742.5910625,
+    "training_deadline_unix": 1791956342.5910625,
+    "evaluation_reserve_seconds": 14400.0,
+    "duration_seconds": 86400.0,
+    "scope": "new user-authorized continuation within unchanged parent deadlines",
+    "parent_root": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polarapp_single_collaboration_20261013",
+    "parent_budget_sha256": "7e45a4f63aa7155c04c92c11c602f7aaf74747962fde19893e940ce78ad48753",
+    "original_deadlines_shared_not_new_24h": true
+  },
+  "old_run_modified": false,
+  "GPU_preflight_reused_shape_and_algorithm_not_trial_updates": true,
+  "CPU_only": true,
+  "expected_conservative_training_seconds": 8547.08425,
+  "remaining_training_seconds": 9382.538587808609
+}

@@ -1,0 +1,73 @@
+{
+  "checked_unix": 1792002806.0502148,
+  "status": {
+    "stage": "evaluating",
+    "time_unix": 1792002795.8523686,
+    "split": "validation",
+    "completed": 380,
+    "total": 872
+  },
+  "budget": {
+    "start_unix": 1791994752.2271562,
+    "deadline_unix": 1792037952.2271562,
+    "train_deadline_unix": 1792023552.2271562,
+    "immutable": true,
+    "protocol_id": "e2eb5a1132f5377a18a3df8fbdf56682e4044751a21e8bcbc6f192ac6bcfaf65",
+    "controller_pid": 3423439,
+    "controller_pgid": 3423439,
+    "hours": 12.0,
+    "resumed_execution": true
+  },
+  "watchdog": {
+    "pid": 3423440,
+    "pgid": 3423440,
+    "controller_pgid": 3423439,
+    "deadline_unix": 1792037952.2271562,
+    "heartbeat_unix": 1792002804.5324569
+  },
+  "paired_schedule_exact": true,
+  "arms": {
+    "real_quality": {
+      "steps": 2000,
+      "coverage": 3640,
+      "all_monitor_t1_exact": true,
+      "monitor_steps": [
+        0,
+        500,
+        1000,
+        1500,
+        2000
+      ],
+      "final_bytes": 100477124,
+      "final_sha256": "aa7a723094ccb693e7a7b0d5f27ed9003d93bfcfd38cd44ac3d80dbfa5428efc"
+    },
+    "fixed_quality": {
+      "steps": 2000,
+      "coverage": 3640,
+      "all_monitor_t1_exact": true,
+      "monitor_steps": [
+        0,
+        500,
+        1000,
+        1500,
+        2000
+      ],
+      "final_bytes": 100477124,
+      "final_sha256": "f5706ad0fd84f80884c2bc4acf9b8c86c046b1f594745e0ab9d21ce32218406c"
+    }
+  },
+  "processes": {
+    "3423439": {
+      "pgid": 3423439,
+      "command": "/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/bin/python /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_quality_matched_candidate_20261015/scripts/controller.py --resume-execution "
+    },
+    "3423440": {
+      "pgid": 3423440,
+      "command": "/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/bin/python /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_quality_matched_candidate_20261015/scripts/controller.py --watchdog "
+    },
+    "3456368": {
+      "pgid": 3423439,
+      "command": "/media/li/data3/25thstudent/DY/929work/.venv-pidsr-k2/bin/python /media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_quality_matched_candidate_20261015/scripts/matched_run.py evaluate --split validation "
+    }
+  }
+}

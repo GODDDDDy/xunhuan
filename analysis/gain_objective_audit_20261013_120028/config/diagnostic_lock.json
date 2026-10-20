@@ -132,5 +132,54 @@
       "pure": false
     }
   },
-  "stage_A_status": "lightweight_probe_complete"
+  "stage_A_status": "native_head_diagnostic_complete",
+  "A2_native_head_execution": {
+    "status": "native_head_diagnostic_complete",
+    "executed_at": "2026-10-13T13:06:10+0800",
+    "run": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_objective_audit_20261013_120028",
+    "gpu_used": true,
+    "test_used": false,
+    "validation_used_for_any_rule": false,
+    "source_final_sha256": "279d0a329d0efebee9678c2156bf3e7b60c0646e75a5f37f8015c7b100f9e9a2",
+    "shared_init_sha256": "6323d52851ad9e67c2020463eab5d3e859e9964758dfbc311f66e69ec6e200b0",
+    "head_architecture": {
+      "input_channels": 50,
+      "output_channels": 3,
+      "projection_out_channels": 8,
+      "state_keys_equal": true,
+      "shapes_equal": true
+    },
+    "cache_npz_sha256": "5ce2df48aecdbb4eb3245067ae47930d5b9c7290afb39b530d45457357c3712d",
+    "cache_crops": 48,
+    "cache_per_role": {
+      "judgement": 24,
+      "bias": 8,
+      "safety": 16
+    },
+    "online_cache_equivalence_passed": true,
+    "online_cache_equivalence_bitwise_equal": true,
+    "scale": 0.000934407114982605,
+    "steps": 500,
+    "train_seconds": 2.109892901033163,
+    "mixed_final_pure_fit": 0.12769268453121185,
+    "pure_final_pure_fit": 0.12755349278450012,
+    "expectation_term_helps": false,
+    "cross_scene_transfer_beats_zero_baseline": false,
+    "chosen_screening": {
+      "margin": 0.8,
+      "coverage": 0.0,
+      "accepted_harmful_rate": null,
+      "mean_mse_improvement": -0.0,
+      "eligible": true
+    },
+    "screening_safe": true,
+    "screening_useful": false,
+    "gt_oracle_upper_bound_raw": 4.57477284805663e-06,
+    "execution_defects_only_no_protocol_change": true,
+    "execution_attempts": {
+      "cache_and_equivalence": 4,
+      "training": 3,
+      "diagnostic": 2
+    }
+  }
 }

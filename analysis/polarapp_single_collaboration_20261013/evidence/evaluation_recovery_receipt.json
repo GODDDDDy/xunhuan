@@ -1,0 +1,133 @@
+{
+  "time_unix": 1791894426.4912524,
+  "protocol_id": "451bda754cbe78e5b65a124c0dde9debc2a2072683dc98f06bf097ed19285f65",
+  "budget": {
+    "run_id": "fa60d9c2-b823-4905-8161-0691c4931821",
+    "root": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polarapp_single_collaboration_20261013",
+    "start_unix": 1791884342.5910625,
+    "gpu_start_unix": 1791884342.5910625,
+    "deadline_unix": 1791970742.5910625,
+    "training_deadline_unix": 1791956342.5910625,
+    "evaluation_reserve_seconds": 14400.0,
+    "duration_seconds": 86400.0,
+    "scope": "single-round ordinary-finetune and meta-collaboration, preflight included"
+  },
+  "budget_sha256": "7e45a4f63aa7155c04c92c11c602f7aaf74747962fde19893e940ce78ad48753",
+  "final_sha256": "f7081db214a201a61a0c67300e564c26af394b048b978bb363d6668b10c886b4",
+  "completed_training_steps": 3000,
+  "meta_updates": 300,
+  "frozen_code_sha256_unchanged": true,
+  "retraining": false,
+  "model_inference_and_metric_algorithms_unchanged": true,
+  "repairs": [
+    "actual example-role availability and unique output paths",
+    "byte snapshot of mutable CPU bookkeeping during archive"
+  ],
+  "example_selection_used_GT": false,
+  "fixed_examples": [
+    {
+      "sample_id": "validation/easy/01/0005",
+      "scene": "01",
+      "difficulty": "easy",
+      "frame": 5
+    },
+    {
+      "sample_id": "validation/easy/07/0006",
+      "scene": "07",
+      "difficulty": "easy",
+      "frame": 6
+    },
+    {
+      "sample_id": "validation/easy/22/0046",
+      "scene": "22",
+      "difficulty": "easy",
+      "frame": 46
+    },
+    {
+      "sample_id": "validation/easy/30/0024",
+      "scene": "30",
+      "difficulty": "easy",
+      "frame": 24
+    },
+    {
+      "sample_id": "validation/easy/36/0027",
+      "scene": "36",
+      "difficulty": "easy",
+      "frame": 27
+    },
+    {
+      "sample_id": "validation/easy/41/0034",
+      "scene": "41",
+      "difficulty": "easy",
+      "frame": 34
+    },
+    {
+      "sample_id": "validation/easy/55/0073",
+      "scene": "55",
+      "difficulty": "easy",
+      "frame": 73
+    },
+    {
+      "sample_id": "validation/easy/55/0146",
+      "scene": "55",
+      "difficulty": "easy",
+      "frame": 146
+    },
+    {
+      "sample_id": "validation/hard/01/0011",
+      "scene": "01",
+      "difficulty": "hard",
+      "frame": 11
+    },
+    {
+      "sample_id": "validation/hard/07/0021",
+      "scene": "07",
+      "difficulty": "hard",
+      "frame": 21
+    },
+    {
+      "sample_id": "validation/hard/22/0013",
+      "scene": "22",
+      "difficulty": "hard",
+      "frame": 13
+    },
+    {
+      "sample_id": "validation/hard/30/0056",
+      "scene": "30",
+      "difficulty": "hard",
+      "frame": 56
+    },
+    {
+      "sample_id": "validation/hard/36/0009",
+      "scene": "36",
+      "difficulty": "hard",
+      "frame": 9
+    },
+    {
+      "sample_id": "validation/hard/41/0039",
+      "scene": "41",
+      "difficulty": "hard",
+      "frame": 39
+    },
+    {
+      "sample_id": "validation/hard/56/0021",
+      "scene": "56",
+      "difficulty": "hard",
+      "frame": 21
+    },
+    {
+      "sample_id": "validation/hard/56/0042",
+      "scene": "56",
+      "difficulty": "hard",
+      "frame": 42
+    }
+  ],
+  "execution_wrapper_sha256": {
+    "recovery/archive_live_snapshot.py": "54817af3cd556cb53932c76ad34061675ed11fcd2178bd6bf24a1bec4944965d",
+    "recovery/evaluate_existing_final.py": "57c2f83062bf44001d88acac33c5819ee2b0964a8468a7d4e05f9c872cce3f9c",
+    "recovery/record_recovery.py": "f576cbd3bdc285fd0030ca2dd1bc58151da6ec694395d029c558a5035b20d215",
+    "recovery/resume_evaluation.py": "0b53771f6489a1bcd1706b7826c1f9526ccc8176b0f4f08ed3eb82507cfc3371"
+  },
+  "failed_temporary_archive_is_unverified": true,
+  "selection_fix_not_model_selection": true
+}

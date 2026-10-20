@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "protocol_id": "451bda754cbe78e5b65a124c0dde9debc2a2072683dc98f06bf097ed19285f65",
+  "locked_run_sha256": "e29bb07a8654bd85dc97a987f29ee5602e02bed82347cca285934b2917b0f3b1",
+  "prepare_config_sha256": "b504e93957020efcc7a9d1608497bcb5200347404e46e6277b6a2ac9beda00af",
+  "source_checkpoint_sha256": "279d0a329d0efebee9678c2156bf3e7b60c0646e75a5f37f8015c7b100f9e9a2",
+  "source_checkpoint": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polarapp_single_collaboration_20261013/weights/source_latest22.pt",
+  "official_ancestry_weight_sha256": {
+    "net_g_latest.pth": "a230e77fb19827a1ada41e4dc86374dee092e476915d2252841f81dd8c257ca2",
+    "net_d_latest.pth": "f1d0e9acb244480e5d4ba4b5cee7ba35666fb97d41bccf4659f20911f46f1fb3",
+    "net_le_dm_latest.pth": "6b98bd2a715d3e669acd99582d9ea37594ff4a2ee7786df86764d8efdafd0546"
+  },
+  "manifest_sha256": "a00caa099b6e4dd3dcc16df494574d42a97b2b84c51ff84d8580c8685d252ad4",
+  "checkpoint_receipts": {
+    "meta": {
+      "arm": "meta",
+      "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polarapp_single_collaboration_20261013/downstream/checkpoints/meta/final.pt",
+      "sha256": "f7081db214a201a61a0c67300e564c26af394b048b978bb363d6668b10c886b4",
+      "final_step": 3000,
+      "source_sha256": "279d0a329d0efebee9678c2156bf3e7b60c0646e75a5f37f8015c7b100f9e9a2",
+      "protocol_id": "451bda754cbe78e5b65a124c0dde9debc2a2072683dc98f06bf097ed19285f65",
+      "optimizer_loaded": false,
+      "rng_loaded": false,
+      "FANet_used_for_inference": false
+    }
+  },
+  "seed": 2026,
+  "expected_counts": {
+    "validation": 872,
+    "test": 188
+  },
+  "arms": [
+    "source",
+    "meta"
+  ],
+  "full_native_size_forward": true,
+  "tiling": false,
+  "diffusion_noise": "CPU generator, sample-id seed, one shared tensor for source and meta forwards",
+  "prediction_metrics": "raw float prediction, original rgb_final_confirmation.evaluation definitions",
+  "clipped_metrics": "auxiliary only; does not select weights or change primary outcome",
+  "metric_source_sha256": "2b71efa332d282c916d771656d289e003a8bd4a619fe6f7f6deb6217d95434c7",
+  "evaluation_code_sha256": "57c2f83062bf44001d88acac33c5819ee2b0964a8468a7d4e05f9c872cce3f9c",
+  "frozen_base_evaluator_sha256": "94a064b4d6e75ce24fe684966b813adc3f98c2cc17dae86fe363a35d525fb3fe",
+  "execution_recovery": "figure availability and unique sample paths only; model/metrics unchanged",
+  "example_sample_ids": [
+    "validation/easy/01/0005",
+    "validation/hard/01/0011",
+    "validation/easy/07/0006",
+    "validation/hard/07/0021",
+    "validation/easy/22/0046",
+    "validation/hard/22/0013",
+    "validation/easy/30/0024",
+    "validation/hard/30/0056",
+    "validation/easy/36/0027",
+    "validation/hard/36/0009",
+    "validation/easy/41/0034",
+    "validation/hard/41/0039",
+    "validation/easy/55/0073",
+    "validation/easy/55/0146",
+    "validation/hard/56/0021",
+    "validation/hard/56/0042"
+  ],
+  "example_selection": "one middle per existing difficulty, or 1/3 and 2/3 frames when only one exists; 16 unique; no GT selection",
+  "examples_are_8bit_display_only": true,
+  "ground_truth_usage": "metrics and figures only; never a network input",
+  "training_or_weight_selection": false
+}

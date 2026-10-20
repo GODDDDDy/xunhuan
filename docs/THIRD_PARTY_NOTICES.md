@@ -4,6 +4,8 @@
 
 ## 直接来源
 
+- PolarAPP的PIDNet重建、原配TaskNet和FANet/协作设计：[作者仓库](https://github.com/roydon-luo/PolarAPP)、[原文](https://arxiv.org/html/2603.23071v2)。第42/43项后置E–T协作是本项目的任务适配设计，使用task-only外层及限定inner参数范围，不称完整复现原方法；第43项FA只在训练使用。新增源码保留上游署名和对应来源，公开代码并不意味着统一获得所有上游的再许可。
+
 - Zhou等，PIDSR: Complementary Polarized Image Demosaicing and Super-Resolution，CVPR 2025，16081–16090。[会议原文](https://openaccess.thecvf.com/content/CVPR2025/papers/Zhou_PIDSR_Complementary_Polarized_Image_Demosaicing_and_Super-Resolution_CVPR_2025_paper.pdf)。vendor/pidsr_official.py等是本实验归档的来源/适配快照；本项目改用同尺度恢复，不是完整SR原版。
 - Yao等，PolarFree: Polarization-based Reflection-Free Imaging，CVPR 2025，10890–10899。[作者仓库](https://github.com/mdyao/PolarFree)、[作者论文](https://arxiv.org/html/2503.18055v1)。官方恢复主网、条件编码、潜变量扩散等不是本项目原创。部分源码是作者依赖或本项目适配包装。
 - Restormer，CVPR 2022。[作者仓库](https://github.com/swz30/Restormer)。本地官方Transformer快照标注构建于Restormer实现，保留该关系。

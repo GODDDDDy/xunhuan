@@ -1,5 +1,17 @@
 # 复现与外部资料
 
+## 2026-10-20更新：先确定要复核哪一个分支
+
+最新资料已覆盖第43项。下文第22项判断头与权重表是历史分支的复现说明，不是当前默认网络。请先从根README、CURRENT_STATE和[实验索引](EXPERIMENT_INDEX_20261020.md)进入对应协议，再选择来源和代码，不能将各时期的模块直接拼接。
+
+- G6参照：seed2027 step3000，SHA `6d4946a5f9963ddb1d142b5f4a97f18d0eedf724769aab4b414997a15a33322f`，按完整验证选择。
+- 第42/43项来源：原配PolarAPP PIDNet/TaskNet；43从42的6000步完整权重/Adam继续，源SHA `a93af237aaf90914f237261dd5e0e7eb5fa6eeaff7839f08cdf2309b8c05b733`，不是G6权重。
+- 第43项执行快照位于`analysis/polarapp_collaboration_extension_20261020/scripts/`；引用的第42项、历史模块及第三方依赖分布在相应`analysis/`、`server_scripts/`与外部服务器。公开副本尚未被验证为可独立安装执行的包。
+- 43原科学协议和原预算保留，有效预算另见[BUDGET_EXTENSION_ZH.md](../analysis/polarapp_collaboration_extension_20261020/BUDGET_EXTENSION_ZH.md)；原预检Adam计数偏差和同协议实现修复见[恢复记录](../analysis/polarapp_collaboration_extension_20261020/RECOVERY_REVIEW_ZH.md)。最新源码不能替代服务器保存的原始/修订SHA与运行回执。
+- 运行中的中间权重、指标、缓存与日志未因本次维护下载。最终结果未完成，读者不能据快照直接继续其控制器或沿用用户旧授权。
+
+下文保留原2026-10-13说明，按其对应历史run解读。
+
 本仓库是科研代码及证据的整理副本。不能将缺少权重、数据及官方依赖的Git目录称为已验证的独立安装包。
 
 ## 原环境

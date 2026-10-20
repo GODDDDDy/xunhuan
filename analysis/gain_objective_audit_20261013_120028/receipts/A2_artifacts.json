@@ -1,0 +1,162 @@
+{
+  "stage": "A2",
+  "created_at": "2026-10-13T13:06:10+0800",
+  "run": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polar_gain_objective_audit_20261013_120028",
+  "protocol_id": "8d4f7dd5e12ce21b92c4d3a3413b68da8786c7cb414e55a9ce31600de8fc6ad2",
+  "protocol_changed": false,
+  "gpu_used": true,
+  "test_used": false,
+  "validation_used_for_any_rule": false,
+  "probe_only": true,
+  "restoration_method_score": false,
+  "artifacts": [
+    {
+      "path": "metrics/A2_native_fit_results.json",
+      "exists": true,
+      "description": "A2 machine-readable results (fit, ranking, roles, screening)",
+      "bytes": 34655,
+      "sha256": "d30bb39fc61106ea17685f99a200570968443894daf71d984f81268a2fb22a48"
+    },
+    {
+      "path": "metrics/A2_cache_audit.json",
+      "exists": true,
+      "description": "A2 cache build audit and source tensor audit",
+      "bytes": 1090,
+      "sha256": "259dbca2ca518292d8e802f99c9bf528601fbb69d09f75d6c1ece5ff017d01fe"
+    },
+    {
+      "path": "cache/a2_spatial_cache.npz",
+      "exists": true,
+      "description": "48-crop minimal spatial cache of the 50-channel head input",
+      "bytes": 50018226,
+      "sha256": "5ce2df48aecdbb4eb3245067ae47930d5b9c7290afb39b530d45457357c3712d"
+    },
+    {
+      "path": "cache/a2_cache_index.json",
+      "exists": true,
+      "description": "crop plan, role positions, channel layout, cache hash",
+      "bytes": 16943,
+      "sha256": "0d1af78d15e31ee2d23ed76789b0bf2160095445824845972ac36486fe1deb00"
+    },
+    {
+      "path": "checkpoints/diagnostic_heads/a2_native_common_init.pt",
+      "exists": true,
+      "description": "shared initial weights of both diagnostic heads",
+      "bytes": 66280,
+      "sha256": "bdfe059bf6a6df51aeac4680ebe07ee12672765574ea53450769da9e091ac2a7"
+    },
+    {
+      "path": "checkpoints/diagnostic_heads/a2_native_mixed.pt",
+      "exists": true,
+      "description": "mixed-head final weights (diagnostic, not a restoration method)",
+      "bytes": 66208,
+      "sha256": "d09a388913eb8fa228739ae72499cbb2e937b14861e17eadd3cf6fd784f53e50"
+    },
+    {
+      "path": "checkpoints/diagnostic_heads/a2_native_pure.pt",
+      "exists": true,
+      "description": "pure-head final weights (diagnostic, not a restoration method)",
+      "bytes": 66196,
+      "sha256": "04bb7d98d71c39398ca3d8856354baf385706657471ca6b1ec39bf923d030ff7"
+    },
+    {
+      "path": "receipts/online_cache_equivalence.json",
+      "exists": true,
+      "description": "mandatory online/cache equivalence evidence",
+      "bytes": 4455,
+      "sha256": "c11a257174b917fea4f82d9a36bdcc380554e2baf03ed0d1f73ae2782d5cda6e"
+    },
+    {
+      "path": "receipts/A2_execution.json",
+      "exists": true,
+      "description": "execution receipt with defect list and timing",
+      "bytes": 5037,
+      "sha256": "7470be78b8c85008f2b301014d42291782dd9b4cde1cad698490dc69d3629544"
+    },
+    {
+      "path": "logs/a2_native_train.csv",
+      "exists": true,
+      "description": "per-step loss, grad norm, lr, finite flag, sample ids",
+      "bytes": 100016,
+      "sha256": "5027f1d9d7069c39ee5d9682e2468e989d8c03c8149cfab2020f7a947db72cfc"
+    },
+    {
+      "path": "logs/a2_cache.log",
+      "exists": true,
+      "description": "cache build log",
+      "bytes": 615,
+      "sha256": "919a60f8154d8733d46d45364b88a6b1333e02040634af7291f01e82b6192b9a"
+    },
+    {
+      "path": "logs/a2_train.log",
+      "exists": true,
+      "description": "paired training log",
+      "bytes": 890,
+      "sha256": "6fd9acf4be4e9f04e34dae354e9f2b3dd0af6e44bfa307984954dd8dd5c39e94"
+    },
+    {
+      "path": "figures/train_fit_and_cost_ranking.svg",
+      "exists": true,
+      "description": "MLP vs native head fit and ranking curves",
+      "bytes": 15671,
+      "sha256": "13f45f83324d0319c2c2aa9bdc264ebe40beed5e6556313483aef97d8cb567ff"
+    },
+    {
+      "path": "figures/risk_coverage.svg",
+      "exists": true,
+      "description": "training-safety risk-coverage / net gain (A1 forced coverage + A2 grid)",
+      "bytes": 13734,
+      "sha256": "f651965f2d234b9d8cfb47c20c9d3895951e6d1aa7248b562fd80af6370884ca"
+    },
+    {
+      "path": "docs/A2_findings.md",
+      "exists": true,
+      "description": "A2 findings report",
+      "bytes": 10618,
+      "sha256": "c855f341475ca431c3e84c08c30f47bd311342ea39cb17c23dc0ecc3e2a189f4"
+    },
+    {
+      "path": "scripts/a2_common.py",
+      "exists": true,
+      "description": "shared A2 helpers (50-channel head input reconstruction)",
+      "bytes": 2195,
+      "sha256": "0bb9016e1c979d44203b4ce2cf4d22e23147b8fdbe6459bd6cdf6794209c2848"
+    },
+    {
+      "path": "scripts/a2_cache.py",
+      "exists": true,
+      "description": "cache build + equivalence check",
+      "bytes": 20291,
+      "sha256": "b9a797386f4baceb87cbdfb7079bc021945c38661dc90a058c17bd01be7aa219"
+    },
+    {
+      "path": "scripts/a2_train.py",
+      "exists": true,
+      "description": "paired mixed/pure native-head diagnostic",
+      "bytes": 15486,
+      "sha256": "a79e7ac7b6c49017dbb94d0fa41e446564d2a422b8cb715c63e47e6eecc256a3"
+    },
+    {
+      "path": "scripts/a2_diag.py",
+      "exists": true,
+      "description": "cache fidelity / RNG sensitivity diagnostic",
+      "bytes": 4208,
+      "sha256": "8d3158b4ee77192643fbc1e69bc9260cf6230c8aaed19a655082886d2290c244"
+    },
+    {
+      "path": "scripts/a2_figure.py",
+      "exists": true,
+      "description": "A2 figures",
+      "bytes": 13107,
+      "sha256": "f08f9316c2a14c0a870834c5c248cfed41b2f992009a62f12711c31cf0879de6"
+    },
+    {
+      "path": "scripts/a2_finalize.py",
+      "exists": true,
+      "description": "status, stage timing, execution receipt",
+      "bytes": 9145,
+      "sha256": "71b9aadd8f77ccfaedf38f1bc12787039d708c62c203812c9fb1f5489d5adaf2"
+    }
+  ],
+  "note": "A2 is a 24-crop native-head learnability and loss-variable diagnostic. It is not a full R2P score, not a convergence proof, and not a claim that the judgement module is theoretically useless."
+}

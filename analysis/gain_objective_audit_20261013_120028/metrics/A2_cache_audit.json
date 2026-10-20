@@ -1,0 +1,39 @@
+{
+  "source_audit": {
+    "non_action_gate_tensors": 518,
+    "mismatched_non_action_gate": [],
+    "net_g_tensors": 436,
+    "mismatched_net_g": [],
+    "action_gate_body0_in_channels": 50,
+    "action_gate_body0_out_channels": 32,
+    "is_50_input_channel": true,
+    "cost_scale": 0.000934407114982605,
+    "cost_bias": [
+      0.019889753311872482,
+      0.03894795477390289,
+      0.07966715097427368
+    ],
+    "safety_margin": 1.6,
+    "all_non_judgement_tensors_equal_source": true,
+    "all_net_g_tensors_equal_source": true
+  },
+  "plan_crops": 48,
+  "per_role": {
+    "judgement": 24,
+    "bias": 8,
+    "safety": 16
+  },
+  "cache_npz_sha256": "5ce2df48aecdbb4eb3245067ae47930d5b9c7290afb39b530d45457357c3712d",
+  "cache_bytes": 50018226,
+  "equivalence_passed": true,
+  "timing": {
+    "model_build_seconds": 1.225350124295801,
+    "cache_forward_seconds": 15.37976062996313,
+    "equivalence_seconds": 2.4278433490544558,
+    "total_seconds": 21.019619720056653
+  },
+  "gpu_used": true,
+  "test_used": false,
+  "validation_used": false,
+  "source_diagnostic_872_rerun": false
+}

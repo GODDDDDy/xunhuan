@@ -1,0 +1,139 @@
+{
+  "stage": "A2_native_head_diagnostic",
+  "state": "native_head_diagnostic_complete",
+  "protocol_id": "8d4f7dd5e12ce21b92c4d3a3413b68da8786c7cb414e55a9ce31600de8fc6ad2",
+  "protocol_changed": false,
+  "algorithm_objective_data_protocol_unchanged": true,
+  "authorised_scope": "stage A only; 2h absolute GPU budget registered at A2 launch; B/C not started",
+  "budget": {
+    "start_unix": 1791866397.2950313,
+    "deadline_unix": 1791873597.2950313,
+    "pgid": 2361135,
+    "process_group": 2361135,
+    "scope": "stage A2 native-head diagnostic and A3 fixed 32-frame screen; a single new 2h absolute GPU budget",
+    "stage_A_gpu_budget_seconds": 7200,
+    "old_budget_reused": false,
+    "created_iso": "2026-10-13T12:39:57+0800"
+  },
+  "process_attempts": {
+    "cache_and_equivalence": 4,
+    "training": 3,
+    "additional_diagnostic_runs": 2,
+    "successful_runs": {
+      "cache": 1,
+      "training": 1
+    }
+  },
+  "execution_defects": [
+    {
+      "id": 1,
+      "where": "a2_cache.equivalence_check",
+      "defect": "4-channel true cost concatenated into 6 channels -> cost_loss shape error",
+      "fix": "zeros_like(y_raw[:, :1]) + y_raw",
+      "affects_protocol": false
+    },
+    {
+      "id": 2,
+      "where": "a2_cache.equivalence_check",
+      "defect": "foreign set_step_seed triple replayed the frozen forward under a different RNG stream",
+      "fix": "replay the exact (phase='a2_native_cache', step=plan position) triple used at cache time",
+      "affects_protocol": false
+    },
+    {
+      "id": 3,
+      "where": "a2_cache.equivalence_check (GT replacement)",
+      "defect": "torch.rand_like drawn after set_step_seed consumed global RNG before recurrent_forward",
+      "fix": "draw the replacement target before seeding",
+      "affects_protocol": false
+    },
+    {
+      "id": 4,
+      "where": "a2_train.make_head",
+      "defect": "LocalAcceptance() used as template -> body.4 out_channels 4 instead of 3",
+      "fix": "deepcopy the production gate built by gain22.components",
+      "affects_protocol": false
+    },
+    {
+      "id": 5,
+      "where": "a2_train.main",
+      "defect": "CUDA median-with-indices has no deterministic implementation under use_deterministic_algorithms(True)",
+      "fix": "compute the median on CPU (numerically identical, tiny tensor)",
+      "affects_protocol": false
+    }
+  ],
+  "known_pitfalls_checked": [
+    "use_deterministic_algorithms True and CUDA reductions (defect 5)",
+    "RNG stream shared between seeding and the frozen two-round forward (defects 2, 3)",
+    "source search path: ROOT assertion resolved to the new audit run for both A2 scripts",
+    "GT isolation: replacement changes labels only, deployable features bitwise unchanged"
+  ],
+  "cache_equivalence": {
+    "passed": true,
+    "bitwise_equal_not_merely_allclose": true,
+    "per_crop_bitwise_equal": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "tolerance": {
+      "atol": 1e-06,
+      "rtol": 0.0001
+    },
+    "rng_sensitivity": {
+      "sample_id": "train/hard/31/0009",
+      "t1_max_abs_difference": 0.016681790351867676,
+      "t1_identical": false,
+      "note": "a foreign triple yields a different frozen forward; replaying the cache triple is mandatory"
+    }
+  },
+  "cache": {
+    "npz_sha256": "5ce2df48aecdbb4eb3245067ae47930d5b9c7290afb39b530d45457357c3712d",
+    "bytes": 50018226,
+    "crops": 48,
+    "per_role": {
+      "judgement": 24,
+      "bias": 8,
+      "safety": 16
+    }
+  },
+  "heads": {
+    "shared_init_sha256": "6323d52851ad9e67c2020463eab5d3e859e9964758dfbc311f66e69ec6e200b0",
+    "source_final_sha256": "279d0a329d0efebee9678c2156bf3e7b60c0646e75a5f37f8015c7b100f9e9a2",
+    "input_channels": 50,
+    "output_channels": 3,
+    "state_keys_equal": true
+  },
+  "outcome": {
+    "mixed_final_pure_fit": 0.12769268453121185,
+    "pure_final_pure_fit": 0.12755349278450012,
+    "mixed_train_cost_mae_raw": 0.00021143532024958667,
+    "pure_train_cost_mae_raw": 0.0002113157848468994,
+    "zero_baseline_mae_raw": 0.00022471508388122174,
+    "bias_role_mae_raw": 9.68991568310873e-05,
+    "bias_role_zero_baseline_raw": 8.172784465865224e-05,
+    "safety_role_mae_raw": 8.584882244488945e-05,
+    "safety_role_zero_baseline_raw": 8.392726822059604e-05,
+    "chosen_margin": 0.8,
+    "chosen_coverage": 0.0,
+    "safe": true,
+    "useful": false,
+    "accepted_harmful_rate": null,
+    "gt_oracle_upper_bound_raw": 4.57477284805663e-06,
+    "expectation_term_helps": false,
+    "cross_scene_transfer_beats_zero_baseline": false
+  },
+  "timing": {
+    "cache_seconds": 21.019619720056653,
+    "cache_wall_clock_seconds": 20.99804401397705,
+    "train_seconds": 15.091754889115691,
+    "train_wall_clock_seconds": 15.09279489517212,
+    "stage_wall_clock_seconds": 36.09083890914917,
+    "note": "wall clock is monotonic per process; unrelated debug cycles are not charged"
+  },
+  "test_used": false,
+  "validation_used_to_select_any_rule": false,
+  "source_diagnostic_872_rerun": false,
+  "created_unix": 1791868826.8685203
+}

@@ -1,0 +1,685 @@
+{
+  "protocol_id": "451bda754cbe78e5b65a124c0dde9debc2a2072683dc98f06bf097ed19285f65",
+  "evaluated_counts": {
+    "validation": 872,
+    "test": 188
+  },
+  "fixed_final_checkpoints": {
+    "meta": {
+      "arm": "meta",
+      "path": "/media/li/data3/25thstudent/DY/929work/pidsr_k2_929/polarapp_single_collaboration_20261013/downstream/checkpoints/meta/final.pt",
+      "sha256": "f7081db214a201a61a0c67300e564c26af394b048b978bb363d6668b10c886b4",
+      "final_step": 3000,
+      "source_sha256": "279d0a329d0efebee9678c2156bf3e7b60c0646e75a5f37f8015c7b100f9e9a2",
+      "protocol_id": "451bda754cbe78e5b65a124c0dde9debc2a2072683dc98f06bf097ed19285f65",
+      "optimizer_loaded": false,
+      "rng_loaded": false,
+      "FANet_used_for_inference": false
+    }
+  },
+  "source_checkpoint_sha256": "279d0a329d0efebee9678c2156bf3e7b60c0646e75a5f37f8015c7b100f9e9a2",
+  "source_receipt": {
+    "source_run": "polar_gain_judgement_short_20261012",
+    "source_sha256": "279d0a329d0efebee9678c2156bf3e7b60c0646e75a5f37f8015c7b100f9e9a2",
+    "source_protocol_id": "8d4f7dd5e12ce21b92c4d3a3413b68da8786c7cb414e55a9ce31600de8fc6ad2",
+    "core_tensors_strict_equal": 396,
+    "generator_tensors_strict_equal": 436,
+    "optimizer_reused": false,
+    "rng_reused": false,
+    "official_polarfree_is_ancestry_not_actual_net_g_start": true,
+    "inactive_source_modules_not_constructed": [
+      "H",
+      "Q",
+      "cross_round_feedback",
+      "RGB_correction_head",
+      "local_acceptance",
+      "action_cost_gate"
+    ],
+    "core_legacy_observation_adapters": "retained frozen; previous-task inputs absent"
+  },
+  "full_native_size_forward": true,
+  "tiling": false,
+  "FANet_used_for_inference": false,
+  "metric_primary": "raw float prediction, original rgb_final_confirmation.evaluation definitions",
+  "evaluation_context_sha256": "2688513cba1eb70dab4bb6b3d8c1ad216ae1ca44cdd82578a08454ef16baaf0a",
+  "fixed_validation_examples": 16,
+  "validation": {
+    "images": 872,
+    "scene_count": 8,
+    "evaluation_devices": [
+      "cuda:0"
+    ],
+    "output_metrics": {
+      "source": {
+        "image_mean_psnr": 26.080381811901162,
+        "image_mean_ssim": 0.9053331122759285,
+        "image_mean_clipped_psnr": 26.081190737226333,
+        "image_mean_clipped_ssim": 0.9054117602629399,
+        "scene_macro_psnr": 26.155900445751048,
+        "scene_macro_ssim": 0.908632310413845,
+        "scene_macro_clipped_psnr": 26.15685905512943,
+        "scene_macro_clipped_ssim": 0.9087493424110208
+      },
+      "meta": {
+        "image_mean_psnr": 26.107864695049898,
+        "image_mean_ssim": 0.9055523408252165,
+        "image_mean_clipped_psnr": 26.10864293630855,
+        "image_mean_clipped_ssim": 0.9056258154434895,
+        "scene_macro_psnr": 26.161065514556544,
+        "scene_macro_ssim": 0.9086227289122111,
+        "scene_macro_clipped_psnr": 26.161983554780594,
+        "scene_macro_clipped_ssim": 0.9087314846240042
+      }
+    },
+    "paired_diffs": {
+      "meta_minus_source": {
+        "image_mean_psnr": 0.027482883148739506,
+        "image_mean_ssim": 0.0002192285492879535,
+        "scene_macro_psnr": 0.005165068805496276,
+        "scene_macro_ssim": -9.581501633895706e-06,
+        "PSNR_improved_images": 440,
+        "PSNR_worse_images": 432,
+        "SSIM_drop_images": 438,
+        "both_improved_images": 361,
+        "negative_PSNR_scenes": [
+          "01",
+          "30",
+          "36",
+          "41",
+          "56"
+        ],
+        "negative_SSIM_scenes": [
+          "01",
+          "07",
+          "22",
+          "30",
+          "56"
+        ],
+        "worst_20_images": [
+          {
+            "sample_id": "validation/hard/36/0002",
+            "scene": "36",
+            "meta_minus_source_psnr": -0.17921714130364919,
+            "meta_minus_source_ssim": -0.0003714561462402344
+          },
+          {
+            "sample_id": "validation/hard/30/0073",
+            "scene": "30",
+            "meta_minus_source_psnr": -0.1752190980884336,
+            "meta_minus_source_ssim": -0.0005832910537719727
+          },
+          {
+            "sample_id": "validation/hard/36/0012",
+            "scene": "36",
+            "meta_minus_source_psnr": -0.1746636751350259,
+            "meta_minus_source_ssim": -6.657838821411133e-05
+          },
+          {
+            "sample_id": "validation/hard/30/0072",
+            "scene": "30",
+            "meta_minus_source_psnr": -0.16929223467890964,
+            "meta_minus_source_ssim": -0.00040858983993530273
+          },
+          {
+            "sample_id": "validation/hard/30/0076",
+            "scene": "30",
+            "meta_minus_source_psnr": -0.16318556933228479,
+            "meta_minus_source_ssim": -0.0007273554801940918
+          },
+          {
+            "sample_id": "validation/hard/30/0081",
+            "scene": "30",
+            "meta_minus_source_psnr": -0.15121310925469444,
+            "meta_minus_source_ssim": -0.0006173849105834961
+          },
+          {
+            "sample_id": "validation/hard/30/0078",
+            "scene": "30",
+            "meta_minus_source_psnr": -0.1501517385047748,
+            "meta_minus_source_ssim": -0.0008455514907836914
+          },
+          {
+            "sample_id": "validation/hard/30/0082",
+            "scene": "30",
+            "meta_minus_source_psnr": -0.1442392194052715,
+            "meta_minus_source_ssim": -0.0007171034812927246
+          },
+          {
+            "sample_id": "validation/hard/30/0074",
+            "scene": "30",
+            "meta_minus_source_psnr": -0.14344680459999282,
+            "meta_minus_source_ssim": -0.0005027055740356445
+          },
+          {
+            "sample_id": "validation/hard/30/0077",
+            "scene": "30",
+            "meta_minus_source_psnr": -0.13772089407029853,
+            "meta_minus_source_ssim": -0.000712275505065918
+          },
+          {
+            "sample_id": "validation/hard/30/0085",
+            "scene": "30",
+            "meta_minus_source_psnr": -0.13157077019994645,
+            "meta_minus_source_ssim": -0.0007623434066772461
+          },
+          {
+            "sample_id": "validation/hard/30/0084",
+            "scene": "30",
+            "meta_minus_source_psnr": -0.12704199719022213,
+            "meta_minus_source_ssim": -0.0006951689720153809
+          },
+          {
+            "sample_id": "validation/hard/36/0001",
+            "scene": "36",
+            "meta_minus_source_psnr": -0.12195444256999366,
+            "meta_minus_source_ssim": -0.0002848505973815918
+          },
+          {
+            "sample_id": "validation/hard/36/0011",
+            "scene": "36",
+            "meta_minus_source_psnr": -0.12078296059131333,
+            "meta_minus_source_ssim": 0.00011593103408813477
+          },
+          {
+            "sample_id": "validation/hard/30/0059",
+            "scene": "30",
+            "meta_minus_source_psnr": -0.11687064169716521,
+            "meta_minus_source_ssim": -0.0008302927017211914
+          },
+          {
+            "sample_id": "validation/hard/30/0083",
+            "scene": "30",
+            "meta_minus_source_psnr": -0.11645206803397912,
+            "meta_minus_source_ssim": -0.0007115602493286133
+          },
+          {
+            "sample_id": "validation/hard/30/0000",
+            "scene": "30",
+            "meta_minus_source_psnr": -0.11621445457322466,
+            "meta_minus_source_ssim": -0.0006952285766601562
+          },
+          {
+            "sample_id": "validation/hard/30/0075",
+            "scene": "30",
+            "meta_minus_source_psnr": -0.11531734547954287,
+            "meta_minus_source_ssim": -0.0005944371223449707
+          },
+          {
+            "sample_id": "validation/hard/30/0057",
+            "scene": "30",
+            "meta_minus_source_psnr": -0.11452178526421974,
+            "meta_minus_source_ssim": -0.0007439851760864258
+          },
+          {
+            "sample_id": "validation/hard/30/0062",
+            "scene": "30",
+            "meta_minus_source_psnr": -0.1126848090644792,
+            "meta_minus_source_ssim": -0.0007562041282653809
+          }
+        ]
+      }
+    },
+    "polar_drift_from_source": {
+      "meta": {
+        "mse": 1.2210431531688835e-06,
+        "mae": 0.0010509716551521271
+      }
+    },
+    "scenes": [
+      {
+        "scene": "01",
+        "images": 33,
+        "source_psnr": 28.430357072860268,
+        "source_ssim": 0.9504995725371621,
+        "source_clipped_psnr": 28.43080495088657,
+        "source_clipped_ssim": 0.9505008585525282,
+        "meta_psnr": 28.42156225646572,
+        "meta_ssim": 0.9504477833256577,
+        "meta_clipped_psnr": 28.421971936772962,
+        "meta_clipped_ssim": 0.9504489248449152,
+        "meta_minus_source_psnr": -0.008794816394548377,
+        "meta_minus_source_ssim": -5.178921150439386e-05,
+        "meta_polar_source_mse": 1.150267263311076e-06,
+        "meta_polar_source_mae": 0.001001487193262261
+      },
+      {
+        "scene": "07",
+        "images": 55,
+        "source_psnr": 21.45435667445649,
+        "source_ssim": 0.8944328849965876,
+        "source_clipped_psnr": 21.45457734647334,
+        "source_clipped_ssim": 0.894459418817,
+        "meta_psnr": 21.45942960478219,
+        "meta_ssim": 0.893773918802088,
+        "meta_clipped_psnr": 21.459648534135525,
+        "meta_clipped_ssim": 0.8938002120364796,
+        "meta_minus_source_psnr": 0.005072930325699332,
+        "meta_minus_source_ssim": -0.0006589661944995662,
+        "meta_polar_source_mse": 1.2975569213515633e-06,
+        "meta_polar_source_mae": 0.0010829257016832178
+      },
+      {
+        "scene": "22",
+        "images": 119,
+        "source_psnr": 29.91246803132983,
+        "source_ssim": 0.9622234877418069,
+        "source_clipped_psnr": 29.91248195109471,
+        "source_clipped_ssim": 0.9622235598684359,
+        "meta_psnr": 29.926747849037902,
+        "meta_ssim": 0.9621710010937282,
+        "meta_clipped_psnr": 29.92676179991976,
+        "meta_clipped_ssim": 0.9621710687124428,
+        "meta_minus_source_psnr": 0.014279817708072073,
+        "meta_minus_source_ssim": -5.2486648078664544e-05,
+        "meta_polar_source_mse": 1.2250278567982237e-06,
+        "meta_polar_source_mae": 0.0010615701086725258
+      },
+      {
+        "scene": "30",
+        "images": 160,
+        "source_psnr": 25.99866396966788,
+        "source_ssim": 0.9213397983461619,
+        "source_clipped_psnr": 26.000872130806904,
+        "source_clipped_ssim": 0.9214049637317657,
+        "meta_psnr": 25.94555321815842,
+        "meta_ssim": 0.9210208240896464,
+        "meta_clipped_psnr": 25.94768983698925,
+        "meta_clipped_ssim": 0.9210858102887869,
+        "meta_minus_source_psnr": -0.053110751509461096,
+        "meta_minus_source_ssim": -0.00031897425651550293,
+        "meta_polar_source_mse": 1.256604326727029e-06,
+        "meta_polar_source_mae": 0.001062198450381402
+      },
+      {
+        "scene": "36",
+        "images": 74,
+        "source_psnr": 31.748647472348182,
+        "source_ssim": 0.9391814148103869,
+        "source_clipped_psnr": 31.74900605853955,
+        "source_clipped_ssim": 0.9393963910437919,
+        "meta_psnr": 31.72909326259495,
+        "meta_ssim": 0.9393497745733004,
+        "meta_clipped_psnr": 31.729414236412687,
+        "meta_clipped_ssim": 0.9395413197375633,
+        "meta_minus_source_psnr": -0.019554209753231078,
+        "meta_minus_source_ssim": 0.00016835976291351695,
+        "meta_polar_source_mse": 1.3228370144625423e-06,
+        "meta_polar_source_mae": 0.0011172094854299684
+      },
+      {
+        "scene": "41",
+        "images": 147,
+        "source_psnr": 26.533681844245375,
+        "source_ssim": 0.8332910894536648,
+        "source_clipped_psnr": 26.533717381665827,
+        "source_clipped_ssim": 0.8332931504768579,
+        "meta_psnr": 26.531838817959404,
+        "meta_ssim": 0.8333567899911583,
+        "meta_clipped_psnr": 26.531872426149103,
+        "meta_clipped_ssim": 0.8333586734168383,
+        "meta_minus_source_psnr": -0.0018430262859716606,
+        "meta_minus_source_ssim": 6.570053749344051e-05,
+        "meta_polar_source_mse": 1.1715407908366393e-06,
+        "meta_polar_source_mae": 0.001023834291687172
+      },
+      {
+        "scene": "55",
+        "images": 220,
+        "source_psnr": 24.127324618429206,
+        "source_ssim": 0.9091040169650858,
+        "source_clipped_psnr": 24.12739616089441,
+        "source_clipped_ssim": 0.9091063160787929,
+        "meta_psnr": 24.292422896584505,
+        "meta_ssim": 0.9104816350069913,
+        "meta_clipped_psnr": 24.29249583448402,
+        "meta_clipped_ssim": 0.9104838452555917,
+        "meta_minus_source_psnr": 0.16509827815529832,
+        "meta_minus_source_ssim": 0.001377618041905504,
+        "meta_polar_source_mse": 1.185278530225663e-06,
+        "meta_polar_source_mae": 0.0010365969353270802
+      },
+      {
+        "scene": "56",
+        "images": 64,
+        "source_psnr": 21.041703882671154,
+        "source_ssim": 0.8589862184599042,
+        "source_clipped_psnr": 21.046016460674124,
+        "source_clipped_ssim": 0.8596100807189941,
+        "meta_psnr": 20.981876210869267,
+        "meta_ssim": 0.8583801044151187,
+        "meta_clipped_psnr": 20.986013833381442,
+        "meta_clipped_ssim": 0.8589620226994157,
+        "meta_minus_source_psnr": -0.059827671801887305,
+        "meta_minus_source_ssim": -0.0006061140447854996,
+        "meta_polar_source_mse": 1.2144134373670568e-06,
+        "meta_polar_source_mae": 0.00103640982433717
+      }
+    ],
+    "interpretation_limits": [
+      "User authorized meta-only training; source comparison cannot isolate collaboration from ordinary continued training",
+      "One seed and short adapter training do not establish convergence or universal benefit",
+      "Raw PolarFree prediction metrics are primary; clipped PNGs and clipped metrics are auxiliary",
+      "Frozen-source polar retention is a proxy, not clean polar ground truth or physical correctness",
+      "Official test has historical exploratory use; it is not a fresh independent confirmation"
+    ]
+  },
+  "test": {
+    "images": 188,
+    "scene_count": 8,
+    "evaluation_devices": [
+      "cuda:0"
+    ],
+    "output_metrics": {
+      "source": {
+        "image_mean_psnr": 23.39596183394112,
+        "image_mean_ssim": 0.8791587159354636,
+        "image_mean_clipped_psnr": 23.396454248361135,
+        "image_mean_clipped_ssim": 0.8795202279344518,
+        "scene_macro_psnr": 25.14091484779152,
+        "scene_macro_ssim": 0.8993857493739131,
+        "scene_macro_clipped_psnr": 25.141350130418626,
+        "scene_macro_clipped_ssim": 0.8995212761259741
+      },
+      "meta": {
+        "image_mean_psnr": 23.413160228111433,
+        "image_mean_ssim": 0.880030113331815,
+        "image_mean_clipped_psnr": 23.413624954694143,
+        "image_mean_clipped_ssim": 0.8803684001273298,
+        "scene_macro_psnr": 25.1479906028682,
+        "scene_macro_ssim": 0.8999030169606657,
+        "scene_macro_clipped_psnr": 25.148420842904056,
+        "scene_macro_clipped_ssim": 0.900029975646541
+      }
+    },
+    "paired_diffs": {
+      "meta_minus_source": {
+        "image_mean_psnr": 0.01719839417032538,
+        "image_mean_ssim": 0.0008713973963514288,
+        "scene_macro_psnr": 0.0070757550766846755,
+        "scene_macro_ssim": 0.0005172675867526483,
+        "PSNR_improved_images": 130,
+        "PSNR_worse_images": 58,
+        "SSIM_drop_images": 50,
+        "both_improved_images": 120,
+        "negative_PSNR_scenes": [
+          "00",
+          "01"
+        ],
+        "negative_SSIM_scenes": [
+          "00",
+          "01"
+        ],
+        "worst_20_images": [
+          {
+            "sample_id": "test/official/00/0012",
+            "scene": "00",
+            "meta_minus_source_psnr": -0.11975160119297712,
+            "meta_minus_source_ssim": -0.00014442205429077148
+          },
+          {
+            "sample_id": "test/official/01/0009",
+            "scene": "01",
+            "meta_minus_source_psnr": -0.10059841400358138,
+            "meta_minus_source_ssim": -0.00047856569290161133
+          },
+          {
+            "sample_id": "test/official/01/0002",
+            "scene": "01",
+            "meta_minus_source_psnr": -0.09613490985498174,
+            "meta_minus_source_ssim": -0.0004419684410095215
+          },
+          {
+            "sample_id": "test/official/01/0003",
+            "scene": "01",
+            "meta_minus_source_psnr": -0.09430613206679439,
+            "meta_minus_source_ssim": -0.00047212839126586914
+          },
+          {
+            "sample_id": "test/official/01/0001",
+            "scene": "01",
+            "meta_minus_source_psnr": -0.08903359693479374,
+            "meta_minus_source_ssim": -0.0003737807273864746
+          },
+          {
+            "sample_id": "test/official/00/0008",
+            "scene": "00",
+            "meta_minus_source_psnr": -0.08288779064261931,
+            "meta_minus_source_ssim": -0.0002453923225402832
+          },
+          {
+            "sample_id": "test/official/01/0008",
+            "scene": "01",
+            "meta_minus_source_psnr": -0.08284091339912436,
+            "meta_minus_source_ssim": -0.0003833174705505371
+          },
+          {
+            "sample_id": "test/official/00/0005",
+            "scene": "00",
+            "meta_minus_source_psnr": -0.08107586434393,
+            "meta_minus_source_ssim": -7.939338684082031e-05
+          },
+          {
+            "sample_id": "test/official/00/0007",
+            "scene": "00",
+            "meta_minus_source_psnr": -0.0806691115126199,
+            "meta_minus_source_ssim": -0.00016105175018310547
+          },
+          {
+            "sample_id": "test/official/01/0007",
+            "scene": "01",
+            "meta_minus_source_psnr": -0.07999651427245169,
+            "meta_minus_source_ssim": -0.0004425048828125
+          },
+          {
+            "sample_id": "test/official/06/0000",
+            "scene": "06",
+            "meta_minus_source_psnr": -0.07956749670742624,
+            "meta_minus_source_ssim": -0.0005857944488525391
+          },
+          {
+            "sample_id": "test/official/01/0004",
+            "scene": "01",
+            "meta_minus_source_psnr": -0.0784766550929703,
+            "meta_minus_source_ssim": -0.0003249049186706543
+          },
+          {
+            "sample_id": "test/official/00/0004",
+            "scene": "00",
+            "meta_minus_source_psnr": -0.0778744651808907,
+            "meta_minus_source_ssim": -6.455183029174805e-05
+          },
+          {
+            "sample_id": "test/official/01/0000",
+            "scene": "01",
+            "meta_minus_source_psnr": -0.07417865653961186,
+            "meta_minus_source_ssim": -0.00035077333450317383
+          },
+          {
+            "sample_id": "test/official/00/0010",
+            "scene": "00",
+            "meta_minus_source_psnr": -0.07308910389307144,
+            "meta_minus_source_ssim": -7.230043411254883e-05
+          },
+          {
+            "sample_id": "test/official/00/0013",
+            "scene": "00",
+            "meta_minus_source_psnr": -0.07217301448176627,
+            "meta_minus_source_ssim": -9.745359420776367e-05
+          },
+          {
+            "sample_id": "test/official/01/0005",
+            "scene": "01",
+            "meta_minus_source_psnr": -0.07154803909639895,
+            "meta_minus_source_ssim": -0.00036072731018066406
+          },
+          {
+            "sample_id": "test/official/00/0014",
+            "scene": "00",
+            "meta_minus_source_psnr": -0.06518203904390774,
+            "meta_minus_source_ssim": -7.18235969543457e-05
+          },
+          {
+            "sample_id": "test/official/01/0006",
+            "scene": "01",
+            "meta_minus_source_psnr": -0.06400045720743819,
+            "meta_minus_source_ssim": -0.00035262107849121094
+          },
+          {
+            "sample_id": "test/official/01/0010",
+            "scene": "01",
+            "meta_minus_source_psnr": -0.06326451579663939,
+            "meta_minus_source_ssim": -0.0002486109733581543
+          }
+        ]
+      }
+    },
+    "polar_drift_from_source": {
+      "meta": {
+        "mse": 1.2090858013892858e-06,
+        "mae": 0.0010432825173608007
+      }
+    },
+    "scenes": [
+      {
+        "scene": "00",
+        "images": 15,
+        "source_psnr": 28.96720699643009,
+        "source_ssim": 0.9707393129666646,
+        "source_clipped_psnr": 28.967221115098646,
+        "source_clipped_ssim": 0.9707396705945333,
+        "meta_psnr": 28.90621889867104,
+        "meta_ssim": 0.9706592082977294,
+        "meta_clipped_psnr": 28.906232279746956,
+        "meta_clipped_ssim": 0.9706595460573832,
+        "meta_minus_source_psnr": -0.060988097759050675,
+        "meta_minus_source_ssim": -8.010466893515478e-05,
+        "meta_polar_source_mse": 1.3044053806273344e-06,
+        "meta_polar_source_mae": 0.00109581567812711
+      },
+      {
+        "scene": "01",
+        "images": 23,
+        "source_psnr": 27.794361839037602,
+        "source_ssim": 0.9474798648253732,
+        "source_clipped_psnr": 27.794383398036402,
+        "source_clipped_ssim": 0.9474800177242445,
+        "meta_psnr": 27.743686862974418,
+        "meta_ssim": 0.9472518381865128,
+        "meta_clipped_psnr": 27.743705359775216,
+        "meta_clipped_ssim": 0.9472519366637521,
+        "meta_minus_source_psnr": -0.05067497606318483,
+        "meta_minus_source_ssim": -0.0002280266388603458,
+        "meta_polar_source_mse": 1.1710077585477214e-06,
+        "meta_polar_source_mae": 0.0010164182167500257
+      },
+      {
+        "scene": "02",
+        "images": 8,
+        "source_psnr": 30.035684028048497,
+        "source_ssim": 0.9638898521661758,
+        "source_clipped_psnr": 30.037629907467846,
+        "source_clipped_ssim": 0.9639048650860786,
+        "meta_psnr": 30.056034122431146,
+        "meta_ssim": 0.9639099538326263,
+        "meta_clipped_psnr": 30.058050341430185,
+        "meta_clipped_ssim": 0.963925302028656,
+        "meta_minus_source_psnr": 0.020350094382649786,
+        "meta_minus_source_ssim": 2.0101666450500488e-05,
+        "meta_polar_source_mse": 1.313459165430686e-06,
+        "meta_polar_source_mae": 0.0010936888575088233
+      },
+      {
+        "scene": "03",
+        "images": 8,
+        "source_psnr": 20.955367303666794,
+        "source_ssim": 0.8591772466897964,
+        "source_clipped_psnr": 20.955575801775993,
+        "source_clipped_ssim": 0.8591847270727158,
+        "meta_psnr": 20.968132981350543,
+        "meta_ssim": 0.8595366105437279,
+        "meta_clipped_psnr": 20.968326617611837,
+        "meta_clipped_ssim": 0.859543576836586,
+        "meta_minus_source_psnr": 0.012765677683749033,
+        "meta_minus_source_ssim": 0.000359363853931427,
+        "meta_polar_source_mse": 1.1887418338574207e-06,
+        "meta_polar_source_mae": 0.0010227282327832654
+      },
+      {
+        "scene": "04",
+        "images": 50,
+        "source_psnr": 20.281232876581868,
+        "source_ssim": 0.8868962574005127,
+        "source_clipped_psnr": 20.281304500058976,
+        "source_clipped_ssim": 0.8869124448299408,
+        "meta_psnr": 20.33495741078492,
+        "meta_ssim": 0.8872289323806762,
+        "meta_clipped_psnr": 20.33503052210927,
+        "meta_clipped_ssim": 0.8872445273399353,
+        "meta_minus_source_psnr": 0.05372453420305234,
+        "meta_minus_source_ssim": 0.0003326749801635387,
+        "meta_polar_source_mse": 1.2188323671580293e-06,
+        "meta_polar_source_mae": 0.0010470494581386446
+      },
+      {
+        "scene": "05",
+        "images": 14,
+        "source_psnr": 23.157388099979823,
+        "source_ssim": 0.8230235576629639,
+        "source_clipped_psnr": 23.157531011354063,
+        "source_clipped_ssim": 0.8230422352041517,
+        "meta_psnr": 23.191476477345798,
+        "meta_ssim": 0.8245441615581512,
+        "meta_clipped_psnr": 23.191613094121013,
+        "meta_clipped_ssim": 0.8245615874017987,
+        "meta_minus_source_psnr": 0.034088377365975475,
+        "meta_minus_source_ssim": 0.001520603895187378,
+        "meta_polar_source_mse": 1.2094106409676897e-06,
+        "meta_polar_source_mae": 0.0010451550977969809
+      },
+      {
+        "scene": "06",
+        "images": 65,
+        "source_psnr": 22.146475357685706,
+        "source_ssim": 0.8292938837638268,
+        "source_clipped_psnr": 22.147536373782263,
+        "source_clipped_ssim": 0.8303200978499192,
+        "meta_psnr": 22.173951219286554,
+        "meta_ssim": 0.8312646058889536,
+        "meta_clipped_psnr": 22.174926937896373,
+        "meta_clipped_ssim": 0.8322244204007663,
+        "meta_minus_source_psnr": 0.02747586160084836,
+        "meta_minus_source_ssim": 0.0019707221251267226,
+        "meta_polar_source_mse": 1.1786586513223412e-06,
+        "meta_polar_source_mae": 0.0010309544338199955
+      },
+      {
+        "scene": "07",
+        "images": 5,
+        "source_psnr": 27.78960228090179,
+        "source_ssim": 0.9145860195159912,
+        "source_clipped_psnr": 27.78961893577486,
+        "source_clipped_ssim": 0.9145861506462097,
+        "meta_psnr": 27.809466850101227,
+        "meta_ssim": 0.9148288249969483,
+        "meta_clipped_psnr": 27.809481590541584,
+        "meta_clipped_ssim": 0.9148289084434509,
+        "meta_minus_source_psnr": 0.01986456919943791,
+        "meta_minus_source_ssim": 0.00024280548095712007,
+        "meta_polar_source_mse": 1.2610167686943897e-06,
+        "meta_polar_source_mae": 0.0010788479819893837
+      }
+    ],
+    "interpretation_limits": [
+      "User authorized meta-only training; source comparison cannot isolate collaboration from ordinary continued training",
+      "One seed and short adapter training do not establish convergence or universal benefit",
+      "Raw PolarFree prediction metrics are primary; clipped PNGs and clipped metrics are auxiliary",
+      "Frozen-source polar retention is a proxy, not clean polar ground truth or physical correctness",
+      "Official test has historical exploratory use; it is not a fresh independent confirmation"
+    ]
+  },
+  "elapsed_this_execution_seconds": 7366.468276262283,
+  "completed": true,
+  "method_effectiveness_requires_paired_results": true,
+  "matched_finetuning_control_available": false,
+  "user_cancelled_control_not_evaluated": true
+}

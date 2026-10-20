@@ -1,0 +1,16 @@
+{
+  "formal_experiment_completed": false,
+  "reasons": [
+    "status.stage=failed",
+    "missing lock_receipt.json",
+    "missing downstream/metrics/summary.json",
+    "missing meta final checkpoint",
+    "missing archived source_checkpoint with expected SHA256 279d0a329d0efebee9678c2156bf3e7b60c0646e75a5f37f8015c7b100f9e9a2",
+    "missing archived official_fanet with expected SHA256 20fe6defc1ac37b5d7011bce5b83a43c9e21e6948f36bbb98933a742a7b75a4b"
+  ],
+  "metrics": {},
+  "final_checkpoints": {},
+  "verified_source_weights": {},
+  "protocol_id": null,
+  "method_effectiveness": "not_inferred_from_archive_completion"
+}

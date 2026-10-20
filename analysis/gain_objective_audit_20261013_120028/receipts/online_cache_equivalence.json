@@ -1,0 +1,175 @@
+{
+  "passed": true,
+  "crops": [
+    "train/hard/31/0009",
+    "train/easy/31/0029",
+    "train/easy/53/0008",
+    "train/easy/53/0017",
+    "train/hard/15/0006"
+  ],
+  "per_crop": [
+    {
+      "sample_id": "train/hard/31/0009",
+      "scene": "31",
+      "raw_cost_max_abs": 0.0,
+      "raw_cost_allclose": true,
+      "raw_cost_bitwise_equal": true,
+      "loss_online": 0.16550442203879356,
+      "loss_cached": 0.16550442203879356
+    },
+    {
+      "sample_id": "train/easy/31/0029",
+      "scene": "31",
+      "raw_cost_max_abs": 0.0,
+      "raw_cost_allclose": true,
+      "raw_cost_bitwise_equal": true,
+      "loss_online": 0.018401689594611526,
+      "loss_cached": 0.018401689594611526
+    },
+    {
+      "sample_id": "train/easy/53/0008",
+      "scene": "53",
+      "raw_cost_max_abs": 0.0,
+      "raw_cost_allclose": true,
+      "raw_cost_bitwise_equal": true,
+      "loss_online": 1.4596830308437347,
+      "loss_cached": 1.4596830308437347
+    },
+    {
+      "sample_id": "train/easy/53/0017",
+      "scene": "53",
+      "raw_cost_max_abs": 0.0,
+      "raw_cost_allclose": true,
+      "raw_cost_bitwise_equal": true,
+      "loss_online": 0.08077130652964115,
+      "loss_cached": 0.08077130652964115
+    },
+    {
+      "sample_id": "train/hard/15/0006",
+      "scene": "15",
+      "raw_cost_max_abs": 0.0,
+      "raw_cost_allclose": true,
+      "raw_cost_bitwise_equal": true,
+      "loss_online": 0.6886683404445648,
+      "loss_cached": 0.6886683404445648
+    }
+  ],
+  "gradient_comparison": {
+    "feature_projection.weight": {
+      "max_abs": 0.0,
+      "max_rel": 0.0,
+      "allclose": true,
+      "nonzero": true
+    },
+    "feature_projection.bias": {
+      "max_abs": 0.0,
+      "max_rel": 0.0,
+      "allclose": true,
+      "nonzero": true
+    },
+    "body.0.weight": {
+      "max_abs": 0.0,
+      "max_rel": 0.0,
+      "allclose": true,
+      "nonzero": true
+    },
+    "body.0.bias": {
+      "max_abs": 0.0,
+      "max_rel": 0.0,
+      "allclose": true,
+      "nonzero": true
+    },
+    "body.2.weight": {
+      "max_abs": 0.0,
+      "max_rel": 0.0,
+      "allclose": true,
+      "nonzero": true
+    },
+    "body.2.bias": {
+      "max_abs": 0.0,
+      "max_rel": 0.0,
+      "allclose": true,
+      "nonzero": true
+    },
+    "body.4.weight": {
+      "max_abs": 0.0,
+      "max_rel": 0.0,
+      "allclose": true,
+      "nonzero": true
+    },
+    "body.4.bias": {
+      "max_abs": 0.0,
+      "max_rel": 0.0,
+      "allclose": true,
+      "nonzero": true
+    }
+  },
+  "parameter_after_one_update": {
+    "feature_projection.weight": {
+      "max_abs": 0.0,
+      "equal": true,
+      "allclose": true
+    },
+    "feature_projection.bias": {
+      "max_abs": 0.0,
+      "equal": true,
+      "allclose": true
+    },
+    "body.0.weight": {
+      "max_abs": 0.0,
+      "equal": true,
+      "allclose": true
+    },
+    "body.0.bias": {
+      "max_abs": 0.0,
+      "equal": true,
+      "allclose": true
+    },
+    "body.2.weight": {
+      "max_abs": 0.0,
+      "equal": true,
+      "allclose": true
+    },
+    "body.2.bias": {
+      "max_abs": 0.0,
+      "equal": true,
+      "allclose": true
+    },
+    "body.4.weight": {
+      "max_abs": 0.0,
+      "equal": true,
+      "allclose": true
+    },
+    "body.4.bias": {
+      "max_abs": 0.0,
+      "equal": true,
+      "allclose": true
+    }
+  },
+  "grad_clip_online": 0.9491429924964905,
+  "grad_clip_cached": 0.9491429924964905,
+  "gt_replacement_changes_labels": true,
+  "gt_replacement_keeps_deployable_features": true,
+  "mask_zero_exactly_copies_t1": true,
+  "rng_sensitivity": {
+    "sample_id": "train/hard/31/0009",
+    "t1_max_abs_difference": 0.016681790351867676,
+    "t1_identical": false,
+    "note": "a foreign triple yields a different frozen forward; replaying the cache triple is mandatory"
+  },
+  "non_judgement_tensors_still_equal_source": true,
+  "non_judgement_mismatches": [],
+  "tolerance": {
+    "atol": 1e-06,
+    "rtol": 0.0001
+  },
+  "dtype": "float32",
+  "autocast": {
+    "enabled_online": "disabled (frozen reuse-fixed-first-round path)",
+    "enabled_cache": "disabled (float32 cache)"
+  },
+  "note": "hash inequality vs numeric equivalence distinguished; allclose is not claimed as bit-exact",
+  "seed_policy": "identical set_step_seed triple as cache generation (phase='a2_native_cache', step=plan position); the frozen two-round forward is RNG-sensitive, so a different triple legitimately changes t1",
+  "test_used": false,
+  "validation_used": false
+}

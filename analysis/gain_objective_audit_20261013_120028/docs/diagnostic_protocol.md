@@ -102,3 +102,28 @@ L_pure  = L_fit
 - 判定：散点表示在训练内可拟合（过拟合于 2048 抽样），但不跨角色/场景迁移；**去掉期望项没有实质改善**（L_fit 几乎不变、MAE 略优、排序略降）。
 - 限制：本结果只说明该探针/预算/散点表示未形成可迁移信号，**不能**据此判定原生判断头坏掉；原生头判定见 A2。
 - 详见 `docs/A1_findings.md`、`metrics/A1_probe_results.json`、`receipts/A1_artifacts.json`。
+
+## 10. A2 执行记录与结果（已完成）
+
+- 状态：`native_head_diagnostic_complete`；GPU；未读 188 测试；未用 validation 选择任何规则；未重跑 872 诊断。
+- 预算：A2 首次 GPU 前登记的新 2 小时绝对预算（`budget.json`），未沿用旧实验预算。
+- 判断头：生产构造路径的 50 输入 / 3 输出原生头（`feature_projection` 96→8 可训练），
+  两份副本共享初始权重 SHA256 `6323d52851ad9e67c2020463eab5d3e859e9964758dfbc311f66e69ec6e200b0`（来源 `final.pt` `279d0a32…e9a2`）。
+- 缓存：48 裁剪（judgement 24 / bias 8 / safety 16），一次冻结双轮前向；`feature_projection` 不缓存。
+- **缓存等价：通过，且为逐比特相等**（成本输出、损失、梯度、一次更新后的参数 max|Δ| 全为 0），
+  非判断张量仍严格等于来源，GT 替换只改标签，M0 精确复制 T1。
+- 训练：Adam lr 1e-4、有效 batch 2、微批 1、clip_norm 1、固定 500 步；唯一变量 = 损失。
+- 结果摘要：
+  - 训练内 L_fit 0.139464 → mixed 0.127693 / pure 0.127553（−8.4% / −8.5%）；
+    三动作成本 MAE 2.114e-4 / 2.113e-4，优于零基线 2.247e-4 与训练均值基线 2.247e-4；
+    训练内 Spearman ≈ 0.24–0.27。
+  - mixed 与 pure 在所有指标上同级（终点 L_fit 相对差 0.11%，**pure 略好**）→ **期望项没有带来可测收益**。
+  - 跨场景角色（bias / safety）MAE 9.69e-5 / 8.58e-5，**均劣于零基线** 8.17e-5 / 8.39e-5 → 不迁移；
+    幅值系统性低估（safety 上 a=1.0 预测 0.0409 vs 真实 0.0970）。
+  - 旧门槛网格 0…12.8：无任何合格的非零覆盖 → **全部拒绝**（coverage 0，safe=true，useful=false，有害率 NA）；
+    GT 参照（每格最优动作上界）仅 +4.575e-6（≈ 尺度的 0.49%）。
+- 判定：原生头在固定小样本上**能收敛式拟合**，但**不跨场景迁移**，且**去掉期望项不改善**；
+  未找到符合预定条件的非零修改。可进入 B 的信号（pure 优于 mixed / 安全角色净改善为正）**未出现**。
+- 执行偏差：7 次进程尝试中 6 次失败，全部是新写脚本的执行缺陷（详见 `docs/A2_findings.md` §9 与
+  `receipts/A2_execution.json`），**未改动算法/目标/数据/协议**，协议 ID 不变。
+- 详见 `docs/A2_findings.md`、`metrics/A2_native_fit_results.json`、`receipts/A2_artifacts.json`。

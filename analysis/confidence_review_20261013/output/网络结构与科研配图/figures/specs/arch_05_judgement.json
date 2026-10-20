@@ -1,0 +1,222 @@
+{
+  "canvas": {
+    "width": 1830,
+    "height": 940
+  },
+  "style": {
+    "font_family": "Microsoft YaHei, Arial, sans-serif",
+    "font_size": 18
+  },
+  "nodes": [
+    {
+      "id": "hinput",
+      "label": "H输入：I / clamp(T1) / |I−T1|\n原偏振摘要5 + 三尺度F各投影8\n4×4池化/对齐，共38通道",
+      "x": 260,
+      "y": 150,
+      "width": 420,
+      "height": 120,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "h",
+      "label": "H：Conv38→32→32→1\nGELU；b=0.001+softplus\nC=exp(-b/τ)，C停止梯度",
+      "x": 760,
+      "y": 150,
+      "width": 420,
+      "height": 120,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "hloss",
+      "label": "历史H监督\n局部clamp(T1)误差 e\nL_H=mean(e/b+log b)",
+      "x": 1300,
+      "y": 150,
+      "width": 420,
+      "height": 120,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "gin",
+      "label": "正式判断50通道\n池化I/T1/U/Δ(12)+偏振(5)+b/C(2)\n任务投影8+状态16+增量平方3\n绝对增量3+抵消比例1；输入detach",
+      "x": 320,
+      "y": 385,
+      "width": 520,
+      "height": 145,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "gate",
+      "label": "动作判断器，15,627参数\nConv50→32，3×3 + GELU\nDW3×3，32 + GELU\nConv1×1，32→3",
+      "x": 945,
+      "y": 385,
+      "width": 510,
+      "height": 145,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "cost",
+      "label": "三非零动作预测成本\n0.25 / 0.5 / 1（零动作固定0）\n加训练偏差和安全门槛",
+      "x": 1530,
+      "y": 385,
+      "width": 440,
+      "height": 145,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "label",
+      "label": "GT仅训练/核验标签\nΔE(a)=pool[(T1+aΔ−GT)²−(T1−GT)²]\n95%训练分位归一成本",
+      "x": 320,
+      "y": 635,
+      "width": 520,
+      "height": 120,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "loss",
+      "label": "本次唯一训练目标\nSmoothL1(预测,实际成本)\n+ 0.1软动作期望实际成本",
+      "x": 945,
+      "y": 635,
+      "width": 510,
+      "height": 120,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    },
+    {
+      "id": "mask",
+      "label": "argmin → 4×4动作网格\n最近邻到原图，M停止梯度\nT2=where(M=0,T1,T1+MΔ)",
+      "x": 1530,
+      "y": 635,
+      "width": 440,
+      "height": 120,
+      "shape": "rounded",
+      "stroke": "#26748B",
+      "fill": "#EAF3F6",
+      "text_color": "#173B4E",
+      "font_size": 18
+    }
+  ],
+  "edges": [
+    {
+      "from": "hinput",
+      "to": "h",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "h",
+      "to": "hloss",
+      "label": "",
+      "style": "dotted",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "gin",
+      "to": "gate",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "gate",
+      "to": "cost",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "label",
+      "to": "loss",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "gate",
+      "to": "loss",
+      "label": "",
+      "style": "dotted",
+      "color": "#64748B",
+      "thickness": 1.5
+    },
+    {
+      "from": "cost",
+      "to": "mask",
+      "label": "",
+      "style": "solid",
+      "color": "#64748B",
+      "thickness": 1.5
+    }
+  ],
+  "groups": [],
+  "labels": [
+    {
+      "x": 35,
+      "y": 34,
+      "text": "质量头、动作判断、训练校准与最终区域保护",
+      "font_size": 26,
+      "anchor": "start",
+      "color": "#173B4E"
+    },
+    {
+      "x": 40,
+      "y": 795,
+      "text": "偏差/安全只用训练内部237/423图角色；候选和Q固定，判断1140图3000步。四角色为来源见过的场景，不是未见确认数据。",
+      "font_size": 17,
+      "anchor": "start",
+      "color": "#586676"
+    },
+    {
+      "x": 40,
+      "y": 840,
+      "text": "安全校准要求平均MSE不增、有害接受≤20%，选最大覆盖；本次最终门槛1.6：全部1060图M=0。GT理想选择不能部署。",
+      "font_size": 17,
+      "anchor": "start",
+      "color": "#586676"
+    },
+    {
+      "x": 40,
+      "y": 885,
+      "text": "重要语义：C是质量分数，Q是修复需求代理，动作成本才判断给定修正的收益。三种量互不等价。",
+      "font_size": 17,
+      "anchor": "start",
+      "color": "#586676"
+    }
+  ]
+}

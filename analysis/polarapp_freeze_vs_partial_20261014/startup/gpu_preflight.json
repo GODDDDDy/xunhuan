@@ -1,0 +1,98 @@
+{
+  "observations": [
+    {
+      "arm": "frozen",
+      "policy": {
+        "arm": "frozen",
+        "upstream_adapters": 11136,
+        "downstream_adapters": 12720,
+        "new_tail_parameters": 0,
+        "new_tail_names": [],
+        "all_priors_frozen": true
+      },
+      "bilevel_joint_trial_seconds": 11.61777768470347,
+      "joint_trial_seconds": 0.6411204719915986,
+      "meta_trial_seconds": 10.976656902115792,
+      "peak_training_bytes": 6620107776,
+      "meta_hypergradient_scaled_norm": 4.786965951984678e-06,
+      "trial_changed_tail_tensors": 0,
+      "frozen_audit_passed": true,
+      "native_size": [
+        1024,
+        1224
+      ],
+      "native_forward_seconds": 3.158831214066595,
+      "trial_updates_discarded": true
+    },
+    {
+      "arm": "partial",
+      "policy": {
+        "arm": "partial",
+        "upstream_adapters": 11136,
+        "downstream_adapters": 12720,
+        "new_tail_parameters": 424589,
+        "new_tail_names": [
+          "task.model.net_g.decoder_level1.blocks.0.norm1.body.weight",
+          "task.model.net_g.decoder_level1.blocks.0.norm1.body.bias",
+          "task.model.net_g.decoder_level1.blocks.0.attn.temperature",
+          "task.model.net_g.decoder_level1.blocks.0.attn.qkv.weight",
+          "task.model.net_g.decoder_level1.blocks.0.attn.qkv_dwconv.weight",
+          "task.model.net_g.decoder_level1.blocks.0.attn.project_out.weight",
+          "task.model.net_g.decoder_level1.blocks.0.norm2.body.weight",
+          "task.model.net_g.decoder_level1.blocks.0.norm2.body.bias",
+          "task.model.net_g.decoder_level1.blocks.0.ffn.project_in.weight",
+          "task.model.net_g.decoder_level1.blocks.0.ffn.dwconv.weight",
+          "task.model.net_g.decoder_level1.blocks.0.ffn.project_out.weight",
+          "task.model.net_g.decoder_level1.blocks.1.norm1.body.weight",
+          "task.model.net_g.decoder_level1.blocks.1.norm1.body.bias",
+          "task.model.net_g.decoder_level1.blocks.1.attn.temperature",
+          "task.model.net_g.decoder_level1.blocks.1.attn.qkv.weight",
+          "task.model.net_g.decoder_level1.blocks.1.attn.qkv_dwconv.weight",
+          "task.model.net_g.decoder_level1.blocks.1.attn.project_out.weight",
+          "task.model.net_g.decoder_level1.blocks.1.norm2.body.weight",
+          "task.model.net_g.decoder_level1.blocks.1.norm2.body.bias",
+          "task.model.net_g.decoder_level1.blocks.1.ffn.project_in.weight",
+          "task.model.net_g.decoder_level1.blocks.1.ffn.dwconv.weight",
+          "task.model.net_g.decoder_level1.blocks.1.ffn.project_out.weight",
+          "task.model.net_g.decoder_level1.blocks.2.norm1.body.weight",
+          "task.model.net_g.decoder_level1.blocks.2.norm1.body.bias",
+          "task.model.net_g.decoder_level1.blocks.2.attn.temperature",
+          "task.model.net_g.decoder_level1.blocks.2.attn.qkv.weight",
+          "task.model.net_g.decoder_level1.blocks.2.attn.qkv_dwconv.weight",
+          "task.model.net_g.decoder_level1.blocks.2.attn.project_out.weight",
+          "task.model.net_g.decoder_level1.blocks.2.norm2.body.weight",
+          "task.model.net_g.decoder_level1.blocks.2.norm2.body.bias",
+          "task.model.net_g.decoder_level1.blocks.2.ffn.project_in.weight",
+          "task.model.net_g.decoder_level1.blocks.2.ffn.dwconv.weight",
+          "task.model.net_g.decoder_level1.blocks.2.ffn.project_out.weight",
+          "task.model.net_g.decoder_level1.him.norm1.body.weight",
+          "task.model.net_g.decoder_level1.him.norm1.body.bias",
+          "task.model.net_g.decoder_level1.him.norm2.body.weight",
+          "task.model.net_g.decoder_level1.him.norm2.body.bias",
+          "task.model.net_g.decoder_level1.him.q.weight",
+          "task.model.net_g.decoder_level1.him.kv.weight",
+          "task.model.net_g.decoder_level1.him.proj.weight",
+          "task.model.net_g.decoder_level1.him.proj.bias",
+          "task.model.net_g.output.weight"
+        ],
+        "all_priors_frozen": true
+      },
+      "bilevel_joint_trial_seconds": 8.55922126211226,
+      "joint_trial_seconds": 0.6076402217149734,
+      "meta_trial_seconds": 7.951580147258937,
+      "peak_training_bytes": 6737873920,
+      "meta_hypergradient_scaled_norm": 4.794520619931546e-06,
+      "trial_changed_tail_tensors": 42,
+      "frozen_audit_passed": true,
+      "native_size": [
+        1024,
+        1224
+      ],
+      "native_forward_seconds": 3.153333308175206,
+      "trial_updates_discarded": true
+    }
+  ],
+  "projected_training_seconds": 16537.129793898202,
+  "projected_evaluation_seconds": 16867.624891097657,
+  "trial_updates_discarded": true
+}

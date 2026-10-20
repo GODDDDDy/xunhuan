@@ -1,5 +1,104 @@
 # K2 code changes
 
+## 2026-10-16: authorized fixed-output diagnostics and matched Oracle quality
+
+Added `server_scripts/oracle_quality_diagnostics_20261016/` as a thin wrapper
+around the frozen experiment30 loader, first/second forwards, update, optimizer,
+loss and checkpoint routines. Only one new arm O is trained; original B/P and
+D/T1 outputs remain the references. Oracle C uses the original4x4 clamped RGB
+MAE target, .001 lower bound and inherited tau. It enters only B's quality
+channel; first-round weights, H and PolarFree remain frozen. Fixed6,000 updates,
+same12,000 crops, full872 validation and188 test. No metric-based selection.
+
+The CPU pass reuses the project's NumPy average-tie Spearman implementation and
+Pillow. It reports fixed-B quality/gain relations and restricted GT blockwise
+T1/T2 selection, without fitting a gate. A numerical cross-check caught an
+initial clamp mismatch: historical PSNR uses raw predictions while H uses
+clamped MAE. Preserved that failure before formal training and corrected only
+the diagnostic MSE definition. An initial full-frame OOM was preserved; the
+existing expandable-segment allocator setting then passed the full-size check.
+
+CPU/GPU Oracle checks passed, including original B step1 and501 exact loss and
+gradient-norm replay, identity initialization, correct Oracle channel, restored
+optimizer replay and unchanged frozen weights. Independent start audit confirms
+all29 trainable tensors and empty Adam states exactly match original B's step0;
+formal sample IDs follow the original schedule. All components completed:
+6,000 updates,872 validation,188 test, and server closeout at Beijing13:47.
+Scene-equal O-minus-P PSNR was +0.000113/+0.000326dB (validation/test), with
+slightly negative SSIM on both; O-minus-T1 +0.007062/-0.001344dB. Both gates
+failed. CPU diagnostics found C/first-MAE Spearman -0.418850 and fixed-B
+block-selection gain only +0.016016dB. No added training or tuning.
+Independent CPU audit verifies all1,060 first-round hashes, exact schedules,
+29 Adam states atstep6,000, paired reaggregation,16 fixed Oracle-definition
+checks,1,129 manifest file sizes and69 selective rehashes. Original full hashes
+remain preserved; large examples were not all rehashed in this audit. All owned
+processes exited. User authorized all components regardless of offline outcome.
+No extra seed, loss, tau or architecture search is queued.
+Central protocol: `analysis/oracle_quality_diagnostics_20261016/PROTOCOL_ZH.md`.
+Final results: `analysis/oracle_quality_diagnostics_20261016/RESULTS_ZH.md`.
+
+## 2026-10-15: fixed-H, three-arm polarization feedback use (experiment30)
+
+Added `server_scripts/c_feedback_polar_loop_20261015/` for the user-approved v3
+comparison. Existing data schedules, model loading, frozen first-round/H,
+floating polarization bridge and PSNR/SSIM implementations are reused. A keeps
+the TaskAdapter C pre-multiplication; B passes the unscaled feedback and true C;
+D uses B's rule with each sample's mean C. Each E2 is an independent copy with
+only its two adapters and zero-initialized output convolution trainable
+(292,896 parameters). P2 is P1 plus a bounded .02*tanh residual. No Q/M, decoder
+feedback hook or direct RGB correction head participates in generation.
+
+The locked data plan has 6,000 updates per arm, the same 12,000 crop
+presentations, a preselected scene-balanced 256-frame validation subset and all
+188 test frames. Validation sampling uncertainty triggers completion to872
+without selecting a different checkpoint. The original eight-hour budget was
+first extended to twelve hours by the user, then all remaining evaluation time
+limits were explicitly cancelled. An evaluation-only queue resumed the same
+endpoint once memory was sufficient; no routine downloads.
+
+CPU checks and GPU small-input checks verified exact zero-head identity,
+GT-invariant prediction, the declared A/B/D inputs, source/first-round freezing,
+real restoration gradients and optimizer replay. Preflight found and preserved
+an RNG-device reload error, followed by excessive CPU metric/compression cost.
+The repairs preserve CPU RNG state, use the original GPU FP32 metrics and store
+identical floating arrays in uncompressed NPZ. Formal training passed the
+complete-frame memory/resource check and all three arms completed 6,000 steps.
+
+Completed 2026-10-16: the original 256 validation rows were reused exactly while
+the predeclared scene-count uncertainty trigger expanded validation to all872;
+all188 test frames also completed at the fixed endpoint. All main gates failed:
+scene-equal B-minus-T1 PSNR was +0.006949dB validation and -0.001670dB test;
+B-minus-A +0.001977/+0.001614dB; B-minus-D +0.001265/-0.000996dB.
+No further training or tuning was launched. Evaluation OOM and recovery receipts
+are preserved. Server closeout fingerprints cover1191 files. Independent CPU
+audit recomputed paired metrics, verified exact schedules/first-round hashes,
+checked all manifest sizes and selectively rehashed128 files; it did not reread
+all large floating examples. The controller exited. Results and limitations:
+`analysis/c_feedback_polar_loop_20261015/RESULTS_ZH.md`.
+
+## 2026-10-15: bounded local-ranking quality-head adaptation
+
+Added isolated `server_scripts/h_rank_quality_20261015/`. It snapshots the existing
+components/data loader and freezes the experiment21 initial first round. Two
+copies of the original H receive identical detached first-round tensors, each
+with its own Adam optimizer for a fixed 2,000 updates. One retains the original
+error-scale objective; the other adds same-image log-error hinge ranking, adapted
+from the CRL/RankIQA training principle. H architecture and b/C semantics do not
+change. No feedback, Q/M, restoration weights or inference paths are modified.
+
+CPU checks passed for ranking-gradient direction, empty-pair behavior, oracle
+AUSE, GT-invariant forward, exact initial-H equivalence, frozen upstream tensors,
+real H updates and deterministic fresh-optimizer replay. GPU preflight updates
+were discarded. Both heads completed 2,000 updates on the same 4,000 train crops.
+An initial full-frame OOM was preserved; an evaluation-only lifetime/allocator
+repair passed CPU/GPU small-input bit-exact checks and finished all 64 frames.
+The ranking candidate did not pass the locked screen: AUSE 0.261319 versus
+0.260808 for matched scale-only continuation, with only 4/8 scenes improved.
+No full 872/188 evaluation or further tuning was launched. Original H retained.
+139 server-side artifact fingerprints and result aggregation were verified.
+Data/weights remain on server. Protocol/results:
+`analysis/h_rank_quality_20261015/PROTOCOL_ZH.md`, `RESULTS_ZH.md`.
+
 ## 2026-10-09 completion: full confidence comparison and evidence archive
 
 Both A2_dual and A0_direct completed 16,000 additional updates and full 872-frame

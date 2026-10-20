@@ -1,0 +1,367 @@
+{
+  "cases": {
+    "01": {
+      "sample_id": "validation/easy/01/0000",
+      "source_index": 0,
+      "shape": [
+        1024,
+        1224,
+        3
+      ],
+      "metrics": {
+        "sample_id": "validation/easy/01/0000",
+        "scene": "01",
+        "round1": {
+          "psnr": 33.206348020770946,
+          "ssim": 0.9721133708953857
+        },
+        "round2": {
+          "psnr": 33.206348020770946,
+          "ssim": 0.9721133708953857
+        },
+        "ungated_candidate": {
+          "psnr": 33.14101300532514,
+          "ssim": 0.9717530608177185
+        },
+        "iteration_gain": {
+          "psnr": 0.0,
+          "ssim": 0.0
+        }
+      },
+      "quality_error_rho": -0.4324606494264951,
+      "quality_full_action_gain_rho": 0.036974501007386563,
+      "beneficial_full_action_fraction": 0.19600183823529413,
+      "harmful_full_action_fraction": 0.31959763071895425,
+      "oracle_nonzero_fraction": 0.4303640727124183,
+      "actual_deployed_coverage": 0.0,
+      "map_source": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\polar_gain_judgement_short_20261012\\artifacts\\diagnostics\\validation_action_maps\\0000.npz",
+      "image_source": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\polar_gain_judgement_short_20261012\\artifacts\\downstream\\examples\\validation\\01_T1.png",
+      "dataset_manifest": {
+        "split": "validation",
+        "difficulty": "easy",
+        "scene": "01",
+        "frame": "0000",
+        "sample_id": "validation/easy/01/0000",
+        "polar_000": "/media/li/data3/Dataset/polargb/train/easy/input/01/0000_000.png",
+        "polar_045": "/media/li/data3/Dataset/polargb/train/easy/input/01/0000_045.png",
+        "polar_090": "/media/li/data3/Dataset/polargb/train/easy/input/01/0000_090.png",
+        "polar_135": "/media/li/data3/Dataset/polargb/train/easy/input/01/0000_135.png",
+        "official_rgb": "/media/li/data3/Dataset/polargb/train/easy/input/01/0000_rgb.png",
+        "gt_rgb": "/media/li/data3/Dataset/polargb/train/easy/gt/01/0000_rgb.png"
+      }
+    },
+    "30": {
+      "sample_id": "validation/easy/30/0000",
+      "source_index": 117,
+      "shape": [
+        1024,
+        1224,
+        3
+      ],
+      "metrics": {
+        "sample_id": "validation/easy/30/0000",
+        "scene": "30",
+        "round1": {
+          "psnr": 27.99729087149646,
+          "ssim": 0.9465603232383728
+        },
+        "round2": {
+          "psnr": 27.99729087149646,
+          "ssim": 0.9465603232383728
+        },
+        "ungated_candidate": {
+          "psnr": 27.43073795555606,
+          "ssim": 0.9407772421836853
+        },
+        "iteration_gain": {
+          "psnr": 0.0,
+          "ssim": 0.0
+        }
+      },
+      "quality_error_rho": -0.45587885528673194,
+      "quality_full_action_gain_rho": 0.3087864249611735,
+      "beneficial_full_action_fraction": 0.26174428104575165,
+      "harmful_full_action_fraction": 0.508859272875817,
+      "oracle_nonzero_fraction": 0.4127987132352941,
+      "actual_deployed_coverage": 0.0,
+      "map_source": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\polar_gain_judgement_short_20261012\\artifacts\\diagnostics\\validation_action_maps\\0117.npz",
+      "image_source": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\polar_gain_judgement_short_20261012\\artifacts\\downstream\\examples\\validation\\30_T1.png",
+      "dataset_manifest": {
+        "split": "validation",
+        "difficulty": "easy",
+        "scene": "30",
+        "frame": "0000",
+        "sample_id": "validation/easy/30/0000",
+        "polar_000": "/media/li/data3/Dataset/polargb/train/easy/input/30/0000_000.png",
+        "polar_045": "/media/li/data3/Dataset/polargb/train/easy/input/30/0000_045.png",
+        "polar_090": "/media/li/data3/Dataset/polargb/train/easy/input/30/0000_090.png",
+        "polar_135": "/media/li/data3/Dataset/polargb/train/easy/input/30/0000_135.png",
+        "official_rgb": "/media/li/data3/Dataset/polargb/train/easy/input/30/0000_rgb.png",
+        "gt_rgb": "/media/li/data3/Dataset/polargb/train/easy/gt/30/0000_rgb.png"
+      },
+      "color_limits": {
+        "C": [
+          0,
+          1
+        ],
+        "error": [
+          0,
+          0.09268492460250854
+        ],
+        "gain": [
+          -0.0026393800508230925,
+          0.0026393800508230925
+        ]
+      },
+      "illustrative_rois": [
+        {
+          "x": 1024,
+          "y": 896,
+          "width": 128,
+          "height": 128,
+          "mean_raw_mse_gain": 0.0002557516563683748,
+          "gt_luma_std": 0.11344828870348349,
+          "selection": "post-hoc max/min 128x128 patch gain among GT luminance std>.035; illustration only"
+        },
+        {
+          "x": 384,
+          "y": 896,
+          "width": 128,
+          "height": 128,
+          "mean_raw_mse_gain": -0.002145451260730624,
+          "gt_luma_std": 0.06615693519717492,
+          "selection": "post-hoc max/min 128x128 patch gain among GT luminance std>.035; illustration only"
+        }
+      ]
+    },
+    "55": {
+      "sample_id": "validation/easy/55/0000",
+      "source_index": 288,
+      "shape": [
+        1024,
+        1224,
+        3
+      ],
+      "metrics": {
+        "sample_id": "validation/easy/55/0000",
+        "scene": "55",
+        "round1": {
+          "psnr": 22.375774766358543,
+          "ssim": 0.9265410304069519
+        },
+        "round2": {
+          "psnr": 22.375774766358543,
+          "ssim": 0.9265410304069519
+        },
+        "ungated_candidate": {
+          "psnr": 22.6522792573987,
+          "ssim": 0.9253387451171875
+        },
+        "iteration_gain": {
+          "psnr": 0.0,
+          "ssim": 0.0
+        }
+      },
+      "quality_error_rho": -0.5941020212513061,
+      "quality_full_action_gain_rho": -0.08134170338005225,
+      "beneficial_full_action_fraction": 0.5564874387254902,
+      "harmful_full_action_fraction": 0.3344184027777778,
+      "oracle_nonzero_fraction": 0.6382761437908496,
+      "actual_deployed_coverage": 0.0,
+      "map_source": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\polar_gain_judgement_short_20261012\\artifacts\\diagnostics\\validation_action_maps\\0288.npz",
+      "image_source": "F:\\WORK\\projects\\pidsr_recurrent_joint_k2\\_dl\\polar_gain_judgement_short_20261012\\artifacts\\downstream\\examples\\validation\\55_T1.png",
+      "dataset_manifest": {
+        "split": "validation",
+        "difficulty": "easy",
+        "scene": "55",
+        "frame": "0000",
+        "sample_id": "validation/easy/55/0000",
+        "polar_000": "/media/li/data3/Dataset/polargb/train/easy/input/55/0000_000.png",
+        "polar_045": "/media/li/data3/Dataset/polargb/train/easy/input/55/0000_045.png",
+        "polar_090": "/media/li/data3/Dataset/polargb/train/easy/input/55/0000_090.png",
+        "polar_135": "/media/li/data3/Dataset/polargb/train/easy/input/55/0000_135.png",
+        "official_rgb": "/media/li/data3/Dataset/polargb/train/easy/input/55/0000_rgb.png",
+        "gt_rgb": "/media/li/data3/Dataset/polargb/train/easy/gt/55/0000_rgb.png"
+      }
+    }
+  },
+  "input_group_scales": {
+    "RGB": {
+      "std_median": 0.22639578580856323,
+      "mean_abs": 0.42768311500549316
+    },
+    "T1": {
+      "std_median": 0.25651878118515015,
+      "mean_abs": 0.380569726228714
+    },
+    "mean_delta": {
+      "std_median": 0.005528795532882214,
+      "mean_abs": 0.002888564020395279
+    },
+    "polar": {
+      "std_median": 0.06256996095180511,
+      "mean_abs": 0.31192317605018616
+    },
+    "error_C": {
+      "std_median": 0.10380083322525024,
+      "mean_abs": 0.2301751673221588
+    },
+    "projected_task": {
+      "std_median": 0.3613594174385071,
+      "mean_abs": 0.6885008811950684
+    },
+    "state": {
+      "std_median": 0.019371433183550835,
+      "mean_abs": 0.10901623219251633
+    },
+    "delta_energy": {
+      "std_median": 0.00035524004488252103,
+      "mean_abs": 4.9103193305199966e-05
+    },
+    "abs_delta": {
+      "std_median": 0.004894847050309181,
+      "mean_abs": 0.0034294677898287773
+    },
+    "cancellation_ratio": {
+      "std_median": 0.21834714710712433,
+      "mean_abs": 0.8271002769470215
+    }
+  },
+  "pooling_ratio_median": 0.7210038900375366,
+  "pooling_ratio_quantiles": [
+    0.18502455949783325,
+    0.7210038602352142,
+    0.9520023167133331
+  ],
+  "training_monitor": [
+    [
+      0,
+      0.016691092685505282
+    ],
+    [
+      500,
+      0.01697681898076553
+    ],
+    [
+      1000,
+      0.016710445976059418
+    ],
+    [
+      1500,
+      0.01695975953771267
+    ],
+    [
+      2000,
+      0.016751819610362872
+    ],
+    [
+      2500,
+      0.017011064817779697
+    ],
+    [
+      3000,
+      0.016828785781399347
+    ]
+  ],
+  "calibration": [
+    {
+      "margin": 0.0,
+      "coverage": 0.1660110205411911,
+      "accepted_harmful_rate": 0.3183634281158447,
+      "mean_mse_improvement": -3.578815812482761e-05,
+      "eligible": false
+    },
+    {
+      "margin": 0.05,
+      "coverage": 0.055214934051036835,
+      "accepted_harmful_rate": 0.4822925925254822,
+      "mean_mse_improvement": -3.7655834394467735e-05,
+      "eligible": false
+    },
+    {
+      "margin": 0.1,
+      "coverage": 0.033682193607091904,
+      "accepted_harmful_rate": 0.5345322489738464,
+      "mean_mse_improvement": -3.794355478597966e-05,
+      "eligible": false
+    },
+    {
+      "margin": 0.2,
+      "coverage": 0.01743071898818016,
+      "accepted_harmful_rate": 0.6152219772338867,
+      "mean_mse_improvement": -3.818217306944538e-05,
+      "eligible": false
+    },
+    {
+      "margin": 0.4,
+      "coverage": 0.004283977206796408,
+      "accepted_harmful_rate": 0.6424731016159058,
+      "mean_mse_improvement": -2.6013456892598485e-05,
+      "eligible": false
+    },
+    {
+      "margin": 0.8,
+      "coverage": 0.00010594781633699313,
+      "accepted_harmful_rate": 0.8260869383811951,
+      "mean_mse_improvement": -2.297181347768462e-06,
+      "eligible": false
+    },
+    {
+      "margin": 1.6,
+      "coverage": 0.0,
+      "accepted_harmful_rate": 0.0,
+      "mean_mse_improvement": -0.0,
+      "eligible": true
+    },
+    {
+      "margin": 3.2,
+      "coverage": 0.0,
+      "accepted_harmful_rate": 0.0,
+      "mean_mse_improvement": -0.0,
+      "eligible": true
+    },
+    {
+      "margin": 6.4,
+      "coverage": 0.0,
+      "accepted_harmful_rate": 0.0,
+      "mean_mse_improvement": -0.0,
+      "eligible": true
+    },
+    {
+      "margin": 12.8,
+      "coverage": 0.0,
+      "accepted_harmful_rate": 0.0,
+      "mean_mse_improvement": -0.0,
+      "eligible": true
+    }
+  ],
+  "final_ranking": {
+    "validation": [
+      -0.0340528734072,
+      -0.0454988252519,
+      -0.0551101210951
+    ],
+    "test": [
+      0.0228310487244,
+      0.018396649371,
+      0.0028760694289
+    ]
+  },
+  "full_evaluation": {
+    "validation": {
+      "image_mean_psnr": 26.08008901248357,
+      "image_mean_ssim": 0.9053678083310434,
+      "scene_macro_psnr": 26.149799005277472,
+      "scene_macro_ssim": 0.9086580236864115
+    },
+    "test": {
+      "image_mean_psnr": 23.377752041471417,
+      "image_mean_ssim": 0.8790678879682053,
+      "scene_macro_psnr": 25.12416337848984,
+      "scene_macro_ssim": 0.8993509730643163
+    }
+  },
+  "cpu_only": true,
+  "new_training": false,
+  "figure_sources": "Frozen experiment22 archives. All heatmaps from floats; RGB PNG display only."
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "created_unix": 1791894367.6817129,
+  "archive_path": "artifacts.tar.gz",
+  "sha256": "8acaf0251f3efb38d99e0ad08122dc6acaf34ecbd27692faca423660a71f5658",
+  "bytes": 5614,
+  "manifest_sha256": "d02ceb958be10fcf7f00e50178eefb5ae16fd9f3c7d3d80ddba8bc92308b7868",
+  "file_count": 65,
+  "archive_members_verified": true,
+  "status_stage": "failed",
+  "completed": false,
+  "formal_experiment_completed": false,
+  "method_effectiveness": "not_inferred_from_archive_completion",
+  "incomplete_reasons": [
+    "status.stage=failed",
+    "missing lock_receipt.json",
+    "missing downstream/metrics/summary.json",
+    "missing meta final checkpoint",
+    "missing archived source_checkpoint with expected SHA256 279d0a329d0efebee9678c2156bf3e7b60c0646e75a5f37f8015c7b100f9e9a2",
+    "missing archived official_fanet with expected SHA256 20fe6defc1ac37b5d7011bce5b83a43c9e21e6948f36bbb98933a742a7b75a4b"
+  ],
+  "protocol_id": null,
+  "original_budget": {},
+  "nested_archives_require_separate_download": false
+}

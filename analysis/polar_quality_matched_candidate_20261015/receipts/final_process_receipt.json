@@ -1,0 +1,33 @@
+{
+  "checked_unix": 1792009935.4560254,
+  "active_run_processes": [],
+  "all_run_processes_exited": true,
+  "gpu_evaluation_completed_before_deadline": true,
+  "status": {
+    "stage": "completed",
+    "time_unix": 1792009472.511583,
+    "protocol_id": "e2eb5a1132f5377a18a3df8fbdf56682e4044751a21e8bcbc6f192ac6bcfaf65",
+    "steps_per_arm": 2000,
+    "validation_frames": 872,
+    "test_frames": 188
+  },
+  "budget": {
+    "start_unix": 1791994752.2271562,
+    "deadline_unix": 1792037952.2271562,
+    "train_deadline_unix": 1792023552.2271562,
+    "immutable": true,
+    "protocol_id": "e2eb5a1132f5377a18a3df8fbdf56682e4044751a21e8bcbc6f192ac6bcfaf65",
+    "controller_pid": 3423439,
+    "controller_pgid": 3423439,
+    "hours": 12.0,
+    "resumed_execution": true
+  },
+  "watchdog_last_record": {
+    "pid": 3423440,
+    "pgid": 3423440,
+    "controller_pgid": 3423439,
+    "deadline_unix": 1792037952.2271562,
+    "heartbeat_unix": 1792009471.153117
+  },
+  "watchdog_file_is_last_record_not_running_evidence": true
+}
